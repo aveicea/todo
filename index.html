@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>할 일</title>
+  <title>To Do</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -55,16 +55,14 @@
       color: #333;
     }
 
-    .badge {
-      font-size: 11px;
-      font-weight: 600;
-      padding: 2px 8px;
-      border-radius: 20px;
-      background: #e8e8e8;
-      color: #666;
+    .dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: transparent;
+      flex-shrink: 0;
     }
-    .badge.ok   { background: #d3f8d3; color: #1a7a1a; }
-    .badge.error { background: #ffe4e4; color: #c0392b; }
+    .dot.error { background: #e53935; }
 
     .nav-btn {
       width: 32px;
@@ -81,37 +79,6 @@
       transition: background 0.2s;
     }
     .nav-btn:hover { background: #f0f0f0; color: #333; }
-
-    /* ── Stats ────────────────────────────────── */
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 8px;
-      padding: 12px 16px;
-      border-bottom: 1px solid #e5e5e7;
-      flex-shrink: 0;
-    }
-
-    .stat-card {
-      background: #f7f7f5;
-      border-radius: 8px;
-      padding: 8px;
-      text-align: center;
-    }
-
-    .stat-label {
-      font-size: 10px;
-      color: #9b9b9b;
-      text-transform: uppercase;
-      letter-spacing: 0.3px;
-      margin-bottom: 3px;
-    }
-
-    .stat-value {
-      font-size: 16px;
-      font-weight: 700;
-      color: #333;
-    }
 
     /* ── Filter tabs ──────────────────────────── */
     .filter-tabs {
@@ -133,8 +100,8 @@
     }
 
     .filter-tab.active {
-      background: var(--accent, #4285f4);
-      border-color: var(--accent, #4285f4);
+      background: var(--accent, #888);
+      border-color: var(--accent, #888);
       color: white;
       font-weight: 600;
     }
@@ -181,8 +148,8 @@
       font-size: 10px;
     }
     .task-check.done {
-      background: var(--accent, #4285f4);
-      border-color: var(--accent, #4285f4);
+      background: var(--accent, #888);
+      border-color: var(--accent, #888);
       color: white;
     }
 
@@ -227,7 +194,7 @@
     .sync-btn {
       width: 100%;
       padding: 9px;
-      background: var(--accent, #4285f4);
+      background: var(--accent, #888);
       color: white;
       border: none;
       border-radius: 8px;
@@ -254,7 +221,7 @@
       border-radius: 6px; font-size: 12px; font-family: monospace;
       background: white; outline: none;
     }
-    .input-row input:focus { border-color: var(--accent, #4285f4); }
+    .input-row input:focus { border-color: var(--accent, #888); }
     .input-row button {
       padding: 6px 10px; background: #37352f; color: white;
       border: none; border-radius: 6px; font-size: 12px; font-weight: 600; cursor: pointer;
@@ -285,25 +252,10 @@
 
   <div class="header">
     <div class="header-left">
-      <span class="header-title">할 일</span>
-      <span class="badge" id="badge">확인 중...</span>
+      <span class="header-title">To Do</span>
+      <span class="dot" id="badge"></span>
     </div>
     <button class="nav-btn" title="새로고침" onclick="loadTasks()">↺</button>
-  </div>
-
-  <div class="stats">
-    <div class="stat-card">
-      <div class="stat-label">전체</div>
-      <div class="stat-value" id="stat-total">-</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-label">미완료</div>
-      <div class="stat-value" id="stat-pending">-</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-label">완료</div>
-      <div class="stat-value" id="stat-done">-</div>
-    </div>
   </div>
 
   <div class="filter-tabs">
@@ -345,8 +297,7 @@ const WORKFLOW   = 'sync.yml';
 let allTasks = [];
 let currentFilter = 'all';
 
-// ── 색상 (캘린더 위젯과 동일한 기본값) ───────────────
-const accent = '#4285f4';
+const accent = '#888';
 document.documentElement.style.setProperty('--accent', accent);
 
 // ── 날짜 유틸 ──────────────────────────────────────
@@ -381,19 +332,14 @@ async function loadTasks() {
 
     allTasks = data.tasks || [];
 
-    document.getElementById('stat-total').textContent   = data.total   ?? allTasks.length;
-    document.getElementById('stat-pending').textContent = data.pending  ?? allTasks.filter(t=>!t.completed).length;
-    document.getElementById('stat-done').textContent    = data.completed ?? allTasks.filter(t=>t.completed).length;
-    document.getElementById('last-sync').textContent    = timeAgo(data.last_sync);
+    document.getElementById('last-sync').textContent = timeAgo(data.last_sync);
 
     const badge = document.getElementById('badge');
-    badge.textContent = '동기화됨';
-    badge.className   = 'badge ok';
+    badge.className = 'dot';
 
     renderTasks();
   } catch {
-    document.getElementById('badge').textContent = '미설정';
-    document.getElementById('badge').className   = 'badge';
+    document.getElementById('badge').className = 'dot error';
     document.getElementById('task-list').innerHTML =
       '<div class="empty-msg">동기화 후 데이터가 표시됩니다.</div>';
   }
