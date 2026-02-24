@@ -5,6 +5,10 @@ on:
     - cron: '*/30 * * * *'  # 30분마다 자동 실행
   workflow_dispatch:         # 수동 트리거 (웹 버튼 또는 GitHub UI)
 
+concurrency:
+  group: sync
+  cancel-in-progress: false
+
 jobs:
   sync:
     runs-on: ubuntu-latest

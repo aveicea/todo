@@ -23,7 +23,7 @@ SCOPES = [
     "https://graph.microsoft.com/Tasks.ReadWrite",
     "https://graph.microsoft.com/User.Read",
 ]
-AUTHORITY = "https://login.microsoftonline.com/common"
+AUTHORITY = "https://login.microsoftonline.com/consumers"
 
 MAPPING_FILE = "data/mapping.json"
 STATUS_FILE = "data/status.json"
@@ -70,8 +70,10 @@ def get_todo_tasks(token, list_id):
     return tasks
 
 
-def create_todo_task(token, list_id, title, completed=False):
+def create_todo_task(token, list_id, title, completed=False, due_date=None):
     body = {"title": title, "status": "completed" if completed else "notStarted"}
+    if due_date:
+        body["dueDateTime"] = {"dateTime": f"{due_date}T00:00:00.0000000", "timeZone": "UTC"}
     r = requests.post(
         f"https://graph.microsoft.com/v1.0/me/todo/lists/{list_id}/tasks",
         headers={**ms_headers(token), "Content-Type": "application/json"},
@@ -82,11 +84,16 @@ def create_todo_task(token, list_id, title, completed=False):
     return r.json()
 
 
-def update_todo_task(token, list_id, task_id, completed):
+def update_todo_task(token, list_id, task_id, completed=None, due_date=None):
+    body = {}
+    if completed is not None:
+        body["status"] = "completed" if completed else "notStarted"
+    if due_date is not None:
+        body["dueDateTime"] = {"dateTime": f"{due_date}T00:00:00.0000000", "timeZone": "UTC"} if due_date else None
     r = requests.patch(
         f"https://graph.microsoft.com/v1.0/me/todo/lists/{list_id}/tasks/{task_id}",
         headers={**ms_headers(token), "Content-Type": "application/json"},
-        json={"status": "completed" if completed else "notStarted"},
+        json=body,
         timeout=30,
     )
     r.raise_for_status()
@@ -133,11 +140,15 @@ def get_notion_pages(db_id):
     return pages
 
 
-def create_notion_page(db_id, title, completed, title_prop, status_prop, done_value, todo_value):
+def create_notion_page(db_id, title, completed, title_prop, status_prop, done_value, todo_value, date_prop=None, due_date=None, id_prop=None, ms_task_id=None):
     props = {
         title_prop: {"title": [{"text": {"content": title}}]},
         status_prop: {"status": {"name": done_value if completed else todo_value}},
     }
+    if date_prop and due_date:
+        props[date_prop] = {"date": {"start": due_date}}
+    if id_prop and ms_task_id:
+        props[id_prop] = {"rich_text": [{"text": {"content": ms_task_id}}]}
     r = requests.post(
         "https://api.notion.com/v1/pages",
         headers=NOTION_HEADERS,
@@ -148,11 +159,14 @@ def create_notion_page(db_id, title, completed, title_prop, status_prop, done_va
     return r.json()
 
 
-def update_notion_page(page_id, completed, status_prop, done_value, todo_value):
+def update_notion_page(page_id, completed, status_prop, done_value, todo_value, date_prop=None, due_date=None):
+    props = {status_prop: {"status": {"name": done_value if completed else todo_value}}}
+    if date_prop is not None:
+        props[date_prop] = {"date": {"start": due_date}} if due_date else {"date": None}
     r = requests.patch(
         f"https://api.notion.com/v1/pages/{page_id}",
         headers=NOTION_HEADERS,
-        json={"properties": {status_prop: {"status": {"name": done_value if completed else todo_value}}}},
+        json={"properties": props},
         timeout=30,
     )
     r.raise_for_status()
@@ -168,6 +182,14 @@ def get_page_title(page, title_prop):
 def get_page_completed(page, status_prop, done_value):
     status = page["properties"].get(status_prop, {}).get("status") or {}
     return status.get("name") == done_value
+
+
+def get_page_date(page, date_prop):
+    """Notion 페이지에서 날짜 속성값 반환 (YYYY-MM-DD 형식)"""
+    if not date_prop:
+        return None
+    date_obj = page["properties"].get(date_prop, {}).get("date") or {}
+    return date_obj.get("start", None)
 
 
 def load_json(path, default):
@@ -203,25 +225,39 @@ def main():
     schema = get_db_schema(NOTION_DB_ID)
     title_prop = find_prop(schema, "title") or "이름"
     status_prop = find_prop(schema, "status") or "상태"
+    date_prop = find_prop(schema, "date")
+    # MS Todo ID 속성 탐지 (rich_text 중 이름에 'todo' 또는 'id' 포함)
+    id_prop = next(
+        (name for name, prop in schema["properties"].items()
+         if prop["type"] == "rich_text" and any(k in name.lower() for k in ("todo", "id", "ms"))),
+        None
+    )
 
-    # 완료/미완료 상태값 탐지 (마지막·첫 번째 옵션)
+    # 완료/미완료 상태값 탐지
     status_opts = schema["properties"].get(status_prop, {}).get("status", {})
+    options = status_opts.get("options", [])
     groups = status_opts.get("groups", [])
+
     done_group = next((g for g in groups if g.get("name") in ("Complete", "완료됨")), None)
     todo_group = next((g for g in groups if g.get("name") in ("To-do", "할 일")), None)
 
-    options = status_opts.get("options", [])
     done_option_ids = set(done_group.get("option_ids", [])) if done_group else set()
     todo_option_ids = set(todo_group.get("option_ids", [])) if todo_group else set()
 
-    done_value = next(
-        (o["name"] for o in options if o["id"] in done_option_ids),
-        "완료",
-    )
-    todo_value = next(
-        (o["name"] for o in options if o["id"] in todo_option_ids),
-        "예정",
-    )
+    done_value = next((o["name"] for o in options if o["id"] in done_option_ids), None)
+    todo_value = next((o["name"] for o in options if o["id"] in todo_option_ids), None)
+
+    # 그룹 탐지 실패시 옵션 이름으로 직접 탐지
+    if not done_value:
+        done_value = next((o["name"] for o in options if o["name"] in ("완료", "Done", "Completed", "완료됨")), None)
+    if not todo_value:
+        todo_value = next((o["name"] for o in options if o["name"] in ("시작 안 함", "Not started", "할 일", "예정", "To-do")), None)
+
+    # 최후 수단: 마지막/첫 번째 옵션
+    if not done_value and options:
+        done_value = options[-1]["name"]
+    if not todo_value and options:
+        todo_value = options[0]["name"]
 
     print(f"  속성: title='{title_prop}', status='{status_prop}'")
     print(f"  상태값: 완료='{done_value}', 미완료='{todo_value}'")
@@ -229,6 +265,18 @@ def main():
     print("📥 데이터 가져오는 중...")
     ms_tasks = {t["id"]: t for t in get_todo_tasks(ms_token, list_id)}
     notion_pages = {p["id"]: p for p in get_notion_pages(NOTION_DB_ID)}
+
+    # Notion의 MS Todo ID 속성으로 매핑 복구 (mapping.json 유실 무관)
+    if id_prop:
+        for page_id, page in notion_pages.items():
+            stored_id = "".join(
+                t.get("plain_text", "")
+                for t in page["properties"].get(id_prop, {}).get("rich_text", [])
+            ).strip()
+            if stored_id and stored_id in ms_tasks and stored_id not in ms_to_notion:
+                ms_to_notion[stored_id] = page_id
+                print(f"  🔗 ID 속성으로 매핑 복구: {ms_tasks[stored_id].get('title', '')}")
+
     notion_to_ms = {v: k for k, v in ms_to_notion.items()}
 
     stats = {"created_in_ms": 0, "created_in_notion": 0, "updated": 0, "errors": 0}
@@ -242,9 +290,18 @@ def main():
             continue
         try:
             completed = get_page_completed(page, status_prop, done_value)
-            task = create_todo_task(ms_token, list_id, title, completed)
+            notion_date = get_page_date(page, date_prop)
+            task = create_todo_task(ms_token, list_id, title, completed, due_date=notion_date)
             ms_to_notion[task["id"]] = page_id
             notion_to_ms[page_id] = task["id"]
+            # Notion 페이지에 MS Todo ID 저장
+            if id_prop:
+                requests.patch(
+                    f"https://api.notion.com/v1/pages/{page_id}",
+                    headers=NOTION_HEADERS,
+                    json={"properties": {id_prop: {"rich_text": [{"text": {"content": task["id"]}}]}}},
+                    timeout=30,
+                )
             stats["created_in_ms"] += 1
             print(f"  ➕ MS에 생성: {title}")
         except Exception as e:
@@ -260,8 +317,12 @@ def main():
             continue
         try:
             completed = task["status"] == "completed"
+            due = task.get("dueDateTime") or {}
+            due_date = due.get("dateTime", "")[:10] or None
             page = create_notion_page(
-                NOTION_DB_ID, title, completed, title_prop, status_prop, done_value, todo_value
+                NOTION_DB_ID, title, completed, title_prop, status_prop, done_value, todo_value,
+                date_prop=date_prop, due_date=due_date,
+                id_prop=id_prop, ms_task_id=task_id
             )
             ms_to_notion[task_id] = page["id"]
             notion_to_ms[page["id"]] = task_id
@@ -280,8 +341,10 @@ def main():
 
         ms_done = task["status"] == "completed"
         notion_done = get_page_completed(page, status_prop, done_value)
+        ms_date = (task.get("dueDateTime") or {}).get("dateTime", "")[:10] or None
+        notion_date = get_page_date(page, date_prop) if date_prop else None
 
-        if ms_done == notion_done:
+        if ms_done == notion_done and ms_date == notion_date:
             continue
 
         title = task.get("title", "?")
@@ -291,15 +354,31 @@ def main():
         try:
             if ms_time >= notion_time:
                 # MS가 최신 → Notion 업데이트
-                update_notion_page(notion_id, ms_done, status_prop, done_value, todo_value)
-                print(f"  🔄 Notion 업데이트: {title} → {'완료' if ms_done else todo_value}")
+                date_changed = date_prop and ms_date != notion_date
+                update_notion_page(
+                    notion_id, ms_done, status_prop, done_value, todo_value,
+                    date_prop=date_prop if date_changed else None,
+                    due_date=ms_date if date_changed else None,
+                )
+                msg = f"{'완료' if ms_done else todo_value}"
+                if date_changed:
+                    msg += f" / 날짜={ms_date}"
+                print(f"  🔄 Notion 업데이트: {title} → {msg}")
             else:
                 # Notion이 최신 → MS 업데이트
-                update_todo_task(ms_token, list_id, ms_id, notion_done)
-                print(f"  🔄 MS 업데이트: {title} → {'완료' if notion_done else '미완료'}")
+                date_changed = ms_date != notion_date
+                update_todo_task(
+                    ms_token, list_id, ms_id,
+                    completed=notion_done,
+                    due_date=notion_date if date_changed else None,
+                )
+                msg = f"{'완료' if notion_done else '미완료'}"
+                if date_changed:
+                    msg += f" / 날짜={notion_date}"
+                print(f"  🔄 MS 업데이트: {title} → {msg}")
             stats["updated"] += 1
         except Exception as e:
-            print(f"  ⚠️ 상태 동기화 실패 ({title}): {e}")
+            print(f"  ⚠️ 동기화 실패 ({title}): {e}")
             stats["errors"] += 1
 
     # ── 결과 저장 ─────────────────────────────────────────

@@ -15,7 +15,7 @@ SCOPES = [
     "https://graph.microsoft.com/Tasks.ReadWrite",
     "https://graph.microsoft.com/User.Read",
 ]
-AUTHORITY = "https://login.microsoftonline.com/common"
+AUTHORITY = "https://login.microsoftonline.com/consumers"
 
 app = msal.PublicClientApplication(CLIENT_ID, authority=AUTHORITY)
 
@@ -39,10 +39,11 @@ if clipboard_ok:
     print("  (클립보드에 자동 복사됨)")
 print("=" * 50)
 print()
-print("브라우저가 열리면 코드를 붙여넣고 로그인하세요.")
+print("브라우저가 열립니다. 그냥 로그인만 하면 됩니다.")
 print()
 
-webbrowser.open("https://microsoft.com/devicelogin")
+# verification_uri_complete = 코드가 이미 포함된 URL (코드 입력 불필요)
+webbrowser.open(flow.get("verification_uri_complete", flow.get("verification_uri", "https://microsoft.com/devicelogin")))
 
 result = app.acquire_token_by_device_flow(flow)
 
