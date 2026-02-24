@@ -241,6 +241,23 @@ def main():
     notion_pages = {p["id"]: p for p in get_notion_pages(NOTION_DB_ID)}
     notion_to_ms = {v: k for k, v in ms_to_notion.items()}
 
+    # 제목 기반 인덱스 (mapping 유실 시 중복 방지)
+    ms_title_to_id = {t.get("title", "").strip(): tid for tid, t in ms_tasks.items()}
+    notion_title_to_id = {}
+    for pid, page in notion_pages.items():
+        t = get_page_title(page, title_prop)
+        if t.strip():
+            notion_title_to_id[t.strip()] = pid
+
+    # mapping 유실된 경우 제목으로 복구
+    for task_id, task in ms_tasks.items():
+        title = task.get("title", "").strip()
+        if task_id not in ms_to_notion and title in notion_title_to_id:
+            page_id = notion_title_to_id[title]
+            ms_to_notion[task_id] = page_id
+            notion_to_ms[page_id] = task_id
+            print(f"  🔗 매핑 복구: {title}")
+
     stats = {"created_in_ms": 0, "created_in_notion": 0, "updated": 0, "errors": 0}
 
     # ── Notion → MS Todo (Notion에만 있는 항목 생성) ──────
@@ -249,6 +266,13 @@ def main():
             continue
         title = get_page_title(page, title_prop)
         if not title.strip():
+            continue
+        # 제목 중복 체크
+        if title.strip() in ms_title_to_id:
+            task_id = ms_title_to_id[title.strip()]
+            ms_to_notion[task_id] = page_id
+            notion_to_ms[page_id] = task_id
+            print(f"  🔗 매핑 복구(제목): {title}")
             continue
         try:
             completed = get_page_completed(page, status_prop, done_value)
@@ -267,6 +291,13 @@ def main():
             continue
         title = task.get("title", "").strip()
         if not title:
+            continue
+        # 제목 중복 체크
+        if title in notion_title_to_id:
+            page_id = notion_title_to_id[title]
+            ms_to_notion[task_id] = page_id
+            notion_to_ms[page_id] = task_id
+            print(f"  🔗 매핑 복구(제목): {title}")
             continue
         try:
             completed = task["status"] == "completed"
