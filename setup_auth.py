@@ -7,7 +7,7 @@
 import msal
 import requests
 
-CLIENT_ID = "04b07795-8ddb-461a-bbee-02f9e1bf7b46"  # Azure CLI public client
+CLIENT_ID = "e2fba581-3f32-42af-9142-e3f8ee6a4003"
 SCOPES = [
     "https://graph.microsoft.com/Tasks.ReadWrite",
     "https://graph.microsoft.com/User.Read",
@@ -19,23 +19,19 @@ app = msal.PublicClientApplication(CLIENT_ID, authority=AUTHORITY)
 print("=" * 60)
 print("  MS Todo + Notion 동기화 초기 설정")
 print("=" * 60)
-print("\n📱 Microsoft 디바이스 코드 인증을 시작합니다...\n")
+print()
+print("브라우저가 자동으로 열립니다.")
+print("Microsoft 계정으로 로그인 후 권한을 허용해주세요.")
+print()
 
-flow = app.initiate_device_flow(scopes=SCOPES)
-if "user_code" not in flow:
-    raise SystemExit(f"오류: {flow}")
-
-print("1️⃣  아래 URL을 브라우저에서 여세요:")
-print("     https://microsoft.com/devicelogin\n")
-print(f"2️⃣  이 코드를 입력하세요: {flow['user_code']}\n")
-print("완료 후 Enter를 누르지 마세요. 자동으로 진행됩니다...")
-
-result = app.acquire_token_by_device_flow(flow)
+result = app.acquire_token_interactive(scopes=SCOPES)
 
 if "access_token" not in result:
-    raise SystemExit(f"인증 실패: {result.get('error_description')}")
+    raise SystemExit(f"인증 실패: {result.get('error_description', result)}")
 
-print("\n✅ 인증 성공!\n")
+print()
+print("인증 성공!")
+print()
 
 # To Do 목록 조회
 r = requests.get(
@@ -46,7 +42,7 @@ r = requests.get(
 r.raise_for_status()
 lists = r.json()["value"]
 
-print("📋 Microsoft To Do 목록:")
+print("Microsoft To Do 목록:")
 for i, lst in enumerate(lists):
     print(f"  {i + 1}. {lst['displayName']}")
 
@@ -54,7 +50,8 @@ print()
 choice = int(input("동기화할 목록 번호를 입력하세요: ")) - 1
 selected_list = lists[choice]
 
-print("\n" + "=" * 60)
+print()
+print("=" * 60)
 print("  GitHub Secrets에 아래 값들을 추가하세요")
 print("  (레포 → Settings → Secrets → Actions → New repository secret)")
 print("=" * 60)
