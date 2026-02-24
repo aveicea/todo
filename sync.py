@@ -283,7 +283,7 @@ def main():
 
     # ── Notion → MS Todo (Notion에만 있는 항목 생성) ──────
     for page_id, page in notion_pages.items():
-        if page_id in notion_to_ms:
+        if page_id in notion_to_ms and notion_to_ms[page_id] in ms_tasks:
             continue
         title = get_page_title(page, title_prop)
         if not title.strip():
@@ -310,7 +310,7 @@ def main():
 
     # ── MS Todo → Notion (MS에만 있는 항목 생성) ──────────
     for task_id, task in ms_tasks.items():
-        if task_id in ms_to_notion:
+        if task_id in ms_to_notion and ms_to_notion[task_id] in notion_pages:
             continue
         title = task.get("title", "").strip()
         if not title:
