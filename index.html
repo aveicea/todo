@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>할 일</title>
+  <title>To Do</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -22,7 +22,7 @@
     #widget-container {
       width: 100%;
       max-width: 400px;
-      height: 700px;
+      height: 480px;
       background: rgba(255, 255, 255, 0.95);
       backdrop-filter: blur(20px);
       border-radius: 16px;
@@ -55,16 +55,14 @@
       color: #333;
     }
 
-    .badge {
-      font-size: 11px;
-      font-weight: 600;
-      padding: 2px 8px;
-      border-radius: 20px;
-      background: #e8e8e8;
-      color: #666;
+    .dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: transparent;
+      flex-shrink: 0;
     }
-    .badge.ok   { background: #d3f8d3; color: #1a7a1a; }
-    .badge.error { background: #ffe4e4; color: #c0392b; }
+    .dot.error { background: #e53935; }
 
     .nav-btn {
       width: 32px;
@@ -81,37 +79,6 @@
       transition: background 0.2s;
     }
     .nav-btn:hover { background: #f0f0f0; color: #333; }
-
-    /* ── Stats ────────────────────────────────── */
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 8px;
-      padding: 12px 16px;
-      border-bottom: 1px solid #e5e5e7;
-      flex-shrink: 0;
-    }
-
-    .stat-card {
-      background: #f7f7f5;
-      border-radius: 8px;
-      padding: 8px;
-      text-align: center;
-    }
-
-    .stat-label {
-      font-size: 10px;
-      color: #9b9b9b;
-      text-transform: uppercase;
-      letter-spacing: 0.3px;
-      margin-bottom: 3px;
-    }
-
-    .stat-value {
-      font-size: 16px;
-      font-weight: 700;
-      color: #333;
-    }
 
     /* ── Filter tabs ──────────────────────────── */
     .filter-tabs {
@@ -133,8 +100,8 @@
     }
 
     .filter-tab.active {
-      background: var(--accent, #4285f4);
-      border-color: var(--accent, #4285f4);
+      background: var(--accent, #888);
+      border-color: var(--accent, #888);
       color: white;
       font-weight: 600;
     }
@@ -181,8 +148,8 @@
       font-size: 10px;
     }
     .task-check.done {
-      background: var(--accent, #4285f4);
-      border-color: var(--accent, #4285f4);
+      background: var(--accent, #888);
+      border-color: var(--accent, #888);
       color: white;
     }
 
@@ -220,14 +187,14 @@
     /* ── Footer ───────────────────────────────── */
     .footer {
       border-top: 1px solid #e5e5e7;
-      padding: 10px 16px;
+      padding: 8px 16px;
       flex-shrink: 0;
     }
 
     .sync-btn {
       width: 100%;
-      padding: 10px;
-      background: var(--accent, #4285f4);
+      padding: 9px;
+      background: var(--accent, #888);
       color: white;
       border: none;
       border-radius: 8px;
@@ -235,12 +202,30 @@
       font-weight: 600;
       cursor: pointer;
       transition: opacity 0.15s;
-      margin-bottom: 8px;
+      margin-bottom: 7px;
     }
     .sync-btn:hover:not(:disabled) { opacity: 0.88; }
     .sync-btn:disabled { opacity: 0.55; cursor: not-allowed; }
     .sync-btn.success { background: #2d8a4e; }
     .sync-btn.err     { background: #c0392b; }
+
+    .setup-panel {
+      display: none;
+      margin-top: 7px;
+    }
+    .setup-panel.visible { display: block; }
+    .setup-desc { font-size: 11px; color: #9b9b9b; }
+    .input-row { display: flex; gap: 6px; margin-top: 4px; }
+    .input-row input {
+      flex: 1; padding: 6px 8px; border: 1px solid #d0d0d0;
+      border-radius: 6px; font-size: 12px; font-family: monospace;
+      background: white; outline: none;
+    }
+    .input-row input:focus { border-color: var(--accent, #888); }
+    .input-row button {
+      padding: 6px 10px; background: #37352f; color: white;
+      border: none; border-radius: 6px; font-size: 12px; font-weight: 600; cursor: pointer;
+    }
 
     .footer-row {
       display: flex;
@@ -260,43 +245,6 @@
     }
     .link-btn:hover { color: #333; text-decoration: underline; }
     .sep { font-size: 11px; color: #ccc; }
-
-    /* ── Setup panel ──────────────────────────── */
-    .setup-panel {
-      display: none;
-      background: #f7f7f5;
-      border-radius: 8px;
-      padding: 12px;
-      margin-bottom: 8px;
-      border: 1px solid #e5e5e5;
-    }
-    .setup-panel.visible { display: block; }
-
-    .setup-title { font-size: 12px; font-weight: 600; margin-bottom: 4px; }
-    .setup-desc  { font-size: 11px; color: #6b6b6b; line-height: 1.5; margin-bottom: 8px; }
-
-    .input-row { display: flex; gap: 6px; }
-    .input-row input {
-      flex: 1;
-      padding: 7px 10px;
-      border: 1px solid #d0d0d0;
-      border-radius: 6px;
-      font-size: 12px;
-      font-family: monospace;
-      background: white;
-      outline: none;
-    }
-    .input-row input:focus { border-color: var(--accent, #4285f4); }
-    .input-row button {
-      padding: 7px 12px;
-      background: #37352f;
-      color: white;
-      border: none;
-      border-radius: 6px;
-      font-size: 12px;
-      font-weight: 600;
-      cursor: pointer;
-    }
   </style>
 </head>
 <body>
@@ -304,25 +252,10 @@
 
   <div class="header">
     <div class="header-left">
-      <span class="header-title">할 일</span>
-      <span class="badge" id="badge">확인 중...</span>
+      <span class="header-title">To Do</span>
+      <span class="dot" id="badge"></span>
     </div>
     <button class="nav-btn" title="새로고침" onclick="loadTasks()">↺</button>
-  </div>
-
-  <div class="stats">
-    <div class="stat-card">
-      <div class="stat-label">전체</div>
-      <div class="stat-value" id="stat-total">-</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-label">미완료</div>
-      <div class="stat-value" id="stat-pending">-</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-label">완료</div>
-      <div class="stat-value" id="stat-done">-</div>
-    </div>
   </div>
 
   <div class="filter-tabs">
@@ -336,26 +269,21 @@
   </div>
 
   <div class="footer">
+    <button class="sync-btn" id="sync-btn" onclick="triggerSync()">지금 동기화</button>
+    <div class="footer-row">
+      <span id="last-sync" style="font-size:11px;color:#bbb;">-</span>
+      <span class="sep">·</span>
+      <a class="link-btn" href="https://github.com/aveicea/todo/actions" target="_blank">Actions 보기</a>
+    </div>
+
     <div class="setup-panel" id="setup-panel">
-      <p class="setup-title">⚙️ GitHub PAT 설정</p>
-      <p class="setup-desc">
-        GitHub → Settings → Developer settings → Personal access tokens → Fine-grained<br>
-        권한: <strong>Actions (Read and write)</strong>
+      <p class="setup-desc" style="margin-bottom:8px;">
+        GitHub PAT 입력 (Fine-grained, Actions Read/Write)
       </p>
       <div class="input-row">
         <input type="password" id="pat-input" placeholder="ghp_..." autocomplete="off">
         <button onclick="savePAT()">저장</button>
       </div>
-    </div>
-
-    <button class="sync-btn" id="sync-btn" onclick="triggerSync()">지금 동기화</button>
-
-    <div class="footer-row">
-      <span class="link-btn" onclick="toggleSetup()">PAT 설정</span>
-      <span class="sep">·</span>
-      <a class="link-btn" href="https://github.com/aveicea/todo/actions" target="_blank">Actions 보기</a>
-      <span class="sep">·</span>
-      <span id="last-sync" style="font-size:11px;color:#bbb;">-</span>
     </div>
   </div>
 
@@ -369,8 +297,7 @@ const WORKFLOW   = 'sync.yml';
 let allTasks = [];
 let currentFilter = 'all';
 
-// ── 색상 (캘린더 위젯과 동일한 기본값) ───────────────
-const accent = '#4285f4';
+const accent = '#888';
 document.documentElement.style.setProperty('--accent', accent);
 
 // ── 날짜 유틸 ──────────────────────────────────────
@@ -405,19 +332,14 @@ async function loadTasks() {
 
     allTasks = data.tasks || [];
 
-    document.getElementById('stat-total').textContent   = data.total   ?? allTasks.length;
-    document.getElementById('stat-pending').textContent = data.pending  ?? allTasks.filter(t=>!t.completed).length;
-    document.getElementById('stat-done').textContent    = data.completed ?? allTasks.filter(t=>t.completed).length;
-    document.getElementById('last-sync').textContent    = timeAgo(data.last_sync);
+    document.getElementById('last-sync').textContent = timeAgo(data.last_sync);
 
     const badge = document.getElementById('badge');
-    badge.textContent = '동기화됨';
-    badge.className   = 'badge ok';
+    badge.className = 'dot';
 
     renderTasks();
   } catch {
-    document.getElementById('badge').textContent = '미설정';
-    document.getElementById('badge').className   = 'badge';
+    document.getElementById('badge').className = 'dot error';
     document.getElementById('task-list').innerHTML =
       '<div class="empty-msg">동기화 후 데이터가 표시됩니다.</div>';
   }
@@ -514,9 +436,8 @@ async function triggerSync() {
         body: JSON.stringify({ ref: 'main' }),
       }
     );
-
     if (r.status === 204) {
-      btn.textContent = '시작됨 ✓';
+      btn.textContent = '시작됨 ✓ (약 1분 후 완료)';
       btn.className = 'sync-btn success';
       setTimeout(loadTasks, 90000);
       setTimeout(() => {
@@ -532,20 +453,17 @@ async function triggerSync() {
     btn.textContent = `오류: ${e.message}`;
     btn.className = 'sync-btn err';
     btn.disabled = false;
-    if (e.message.includes('401') || e.message.includes('Bad credentials')) {
+    if (e.message.includes('Bad credentials') || e.message.includes('401')) {
       localStorage.removeItem('gh_pat');
       showSetup();
     }
   }
 }
 
-// ── PAT 설정 ───────────────────────────────────────
-function toggleSetup() {
-  document.getElementById('setup-panel').classList.toggle('visible');
-}
 function showSetup() {
   document.getElementById('setup-panel').classList.add('visible');
 }
+
 function savePAT() {
   const val = document.getElementById('pat-input').value.trim();
   if (!val) return;
@@ -559,7 +477,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const input = document.getElementById('pat-input');
   if (input) input.addEventListener('keydown', e => { if (e.key === 'Enter') savePAT(); });
   loadTasks();
-  setInterval(loadTasks, 120000); // 2분마다 자동 갱신
+  setInterval(loadTasks, 120000);
 });
 </script>
 </body>
