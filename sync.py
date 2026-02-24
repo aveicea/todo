@@ -8,7 +8,7 @@ import os
 import json
 import msal
 import requests
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 
 # ── 환경 변수 ──────────────────────────────────────────────
 CLIENT_ID = os.environ["AZURE_CLIENT_ID"]
@@ -70,10 +70,11 @@ def get_todo_tasks(token, list_id):
     return tasks
 
 
-def create_todo_task(token, list_id, title, completed=False, due_date=None):
+def create_todo_task(token, list_id, title, completed=False, due_date=None, due_time=None):
     body = {"title": title, "status": "completed" if completed else "notStarted"}
     if due_date:
-        body["dueDateTime"] = {"dateTime": f"{due_date}T00:00:00.0000000", "timeZone": "UTC"}
+        time_str = due_time or "00:00"
+        body["dueDateTime"] = {"dateTime": f"{due_date}T{time_str}:00.0000000", "timeZone": "Korea Standard Time"}
     r = requests.post(
         f"https://graph.microsoft.com/v1.0/me/todo/lists/{list_id}/tasks",
         headers={**ms_headers(token), "Content-Type": "application/json"},
@@ -84,12 +85,25 @@ def create_todo_task(token, list_id, title, completed=False, due_date=None):
     return r.json()
 
 
-def update_todo_task(token, list_id, task_id, completed=None, due_date=None, title=None):
+def delete_todo_task(token, list_id, task_id):
+    r = requests.delete(
+        f"https://graph.microsoft.com/v1.0/me/todo/lists/{list_id}/tasks/{task_id}",
+        headers=ms_headers(token),
+        timeout=30,
+    )
+    r.raise_for_status()
+
+
+def update_todo_task(token, list_id, task_id, completed=None, due_date=None, due_time=None, title=None):
     body = {}
     if completed is not None:
         body["status"] = "completed" if completed else "notStarted"
     if due_date is not None:
-        body["dueDateTime"] = {"dateTime": f"{due_date}T00:00:00.0000000", "timeZone": "UTC"} if due_date else None
+        if due_date:
+            time_str = due_time or "00:00"
+            body["dueDateTime"] = {"dateTime": f"{due_date}T{time_str}:00.0000000", "timeZone": "Korea Standard Time"}
+        else:
+            body["dueDateTime"] = None
     if title is not None:
         body["title"] = title
     r = requests.patch(
@@ -196,6 +210,27 @@ def get_page_date(page, date_prop):
     return date_obj.get("start", None)
 
 
+def extract_ms_due(due_dt_obj):
+    """MS Todo dueDateTime에서 날짜·시간 추출 (KST = UTC+9 기준)
+    MS가 UTC로 반환하는 경우 +9시간 보정해 한국 날짜로 변환."""
+    if not due_dt_obj:
+        return None, None
+    dt_str = due_dt_obj.get("dateTime", "")
+    tz = due_dt_obj.get("timeZone", "UTC")
+    if not dt_str or len(dt_str) < 10:
+        return None, None
+    try:
+        dt = datetime.fromisoformat(dt_str[:19])
+        if tz.upper() == "UTC":
+            dt = dt + timedelta(hours=9)  # UTC → KST 변환
+        date_str = dt.strftime("%Y-%m-%d")
+        time_val = dt.strftime("%H:%M")
+        due_time = None if time_val == "00:00" else time_val
+        return date_str, due_time
+    except Exception:
+        return (dt_str[:10] or None), None
+
+
 def load_json(path, default):
     if os.path.exists(path):
         with open(path, encoding="utf-8") as f:
@@ -287,6 +322,7 @@ def main():
     stats = {"created_in_ms": 0, "created_in_notion": 0, "updated": 0, "errors": 0}
 
     # ── 직접 업데이트 처리 (위젯에서 트리거) ─────────────
+    directly_updated_ms_ids = set()
     input_action  = os.environ.get("INPUT_ACTION",    "").strip()
     input_task_id = os.environ.get("INPUT_TASK_ID",   "").strip()
     if input_action and input_task_id:
@@ -294,6 +330,7 @@ def main():
         input_completed_str = os.environ.get("INPUT_COMPLETED", "").strip()
         input_title    = os.environ.get("INPUT_TITLE",    "").strip()
         input_due_date = os.environ.get("INPUT_DUE_DATE", "").strip()
+        input_due_time = os.environ.get("INPUT_DUE_TIME", "").strip()
 
         ms_kwargs = {}
         if input_completed_str:
@@ -302,16 +339,24 @@ def main():
             ms_kwargs["title"] = input_title
         if input_due_date:
             ms_kwargs["due_date"] = None if input_due_date == "none" else input_due_date
+            if input_due_date != "none":
+                ms_kwargs["due_time"] = input_due_time or None
 
         try:
             if ms_kwargs:
                 update_todo_task(ms_token, list_id, input_task_id, **ms_kwargs)
-                # 로컬 캐시도 갱신
+                # 로컬 캐시도 갱신 (이후 동기화 루프에서 덮어쓰지 않도록)
                 if input_task_id in ms_tasks:
                     if "completed" in ms_kwargs:
                         ms_tasks[input_task_id]["status"] = "completed" if ms_kwargs["completed"] else "notStarted"
                     if "title" in ms_kwargs:
                         ms_tasks[input_task_id]["title"] = ms_kwargs["title"]
+                    if "due_date" in ms_kwargs:
+                        d = ms_kwargs["due_date"]
+                        t = ms_kwargs.get("due_time") or "00:00"
+                        ms_tasks[input_task_id]["dueDateTime"] = (
+                            {"dateTime": f"{d}T{t}:00.0000000", "timeZone": "Korea Standard Time"} if d else None
+                        )
             print(f"  ✅ MS Todo 업데이트 완료")
         except Exception as e:
             print(f"  ⚠️ MS Todo 업데이트 실패: {e}")
@@ -331,13 +376,29 @@ def main():
                     title_prop=title_prop if input_title else None,
                     title=input_title if input_title else None,
                 )
-                # 로컬 캐시도 갱신
-                if input_title:
-                    for t in notion_pages[notion_id]["properties"].get(title_prop, {}).get("title", []):
-                        t["plain_text"] = input_title
+                # Notion 로컬 캐시 갱신 (동기화 루프가 이 태스크를 덮어쓰지 않도록)
+                props = notion_pages[notion_id]["properties"]
+                if "completed" in ms_kwargs:
+                    status_name = done_value if new_completed else todo_value
+                    if status_prop in props and props[status_prop].get("status") is not None:
+                        props[status_prop]["status"]["name"] = status_name
+                if "due_date" in ms_kwargs and date_prop and date_prop in props:
+                    props[date_prop]["date"] = {"start": new_due_date} if new_due_date else None
+                if input_title and title_prop in props:
+                    title_arr = props[title_prop].get("title", [])
+                    if title_arr:
+                        title_arr[0].setdefault("text", {})["content"] = input_title
+                        title_arr[0]["plain_text"] = input_title
+                    else:
+                        props[title_prop]["title"] = [{"plain_text": input_title, "text": {"content": input_title}}]
+                # 타임스탬프를 현재 시각으로 설정해 동기화 루프에서 충돌 방지
+                notion_pages[notion_id]["last_edited_time"] = datetime.now(timezone.utc).isoformat()
                 print(f"  ✅ Notion 업데이트 완료")
             except Exception as e:
                 print(f"  ⚠️ Notion 업데이트 실패: {e}")
+
+        # 이 태스크는 이미 양쪽 모두 업데이트했으므로 동기화 루프에서 스킵
+        directly_updated_ms_ids.add(input_task_id)
 
     # ── Notion → MS Todo (Notion에만 있는 항목 생성) ──────
     for page_id, page in notion_pages.items():
@@ -375,8 +436,7 @@ def main():
             continue
         try:
             completed = task["status"] == "completed"
-            due = task.get("dueDateTime") or {}
-            due_date = due.get("dateTime", "")[:10] or None
+            due_date, _ = extract_ms_due(task.get("dueDateTime"))
             page = create_notion_page(
                 NOTION_DB_ID, title, completed, title_prop, status_prop, done_value, todo_value,
                 date_prop=date_prop, due_date=due_date,
@@ -390,16 +450,56 @@ def main():
             print(f"  ⚠️ Notion 생성 실패 ({title}): {e}")
             stats["errors"] += 1
 
-    # ── 완료 상태 양방향 동기화 ───────────────────────────
+    # ── 완료 상태 양방향 동기화 + 삭제 전파 ──────────────
     for ms_id, notion_id in list(ms_to_notion.items()):
-        if ms_id not in ms_tasks or notion_id not in notion_pages:
+        # 이번 실행에서 직접 업데이트한 태스크는 스킵 (이미 양쪽 모두 처리됨)
+        if ms_id in directly_updated_ms_ids:
             continue
+
+        ms_exists = ms_id in ms_tasks
+        notion_exists = notion_id in notion_pages
+
+        # 한쪽 또는 양쪽 모두 삭제된 경우
+        if not ms_exists or not notion_exists:
+            if not ms_exists and not notion_exists:
+                # 양쪽 모두 삭제 → 매핑만 정리
+                del ms_to_notion[ms_id]
+                print(f"  🗑️ 매핑 정리 (양쪽 모두 삭제됨): {ms_id[:8]}...")
+            elif not ms_exists:
+                # MS에서 삭제됨 → Notion 페이지도 아카이브
+                try:
+                    requests.patch(
+                        f"https://api.notion.com/v1/pages/{notion_id}",
+                        headers=NOTION_HEADERS,
+                        json={"archived": True},
+                        timeout=30,
+                    )
+                    del ms_to_notion[ms_id]
+                    stats["updated"] += 1
+                    title = get_page_title(notion_pages[notion_id], title_prop)
+                    print(f"  🗑️ Notion 아카이브 (MS에서 삭제됨): {title}")
+                except Exception as e:
+                    print(f"  ⚠️ Notion 아카이브 실패: {e}")
+                    stats["errors"] += 1
+            else:
+                # Notion에서 삭제됨 → MS 태스크도 삭제
+                try:
+                    delete_todo_task(ms_token, list_id, ms_id)
+                    del ms_to_notion[ms_id]
+                    stats["updated"] += 1
+                    title = ms_tasks[ms_id].get("title", "?")
+                    print(f"  🗑️ MS 태스크 삭제 (Notion에서 삭제됨): {title}")
+                except Exception as e:
+                    print(f"  ⚠️ MS 태스크 삭제 실패: {e}")
+                    stats["errors"] += 1
+            continue
+
         task = ms_tasks[ms_id]
         page = notion_pages[notion_id]
 
         ms_done = task["status"] == "completed"
         notion_done = get_page_completed(page, status_prop, done_value)
-        ms_date = (task.get("dueDateTime") or {}).get("dateTime", "")[:10] or None
+        ms_date, _ = extract_ms_due(task.get("dueDateTime"))
         notion_date = get_page_date(page, date_prop) if date_prop else None
 
         if ms_done == notion_done and ms_date == notion_date:
@@ -457,16 +557,16 @@ def main():
     # tasks.json: 위젯 표시용 할 일 목록
     all_tasks = []
     for task_id, task in ms_tasks.items():
-        due = task.get("dueDateTime") or {}
-        due_date = due.get("dateTime", "")[:10] or None
+        due_date, due_time = extract_ms_due(task.get("dueDateTime"))
         all_tasks.append({
             "ms_id": task_id,
             "notion_id": ms_to_notion.get(task_id, ""),
             "title": task.get("title", ""),
             "completed": task["status"] == "completed",
             "due_date": due_date,
+            "due_time": due_time,
         })
-    all_tasks.sort(key=lambda x: (x["completed"], x["due_date"] or "9999-12-31"))
+    all_tasks.sort(key=lambda x: (x["completed"], x["due_date"] or "9999-12-31", x["due_time"] or "99:99"))
     save_json("data/tasks.json", {
         "tasks": all_tasks,
         "last_sync": now_iso,
