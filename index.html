@@ -59,10 +59,10 @@
       width: 7px;
       height: 7px;
       border-radius: 50%;
-      background: transparent;
+      display: none;
       flex-shrink: 0;
     }
-    .dot.error { background: #e53935; }
+    .dot.error { display: block; background: #e53935; }
 
     .nav-btn {
       width: 32px;
@@ -325,23 +325,33 @@ function timeAgo(isoStr) {
 
 // ── 태스크 로드 ────────────────────────────────────
 async function loadTasks() {
+  // 캐시된 데이터 즉시 표시
+  const cached = localStorage.getItem('tasks_cache');
+  if (cached && !allTasks.length) {
+    try {
+      const c = JSON.parse(cached);
+      allTasks = c.tasks || [];
+      document.getElementById('last-sync').textContent = timeAgo(c.last_sync);
+      renderTasks();
+    } catch {}
+  }
+
   try {
     const r = await fetch(TASKS_URL + '?t=' + Date.now());
     if (!r.ok) throw new Error('404');
     const data = await r.json();
 
+    localStorage.setItem('tasks_cache', JSON.stringify(data));
     allTasks = data.tasks || [];
-
     document.getElementById('last-sync').textContent = timeAgo(data.last_sync);
-
-    const badge = document.getElementById('badge');
-    badge.className = 'dot';
-
+    document.getElementById('badge').className = 'dot';
     renderTasks();
   } catch {
+    if (!allTasks.length) {
+      document.getElementById('task-list').innerHTML =
+        '<div class="empty-msg">동기화 후 데이터가 표시됩니다.</div>';
+    }
     document.getElementById('badge').className = 'dot error';
-    document.getElementById('task-list').innerHTML =
-      '<div class="empty-msg">동기화 후 데이터가 표시됩니다.</div>';
   }
 }
 
