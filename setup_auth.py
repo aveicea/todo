@@ -15,7 +15,7 @@ SCOPES = [
     "https://graph.microsoft.com/Tasks.ReadWrite",
     "https://graph.microsoft.com/User.Read",
 ]
-AUTHORITY = "https://login.microsoftonline.com/common"
+AUTHORITY = "https://login.microsoftonline.com/consumers"
 
 app = msal.PublicClientApplication(CLIENT_ID, authority=AUTHORITY)
 

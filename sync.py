@@ -23,7 +23,7 @@ SCOPES = [
     "https://graph.microsoft.com/Tasks.ReadWrite",
     "https://graph.microsoft.com/User.Read",
 ]
-AUTHORITY = "https://login.microsoftonline.com/common"
+AUTHORITY = "https://login.microsoftonline.com/consumers"
 
 MAPPING_FILE = "data/mapping.json"
 STATUS_FILE = "data/status.json"
