@@ -14,11 +14,13 @@
       display: flex;
       justify-content: center;
       align-items: flex-start;
-      padding: 8px 0 0 0;
+      padding: 20px;
     }
 
     #widget-container {
-      width: 220px;
+      width: 100%;
+      min-width: 280px;
+      max-width: 400px;
       height: 240px;
       background: rgba(255,255,255,0.95);
       backdrop-filter: blur(20px);
@@ -39,7 +41,7 @@
       flex-shrink: 0;
     }
     .header-left { display: flex; align-items: center; gap: 6px; }
-    .header-title { font-size: 13px; font-weight: 600; color: #333; }
+    .header-title { font-size: 18px; font-weight: 600; color: #333; }
     .dot { width: 6px; height: 6px; border-radius: 50%; display: none; }
     .dot.error { display: block; background: #e53935; }
     .nav-btn {
@@ -100,7 +102,7 @@
 
     .task-body { flex: 1; min-width: 0; }
     .task-title {
-      font-size: 11px; font-weight: 500; color: #333;
+      font-size: 13px; font-weight: 500; color: #333;
       overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
     }
     .task-title.done { text-decoration: line-through; color: #bbb; }
