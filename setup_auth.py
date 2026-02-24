@@ -1,11 +1,14 @@
 #!/usr/bin/env python3
 """
 최초 1회 실행: Microsoft 인증 & GitHub Secrets에 넣을 값 출력
-사용법: pip install msal requests && python setup_auth.py
+사용법: pip3 install msal requests && python3 setup_auth.py
 """
 
 import msal
 import requests
+import webbrowser
+import subprocess
+import sys
 
 CLIENT_ID = "e2fba581-3f32-42af-9142-e3f8ee6a4003"
 SCOPES = [
@@ -16,15 +19,32 @@ AUTHORITY = "https://login.microsoftonline.com/common"
 
 app = msal.PublicClientApplication(CLIENT_ID, authority=AUTHORITY)
 
-print("=" * 60)
-print("  MS Todo + Notion 동기화 초기 설정")
-print("=" * 60)
+flow = app.initiate_device_flow(scopes=SCOPES)
+if "user_code" not in flow:
+    raise SystemExit(f"오류: {flow}")
+
+code = flow["user_code"]
+
+# 클립보드에 코드 복사 (Mac)
+try:
+    subprocess.run(["pbcopy"], input=code.encode(), check=True)
+    clipboard_ok = True
+except Exception:
+    clipboard_ok = False
+
 print()
-print("브라우저가 자동으로 열립니다.")
-print("Microsoft 계정으로 로그인 후 권한을 허용해주세요.")
+print("=" * 50)
+print(f"  코드: {code}")
+if clipboard_ok:
+    print("  (클립보드에 자동 복사됨)")
+print("=" * 50)
+print()
+print("브라우저가 열리면 코드를 붙여넣고 로그인하세요.")
 print()
 
-result = app.acquire_token_interactive(scopes=SCOPES)
+webbrowser.open("https://microsoft.com/devicelogin")
+
+result = app.acquire_token_by_device_flow(flow)
 
 if "access_token" not in result:
     raise SystemExit(f"인증 실패: {result.get('error_description', result)}")
