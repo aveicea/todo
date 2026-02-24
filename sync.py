@@ -207,24 +207,31 @@ def main():
     status_prop = find_prop(schema, "status") or "상태"
     date_prop = find_prop(schema, "date")
 
-    # 완료/미완료 상태값 탐지 (마지막·첫 번째 옵션)
+    # 완료/미완료 상태값 탐지
     status_opts = schema["properties"].get(status_prop, {}).get("status", {})
+    options = status_opts.get("options", [])
     groups = status_opts.get("groups", [])
+
     done_group = next((g for g in groups if g.get("name") in ("Complete", "완료됨")), None)
     todo_group = next((g for g in groups if g.get("name") in ("To-do", "할 일")), None)
 
-    options = status_opts.get("options", [])
     done_option_ids = set(done_group.get("option_ids", [])) if done_group else set()
     todo_option_ids = set(todo_group.get("option_ids", [])) if todo_group else set()
 
-    done_value = next(
-        (o["name"] for o in options if o["id"] in done_option_ids),
-        "완료",
-    )
-    todo_value = next(
-        (o["name"] for o in options if o["id"] in todo_option_ids),
-        "예정",
-    )
+    done_value = next((o["name"] for o in options if o["id"] in done_option_ids), None)
+    todo_value = next((o["name"] for o in options if o["id"] in todo_option_ids), None)
+
+    # 그룹 탐지 실패시 옵션 이름으로 직접 탐지
+    if not done_value:
+        done_value = next((o["name"] for o in options if o["name"] in ("완료", "Done", "Completed", "완료됨")), None)
+    if not todo_value:
+        todo_value = next((o["name"] for o in options if o["name"] in ("시작 안 함", "Not started", "할 일", "예정", "To-do")), None)
+
+    # 최후 수단: 마지막/첫 번째 옵션
+    if not done_value and options:
+        done_value = options[-1]["name"]
+    if not todo_value and options:
+        todo_value = options[0]["name"]
 
     print(f"  속성: title='{title_prop}', status='{status_prop}'")
     print(f"  상태값: 완료='{done_value}', 미완료='{todo_value}'")
