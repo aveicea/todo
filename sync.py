@@ -133,11 +133,13 @@ def get_notion_pages(db_id):
     return pages
 
 
-def create_notion_page(db_id, title, completed, title_prop, status_prop, done_value, todo_value):
+def create_notion_page(db_id, title, completed, title_prop, status_prop, done_value, todo_value, date_prop=None, due_date=None):
     props = {
         title_prop: {"title": [{"text": {"content": title}}]},
         status_prop: {"status": {"name": done_value if completed else todo_value}},
     }
+    if date_prop and due_date:
+        props[date_prop] = {"date": {"start": due_date}}
     r = requests.post(
         "https://api.notion.com/v1/pages",
         headers=NOTION_HEADERS,
@@ -203,6 +205,7 @@ def main():
     schema = get_db_schema(NOTION_DB_ID)
     title_prop = find_prop(schema, "title") or "이름"
     status_prop = find_prop(schema, "status") or "상태"
+    date_prop = find_prop(schema, "date")
 
     # 완료/미완료 상태값 탐지 (마지막·첫 번째 옵션)
     status_opts = schema["properties"].get(status_prop, {}).get("status", {})
@@ -260,8 +263,11 @@ def main():
             continue
         try:
             completed = task["status"] == "completed"
+            due = task.get("dueDateTime") or {}
+            due_date = due.get("dateTime", "")[:10] or None
             page = create_notion_page(
-                NOTION_DB_ID, title, completed, title_prop, status_prop, done_value, todo_value
+                NOTION_DB_ID, title, completed, title_prop, status_prop, done_value, todo_value,
+                date_prop=date_prop, due_date=due_date
             )
             ms_to_notion[task_id] = page["id"]
             notion_to_ms[page["id"]] = task_id
