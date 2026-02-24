@@ -14,6 +14,7 @@
       display: flex;
       justify-content: center;
       align-items: flex-start;
+      padding-top: 8px;
     }
 
     #widget-container {
@@ -55,7 +56,7 @@
     /* ── Filter tabs ─────────────── */
     .filter-tabs {
       display: flex; gap: 4px;
-      padding: 5px 14px 4px;
+      padding: 8px 14px 4px;
       flex-shrink: 0;
     }
     .filter-tab {
@@ -191,9 +192,9 @@
   </div>
 
   <div class="filter-tabs">
-    <button class="filter-tab active" onclick="setFilter('all')"    id="tab-all">전체</button>
+    <button class="filter-tab active" onclick="setFilter('today')"   id="tab-today">오늘</button>
     <button class="filter-tab"        onclick="setFilter('pending')" id="tab-pending">미완료</button>
-    <button class="filter-tab"        onclick="setFilter('done')"    id="tab-done">완료</button>
+    <button class="filter-tab"        onclick="setFilter('all')"     id="tab-all">전체</button>
   </div>
 
   <div class="task-list" id="task-list">
@@ -234,7 +235,7 @@ const TASKS_URL = 'https://raw.githubusercontent.com/aveicea/todo/main/data/task
 const WORKFLOW  = 'sync.yml';
 
 let allTasks = [];
-let currentFilter = 'all';
+let currentFilter = 'today';
 let editingTaskId = null;
 
 document.documentElement.style.setProperty('--accent', '#888');
@@ -274,10 +275,12 @@ async function loadTasks() {
 }
 
 function renderTasks() {
-  const tasks = allTasks.filter(t =>
-    currentFilter === 'pending' ? !t.completed :
-    currentFilter === 'done'    ?  t.completed : true
-  );
+  const today = todayStr();
+  const tasks = allTasks.filter(t => {
+    if (currentFilter === 'today')   return !t.completed && (!t.due_date || t.due_date <= today);
+    if (currentFilter === 'pending') return !t.completed;
+    return true;
+  });
   const list = document.getElementById('task-list');
   if (!tasks.length) { list.innerHTML = '<div class="empty-msg">항목이 없어요</div>'; return; }
 
@@ -285,13 +288,13 @@ function renderTasks() {
   const done    = tasks.filter(t =>  t.completed);
   let html = '';
 
-  if (pending.length && currentFilter !== 'done') {
+  if (pending.length) {
     if (currentFilter === 'all' && done.length)
       html += `<div class="task-group-label">미완료 ${pending.length}</div>`;
     html += pending.map(taskHTML).join('');
   }
-  if (done.length && currentFilter !== 'pending') {
-    if (currentFilter === 'all' && pending.length)
+  if (done.length && currentFilter === 'all') {
+    if (pending.length)
       html += `<div class="task-group-label">완료 ${done.length}</div>`;
     html += done.map(taskHTML).join('');
   }
@@ -319,6 +322,7 @@ function setFilter(f) {
   document.getElementById('tab-' + f).classList.add('active');
   renderTasks();
 }
+
 
 async function toggleTask(e, msId, cur) {
   e.stopPropagation();
