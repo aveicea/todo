@@ -7,7 +7,7 @@
 import msal
 import requests
 
-CLIENT_ID = "e2fba581-3f32-42af-9142-e3f8ee6a4003"
+CLIENT_ID = "04b07795-8ddb-461a-bbee-02f9e1bf7b46"  # Azure CLI public client
 SCOPES = [
     "https://graph.microsoft.com/Tasks.ReadWrite",
     "https://graph.microsoft.com/User.Read",
