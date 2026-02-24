@@ -1,0 +1,18 @@
+{
+  "tasks": [
+    {
+      "title": "다이소 5공 펀치",
+      "completed": false,
+      "due_date": "2026-02-24"
+    },
+    {
+      "title": "키레나 형광펜 페일 그린",
+      "completed": true,
+      "due_date": "2026-02-23"
+    }
+  ],
+  "last_sync": "2026-02-24T16:33:25.723465+00:00",
+  "total": 2,
+  "completed": 1,
+  "pending": 1
+}
