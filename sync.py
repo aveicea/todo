@@ -84,12 +84,14 @@ def create_todo_task(token, list_id, title, completed=False, due_date=None):
     return r.json()
 
 
-def update_todo_task(token, list_id, task_id, completed=None, due_date=None):
+def update_todo_task(token, list_id, task_id, completed=None, due_date=None, title=None):
     body = {}
     if completed is not None:
         body["status"] = "completed" if completed else "notStarted"
     if due_date is not None:
         body["dueDateTime"] = {"dateTime": f"{due_date}T00:00:00.0000000", "timeZone": "UTC"} if due_date else None
+    if title is not None:
+        body["title"] = title
     r = requests.patch(
         f"https://graph.microsoft.com/v1.0/me/todo/lists/{list_id}/tasks/{task_id}",
         headers={**ms_headers(token), "Content-Type": "application/json"},
@@ -159,10 +161,12 @@ def create_notion_page(db_id, title, completed, title_prop, status_prop, done_va
     return r.json()
 
 
-def update_notion_page(page_id, completed, status_prop, done_value, todo_value, date_prop=None, due_date=None):
+def update_notion_page(page_id, completed, status_prop, done_value, todo_value, date_prop=None, due_date=None, title_prop=None, title=None):
     props = {status_prop: {"status": {"name": done_value if completed else todo_value}}}
     if date_prop is not None:
         props[date_prop] = {"date": {"start": due_date}} if due_date else {"date": None}
+    if title_prop and title is not None:
+        props[title_prop] = {"title": [{"text": {"content": title}}]}
     r = requests.patch(
         f"https://api.notion.com/v1/pages/{page_id}",
         headers=NOTION_HEADERS,
@@ -267,6 +271,7 @@ def main():
     notion_pages = {p["id"]: p for p in get_notion_pages(NOTION_DB_ID)}
 
     # Notion의 MS Todo ID 속성으로 매핑 복구 (mapping.json 유실 무관)
+
     if id_prop:
         for page_id, page in notion_pages.items():
             stored_id = "".join(
@@ -280,6 +285,59 @@ def main():
     notion_to_ms = {v: k for k, v in ms_to_notion.items()}
 
     stats = {"created_in_ms": 0, "created_in_notion": 0, "updated": 0, "errors": 0}
+
+    # ── 직접 업데이트 처리 (위젯에서 트리거) ─────────────
+    input_action  = os.environ.get("INPUT_ACTION",    "").strip()
+    input_task_id = os.environ.get("INPUT_TASK_ID",   "").strip()
+    if input_action and input_task_id:
+        print(f"🎯 직접 업데이트: action={input_action}, task={input_task_id}")
+        input_completed_str = os.environ.get("INPUT_COMPLETED", "").strip()
+        input_title    = os.environ.get("INPUT_TITLE",    "").strip()
+        input_due_date = os.environ.get("INPUT_DUE_DATE", "").strip()
+
+        ms_kwargs = {}
+        if input_completed_str:
+            ms_kwargs["completed"] = input_completed_str.lower() == "true"
+        if input_title:
+            ms_kwargs["title"] = input_title
+        if input_due_date:
+            ms_kwargs["due_date"] = None if input_due_date == "none" else input_due_date
+
+        try:
+            if ms_kwargs:
+                update_todo_task(ms_token, list_id, input_task_id, **ms_kwargs)
+                # 로컬 캐시도 갱신
+                if input_task_id in ms_tasks:
+                    if "completed" in ms_kwargs:
+                        ms_tasks[input_task_id]["status"] = "completed" if ms_kwargs["completed"] else "notStarted"
+                    if "title" in ms_kwargs:
+                        ms_tasks[input_task_id]["title"] = ms_kwargs["title"]
+            print(f"  ✅ MS Todo 업데이트 완료")
+        except Exception as e:
+            print(f"  ⚠️ MS Todo 업데이트 실패: {e}")
+
+        notion_id = ms_to_notion.get(input_task_id)
+        if notion_id and notion_id in notion_pages:
+            try:
+                page = notion_pages[notion_id]
+                cur_completed = get_page_completed(page, status_prop, done_value)
+                cur_date = get_page_date(page, date_prop) if date_prop else None
+                new_completed = ms_kwargs.get("completed", cur_completed)
+                new_due_date  = ms_kwargs.get("due_date",  cur_date)
+                update_notion_page(
+                    notion_id, new_completed, status_prop, done_value, todo_value,
+                    date_prop=date_prop if input_due_date else None,
+                    due_date=new_due_date,
+                    title_prop=title_prop if input_title else None,
+                    title=input_title if input_title else None,
+                )
+                # 로컬 캐시도 갱신
+                if input_title:
+                    for t in notion_pages[notion_id]["properties"].get(title_prop, {}).get("title", []):
+                        t["plain_text"] = input_title
+                print(f"  ✅ Notion 업데이트 완료")
+            except Exception as e:
+                print(f"  ⚠️ Notion 업데이트 실패: {e}")
 
     # ── Notion → MS Todo (Notion에만 있는 항목 생성) ──────
     for page_id, page in notion_pages.items():
@@ -402,6 +460,8 @@ def main():
         due = task.get("dueDateTime") or {}
         due_date = due.get("dateTime", "")[:10] or None
         all_tasks.append({
+            "ms_id": task_id,
+            "notion_id": ms_to_notion.get(task_id, ""),
             "title": task.get("title", ""),
             "completed": task["status"] == "completed",
             "due_date": due_date,

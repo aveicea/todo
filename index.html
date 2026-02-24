@@ -6,25 +6,21 @@
   <title>To Do</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
-
     html, body { overflow: hidden; height: 100%; }
-
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      font-size: 13px;
       color: #333;
       background: transparent;
       display: flex;
       justify-content: center;
       align-items: flex-start;
-      padding: 0;
     }
 
     #widget-container {
       width: 100%;
       max-width: 220px;
       height: 200px;
-      background: rgba(255, 255, 255, 0.95);
+      background: rgba(255,255,255,0.95);
       backdrop-filter: blur(20px);
       border-radius: 16px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
@@ -34,179 +30,152 @@
       position: relative;
     }
 
-    /* ── Header ───────────────────────────────── */
+    /* ── Header ─────────────────── */
     .header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 12px 16px;
+      padding: 7px 8px 7px 14px;
       border-bottom: 1px solid #e5e5e7;
       flex-shrink: 0;
     }
-
-    .header-left {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .header-title {
-      font-size: 15px;
-      font-weight: 600;
-      color: #333;
-    }
-
-    .dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      display: none;
-      flex-shrink: 0;
-    }
+    .header-left { display: flex; align-items: center; gap: 6px; }
+    .header-title { font-size: 13px; font-weight: 600; color: #333; }
+    .dot { width: 6px; height: 6px; border-radius: 50%; display: none; }
     .dot.error { display: block; background: #e53935; }
-
     .nav-btn {
-      width: 32px;
-      height: 32px;
-      border: none;
-      background: transparent;
-      border-radius: 6px;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #666;
-      font-size: 14px;
-      transition: background 0.2s;
+      width: 24px; height: 24px;
+      border: none; background: transparent; border-radius: 5px;
+      cursor: pointer; display: flex; align-items: center; justify-content: center;
+      color: #888; font-size: 13px; transition: background 0.15s;
     }
     .nav-btn:hover:not(:disabled) { background: #f0f0f0; color: #333; }
     .nav-btn:disabled { opacity: 0.4; cursor: not-allowed; }
 
-    /* ── Filter tabs ──────────────────────────── */
+    /* ── Filter tabs ─────────────── */
     .filter-tabs {
-      display: flex;
-      gap: 4px;
-      padding: 10px 16px 8px;
+      display: flex; gap: 4px;
+      padding: 5px 14px 4px;
       flex-shrink: 0;
     }
-
     .filter-tab {
-      padding: 4px 12px;
-      border: 1px solid #ddd;
-      border-radius: 20px;
-      font-size: 12px;
-      cursor: pointer;
-      background: white;
-      color: #666;
-      transition: all 0.2s;
+      padding: 2px 9px;
+      border: 1px solid #ddd; border-radius: 20px;
+      font-size: 10px; cursor: pointer;
+      background: white; color: #666; transition: all 0.15s;
     }
-
     .filter-tab.active {
-      background: var(--accent, #888);
-      border-color: var(--accent, #888);
-      color: white;
-      font-weight: 600;
+      background: var(--accent,#888); border-color: var(--accent,#888);
+      color: white; font-weight: 600;
     }
 
-    /* ── Task list ────────────────────────────── */
+    /* ── Task list ───────────────── */
     .task-list {
-      flex: 1;
-      overflow-y: auto;
-      padding: 0 16px 8px;
-      -ms-overflow-style: none;
-      scrollbar-width: none;
+      flex: 1; overflow-y: auto;
+      padding: 2px 6px 4px;
+      -ms-overflow-style: none; scrollbar-width: none;
     }
     .task-list::-webkit-scrollbar { display: none; }
 
     .task-group-label {
-      font-size: 10px;
-      font-weight: 600;
-      color: #9b9b9b;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      padding: 10px 0 4px;
+      font-size: 9px; font-weight: 600; color: #bbb;
+      text-transform: uppercase; letter-spacing: 0.4px;
+      padding: 4px 6px 2px;
     }
 
     .task-item {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 9px 10px;
-      border-radius: 8px;
-      margin-bottom: 3px;
-      transition: background 0.15s;
+      display: flex; align-items: center; gap: 7px;
+      padding: 3px 6px; border-radius: 6px;
+      cursor: pointer; transition: background 0.12s;
     }
-    .task-item:hover { background: #f7f7f5; }
+    .task-item:hover { background: #f5f5f3; }
 
     .task-check {
-      width: 18px;
-      height: 18px;
-      border-radius: 50%;
-      border: 2px solid #ccc;
-      flex-shrink: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 10px;
+      width: 13px; height: 13px; border-radius: 50%;
+      border: 1.5px solid #ccc; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 8px; cursor: pointer; transition: all 0.12s;
     }
-    .task-check.done {
-      background: var(--accent, #888);
-      border-color: var(--accent, #888);
-      color: white;
-    }
+    .task-check:hover { border-color: #888; }
+    .task-check.done { background: var(--accent,#888); border-color: var(--accent,#888); color: white; }
 
     .task-body { flex: 1; min-width: 0; }
-
     .task-title {
-      font-size: 13px;
-      font-weight: 500;
-      color: #333;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
+      font-size: 11px; font-weight: 500; color: #333;
+      overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
     }
-    .task-title.done {
-      text-decoration: line-through;
-      color: #aaa;
-    }
-
-    .task-due {
-      font-size: 10px;
-      margin-top: 2px;
-    }
+    .task-title.done { text-decoration: line-through; color: #bbb; }
+    .task-due { font-size: 9px; margin-top: 0; }
     .task-due.overdue  { color: #e53935; font-weight: 600; }
     .task-due.today    { color: #f57c00; font-weight: 600; }
-    .task-due.upcoming { color: #9b9b9b; }
-    .task-due.done-date { color: #bbb; }
+    .task-due.upcoming { color: #bbb; }
+    .task-due.done-date { color: #ccc; }
 
-    .empty-msg {
-      text-align: center;
-      color: #bbb;
-      font-size: 12px;
-      padding: 40px 0;
+    .empty-msg { text-align: center; color: #ccc; font-size: 11px; padding: 24px 0; }
+
+    /* ── Detail panel ────────────── */
+    .detail-panel {
+      display: none; position: absolute; inset: 0;
+      background: rgba(255,255,255,0.98);
+      border-radius: 16px; flex-direction: column;
+      padding: 12px 14px; z-index: 10;
     }
+    .detail-panel.visible { display: flex; }
+    .detail-header {
+      display: flex; justify-content: space-between;
+      align-items: center; margin-bottom: 10px;
+    }
+    .detail-label { font-size: 11px; font-weight: 600; color: #888; text-transform: uppercase; letter-spacing: 0.4px; }
+    .close-btn {
+      width: 22px; height: 22px; border: none; background: transparent;
+      border-radius: 5px; cursor: pointer; color: #aaa; font-size: 13px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .close-btn:hover { background: #f0f0f0; color: #333; }
 
-    /* ── PAT 패널 (오버레이) ──────────────────── */
+    .detail-field { margin-bottom: 7px; }
+    .detail-field label { display: block; font-size: 9px; color: #aaa; text-transform: uppercase; letter-spacing: 0.3px; margin-bottom: 2px; }
+    .detail-field input {
+      width: 100%; padding: 5px 7px;
+      border: 1px solid #e0e0e0; border-radius: 6px;
+      font-size: 11px; font-family: inherit; outline: none; background: #fafafa;
+    }
+    .detail-field input:focus { border-color: #888; background: white; }
+
+    .detail-actions { display: flex; gap: 5px; margin-top: auto; }
+    .btn-save {
+      flex: 1; padding: 6px;
+      background: #333; color: white; border: none;
+      border-radius: 6px; font-size: 11px; font-weight: 600; cursor: pointer;
+    }
+    .btn-save:hover { background: #555; }
+    .btn-save:disabled { opacity: 0.5; cursor: not-allowed; }
+    .btn-cancel {
+      padding: 6px 10px; background: transparent; color: #888;
+      border: 1px solid #e0e0e0; border-radius: 6px; font-size: 11px; cursor: pointer;
+    }
+    .btn-cancel:hover { background: #f5f5f5; }
+
+    /* ── PAT panel ───────────────── */
     .setup-panel {
-      display: none;
-      position: absolute;
+      display: none; position: absolute;
       bottom: 0; left: 0; right: 0;
       background: rgba(255,255,255,0.97);
       border-top: 1px solid #e5e5e7;
-      padding: 10px 16px;
+      border-radius: 0 0 16px 16px;
+      padding: 8px 14px; z-index: 20;
     }
     .setup-panel.visible { display: block; }
-    .setup-desc { font-size: 11px; color: #9b9b9b; margin-bottom: 6px; }
-    .input-row { display: flex; gap: 6px; }
+    .setup-desc { font-size: 10px; color: #aaa; margin-bottom: 5px; }
+    .input-row { display: flex; gap: 5px; }
     .input-row input {
-      flex: 1; padding: 6px 8px; border: 1px solid #d0d0d0;
-      border-radius: 6px; font-size: 12px; font-family: monospace;
-      background: white; outline: none;
+      flex: 1; padding: 5px 7px; border: 1px solid #d0d0d0;
+      border-radius: 5px; font-size: 11px; font-family: monospace; background: white; outline: none;
     }
-    .input-row input:focus { border-color: var(--accent, #888); }
+    .input-row input:focus { border-color: #888; }
     .input-row button {
-      padding: 6px 10px; background: #37352f; color: white;
-      border: none; border-radius: 6px; font-size: 12px; font-weight: 600; cursor: pointer;
+      padding: 5px 9px; background: #37352f; color: white;
+      border: none; border-radius: 5px; font-size: 11px; font-weight: 600; cursor: pointer;
     }
   </style>
 </head>
@@ -231,6 +200,25 @@
     <div class="empty-msg">불러오는 중...</div>
   </div>
 
+  <div class="detail-panel" id="detail-panel">
+    <div class="detail-header">
+      <span class="detail-label">편집</span>
+      <button class="close-btn" onclick="closeDetail()">✕</button>
+    </div>
+    <div class="detail-field">
+      <label>제목</label>
+      <input type="text" id="detail-title">
+    </div>
+    <div class="detail-field">
+      <label>마감일</label>
+      <input type="date" id="detail-date">
+    </div>
+    <div class="detail-actions">
+      <button class="btn-save" id="save-btn" onclick="saveTask()">저장</button>
+      <button class="btn-cancel" onclick="closeDetail()">취소</button>
+    </div>
+  </div>
+
   <div class="setup-panel" id="setup-panel">
     <p class="setup-desc">GitHub PAT 입력 (Actions Read/Write)</p>
     <div class="input-row">
@@ -240,7 +228,6 @@
   </div>
 
 </div>
-
 <script>
 const REPO      = 'aveicea/todo';
 const TASKS_URL = 'https://raw.githubusercontent.com/aveicea/todo/main/data/tasks.json';
@@ -248,11 +235,10 @@ const WORKFLOW  = 'sync.yml';
 
 let allTasks = [];
 let currentFilter = 'all';
+let editingTaskId = null;
 
-const accent = '#888';
-document.documentElement.style.setProperty('--accent', accent);
+document.documentElement.style.setProperty('--accent', '#888');
 
-// ── 날짜 유틸 ──────────────────────────────────────
 function todayStr() {
   const d = new Date();
   return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
@@ -267,47 +253,33 @@ function formatDue(dateStr, completed) {
   return { label: dateStr, cls: 'upcoming' };
 }
 
-// ── 태스크 로드 ────────────────────────────────────
 async function loadTasks() {
   const cached = localStorage.getItem('tasks_cache');
   if (cached && !allTasks.length) {
-    try {
-      const c = JSON.parse(cached);
-      allTasks = c.tasks || [];
-      renderTasks();
-    } catch {}
+    try { const c = JSON.parse(cached); allTasks = c.tasks || []; renderTasks(); } catch {}
   }
-
   try {
     const r = await fetch(TASKS_URL + '?t=' + Date.now());
-    if (!r.ok) throw new Error('404');
+    if (!r.ok) throw new Error();
     const data = await r.json();
     localStorage.setItem('tasks_cache', JSON.stringify(data));
     allTasks = data.tasks || [];
     document.getElementById('badge').className = 'dot';
     renderTasks();
   } catch {
-    if (!allTasks.length) {
-      document.getElementById('task-list').innerHTML =
-        '<div class="empty-msg">동기화 후 데이터가 표시됩니다.</div>';
-    }
+    if (!allTasks.length)
+      document.getElementById('task-list').innerHTML = '<div class="empty-msg">동기화 후 표시됩니다.</div>';
     document.getElementById('badge').className = 'dot error';
   }
 }
 
-// ── 렌더 ───────────────────────────────────────────
 function renderTasks() {
-  const tasks = allTasks.filter(t => {
-    if (currentFilter === 'pending') return !t.completed;
-    if (currentFilter === 'done')    return  t.completed;
-    return true;
-  });
-
+  const tasks = allTasks.filter(t =>
+    currentFilter === 'pending' ? !t.completed :
+    currentFilter === 'done'    ?  t.completed : true
+  );
   const list = document.getElementById('task-list');
-  if (!tasks.length) {
-    list.innerHTML = '<div class="empty-msg">항목이 없어요</div>';
-    return;
-  }
+  if (!tasks.length) { list.innerHTML = '<div class="empty-msg">항목이 없어요</div>'; return; }
 
   const pending = tasks.filter(t => !t.completed);
   const done    = tasks.filter(t =>  t.completed);
@@ -323,30 +295,24 @@ function renderTasks() {
       html += `<div class="task-group-label">완료 ${done.length}</div>`;
     html += done.map(taskHTML).join('');
   }
-
   list.innerHTML = html;
 }
 
-function taskHTML(task) {
-  const due = formatDue(task.due_date, task.completed);
+function taskHTML(t) {
+  const due = formatDue(t.due_date, t.completed);
   const dueHTML = due ? `<div class="task-due ${due.cls}">${due.label}</div>` : '';
-  return `
-    <div class="task-item">
-      <div class="task-check ${task.completed ? 'done' : ''}">${task.completed ? '✓' : ''}</div>
-      <div class="task-body">
-        <div class="task-title ${task.completed ? 'done' : ''}">${escHtml(task.title)}</div>
-        ${dueHTML}
-      </div>
-    </div>`;
+  const id = (t.ms_id || '').replace(/'/g, "\\'");
+  const done = t.completed ? 'done' : '';
+  return `<div class="task-item">
+    <div class="task-check ${done}" onclick="toggleTask(event,'${id}',${t.completed})">${t.completed?'✓':''}</div>
+    <div class="task-body" onclick="openDetail('${id}')">
+      <div class="task-title ${done}">${escHtml(t.title)}</div>${dueHTML}
+    </div>
+  </div>`;
 }
 
-function escHtml(s) {
-  const d = document.createElement('div');
-  d.textContent = s || '';
-  return d.innerHTML;
-}
+function escHtml(s) { const d = document.createElement('div'); d.textContent = s||''; return d.innerHTML; }
 
-// ── 필터 ───────────────────────────────────────────
 function setFilter(f) {
   currentFilter = f;
   document.querySelectorAll('.filter-tab').forEach(b => b.classList.remove('active'));
@@ -354,50 +320,90 @@ function setFilter(f) {
   renderTasks();
 }
 
-// ── 동기화 트리거 ──────────────────────────────────
-async function triggerSync() {
-  const pat = localStorage.getItem('gh_pat');
-  if (!pat) { showSetup(); return; }
-
-  const btn = document.getElementById('sync-btn');
-  btn.disabled = true;
-  btn.textContent = '…';
-
-  try {
-    const r = await fetch(
-      `https://api.github.com/repos/${REPO}/actions/workflows/${WORKFLOW}/dispatches`,
-      {
-        method: 'POST',
-        headers: {
-          Authorization: `Bearer ${pat}`,
-          Accept: 'application/vnd.github+json',
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ ref: 'main' }),
-      }
-    );
-    if (r.status === 204) {
-      btn.textContent = '✓';
-      setTimeout(() => { btn.textContent = '↺'; btn.disabled = false; }, 3000);
-      setTimeout(loadTasks, 90000);
-    } else {
-      const body = await r.json().catch(() => ({}));
-      throw new Error(body.message || `HTTP ${r.status}`);
-    }
-  } catch (e) {
-    btn.textContent = '!';
-    btn.disabled = false;
-    if (e.message.includes('Bad credentials') || e.message.includes('401')) {
-      localStorage.removeItem('gh_pat');
-      showSetup();
-    }
-    setTimeout(() => { btn.textContent = '↺'; }, 3000);
+async function toggleTask(e, msId, cur) {
+  e.stopPropagation();
+  if (!msId) return;
+  const next = !cur;
+  const task = allTasks.find(t => t.ms_id === msId);
+  if (task) task.completed = next;
+  updateCache(msId, { completed: next });
+  renderTasks();
+  const ok = await triggerUpdate({ action: 'toggle_complete', task_id: msId, completed: String(next) });
+  if (!ok) {
+    if (task) task.completed = cur;
+    updateCache(msId, { completed: cur });
+    renderTasks();
   }
 }
 
-function showSetup() {
-  document.getElementById('setup-panel').classList.add('visible');
+function openDetail(msId) {
+  const task = allTasks.find(t => t.ms_id === msId);
+  if (!task) return;
+  editingTaskId = msId;
+  document.getElementById('detail-title').value = task.title || '';
+  document.getElementById('detail-date').value  = task.due_date || '';
+  document.getElementById('detail-panel').classList.add('visible');
 }
+
+function closeDetail() {
+  document.getElementById('detail-panel').classList.remove('visible');
+  editingTaskId = null;
+}
+
+async function saveTask() {
+  if (!editingTaskId) return;
+  const title   = document.getElementById('detail-title').value.trim();
+  const dateVal = document.getElementById('detail-date').value;
+  if (!title) return;
+
+  const btn = document.getElementById('save-btn');
+  btn.disabled = true; btn.textContent = '저장 중...';
+
+  const task = allTasks.find(t => t.ms_id === editingTaskId);
+  if (task) { task.title = title; task.due_date = dateVal || null; }
+  updateCache(editingTaskId, { title, due_date: dateVal || null });
+  closeDetail(); renderTasks();
+
+  await triggerUpdate({ action: 'update', task_id: editingTaskId, title, due_date: dateVal || 'none' });
+  btn.disabled = false; btn.textContent = '저장';
+}
+
+function updateCache(msId, changes) {
+  try {
+    const cached = localStorage.getItem('tasks_cache');
+    if (!cached) return;
+    const data = JSON.parse(cached);
+    const t = (data.tasks||[]).find(x => x.ms_id === msId);
+    if (t) Object.assign(t, changes);
+    localStorage.setItem('tasks_cache', JSON.stringify(data));
+  } catch {}
+}
+
+async function triggerUpdate(inputs) {
+  const pat = localStorage.getItem('gh_pat');
+  if (!pat) { showSetup(); return false; }
+  try {
+    const r = await fetch(
+      `https://api.github.com/repos/${REPO}/actions/workflows/${WORKFLOW}/dispatches`,
+      { method: 'POST',
+        headers: { Authorization: `Bearer ${pat}`, Accept: 'application/vnd.github+json', 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ref: 'main', inputs }) }
+    );
+    if (r.status === 401 || r.status === 403) { localStorage.removeItem('gh_pat'); showSetup(); return false; }
+    return r.status === 204;
+  } catch { return false; }
+}
+
+async function triggerSync() {
+  const btn = document.getElementById('sync-btn');
+  btn.disabled = true; btn.textContent = '…';
+  const ok = await triggerUpdate({ action: '', task_id: '', completed: '', title: '', due_date: '' });
+  btn.textContent = ok ? '✓' : '!';
+  setTimeout(() => { btn.textContent = '↺'; btn.disabled = false; }, 3000);
+  if (ok) setTimeout(loadTasks, 90000);
+}
+
+function showSetup() { document.getElementById('setup-panel').classList.add('visible'); }
 
 function savePAT() {
   const val = document.getElementById('pat-input').value.trim();
@@ -407,7 +413,6 @@ function savePAT() {
   document.getElementById('setup-panel').classList.remove('visible');
 }
 
-// ── Init ───────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
   const input = document.getElementById('pat-input');
   if (input) input.addEventListener('keydown', e => { if (e.key === 'Enter') savePAT(); });
