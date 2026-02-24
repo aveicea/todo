@@ -3,7 +3,24 @@ name: Sync Microsoft To Do ↔ Notion
 on:
   schedule:
     - cron: '*/30 * * * *'  # 30분마다 자동 실행
-  workflow_dispatch:         # 수동 트리거 (웹 버튼 또는 GitHub UI)
+  workflow_dispatch:
+    inputs:
+      action:
+        description: 'toggle_complete | update'
+        required: false
+        default: ''
+      task_id:
+        required: false
+        default: ''
+      completed:
+        required: false
+        default: ''
+      title:
+        required: false
+        default: ''
+      due_date:
+        required: false
+        default: ''
 
 concurrency:
   group: sync
@@ -33,6 +50,11 @@ jobs:
           NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
           NOTION_DB_ID: ${{ secrets.NOTION_DB_ID }}
           MSTODO_LIST_ID: ${{ secrets.MSTODO_LIST_ID }}
+          INPUT_ACTION: ${{ inputs.action }}
+          INPUT_TASK_ID: ${{ inputs.task_id }}
+          INPUT_COMPLETED: ${{ inputs.completed }}
+          INPUT_TITLE: ${{ inputs.title }}
+          INPUT_DUE_DATE: ${{ inputs.due_date }}
         run: python sync.py
 
       - name: Commit sync results
