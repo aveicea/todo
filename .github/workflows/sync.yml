@@ -1,0 +1,40 @@
+name: Sync Microsoft To Do ↔ Notion
+
+on:
+  schedule:
+    - cron: '*/30 * * * *'  # 30분마다 자동 실행
+  workflow_dispatch:         # 수동 트리거 (웹 버튼 또는 GitHub UI)
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write  # status.json, mapping.json 커밋 용
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run sync
+        env:
+          AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
+          AZURE_REFRESH_TOKEN: ${{ secrets.AZURE_REFRESH_TOKEN }}
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+          NOTION_DB_ID: ${{ secrets.NOTION_DB_ID }}
+          MSTODO_LIST_ID: ${{ secrets.MSTODO_LIST_ID }}
+        run: python sync.py
+
+      - name: Commit sync results
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/
+          git diff --staged --quiet || git commit -m "sync: $(date -u '+%Y-%m-%d %H:%M') UTC"
+          git push
