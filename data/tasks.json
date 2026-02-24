@@ -6,13 +6,18 @@
       "due_date": "2026-02-24"
     },
     {
+      "title": "ㅌㅅㅌ",
+      "completed": false,
+      "due_date": "2026-02-27"
+    },
+    {
       "title": "키레나 형광펜 페일 그린",
       "completed": true,
       "due_date": "2026-02-23"
     }
   ],
-  "last_sync": "2026-02-24T16:53:11.663301+00:00",
-  "total": 2,
+  "last_sync": "2026-02-24T16:55:24.528301+00:00",
+  "total": 3,
   "completed": 1,
-  "pending": 1
+  "pending": 2
 }
