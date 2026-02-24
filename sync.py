@@ -133,13 +133,15 @@ def get_notion_pages(db_id):
     return pages
 
 
-def create_notion_page(db_id, title, completed, title_prop, status_prop, done_value, todo_value, date_prop=None, due_date=None):
+def create_notion_page(db_id, title, completed, title_prop, status_prop, done_value, todo_value, date_prop=None, due_date=None, id_prop=None, ms_task_id=None):
     props = {
         title_prop: {"title": [{"text": {"content": title}}]},
         status_prop: {"status": {"name": done_value if completed else todo_value}},
     }
     if date_prop and due_date:
         props[date_prop] = {"date": {"start": due_date}}
+    if id_prop and ms_task_id:
+        props[id_prop] = {"rich_text": [{"text": {"content": ms_task_id}}]}
     r = requests.post(
         "https://api.notion.com/v1/pages",
         headers=NOTION_HEADERS,
@@ -206,6 +208,12 @@ def main():
     title_prop = find_prop(schema, "title") or "이름"
     status_prop = find_prop(schema, "status") or "상태"
     date_prop = find_prop(schema, "date")
+    # MS Todo ID 속성 탐지 (rich_text 중 이름에 'todo' 또는 'id' 포함)
+    id_prop = next(
+        (name for name, prop in schema["properties"].items()
+         if prop["type"] == "rich_text" and any(k in name.lower() for k in ("todo", "id", "ms"))),
+        None
+    )
 
     # 완료/미완료 상태값 탐지
     status_opts = schema["properties"].get(status_prop, {}).get("status", {})
@@ -239,24 +247,19 @@ def main():
     print("📥 데이터 가져오는 중...")
     ms_tasks = {t["id"]: t for t in get_todo_tasks(ms_token, list_id)}
     notion_pages = {p["id"]: p for p in get_notion_pages(NOTION_DB_ID)}
+
+    # Notion의 MS Todo ID 속성으로 매핑 복구 (mapping.json 유실 무관)
+    if id_prop:
+        for page_id, page in notion_pages.items():
+            stored_id = "".join(
+                t.get("plain_text", "")
+                for t in page["properties"].get(id_prop, {}).get("rich_text", [])
+            ).strip()
+            if stored_id and stored_id in ms_tasks and stored_id not in ms_to_notion:
+                ms_to_notion[stored_id] = page_id
+                print(f"  🔗 ID 속성으로 매핑 복구: {ms_tasks[stored_id].get('title', '')}")
+
     notion_to_ms = {v: k for k, v in ms_to_notion.items()}
-
-    # 제목 기반 인덱스 (mapping 유실 시 중복 방지)
-    ms_title_to_id = {t.get("title", "").strip(): tid for tid, t in ms_tasks.items()}
-    notion_title_to_id = {}
-    for pid, page in notion_pages.items():
-        t = get_page_title(page, title_prop)
-        if t.strip():
-            notion_title_to_id[t.strip()] = pid
-
-    # mapping 유실된 경우 제목으로 복구
-    for task_id, task in ms_tasks.items():
-        title = task.get("title", "").strip()
-        if task_id not in ms_to_notion and title in notion_title_to_id:
-            page_id = notion_title_to_id[title]
-            ms_to_notion[task_id] = page_id
-            notion_to_ms[page_id] = task_id
-            print(f"  🔗 매핑 복구: {title}")
 
     stats = {"created_in_ms": 0, "created_in_notion": 0, "updated": 0, "errors": 0}
 
@@ -267,18 +270,19 @@ def main():
         title = get_page_title(page, title_prop)
         if not title.strip():
             continue
-        # 제목 중복 체크
-        if title.strip() in ms_title_to_id:
-            task_id = ms_title_to_id[title.strip()]
-            ms_to_notion[task_id] = page_id
-            notion_to_ms[page_id] = task_id
-            print(f"  🔗 매핑 복구(제목): {title}")
-            continue
         try:
             completed = get_page_completed(page, status_prop, done_value)
             task = create_todo_task(ms_token, list_id, title, completed)
             ms_to_notion[task["id"]] = page_id
             notion_to_ms[page_id] = task["id"]
+            # Notion 페이지에 MS Todo ID 저장
+            if id_prop:
+                requests.patch(
+                    f"https://api.notion.com/v1/pages/{page_id}",
+                    headers=NOTION_HEADERS,
+                    json={"properties": {id_prop: {"rich_text": [{"text": {"content": task["id"]}}]}}},
+                    timeout=30,
+                )
             stats["created_in_ms"] += 1
             print(f"  ➕ MS에 생성: {title}")
         except Exception as e:
@@ -292,20 +296,14 @@ def main():
         title = task.get("title", "").strip()
         if not title:
             continue
-        # 제목 중복 체크
-        if title in notion_title_to_id:
-            page_id = notion_title_to_id[title]
-            ms_to_notion[task_id] = page_id
-            notion_to_ms[page_id] = task_id
-            print(f"  🔗 매핑 복구(제목): {title}")
-            continue
         try:
             completed = task["status"] == "completed"
             due = task.get("dueDateTime") or {}
             due_date = due.get("dateTime", "")[:10] or None
             page = create_notion_page(
                 NOTION_DB_ID, title, completed, title_prop, status_prop, done_value, todo_value,
-                date_prop=date_prop, due_date=due_date
+                date_prop=date_prop, due_date=due_date,
+                id_prop=id_prop, ms_task_id=task_id
             )
             ms_to_notion[task_id] = page["id"]
             notion_to_ms[page["id"]] = task_id
