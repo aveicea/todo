@@ -385,14 +385,35 @@ def main():
     mapping["ms_to_notion"] = ms_to_notion
     save_json(MAPPING_FILE, mapping)
 
+    now_iso = datetime.now(timezone.utc).isoformat()
+
     status = {
-        "last_sync": datetime.now(timezone.utc).isoformat(),
+        "last_sync": now_iso,
         "success": stats["errors"] == 0,
         "stats": stats,
         "total_ms_tasks": len(ms_tasks),
         "total_notion_pages": len(notion_pages),
     }
     save_json(STATUS_FILE, status)
+
+    # tasks.json: 위젯 표시용 할 일 목록
+    all_tasks = []
+    for task_id, task in ms_tasks.items():
+        due = task.get("dueDateTime") or {}
+        due_date = due.get("dateTime", "")[:10] or None
+        all_tasks.append({
+            "title": task.get("title", ""),
+            "completed": task["status"] == "completed",
+            "due_date": due_date,
+        })
+    all_tasks.sort(key=lambda x: (x["completed"], x["due_date"] or "9999-12-31"))
+    save_json("data/tasks.json", {
+        "tasks": all_tasks,
+        "last_sync": now_iso,
+        "total": len(all_tasks),
+        "completed": sum(1 for t in all_tasks if t["completed"]),
+        "pending": sum(1 for t in all_tasks if not t["completed"]),
+    })
 
     print(f"\n✨ 동기화 완료!")
     print(f"  MS 생성: {stats['created_in_ms']} | Notion 생성: {stats['created_in_notion']} | 업데이트: {stats['updated']} | 오류: {stats['errors']}")

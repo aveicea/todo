@@ -3,40 +3,339 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Todo Sync</title>
-  <link rel="stylesheet" href="css/style.css">
+  <title>할 일</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 13px;
+      color: #333;
+      background: transparent;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0;
+    }
+
+    #widget-container {
+      width: 100%;
+      max-width: 400px;
+      height: 700px;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(20px);
+      border-radius: 16px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* ── Header ───────────────────────────────── */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 16px;
+      border-bottom: 1px solid #e5e5e7;
+      flex-shrink: 0;
+    }
+
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .header-title {
+      font-size: 15px;
+      font-weight: 600;
+      color: #333;
+    }
+
+    .badge {
+      font-size: 11px;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 20px;
+      background: #e8e8e8;
+      color: #666;
+    }
+    .badge.ok   { background: #d3f8d3; color: #1a7a1a; }
+    .badge.error { background: #ffe4e4; color: #c0392b; }
+
+    .nav-btn {
+      width: 32px;
+      height: 32px;
+      border: none;
+      background: transparent;
+      border-radius: 6px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #666;
+      font-size: 14px;
+      transition: background 0.2s;
+    }
+    .nav-btn:hover { background: #f0f0f0; color: #333; }
+
+    /* ── Stats ────────────────────────────────── */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      padding: 12px 16px;
+      border-bottom: 1px solid #e5e5e7;
+      flex-shrink: 0;
+    }
+
+    .stat-card {
+      background: #f7f7f5;
+      border-radius: 8px;
+      padding: 8px;
+      text-align: center;
+    }
+
+    .stat-label {
+      font-size: 10px;
+      color: #9b9b9b;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      margin-bottom: 3px;
+    }
+
+    .stat-value {
+      font-size: 16px;
+      font-weight: 700;
+      color: #333;
+    }
+
+    /* ── Filter tabs ──────────────────────────── */
+    .filter-tabs {
+      display: flex;
+      gap: 4px;
+      padding: 10px 16px 8px;
+      flex-shrink: 0;
+    }
+
+    .filter-tab {
+      padding: 4px 12px;
+      border: 1px solid #ddd;
+      border-radius: 20px;
+      font-size: 12px;
+      cursor: pointer;
+      background: white;
+      color: #666;
+      transition: all 0.2s;
+    }
+
+    .filter-tab.active {
+      background: var(--accent, #4285f4);
+      border-color: var(--accent, #4285f4);
+      color: white;
+      font-weight: 600;
+    }
+
+    /* ── Task list ────────────────────────────── */
+    .task-list {
+      flex: 1;
+      overflow-y: auto;
+      padding: 0 16px 8px;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    .task-list::-webkit-scrollbar { display: none; }
+
+    .task-group-label {
+      font-size: 10px;
+      font-weight: 600;
+      color: #9b9b9b;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding: 10px 0 4px;
+    }
+
+    .task-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 10px;
+      border-radius: 8px;
+      margin-bottom: 3px;
+      transition: background 0.15s;
+    }
+    .task-item:hover { background: #f7f7f5; }
+
+    .task-check {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      border: 2px solid #ccc;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+    }
+    .task-check.done {
+      background: var(--accent, #4285f4);
+      border-color: var(--accent, #4285f4);
+      color: white;
+    }
+
+    .task-body { flex: 1; min-width: 0; }
+
+    .task-title {
+      font-size: 13px;
+      font-weight: 500;
+      color: #333;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .task-title.done {
+      text-decoration: line-through;
+      color: #aaa;
+    }
+
+    .task-due {
+      font-size: 10px;
+      margin-top: 2px;
+    }
+    .task-due.overdue  { color: #e53935; font-weight: 600; }
+    .task-due.today    { color: #f57c00; font-weight: 600; }
+    .task-due.upcoming { color: #9b9b9b; }
+    .task-due.done-date { color: #bbb; }
+
+    .empty-msg {
+      text-align: center;
+      color: #bbb;
+      font-size: 12px;
+      padding: 40px 0;
+    }
+
+    /* ── Footer ───────────────────────────────── */
+    .footer {
+      border-top: 1px solid #e5e5e7;
+      padding: 10px 16px;
+      flex-shrink: 0;
+    }
+
+    .sync-btn {
+      width: 100%;
+      padding: 10px;
+      background: var(--accent, #4285f4);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: opacity 0.15s;
+      margin-bottom: 8px;
+    }
+    .sync-btn:hover:not(:disabled) { opacity: 0.88; }
+    .sync-btn:disabled { opacity: 0.55; cursor: not-allowed; }
+    .sync-btn.success { background: #2d8a4e; }
+    .sync-btn.err     { background: #c0392b; }
+
+    .footer-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .link-btn {
+      background: none;
+      border: none;
+      font-size: 11px;
+      color: #9b9b9b;
+      cursor: pointer;
+      text-decoration: none;
+      padding: 0;
+    }
+    .link-btn:hover { color: #333; text-decoration: underline; }
+    .sep { font-size: 11px; color: #ccc; }
+
+    /* ── Setup panel ──────────────────────────── */
+    .setup-panel {
+      display: none;
+      background: #f7f7f5;
+      border-radius: 8px;
+      padding: 12px;
+      margin-bottom: 8px;
+      border: 1px solid #e5e5e5;
+    }
+    .setup-panel.visible { display: block; }
+
+    .setup-title { font-size: 12px; font-weight: 600; margin-bottom: 4px; }
+    .setup-desc  { font-size: 11px; color: #6b6b6b; line-height: 1.5; margin-bottom: 8px; }
+
+    .input-row { display: flex; gap: 6px; }
+    .input-row input {
+      flex: 1;
+      padding: 7px 10px;
+      border: 1px solid #d0d0d0;
+      border-radius: 6px;
+      font-size: 12px;
+      font-family: monospace;
+      background: white;
+      outline: none;
+    }
+    .input-row input:focus { border-color: var(--accent, #4285f4); }
+    .input-row button {
+      padding: 7px 12px;
+      background: #37352f;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
-  <div class="widget">
+<div id="widget-container">
 
-    <div class="header">
-      <div class="title-row">
-        <span class="icon">🔄</span>
-        <h1>Todo Sync</h1>
-        <span class="badge" id="badge">확인 중...</span>
-      </div>
-      <p class="subtitle">Microsoft To Do ↔ Notion</p>
+  <div class="header">
+    <div class="header-left">
+      <span class="header-title">할 일</span>
+      <span class="badge" id="badge">확인 중...</span>
     </div>
+    <button class="nav-btn" title="새로고침" onclick="loadTasks()">↺</button>
+  </div>
 
-    <div class="stats">
-      <div class="stat-card">
-        <div class="stat-label">마지막 동기화</div>
-        <div class="stat-value" id="last-sync">-</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-label">MS Todo</div>
-        <div class="stat-value" id="ms-count">-</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-label">Notion</div>
-        <div class="stat-value" id="notion-count">-</div>
-      </div>
+  <div class="stats">
+    <div class="stat-card">
+      <div class="stat-label">전체</div>
+      <div class="stat-value" id="stat-total">-</div>
     </div>
+    <div class="stat-card">
+      <div class="stat-label">미완료</div>
+      <div class="stat-value" id="stat-pending">-</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">완료</div>
+      <div class="stat-value" id="stat-done">-</div>
+    </div>
+  </div>
 
-    <button class="sync-btn" id="sync-btn" onclick="triggerSync()">
-      지금 동기화
-    </button>
+  <div class="filter-tabs">
+    <button class="filter-tab active" onclick="setFilter('all')"    id="tab-all">전체</button>
+    <button class="filter-tab"        onclick="setFilter('pending')" id="tab-pending">미완료</button>
+    <button class="filter-tab"        onclick="setFilter('done')"    id="tab-done">완료</button>
+  </div>
 
+  <div class="task-list" id="task-list">
+    <div class="empty-msg">불러오는 중...</div>
+  </div>
+
+  <div class="footer">
     <div class="setup-panel" id="setup-panel">
       <p class="setup-title">⚙️ GitHub PAT 설정</p>
       <p class="setup-desc">
@@ -49,14 +348,219 @@
       </div>
     </div>
 
-    <div class="footer">
-      <button class="link-btn" onclick="toggleSetup()">PAT 설정</button>
+    <button class="sync-btn" id="sync-btn" onclick="triggerSync()">지금 동기화</button>
+
+    <div class="footer-row">
+      <span class="link-btn" onclick="toggleSetup()">PAT 설정</span>
       <span class="sep">·</span>
       <a class="link-btn" href="https://github.com/aveicea/todo/actions" target="_blank">Actions 보기</a>
+      <span class="sep">·</span>
+      <span id="last-sync" style="font-size:11px;color:#bbb;">-</span>
     </div>
-
   </div>
 
-  <script src="js/app.js"></script>
+</div>
+
+<script>
+const REPO       = 'aveicea/todo';
+const TASKS_URL  = 'https://raw.githubusercontent.com/aveicea/todo/main/data/tasks.json';
+const WORKFLOW   = 'sync.yml';
+
+let allTasks = [];
+let currentFilter = 'all';
+
+// ── 색상 (캘린더 위젯과 동일한 기본값) ───────────────
+const accent = '#4285f4';
+document.documentElement.style.setProperty('--accent', accent);
+
+// ── 날짜 유틸 ──────────────────────────────────────
+function todayStr() {
+  const d = new Date();
+  return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+}
+
+function formatDue(dateStr, completed) {
+  if (!dateStr) return null;
+  const today = todayStr();
+  if (completed) return { label: dateStr, cls: 'done-date' };
+  if (dateStr < today) return { label: `${dateStr} 지남`, cls: 'overdue' };
+  if (dateStr === today) return { label: '오늘 마감', cls: 'today' };
+  return { label: dateStr, cls: 'upcoming' };
+}
+
+function timeAgo(isoStr) {
+  if (!isoStr) return '-';
+  const diff = Math.round((Date.now() - new Date(isoStr)) / 60000);
+  if (diff < 1)  return '방금';
+  if (diff < 60) return `${diff}분 전`;
+  return `${Math.floor(diff/60)}시간 전`;
+}
+
+// ── 태스크 로드 ────────────────────────────────────
+async function loadTasks() {
+  try {
+    const r = await fetch(TASKS_URL + '?t=' + Date.now());
+    if (!r.ok) throw new Error('404');
+    const data = await r.json();
+
+    allTasks = data.tasks || [];
+
+    document.getElementById('stat-total').textContent   = data.total   ?? allTasks.length;
+    document.getElementById('stat-pending').textContent = data.pending  ?? allTasks.filter(t=>!t.completed).length;
+    document.getElementById('stat-done').textContent    = data.completed ?? allTasks.filter(t=>t.completed).length;
+    document.getElementById('last-sync').textContent    = timeAgo(data.last_sync);
+
+    const badge = document.getElementById('badge');
+    badge.textContent = '동기화됨';
+    badge.className   = 'badge ok';
+
+    renderTasks();
+  } catch {
+    document.getElementById('badge').textContent = '미설정';
+    document.getElementById('badge').className   = 'badge';
+    document.getElementById('task-list').innerHTML =
+      '<div class="empty-msg">동기화 후 데이터가 표시됩니다.</div>';
+  }
+}
+
+// ── 렌더 ───────────────────────────────────────────
+function renderTasks() {
+  const tasks = allTasks.filter(t => {
+    if (currentFilter === 'pending') return !t.completed;
+    if (currentFilter === 'done')    return  t.completed;
+    return true;
+  });
+
+  const list = document.getElementById('task-list');
+  if (!tasks.length) {
+    list.innerHTML = '<div class="empty-msg">항목이 없어요</div>';
+    return;
+  }
+
+  // 미완료 / 완료 그룹 분리
+  const pending = tasks.filter(t => !t.completed);
+  const done    = tasks.filter(t =>  t.completed);
+
+  let html = '';
+
+  if (pending.length && currentFilter !== 'done') {
+    if (currentFilter === 'all' && done.length) {
+      html += `<div class="task-group-label">미완료 ${pending.length}</div>`;
+    }
+    html += pending.map(taskHTML).join('');
+  }
+
+  if (done.length && currentFilter !== 'pending') {
+    if (currentFilter === 'all' && pending.length) {
+      html += `<div class="task-group-label">완료 ${done.length}</div>`;
+    }
+    html += done.map(taskHTML).join('');
+  }
+
+  list.innerHTML = html;
+}
+
+function taskHTML(task) {
+  const due = formatDue(task.due_date, task.completed);
+  const dueHTML = due
+    ? `<div class="task-due ${due.cls}">${due.label}</div>`
+    : '';
+  return `
+    <div class="task-item">
+      <div class="task-check ${task.completed ? 'done' : ''}">
+        ${task.completed ? '✓' : ''}
+      </div>
+      <div class="task-body">
+        <div class="task-title ${task.completed ? 'done' : ''}">${escHtml(task.title)}</div>
+        ${dueHTML}
+      </div>
+    </div>`;
+}
+
+function escHtml(s) {
+  const d = document.createElement('div');
+  d.textContent = s || '';
+  return d.innerHTML;
+}
+
+// ── 필터 ───────────────────────────────────────────
+function setFilter(f) {
+  currentFilter = f;
+  document.querySelectorAll('.filter-tab').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + f).classList.add('active');
+  renderTasks();
+}
+
+// ── 동기화 트리거 ──────────────────────────────────
+async function triggerSync() {
+  const pat = localStorage.getItem('gh_pat');
+  if (!pat) { showSetup(); return; }
+
+  const btn = document.getElementById('sync-btn');
+  btn.disabled = true;
+  btn.textContent = '동기화 요청 중...';
+  btn.className = 'sync-btn';
+
+  try {
+    const r = await fetch(
+      `https://api.github.com/repos/${REPO}/actions/workflows/${WORKFLOW}/dispatches`,
+      {
+        method: 'POST',
+        headers: {
+          Authorization: `Bearer ${pat}`,
+          Accept: 'application/vnd.github+json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ ref: 'main' }),
+      }
+    );
+
+    if (r.status === 204) {
+      btn.textContent = '시작됨 ✓';
+      btn.className = 'sync-btn success';
+      setTimeout(loadTasks, 90000);
+      setTimeout(() => {
+        btn.textContent = '지금 동기화';
+        btn.className = 'sync-btn';
+        btn.disabled = false;
+      }, 5000);
+    } else {
+      const body = await r.json().catch(() => ({}));
+      throw new Error(body.message || `HTTP ${r.status}`);
+    }
+  } catch (e) {
+    btn.textContent = `오류: ${e.message}`;
+    btn.className = 'sync-btn err';
+    btn.disabled = false;
+    if (e.message.includes('401') || e.message.includes('Bad credentials')) {
+      localStorage.removeItem('gh_pat');
+      showSetup();
+    }
+  }
+}
+
+// ── PAT 설정 ───────────────────────────────────────
+function toggleSetup() {
+  document.getElementById('setup-panel').classList.toggle('visible');
+}
+function showSetup() {
+  document.getElementById('setup-panel').classList.add('visible');
+}
+function savePAT() {
+  const val = document.getElementById('pat-input').value.trim();
+  if (!val) return;
+  localStorage.setItem('gh_pat', val);
+  document.getElementById('pat-input').value = '';
+  document.getElementById('setup-panel').classList.remove('visible');
+}
+
+// ── Init ───────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', () => {
+  const input = document.getElementById('pat-input');
+  if (input) input.addEventListener('keydown', e => { if (e.key === 'Enter') savePAT(); });
+  loadTasks();
+  setInterval(loadTasks, 120000); // 2분마다 자동 갱신
+});
+</script>
 </body>
 </html>
