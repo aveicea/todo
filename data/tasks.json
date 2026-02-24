@@ -8,18 +8,18 @@
       "due_date": "2026-02-24"
     },
     {
-      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAegn-88AAA=",
-      "notion_id": "311c2bbd-5973-81ee-a210-f34a87727308",
-      "title": "ㅌㅌㅊ",
-      "completed": false,
-      "due_date": "2026-02-25"
-    },
-    {
       "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAegn-8xAAA=",
       "notion_id": "311c2bbd-5973-8198-88eb-df671fe340c3",
       "title": "키레나 형광펜 페일 그린",
       "completed": true,
       "due_date": "2026-02-23"
+    },
+    {
+      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAegn-88AAA=",
+      "notion_id": "311c2bbd-5973-81ee-a210-f34a87727308",
+      "title": "ㅌㅌㅊ",
+      "completed": true,
+      "due_date": "2026-02-25"
     },
     {
       "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAegn-87AAA=",
@@ -29,8 +29,8 @@
       "due_date": "2026-02-27"
     }
   ],
-  "last_sync": "2026-02-24T17:47:06.683405+00:00",
+  "last_sync": "2026-02-24T17:51:03.409130+00:00",
   "total": 4,
-  "completed": 2,
-  "pending": 2
+  "completed": 3,
+  "pending": 1
 }
