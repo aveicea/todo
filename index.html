@@ -19,8 +19,9 @@
 
     #widget-container {
       width: 100%;
-      max-width: 220px;
-      height: 200px;
+      min-width: 280px;
+      max-width: 400px;
+      height: 240px;
       background: rgba(255,255,255,0.95);
       backdrop-filter: blur(20px);
       border-radius: 16px;
@@ -37,7 +38,6 @@
       justify-content: space-between;
       align-items: center;
       padding: 7px 8px 7px 14px;
-      border-bottom: 1px solid #e5e5e7;
       flex-shrink: 0;
     }
     .header-left { display: flex; align-items: center; gap: 6px; }
@@ -108,7 +108,7 @@
     .task-title.done { text-decoration: line-through; color: #bbb; }
     .task-due { font-size: 9px; margin-top: 0; }
     .task-due.overdue  { color: #e53935; font-weight: 600; }
-    .task-due.today    { color: #f57c00; font-weight: 600; }
+    .task-due.today    { color: #bbb; }
     .task-due.upcoming { color: #bbb; }
     .task-due.done-date { color: #ccc; }
 
@@ -185,7 +185,7 @@
 
   <div class="header">
     <div class="header-left">
-      <span class="header-title">To Do</span>
+      <span class="header-title">To do list</span>
       <span class="dot" id="badge"></span>
     </div>
     <button class="nav-btn" id="sync-btn" title="동기화" onclick="triggerSync()">↺</button>
@@ -210,9 +210,15 @@
       <label>제목</label>
       <input type="text" id="detail-title">
     </div>
-    <div class="detail-field">
-      <label>마감일</label>
-      <input type="date" id="detail-date">
+    <div class="detail-field" style="display:flex;gap:6px;">
+      <div style="flex:1;">
+        <label>마감일</label>
+        <input type="date" id="detail-date" style="width:100%;">
+      </div>
+      <div style="flex:0 0 80px;">
+        <label>시간</label>
+        <input type="time" id="detail-time" style="width:100%;">
+      </div>
     </div>
     <div class="detail-actions">
       <button class="btn-save" id="save-btn" onclick="saveTask()">저장</button>
@@ -245,13 +251,14 @@ function todayStr() {
   return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
 }
 
-function formatDue(dateStr, completed) {
+function formatDue(dateStr, timeStr, completed) {
   if (!dateStr) return null;
   const today = todayStr();
-  if (completed) return { label: dateStr, cls: 'done-date' };
-  if (dateStr < today) return { label: `${dateStr} 지남`, cls: 'overdue' };
-  if (dateStr === today) return { label: '오늘 마감', cls: 'today' };
-  return { label: dateStr, cls: 'upcoming' };
+  const timeSuffix = timeStr ? ` ${timeStr}` : '';
+  if (completed) return { label: dateStr + timeSuffix, cls: 'done-date' };
+  if (dateStr < today) return { label: `${dateStr}${timeSuffix} 지남`, cls: 'overdue' };
+  if (dateStr === today) return { label: '오늘 마감' + timeSuffix, cls: 'today' };
+  return { label: dateStr + timeSuffix, cls: 'upcoming' };
 }
 
 async function loadTasks() {
@@ -302,7 +309,7 @@ function renderTasks() {
 }
 
 function taskHTML(t) {
-  const due = formatDue(t.due_date, t.completed);
+  const due = formatDue(t.due_date, t.due_time, t.completed);
   const dueHTML = due ? `<div class="task-due ${due.cls}">${due.label}</div>` : '';
   const id = (t.ms_id || '').replace(/'/g, "\\'");
   const done = t.completed ? 'done' : '';
@@ -346,6 +353,7 @@ function openDetail(msId) {
   editingTaskId = msId;
   document.getElementById('detail-title').value = task.title || '';
   document.getElementById('detail-date').value  = task.due_date || '';
+  document.getElementById('detail-time').value  = task.due_time || '';
   document.getElementById('detail-panel').classList.add('visible');
 }
 
@@ -358,17 +366,18 @@ async function saveTask() {
   if (!editingTaskId) return;
   const title   = document.getElementById('detail-title').value.trim();
   const dateVal = document.getElementById('detail-date').value;
+  const timeVal = document.getElementById('detail-time').value;
   if (!title) return;
 
   const btn = document.getElementById('save-btn');
   btn.disabled = true; btn.textContent = '저장 중...';
 
   const task = allTasks.find(t => t.ms_id === editingTaskId);
-  if (task) { task.title = title; task.due_date = dateVal || null; }
-  updateCache(editingTaskId, { title, due_date: dateVal || null });
+  if (task) { task.title = title; task.due_date = dateVal || null; task.due_time = timeVal || null; }
+  updateCache(editingTaskId, { title, due_date: dateVal || null, due_time: timeVal || null });
   closeDetail(); renderTasks();
 
-  await triggerUpdate({ action: 'update', task_id: editingTaskId, title, due_date: dateVal || 'none' });
+  await triggerUpdate({ action: 'update', task_id: editingTaskId, title, due_date: dateVal || 'none', due_time: timeVal || '' });
   btn.disabled = false; btn.textContent = '저장';
 }
 
@@ -401,7 +410,7 @@ async function triggerUpdate(inputs) {
 async function triggerSync() {
   const btn = document.getElementById('sync-btn');
   btn.disabled = true; btn.textContent = '…';
-  const ok = await triggerUpdate({ action: '', task_id: '', completed: '', title: '', due_date: '' });
+  const ok = await triggerUpdate({ action: '', task_id: '', completed: '', title: '', due_date: '', due_time: '' });
   btn.textContent = ok ? '✓' : '!';
   setTimeout(() => { btn.textContent = '↺'; btn.disabled = false; }, 3000);
   if (ok) setTimeout(loadTasks, 90000);
