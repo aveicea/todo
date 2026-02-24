@@ -1,13 +1,6 @@
 {
   "tasks": [
     {
-      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAegn-8xAAA=",
-      "notion_id": "311c2bbd-5973-8198-88eb-df671fe340c3",
-      "title": "키레나 형광펜 페일 그린",
-      "completed": false,
-      "due_date": "2026-02-23"
-    },
-    {
       "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAefbc24AAA=",
       "notion_id": "311c2bbd-5973-814e-bfa3-f300e60e6ab0",
       "title": "다이소 5공 펀치",
@@ -27,10 +20,17 @@
       "title": "ㅌㅅㅌ",
       "completed": false,
       "due_date": "2026-02-27"
+    },
+    {
+      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAegn-8xAAA=",
+      "notion_id": "311c2bbd-5973-8198-88eb-df671fe340c3",
+      "title": "키레나 형광펜 페일 그린",
+      "completed": true,
+      "due_date": "2026-02-23"
     }
   ],
-  "last_sync": "2026-02-24T17:31:47.058010+00:00",
+  "last_sync": "2026-02-24T17:32:17.507178+00:00",
   "total": 4,
-  "completed": 0,
-  "pending": 4
+  "completed": 1,
+  "pending": 3
 }
