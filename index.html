@@ -412,7 +412,7 @@ async function deleteTask() {
   const btn = document.getElementById('delete-btn');
   if (btn.dataset.confirm !== '1') {
     btn.dataset.confirm = '1';
-    btn.textContent = '정말요?';
+    btn.textContent = '재확인';
     setTimeout(() => { btn.dataset.confirm = ''; btn.textContent = '삭제'; }, 3000);
     return;
   }
