@@ -336,9 +336,7 @@ function renderTasks() {
     html += pending.length ? pending.map(taskHTML).join('') : '<div style="height:6px"></div>';
     html += `<div class="task-group-label">완료 ${done.length}</div>`;
     html += done.length ? done.map(taskHTML).join('') : '<div style="height:4px"></div>';
-    const todayPlanner = allPlanner.filter(t =>
-      t.completed ? (t.due_date && t.due_date.startsWith(today)) : (!t.due_date || t.due_date <= today)
-    );
+    const todayPlanner = allPlanner.filter(t => t.due_date && t.due_date.startsWith(today));
     if (todayPlanner.length) {
       html += `<div class="task-group-label">플래너 ${todayPlanner.length}</div>`;
       html += todayPlanner.map(plannerTaskHTML).join('');
