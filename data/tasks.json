@@ -9,6 +9,14 @@
       "due_time": null
     },
     {
+      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAegn-88AAA=",
+      "notion_id": "311c2bbd-5973-81ee-a210-f34a87727308",
+      "title": "ㅌㅌㅊ",
+      "completed": false,
+      "due_date": "2026-02-25",
+      "due_time": null
+    },
+    {
       "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAefbc24AAA=",
       "notion_id": "311c2bbd-5973-814e-bfa3-f300e60e6ab0",
       "title": "다이소 5공 펀치",
@@ -33,14 +41,6 @@
       "due_time": null
     },
     {
-      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAegn-88AAA=",
-      "notion_id": "311c2bbd-5973-81ee-a210-f34a87727308",
-      "title": "ㅌㅌㅊ",
-      "completed": true,
-      "due_date": "2026-02-25",
-      "due_time": null
-    },
-    {
       "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAegn-87AAA=",
       "notion_id": "311c2bbd-5973-810f-86fe-fbe61623b958",
       "title": "ㅌㅅㅌ",
@@ -49,8 +49,8 @@
       "due_time": null
     }
   ],
-  "last_sync": "2026-02-25T00:17:28.011418+00:00",
+  "last_sync": "2026-02-25T00:23:35.701962+00:00",
   "total": 6,
-  "completed": 3,
-  "pending": 3
+  "completed": 2,
+  "pending": 4
 }
