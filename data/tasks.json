@@ -15,18 +15,10 @@
       "completed": true,
       "due_date": "2026-02-24",
       "due_time": null
-    },
-    {
-      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAehDQkoAAA=",
-      "notion_id": "312c2bbd-5973-8113-9541-e3ccfc474ba8",
-      "title": "ㅌㅅㅌ",
-      "completed": true,
-      "due_date": "2026-02-27",
-      "due_time": null
     }
   ],
-  "last_sync": "2026-02-25T02:55:18.807475+00:00",
-  "total": 3,
-  "completed": 2,
+  "last_sync": "2026-02-25T02:55:44.649800+00:00",
+  "total": 2,
+  "completed": 1,
   "pending": 1
 }
