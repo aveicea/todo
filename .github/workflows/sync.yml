@@ -24,6 +24,9 @@ on:
       due_time:
         required: false
         default: ''
+      importance:
+        required: false
+        default: ''
 
 concurrency:
   group: sync
@@ -60,6 +63,7 @@ jobs:
           INPUT_TITLE: ${{ inputs.title }}
           INPUT_DUE_DATE: ${{ inputs.due_date }}
           INPUT_DUE_TIME: ${{ inputs.due_time }}
+          INPUT_IMPORTANCE: ${{ inputs.importance }}
         run: python sync.py
 
       - name: Commit sync results
