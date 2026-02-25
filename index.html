@@ -409,7 +409,14 @@ async function saveTask() {
 
 async function deleteTask() {
   if (!editingTaskId) return;
-  if (!confirm('정말 삭제할까요?')) return;
+  const btn = document.getElementById('delete-btn');
+  if (btn.dataset.confirm !== '1') {
+    btn.dataset.confirm = '1';
+    btn.textContent = '재확인';
+    setTimeout(() => { btn.dataset.confirm = ''; btn.textContent = '삭제'; }, 3000);
+    return;
+  }
+  btn.dataset.confirm = '';
   const msId = editingTaskId;
   allTasks = allTasks.filter(t => t.ms_id !== msId);
   try {
