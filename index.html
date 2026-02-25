@@ -373,10 +373,11 @@ function plannerTaskHTML(t) {
   const dueHTML = due ? `<div class="task-due ${due.cls}">${due.label}</div>` : '';
   const id = (t.notion_id || '').replace(/'/g, "\\'");
   const done = t.completed ? 'done' : '';
+  const bookPrefix = t.book_title ? `<span style="color:#aaa;font-weight:500">[${escHtml(t.book_title)}]</span> ` : '';
   return `<div class="task-item">
     <div class="task-check ${done}" onclick="togglePlanner(event,'${id}',${t.completed})">${t.completed?'✓':''}</div>
     <div class="task-body" onclick="openPlannerDetail('${id}')">
-      <div class="task-title ${done}">${escHtml(t.title)}</div>${dueHTML}
+      <div class="task-title ${done}">${bookPrefix}${escHtml(t.title)}</div>${dueHTML}
     </div>
   </div>`;
 }

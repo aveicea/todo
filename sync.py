@@ -22,6 +22,9 @@ NOTION_DB_ID = f"{_raw_db_id[:8]}-{_raw_db_id[8:12]}-{_raw_db_id[12:16]}-{_raw_d
 _planner_raw = "468bf987e6cd4372abf96a8f30f165b1"
 PLANNER_DB_ID = f"{_planner_raw[:8]}-{_planner_raw[8:12]}-{_planner_raw[12:16]}-{_planner_raw[16:20]}-{_planner_raw[20:]}"
 
+_book_raw = "41c3889d4617465db9df008e96ca5af1"
+BOOK_DB_ID = f"{_book_raw[:8]}-{_book_raw[8:12]}-{_book_raw[12:16]}-{_book_raw[16:20]}-{_book_raw[20:]}"
+
 SCOPES = [
     "https://graph.microsoft.com/Tasks.ReadWrite",
     "https://graph.microsoft.com/User.Read",
@@ -325,6 +328,28 @@ def run_planner(input_action, input_task_id):
             except Exception as e:
                 print(f"  ⚠️ 플래너 아카이브 실패: {e}")
 
+    # 책 관계형 속성 찾기 (BOOK_DB_ID와 연결된 relation 속성)
+    book_rel_prop = None
+    for name, prop in schema["properties"].items():
+        if prop["type"] == "relation":
+            rel_db = prop.get("relation", {}).get("database_id", "").replace("-", "")
+            if rel_db == _book_raw:
+                book_rel_prop = name
+                break
+    print(f"  📚 책 관계형 속성: {book_rel_prop or '없음'}")
+
+    # 책 제목 일괄 조회
+    book_title_map = {}
+    if book_rel_prop:
+        try:
+            book_schema = get_db_schema(BOOK_DB_ID)
+            book_title_prop = find_prop(book_schema, "title") or "이름"
+            book_pages = get_notion_pages(BOOK_DB_ID)
+            book_title_map = {p["id"]: get_page_title(p, book_title_prop) for p in book_pages}
+            print(f"  📚 책 {len(book_title_map)}권 로드 완료")
+        except Exception as e:
+            print(f"  ⚠️ 책 DB 조회 실패: {e}")
+
     # 플래너 전체 조회 후 저장
     try:
         pages = get_notion_pages(PLANNER_DB_ID)
@@ -337,9 +362,16 @@ def run_planner(input_action, input_task_id):
         title = get_page_title(page, title_prop)
         if not title.strip():
             continue
+        # 연결된 첫 번째 책 제목
+        book_title = None
+        if book_rel_prop:
+            rel_ids = [r["id"] for r in page["properties"].get(book_rel_prop, {}).get("relation", [])]
+            if rel_ids:
+                book_title = book_title_map.get(rel_ids[0], "")
         planner_tasks.append({
             "notion_id": page["id"],
             "title": title,
+            "book_title": book_title or None,
             "completed": get_page_completed(page, status_prop, done_value),
             "due_date": get_page_date(page, date_prop) if date_prop else None,
             "due_time": None,
