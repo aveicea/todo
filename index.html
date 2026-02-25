@@ -432,6 +432,7 @@ function openPlannerDetail(notionId) {
   const task = allPlanner.find(t => t.notion_id === notionId);
   if (!task) return;
   editingTaskId = notionId;
+  document.querySelector('.detail-field:has(#detail-time)').style.display = 'none';
   editingSource = 'planner';
   document.getElementById('detail-label').textContent = '편집';
   document.getElementById('detail-title').value = task.title || '';
@@ -445,6 +446,7 @@ function openDetail(msId) {
   const task = allTasks.find(t => t.ms_id === msId);
   if (!task) return;
   editingTaskId = msId;
+  document.querySelector('.detail-field:has(#detail-time)').style.display = '';
   document.getElementById('detail-label').textContent = '편집';
   document.getElementById('detail-title').value = task.title || '';
   document.getElementById('detail-date').value  = task.due_date || '';
@@ -456,6 +458,7 @@ function openDetail(msId) {
 function openAddPanel() {
   editingTaskId = 'new';
   editingSource = 'todo';
+  document.querySelector('.detail-field:has(#detail-time)').style.display = '';
   document.getElementById('detail-label').textContent = '추가';
   document.getElementById('detail-title').value = '';
   document.getElementById('detail-date').value  = '';

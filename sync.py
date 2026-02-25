@@ -182,8 +182,11 @@ def create_notion_page(db_id, title, completed, title_prop, status_prop, done_va
     return r.json()
 
 
-def update_notion_page(page_id, completed, status_prop, done_value, todo_value, date_prop=None, due_date=None, title_prop=None, title=None):
-    props = {status_prop: {"status": {"name": done_value if completed else todo_value}}}
+def update_notion_page(page_id, completed, status_prop, done_value, todo_value, date_prop=None, due_date=None, title_prop=None, title=None, comp_type="status"):
+    if comp_type == "checkbox":
+        props = {status_prop: {"checkbox": completed}}
+    else:
+        props = {status_prop: {"status": {"name": done_value if completed else todo_value}}}
     if date_prop is not None:
         props[date_prop] = {"date": {"start": due_date}} if due_date else {"date": None}
     if title_prop and title is not None:
@@ -204,8 +207,10 @@ def get_page_title(page, title_prop):
     return "".join(t.get("plain_text", "") for t in arr)
 
 
-def get_page_completed(page, status_prop, done_value):
-    status = page["properties"].get(status_prop, {}).get("status") or {}
+def get_page_completed(page, prop_name, done_value=None, prop_type="status"):
+    if prop_type == "checkbox":
+        return bool(page["properties"].get(prop_name, {}).get("checkbox", False))
+    status = page["properties"].get(prop_name, {}).get("status") or {}
     return status.get("name") == done_value
 
 
@@ -261,28 +266,41 @@ def run_planner(input_action, input_task_id):
         return
 
     title_prop = find_prop(schema, "title") or "이름"
-    status_prop = find_prop(schema, "status") or "상태"
     date_prop = find_prop(schema, "date")
 
-    status_opts = schema["properties"].get(status_prop, {}).get("status", {})
-    options = status_opts.get("options", [])
-    groups = status_opts.get("groups", [])
-
-    done_group = next((g for g in groups if g.get("name") in ("Complete", "완료됨")), None)
-    todo_group = next((g for g in groups if g.get("name") in ("To-do", "할 일")), None)
-    done_option_ids = set(done_group.get("option_ids", [])) if done_group else set()
-    todo_option_ids = set(todo_group.get("option_ids", [])) if todo_group else set()
-
-    done_value = next((o["name"] for o in options if o["id"] in done_option_ids), None)
-    todo_value = next((o["name"] for o in options if o["id"] in todo_option_ids), None)
-    if not done_value:
-        done_value = next((o["name"] for o in options if o["name"] in ("완료", "Done", "Completed", "완료됨")), None)
-    if not todo_value:
-        todo_value = next((o["name"] for o in options if o["name"] in ("시작 안 함", "Not started", "할 일", "예정", "To-do")), None)
-    if not done_value and options:
-        done_value = options[-1]["name"]
-    if not todo_value and options:
-        todo_value = options[0]["name"]
+    # 완료 속성 탐지: checkbox "완료" 우선, 없으면 status 타입
+    checkbox_done_prop = next(
+        (name for name, prop in schema["properties"].items()
+         if prop["type"] == "checkbox" and name == "완료"),
+        None
+    )
+    if checkbox_done_prop:
+        comp_prop = checkbox_done_prop
+        comp_type = "checkbox"
+        done_value = todo_value = None
+        print(f"  ✅ 완료 속성: checkbox '{comp_prop}'")
+    else:
+        status_prop = find_prop(schema, "status") or "상태"
+        comp_prop = status_prop
+        comp_type = "status"
+        status_opts = schema["properties"].get(status_prop, {}).get("status", {})
+        options = status_opts.get("options", [])
+        groups = status_opts.get("groups", [])
+        done_group = next((g for g in groups if g.get("name") in ("Complete", "완료됨")), None)
+        todo_group = next((g for g in groups if g.get("name") in ("To-do", "할 일")), None)
+        done_option_ids = set(done_group.get("option_ids", [])) if done_group else set()
+        todo_option_ids = set(todo_group.get("option_ids", [])) if todo_group else set()
+        done_value = next((o["name"] for o in options if o["id"] in done_option_ids), None)
+        todo_value = next((o["name"] for o in options if o["id"] in todo_option_ids), None)
+        if not done_value:
+            done_value = next((o["name"] for o in options if o["name"] in ("완료", "Done", "Completed", "완료됨")), None)
+        if not todo_value:
+            todo_value = next((o["name"] for o in options if o["name"] in ("시작 안 함", "Not started", "할 일", "예정", "To-do")), None)
+        if not done_value and options:
+            done_value = options[-1]["name"]
+        if not todo_value and options:
+            todo_value = options[0]["name"]
+        print(f"  ✅ 완료 속성: status '{comp_prop}' (완료={done_value})")
 
     # 플래너 직접 액션 처리
     if input_action.startswith("planner_"):
@@ -296,7 +314,7 @@ def run_planner(input_action, input_task_id):
         if action == "toggle" and input_task_id:
             try:
                 completed = input_completed_str.lower() == "true"
-                update_notion_page(input_task_id, completed, status_prop, done_value, todo_value)
+                update_notion_page(input_task_id, completed, comp_prop, done_value, todo_value, comp_type=comp_type)
                 print(f"  ✅ 플래너 완료 토글: {completed}")
             except Exception as e:
                 print(f"  ⚠️ 플래너 토글 실패: {e}")
@@ -306,11 +324,12 @@ def run_planner(input_action, input_task_id):
                 completed = input_completed_str.lower() == "true" if input_completed_str else False
                 due_date = None if input_due_date in ("", "none") else input_due_date
                 update_notion_page(
-                    input_task_id, completed, status_prop, done_value, todo_value,
+                    input_task_id, completed, comp_prop, done_value, todo_value,
                     date_prop=date_prop if input_due_date else None,
                     due_date=due_date,
                     title_prop=title_prop if input_title else None,
                     title=input_title if input_title else None,
+                    comp_type=comp_type,
                 )
                 print(f"  ✅ 플래너 업데이트")
             except Exception as e:
@@ -372,7 +391,7 @@ def run_planner(input_action, input_task_id):
             "notion_id": page["id"],
             "title": title,
             "book_title": book_title or None,
-            "completed": get_page_completed(page, status_prop, done_value),
+            "completed": get_page_completed(page, comp_prop, done_value, comp_type),
             "due_date": get_page_date(page, date_prop) if date_prop else None,
             "due_time": None,
         })
