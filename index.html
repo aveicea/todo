@@ -55,6 +55,9 @@
     .nav-btn:hover:not(:disabled) { background: #f0f0f0; color: #333; }
     .nav-btn:disabled { opacity: 0.4; cursor: not-allowed; }
     #sync-btn { margin-bottom: 1px; }
+    .imp-star { font-size: 12px; color: #e0e0e0; cursor: pointer; flex-shrink: 0; padding: 2px 0 2px 2px; transition: color 0.15s; line-height: 1; }
+    .imp-star:hover { color: #f5a623; }
+    .imp-star.high { color: #f5a623; }
 
     /* ── Filter tabs ─────────────── */
     .filter-tabs {
@@ -369,11 +372,13 @@ function taskHTML(t) {
   const dueHTML = due ? `<div class="task-due ${due.cls}">${due.label}</div>` : '';
   const id = (t.ms_id || '').replace(/'/g, "\\'");
   const done = t.completed ? 'done' : '';
+  const imp = t.importance || 'normal';
   return `<div class="task-item">
     <div class="task-check ${done}" onclick="toggleTask(event,'${id}',${t.completed})">${t.completed?'✓':''}</div>
     <div class="task-body" onclick="openDetail('${id}')">
       <div class="task-title ${done}">${escHtml(t.title)}</div>${dueHTML}
     </div>
+    <div class="imp-star${imp==='high'?' high':''}" onclick="toggleImportance(event,'${id}','${imp}')" title="중요도">★</div>
   </div>`;
 }
 
@@ -422,6 +427,19 @@ async function toggleTask(e, msId, cur) {
     updateCache(msId, { completed: cur });
     renderTasks();
   }
+}
+
+async function toggleImportance(e, msId, cur) {
+  e.stopPropagation();
+  if (!msId) return;
+  const next = cur === 'high' ? 'normal' : 'high';
+  const task = allTasks.find(t => t.ms_id === msId);
+  const preSave = JSON.stringify(allTasks);
+  if (task) task.importance = next;
+  renderTasks();
+  const ok = await triggerUpdate({ action: 'update', task_id: msId, completed: '', title: '', due_date: '', due_time: '', importance: next });
+  if (!ok) { if (task) { task.importance = cur; renderTasks(); } }
+  else startFastPoll(preSave);
 }
 
 async function togglePlanner(e, notionId, cur) {
@@ -631,12 +649,13 @@ function startPlannerPoll(preSaveHash) {
 async function triggerUpdate(inputs) {
   const pat = localStorage.getItem('gh_pat');
   if (!pat) { showSetup(); return false; }
+  const payload = { importance: '', ...inputs };
   try {
     const r = await fetch(
       `https://api.github.com/repos/${REPO}/actions/workflows/${WORKFLOW}/dispatches`,
       { method: 'POST',
         headers: { Authorization: `Bearer ${pat}`, Accept: 'application/vnd.github+json', 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ref: 'main', inputs }) }
+        body: JSON.stringify({ ref: 'main', inputs: payload }) }
     );
     if (r.status === 401 || r.status === 403) { localStorage.removeItem('gh_pat'); showSetup(); return false; }
     if (r.status === 204) { return true; }

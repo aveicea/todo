@@ -77,8 +77,8 @@ def get_todo_tasks(token, list_id):
     return tasks
 
 
-def create_todo_task(token, list_id, title, completed=False, due_date=None, due_time=None):
-    body = {"title": title, "status": "completed" if completed else "notStarted"}
+def create_todo_task(token, list_id, title, completed=False, due_date=None, due_time=None, importance="normal"):
+    body = {"title": title, "status": "completed" if completed else "notStarted", "importance": importance or "normal"}
     if due_date:
         time_str = due_time or "00:00"
         body["dueDateTime"] = {"dateTime": f"{due_date}T{time_str}:00.0000000", "timeZone": "Korea Standard Time"}
@@ -101,7 +101,7 @@ def delete_todo_task(token, list_id, task_id):
     r.raise_for_status()
 
 
-def update_todo_task(token, list_id, task_id, completed=None, due_date=None, due_time=None, title=None):
+def update_todo_task(token, list_id, task_id, completed=None, due_date=None, due_time=None, title=None, importance=None):
     body = {}
     if completed is not None:
         body["status"] = "completed" if completed else "notStarted"
@@ -113,6 +113,8 @@ def update_todo_task(token, list_id, task_id, completed=None, due_date=None, due
             body["dueDateTime"] = None
     if title is not None:
         body["title"] = title
+    if importance is not None:
+        body["importance"] = importance
     r = requests.patch(
         f"https://graph.microsoft.com/v1.0/me/todo/lists/{list_id}/tasks/{task_id}",
         headers={**ms_headers(token), "Content-Type": "application/json"},
@@ -163,7 +165,7 @@ def get_notion_pages(db_id):
     return pages
 
 
-def create_notion_page(db_id, title, completed, title_prop, status_prop, done_value, todo_value, date_prop=None, due_date=None, id_prop=None, ms_task_id=None):
+def create_notion_page(db_id, title, completed, title_prop, status_prop, done_value, todo_value, date_prop=None, due_date=None, id_prop=None, ms_task_id=None, importance_prop=None, importance_value=None):
     props = {
         title_prop: {"title": [{"text": {"content": title}}]},
         status_prop: {"status": {"name": done_value if completed else todo_value}},
@@ -172,6 +174,8 @@ def create_notion_page(db_id, title, completed, title_prop, status_prop, done_va
         props[date_prop] = {"date": {"start": due_date}}
     if id_prop and ms_task_id:
         props[id_prop] = {"rich_text": [{"text": {"content": ms_task_id}}]}
+    if importance_prop and importance_value:
+        props[importance_prop] = {"select": {"name": importance_value}}
     r = requests.post(
         "https://api.notion.com/v1/pages",
         headers=NOTION_HEADERS,
@@ -182,7 +186,7 @@ def create_notion_page(db_id, title, completed, title_prop, status_prop, done_va
     return r.json()
 
 
-def update_notion_page(page_id, completed, status_prop, done_value, todo_value, date_prop=None, due_date=None, title_prop=None, title=None, comp_type="status"):
+def update_notion_page(page_id, completed, status_prop, done_value, todo_value, date_prop=None, due_date=None, title_prop=None, title=None, comp_type="status", importance_prop=None, importance_value=None):
     if comp_type == "checkbox":
         props = {status_prop: {"checkbox": completed}}
     else:
@@ -191,6 +195,8 @@ def update_notion_page(page_id, completed, status_prop, done_value, todo_value, 
         props[date_prop] = {"date": {"start": due_date}} if due_date else {"date": None}
     if title_prop and title is not None:
         props[title_prop] = {"title": [{"text": {"content": title}}]}
+    if importance_prop and importance_value is not None:
+        props[importance_prop] = {"select": {"name": importance_value}}
     r = requests.patch(
         f"https://api.notion.com/v1/pages/{page_id}",
         headers=NOTION_HEADERS,
@@ -220,6 +226,46 @@ def get_page_date(page, date_prop):
         return None
     date_obj = page["properties"].get(date_prop, {}).get("date") or {}
     return date_obj.get("start", None)
+
+
+def get_page_importance(page, importance_prop):
+    if not importance_prop:
+        return None
+    select_val = page["properties"].get(importance_prop, {}).get("select") or {}
+    return select_val.get("name") or None
+
+
+def notion_importance_to_ms(option_name):
+    if not option_name:
+        return "normal"
+    n = option_name.lower()
+    if any(k in n for k in ("높", "중요", "high", "import", "urgent")):
+        return "high"
+    if any(k in n for k in ("낮", "low", "minor")):
+        return "low"
+    return "normal"
+
+
+def ms_importance_to_notion(ms_val, options):
+    names = [o["name"] for o in options]
+    if not names:
+        return None
+    if ms_val == "high":
+        for c in ("높음", "중요", "High", "Important"):
+            if c in names:
+                return c
+        return names[-1]
+    if ms_val == "low":
+        for c in ("낮음", "Low"):
+            if c in names:
+                return c
+        return names[0]
+    for c in ("보통", "일반", "Normal", "Medium", "중간"):
+        if c in names:
+            return c
+    if len(names) >= 3:
+        return names[len(names) // 2]
+    return names[0]
 
 
 def extract_ms_due(due_dt_obj):
@@ -447,6 +493,15 @@ def main():
     title_prop = find_prop(schema, "title") or "이름"
     status_prop = find_prop(schema, "status") or "상태"
     date_prop = find_prop(schema, "date")
+    importance_prop = next(
+        (name for name, prop in schema["properties"].items()
+         if prop["type"] == "select" and "중요" in name),
+        None
+    )
+    importance_options = (
+        schema["properties"].get(importance_prop, {}).get("select", {}).get("options", [])
+        if importance_prop else []
+    )
     # MS Todo ID 속성 탐지 (rich_text 중 이름에 'todo' 또는 'id' 포함)
     id_prop = next(
         (name for name, prop in schema["properties"].items()
@@ -480,7 +535,7 @@ def main():
     if not todo_value and options:
         todo_value = options[0]["name"]
 
-    print(f"  속성: title='{title_prop}', status='{status_prop}'")
+    print(f"  속성: title='{title_prop}', status='{status_prop}', 중요도='{importance_prop or '없음'}'")
     print(f"  상태값: 완료='{done_value}', 미완료='{todo_value}'")
 
     print("📥 데이터 가져오는 중...")
@@ -524,9 +579,10 @@ def main():
     if input_action and input_task_id:
         print(f"🎯 직접 업데이트: action={input_action}, task={input_task_id}")
         input_completed_str = os.environ.get("INPUT_COMPLETED", "").strip()
-        input_title    = os.environ.get("INPUT_TITLE",    "").strip()
-        input_due_date = os.environ.get("INPUT_DUE_DATE", "").strip()
-        input_due_time = os.environ.get("INPUT_DUE_TIME", "").strip()
+        input_title      = os.environ.get("INPUT_TITLE",      "").strip()
+        input_due_date   = os.environ.get("INPUT_DUE_DATE",   "").strip()
+        input_due_time   = os.environ.get("INPUT_DUE_TIME",   "").strip()
+        input_importance = os.environ.get("INPUT_IMPORTANCE", "").strip()
 
         ms_kwargs = {}
         if input_completed_str:
@@ -537,6 +593,8 @@ def main():
             ms_kwargs["due_date"] = None if input_due_date == "none" else input_due_date
             if input_due_date != "none":
                 ms_kwargs["due_time"] = input_due_time or None
+        if input_importance:
+            ms_kwargs["importance"] = input_importance
 
         if input_action == "create":
             # 새 태스크 생성 (MS Todo + Notion)
@@ -619,6 +677,8 @@ def main():
                     due_date=new_due_date,
                     title_prop=title_prop if input_title else None,
                     title=input_title if input_title else None,
+                    importance_prop=importance_prop if input_importance and importance_prop else None,
+                    importance_value=ms_importance_to_notion(input_importance, importance_options) if input_importance and importance_prop else None,
                 )
                 # Notion 로컬 캐시 갱신 (동기화 루프가 이 태스크를 덮어쓰지 않도록)
                 props = notion_pages[notion_id]["properties"]
@@ -654,7 +714,9 @@ def main():
         try:
             completed = get_page_completed(page, status_prop, done_value)
             notion_date = get_page_date(page, date_prop)
-            task = create_todo_task(ms_token, list_id, title, completed, due_date=notion_date)
+            notion_imp_name = get_page_importance(page, importance_prop)
+            notion_imp_ms = notion_importance_to_ms(notion_imp_name) if notion_imp_name else "normal"
+            task = create_todo_task(ms_token, list_id, title, completed, due_date=notion_date, importance=notion_imp_ms)
             ms_tasks[task["id"]] = task  # 동기화 루프에서 "없음"으로 오인하지 않도록
             # stale 매핑 제거: old_ms_id가 ms_to_notion에 남아 있으면 sync 루프가
             # "MS에 없음 → Notion 아카이브"를 실행해버리는 버그 방지
@@ -688,10 +750,13 @@ def main():
         try:
             completed = task["status"] == "completed"
             due_date, _ = extract_ms_due(task.get("dueDateTime"))
+            ms_imp = task.get("importance", "normal")
+            notion_imp_val = ms_importance_to_notion(ms_imp, importance_options) if importance_prop else None
             page = create_notion_page(
                 NOTION_DB_ID, title, completed, title_prop, status_prop, done_value, todo_value,
                 date_prop=date_prop, due_date=due_date,
-                id_prop=id_prop, ms_task_id=task_id
+                id_prop=id_prop, ms_task_id=task_id,
+                importance_prop=importance_prop, importance_value=notion_imp_val,
             )
             notion_pages[page["id"]] = page  # 동기화 루프에서 "없음"으로 오인하지 않도록
             ms_to_notion[task_id] = page["id"]
@@ -753,8 +818,11 @@ def main():
         notion_done = get_page_completed(page, status_prop, done_value)
         ms_date, _ = extract_ms_due(task.get("dueDateTime"))
         notion_date = get_page_date(page, date_prop) if date_prop else None
+        ms_importance = task.get("importance", "normal")
+        notion_imp_name = get_page_importance(page, importance_prop)
+        notion_importance = notion_importance_to_ms(notion_imp_name) if notion_imp_name else "normal"
 
-        if ms_done == notion_done and ms_date == notion_date:
+        if ms_done == notion_done and ms_date == notion_date and (not importance_prop or ms_importance == notion_importance):
             continue
 
         title = task.get("title", "?")
@@ -765,27 +833,36 @@ def main():
             if ms_time >= notion_time:
                 # MS가 최신 → Notion 업데이트
                 date_changed = date_prop and ms_date != notion_date
+                imp_changed = importance_prop and ms_importance != notion_importance
                 update_notion_page(
                     notion_id, ms_done, status_prop, done_value, todo_value,
                     date_prop=date_prop if date_changed else None,
                     due_date=ms_date if date_changed else None,
+                    importance_prop=importance_prop if imp_changed else None,
+                    importance_value=ms_importance_to_notion(ms_importance, importance_options) if imp_changed else None,
                 )
                 msg = f"{'완료' if ms_done else todo_value}"
                 if date_changed:
                     msg += f" / 날짜={ms_date}"
+                if imp_changed:
+                    msg += f" / 중요도={ms_importance}"
                 print(f"  🔄 Notion 업데이트: {title} → {msg}")
             else:
                 # Notion이 최신 → MS 업데이트
                 date_changed = ms_date != notion_date
+                imp_changed = importance_prop and ms_importance != notion_importance
                 update_todo_task(
                     ms_token, list_id, ms_id,
                     completed=notion_done,
                     # notion_date가 None이면 빈 문자열로 → MS 날짜 클리어
                     due_date=(notion_date or "") if date_changed else None,
+                    importance=notion_importance if imp_changed else None,
                 )
                 msg = f"{'완료' if notion_done else '미완료'}"
                 if date_changed:
                     msg += f" / 날짜={notion_date}"
+                if imp_changed:
+                    msg += f" / 중요도={notion_importance}"
                 print(f"  🔄 MS 업데이트: {title} → {msg}")
             stats["updated"] += 1
         except Exception as e:
@@ -818,6 +895,7 @@ def main():
             "completed": task["status"] == "completed",
             "due_date": due_date,
             "due_time": due_time,
+            "importance": task.get("importance", "normal"),
         })
     all_tasks.sort(key=lambda x: (x["completed"], x["due_date"] or "9999-12-31", x["due_time"] or "99:99"))
     save_json("data/tasks.json", {
