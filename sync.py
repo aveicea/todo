@@ -411,6 +411,7 @@ def main():
             completed = get_page_completed(page, status_prop, done_value)
             notion_date = get_page_date(page, date_prop)
             task = create_todo_task(ms_token, list_id, title, completed, due_date=notion_date)
+            ms_tasks[task["id"]] = task  # 동기화 루프에서 "없음"으로 오인하지 않도록
             ms_to_notion[task["id"]] = page_id
             notion_to_ms[page_id] = task["id"]
             # Notion 페이지에 MS Todo ID 저장
@@ -442,6 +443,7 @@ def main():
                 date_prop=date_prop, due_date=due_date,
                 id_prop=id_prop, ms_task_id=task_id
             )
+            notion_pages[page["id"]] = page  # 동기화 루프에서 "없음"으로 오인하지 않도록
             ms_to_notion[task_id] = page["id"]
             notion_to_ms[page["id"]] = task_id
             stats["created_in_notion"] += 1
