@@ -412,6 +412,21 @@ function updateCache(msId, changes) {
   } catch {}
 }
 
+let fastPollTimer = null;
+function startFastPoll() {
+  if (fastPollTimer) clearInterval(fastPollTimer);
+  const prevHash = JSON.stringify(allTasks);
+  let attempts = 0;
+  fastPollTimer = setInterval(async () => {
+    attempts++;
+    await loadTasks();
+    if (JSON.stringify(allTasks) !== prevHash || attempts >= 24) {
+      clearInterval(fastPollTimer);
+      fastPollTimer = null;
+    }
+  }, 5000);
+}
+
 async function triggerUpdate(inputs) {
   const pat = localStorage.getItem('gh_pat');
   if (!pat) { showSetup(); return false; }
@@ -423,7 +438,8 @@ async function triggerUpdate(inputs) {
         body: JSON.stringify({ ref: 'main', inputs }) }
     );
     if (r.status === 401 || r.status === 403) { localStorage.removeItem('gh_pat'); showSetup(); return false; }
-    return r.status === 204;
+    if (r.status === 204) { startFastPoll(); return true; }
+    return false;
   } catch { return false; }
 }
 
@@ -433,7 +449,6 @@ async function triggerSync() {
   const ok = await triggerUpdate({ action: '', task_id: '', completed: '', title: '', due_date: '', due_time: '' });
   btn.textContent = ok ? '✓' : '!';
   setTimeout(() => { btn.textContent = '↺'; btn.disabled = false; }, 3000);
-  if (ok) setTimeout(loadTasks, 90000);
 }
 
 function showSetup() { document.getElementById('setup-panel').classList.add('visible'); }
