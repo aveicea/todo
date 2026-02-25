@@ -358,7 +358,31 @@ def main():
             if input_due_date != "none":
                 ms_kwargs["due_time"] = input_due_time or None
 
-        if input_action == "delete":
+        if input_action == "create":
+            # 새 태스크 생성 (MS Todo + Notion)
+            title = input_title
+            due_date = None if input_due_date in ("", "none") else input_due_date
+            due_time = input_due_time or None
+            if title:
+                try:
+                    task = create_todo_task(ms_token, list_id, title, due_date=due_date, due_time=due_time)
+                    ms_tasks[task["id"]] = task
+                    print(f"  ➕ MS Todo 생성: {title}")
+                    page = create_notion_page(
+                        NOTION_DB_ID, title, False, title_prop, status_prop, done_value, todo_value,
+                        date_prop=date_prop, due_date=due_date,
+                        id_prop=id_prop, ms_task_id=task["id"]
+                    )
+                    notion_pages[page["id"]] = page
+                    ms_to_notion[task["id"]] = page["id"]
+                    notion_to_ms[page["id"]] = task["id"]
+                    directly_updated_ms_ids.add(task["id"])
+                    stats["created_in_notion"] += 1
+                    print(f"  ➕ Notion 생성: {title}")
+                except Exception as e:
+                    print(f"  ⚠️ 생성 실패: {e}")
+                    stats["errors"] += 1
+        elif input_action == "delete":
             # MS Todo 삭제 + Notion 아카이브
             try:
                 delete_todo_task(ms_token, list_id, input_task_id)

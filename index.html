@@ -195,7 +195,10 @@
       <span class="header-title">To do list</span>
       <span class="dot" id="badge"></span>
     </div>
-    <button class="nav-btn" id="sync-btn" title="동기화" onclick="triggerSync()">↺</button>
+    <div style="display:flex;gap:4px;">
+      <button class="nav-btn" id="add-btn" title="추가" onclick="openAddPanel()">＋</button>
+      <button class="nav-btn" id="sync-btn" title="동기화" onclick="triggerSync()">↺</button>
+    </div>
   </div>
 
   <div class="filter-tabs">
@@ -211,7 +214,7 @@
 
   <div class="detail-panel" id="detail-panel">
     <div class="detail-header">
-      <span class="detail-label">편집</span>
+      <span class="detail-label" id="detail-label">편집</span>
       <button class="close-btn" onclick="closeDetail()">✕</button>
     </div>
     <div class="detail-field">
@@ -295,7 +298,7 @@ async function loadTasks() {
 function renderTasks() {
   const today = todayStr();
   const tasks = allTasks.filter(t => {
-    if (currentFilter === 'today')   return t.completed ? (t.due_date && t.due_date.startsWith(today)) : (!t.due_date || t.due_date <= today);
+    if (currentFilter === 'today')   return t.completed ? (t.due_date && t.due_date.startsWith(today)) : true;
     if (currentFilter === 'pending') return !t.completed;
     return true;
   });
@@ -380,9 +383,21 @@ function openDetail(msId) {
   const task = allTasks.find(t => t.ms_id === msId);
   if (!task) return;
   editingTaskId = msId;
+  document.getElementById('detail-label').textContent = '편집';
   document.getElementById('detail-title').value = task.title || '';
   document.getElementById('detail-date').value  = task.due_date || '';
   document.getElementById('detail-time').value  = task.due_time || '';
+  document.getElementById('delete-btn').style.display = '';
+  document.getElementById('detail-panel').classList.add('visible');
+}
+
+function openAddPanel() {
+  editingTaskId = 'new';
+  document.getElementById('detail-label').textContent = '추가';
+  document.getElementById('detail-title').value = '';
+  document.getElementById('detail-date').value  = '';
+  document.getElementById('detail-time').value  = '';
+  document.getElementById('delete-btn').style.display = 'none';
   document.getElementById('detail-panel').classList.add('visible');
 }
 
@@ -401,12 +416,20 @@ async function saveTask() {
   const btn = document.getElementById('save-btn');
   btn.disabled = true; btn.textContent = '저장 중...';
 
-  const task = allTasks.find(t => t.ms_id === editingTaskId);
-  if (task) { task.title = title; task.due_date = dateVal || null; task.due_time = timeVal || null; }
-  updateCache(editingTaskId, { title, due_date: dateVal || null, due_time: timeVal || null });
-  closeDetail(); renderTasks();
-
-  await triggerUpdate({ action: 'update', task_id: editingTaskId, title, due_date: dateVal || 'none', due_time: timeVal || '' });
+  if (editingTaskId === 'new') {
+    // 추가 모드: 임시 항목 UI에 즉시 반영
+    const tmpId = 'tmp_' + Date.now();
+    const newTask = { ms_id: tmpId, title, due_date: dateVal || null, due_time: timeVal || null, completed: false };
+    allTasks.push(newTask);
+    closeDetail(); renderTasks();
+    await triggerUpdate({ action: 'create', task_id: '', title, due_date: dateVal || 'none', due_time: timeVal || '', completed: '' });
+  } else {
+    const task = allTasks.find(t => t.ms_id === editingTaskId);
+    if (task) { task.title = title; task.due_date = dateVal || null; task.due_time = timeVal || null; }
+    updateCache(editingTaskId, { title, due_date: dateVal || null, due_time: timeVal || null });
+    closeDetail(); renderTasks();
+    await triggerUpdate({ action: 'update', task_id: editingTaskId, title, due_date: dateVal || 'none', due_time: timeVal || '' });
+  }
   btn.disabled = false; btn.textContent = '저장';
 }
 
@@ -475,6 +498,7 @@ async function triggerUpdate(inputs) {
 async function triggerSync() {
   const btn = document.getElementById('sync-btn');
   btn.disabled = true; btn.textContent = '…';
+  await loadTasks();
   const ok = await triggerUpdate({ action: '', task_id: '', completed: '', title: '', due_date: '', due_time: '' });
   btn.textContent = ok ? '✓' : '!';
   setTimeout(() => { btn.textContent = '↺'; btn.disabled = false; }, 3000);
