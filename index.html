@@ -275,7 +275,10 @@ async function loadTasks() {
     try { const c = JSON.parse(cached); allTasks = c.tasks || []; renderTasks(); } catch {}
   }
   try {
-    const r = await fetch(TASKS_URL + '?t=' + Date.now());
+    const pat = localStorage.getItem('gh_pat');
+    const headers = pat ? { Authorization: `Bearer ${pat}`, Accept: 'application/vnd.github.raw+json' } : {};
+    const apiUrl = `https://api.github.com/repos/${REPO}/contents/data/tasks.json`;
+    const r = await fetch(pat ? apiUrl : TASKS_URL + '?t=' + Date.now(), { headers });
     if (!r.ok) throw new Error();
     const data = await r.json();
     localStorage.setItem('tasks_cache', JSON.stringify(data));
