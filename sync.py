@@ -358,24 +358,48 @@ def main():
             if input_due_date != "none":
                 ms_kwargs["due_time"] = input_due_time or None
 
-        try:
-            if ms_kwargs:
-                update_todo_task(ms_token, list_id, input_task_id, **ms_kwargs)
-                # 로컬 캐시도 갱신 (이후 동기화 루프에서 덮어쓰지 않도록)
-                if input_task_id in ms_tasks:
-                    if "completed" in ms_kwargs:
-                        ms_tasks[input_task_id]["status"] = "completed" if ms_kwargs["completed"] else "notStarted"
-                    if "title" in ms_kwargs:
-                        ms_tasks[input_task_id]["title"] = ms_kwargs["title"]
-                    if "due_date" in ms_kwargs:
-                        d = ms_kwargs["due_date"]
-                        t = ms_kwargs.get("due_time") or "00:00"
-                        ms_tasks[input_task_id]["dueDateTime"] = (
-                            {"dateTime": f"{d}T{t}:00.0000000", "timeZone": "Korea Standard Time"} if d else None
-                        )
-            print(f"  ✅ MS Todo 업데이트 완료")
-        except Exception as e:
-            print(f"  ⚠️ MS Todo 업데이트 실패: {e}")
+        if input_action == "delete":
+            # MS Todo 삭제 + Notion 아카이브
+            try:
+                delete_todo_task(ms_token, list_id, input_task_id)
+                ms_tasks.pop(input_task_id, None)
+                print(f"  🗑️ MS Todo 삭제 완료")
+            except Exception as e:
+                print(f"  ⚠️ MS Todo 삭제 실패: {e}")
+            notion_id = ms_to_notion.get(input_task_id)
+            if notion_id:
+                try:
+                    requests.patch(
+                        f"https://api.notion.com/v1/pages/{notion_id}",
+                        headers=NOTION_HEADERS,
+                        json={"archived": True},
+                        timeout=30,
+                    )
+                    print(f"  🗑️ Notion 아카이브 완료")
+                except Exception as e:
+                    print(f"  ⚠️ Notion 아카이브 실패: {e}")
+            ms_to_notion.pop(input_task_id, None)
+            notion_pages.pop(notion_id, None)
+            directly_updated_ms_ids.add(input_task_id)
+        else:
+            try:
+                if ms_kwargs:
+                    update_todo_task(ms_token, list_id, input_task_id, **ms_kwargs)
+                    # 로컬 캐시도 갱신 (이후 동기화 루프에서 덮어쓰지 않도록)
+                    if input_task_id in ms_tasks:
+                        if "completed" in ms_kwargs:
+                            ms_tasks[input_task_id]["status"] = "completed" if ms_kwargs["completed"] else "notStarted"
+                        if "title" in ms_kwargs:
+                            ms_tasks[input_task_id]["title"] = ms_kwargs["title"]
+                        if "due_date" in ms_kwargs:
+                            d = ms_kwargs["due_date"]
+                            t = ms_kwargs.get("due_time") or "00:00"
+                            ms_tasks[input_task_id]["dueDateTime"] = (
+                                {"dateTime": f"{d}T{t}:00.0000000", "timeZone": "Korea Standard Time"} if d else None
+                            )
+                print(f"  ✅ MS Todo 업데이트 완료")
+            except Exception as e:
+                print(f"  ⚠️ MS Todo 업데이트 실패: {e}")
 
         notion_id = ms_to_notion.get(input_task_id)
         if notion_id and notion_id in notion_pages:
@@ -450,7 +474,9 @@ def main():
 
     # ── MS Todo → Notion (MS에만 있는 항목 생성) ──────────
     for task_id, task in ms_tasks.items():
-        if task_id in ms_to_notion and ms_to_notion[task_id] in notion_pages:
+        # 매핑이 존재하면 Notion 페이지 유무와 무관하게 스킵
+        # (Notion에서 삭제된 경우 아래 삭제 전파 루프에서 처리)
+        if task_id in ms_to_notion:
             continue
         title = task.get("title", "").strip()
         if not title:

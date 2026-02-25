@@ -156,6 +156,11 @@
       border: 1px solid #e0e0e0; border-radius: 6px; font-size: 11px; cursor: pointer;
     }
     .btn-cancel:hover { background: #f5f5f5; }
+    .btn-delete {
+      padding: 6px 10px; background: transparent; color: #e53935;
+      border: 1px solid #ffcdd2; border-radius: 6px; font-size: 11px; cursor: pointer;
+    }
+    .btn-delete:hover { background: #ffebee; }
 
     /* ── PAT panel ───────────────── */
     .setup-panel {
@@ -224,6 +229,7 @@
     <div class="detail-actions">
       <button class="btn-save" id="save-btn" onclick="saveTask()">저장</button>
       <button class="btn-cancel" onclick="closeDetail()">취소</button>
+      <button class="btn-delete" id="delete-btn" onclick="deleteTask()">삭제</button>
     </div>
   </div>
 
@@ -401,6 +407,19 @@ async function saveTask() {
   btn.disabled = false; btn.textContent = '저장';
 }
 
+async function deleteTask() {
+  if (!editingTaskId) return;
+  if (!confirm('정말 삭제할까요?')) return;
+  const msId = editingTaskId;
+  allTasks = allTasks.filter(t => t.ms_id !== msId);
+  try {
+    const cached = JSON.parse(localStorage.getItem('tasks_cache') || '{}');
+    if (cached.tasks) { cached.tasks = cached.tasks.filter(t => t.ms_id !== msId); localStorage.setItem('tasks_cache', JSON.stringify(cached)); }
+  } catch {}
+  closeDetail(); renderTasks();
+  await triggerUpdate({ action: 'delete', task_id: msId, completed: '', title: '', due_date: '', due_time: '' });
+}
+
 function updateCache(msId, changes) {
   try {
     const cached = localStorage.getItem('tasks_cache');
@@ -410,6 +429,21 @@ function updateCache(msId, changes) {
     if (t) Object.assign(t, changes);
     localStorage.setItem('tasks_cache', JSON.stringify(data));
   } catch {}
+}
+
+let fastPollTimer = null;
+function startFastPoll() {
+  if (fastPollTimer) clearInterval(fastPollTimer);
+  const prevHash = JSON.stringify(allTasks);
+  let attempts = 0;
+  fastPollTimer = setInterval(async () => {
+    attempts++;
+    await loadTasks();
+    if (JSON.stringify(allTasks) !== prevHash || attempts >= 24) {
+      clearInterval(fastPollTimer);
+      fastPollTimer = null;
+    }
+  }, 5000);
 }
 
 async function triggerUpdate(inputs) {
@@ -423,7 +457,8 @@ async function triggerUpdate(inputs) {
         body: JSON.stringify({ ref: 'main', inputs }) }
     );
     if (r.status === 401 || r.status === 403) { localStorage.removeItem('gh_pat'); showSetup(); return false; }
-    return r.status === 204;
+    if (r.status === 204) { startFastPoll(); return true; }
+    return false;
   } catch { return false; }
 }
 
@@ -433,7 +468,6 @@ async function triggerSync() {
   const ok = await triggerUpdate({ action: '', task_id: '', completed: '', title: '', due_date: '', due_time: '' });
   btn.textContent = ok ? '✓' : '!';
   setTimeout(() => { btn.textContent = '↺'; btn.disabled = false; }, 3000);
-  if (ok) setTimeout(loadTasks, 90000);
 }
 
 function showSetup() { document.getElementById('setup-panel').classList.add('visible'); }
