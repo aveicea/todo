@@ -37,7 +37,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 7px 8px 5px 14px;
+      padding: 14px 8px 5px 14px;
       flex-shrink: 0;
     }
     .header-left { display: flex; align-items: center; gap: 6px; }
@@ -286,7 +286,7 @@ async function loadTasks() {
 function renderTasks() {
   const today = todayStr();
   const tasks = allTasks.filter(t => {
-    if (currentFilter === 'today')   return !t.due_date || t.due_date <= today;
+    if (currentFilter === 'today')   return t.completed ? t.due_date === today : (!t.due_date || t.due_date <= today);
     if (currentFilter === 'pending') return !t.completed;
     return true;
   });
