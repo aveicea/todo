@@ -6,7 +6,8 @@
       "title": "키레나 형광펜 페일 그린",
       "completed": true,
       "due_date": "2026-02-24",
-      "due_time": "16:30"
+      "due_time": "16:30",
+      "importance": "normal"
     },
     {
       "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAefbc24AAA=",
@@ -14,10 +15,11 @@
       "title": "다이소 5공 펀치",
       "completed": true,
       "due_date": "2026-02-25",
-      "due_time": "16:15"
+      "due_time": "16:15",
+      "importance": "normal"
     }
   ],
-  "last_sync": "2026-02-25T12:02:48.732004+00:00",
+  "last_sync": "2026-02-25T13:26:40.802540+00:00",
   "total": 2,
   "completed": 2,
   "pending": 0
