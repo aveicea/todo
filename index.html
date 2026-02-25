@@ -422,13 +422,15 @@ async function saveTask() {
     const newTask = { ms_id: tmpId, title, due_date: dateVal || null, due_time: timeVal || null, completed: false };
     allTasks.push(newTask);
     closeDetail(); renderTasks();
-    await triggerUpdate({ action: 'create', task_id: '', title, due_date: dateVal || 'none', due_time: timeVal || '', completed: '' });
+    const ok1 = await triggerUpdate({ action: 'create', task_id: '', title, due_date: dateVal || 'none', due_time: timeVal || '', completed: '' });
+    if (ok1) startFastPoll();
   } else {
     const task = allTasks.find(t => t.ms_id === editingTaskId);
     if (task) { task.title = title; task.due_date = dateVal || null; task.due_time = timeVal || null; }
     updateCache(editingTaskId, { title, due_date: dateVal || null, due_time: timeVal || null });
     closeDetail(); renderTasks();
-    await triggerUpdate({ action: 'update', task_id: editingTaskId, title, due_date: dateVal || 'none', due_time: timeVal || '' });
+    const ok2 = await triggerUpdate({ action: 'update', task_id: editingTaskId, title, due_date: dateVal || 'none', due_time: timeVal || '' });
+    if (ok2) startFastPoll();
   }
   btn.disabled = false; btn.textContent = '저장';
 }
@@ -450,7 +452,8 @@ async function deleteTask() {
     if (cached.tasks) { cached.tasks = cached.tasks.filter(t => t.ms_id !== msId); localStorage.setItem('tasks_cache', JSON.stringify(cached)); }
   } catch {}
   closeDetail(); renderTasks();
-  await triggerUpdate({ action: 'delete', task_id: msId, completed: '', title: '', due_date: '', due_time: '' });
+  const ok = await triggerUpdate({ action: 'delete', task_id: msId, completed: '', title: '', due_date: '', due_time: '' });
+  if (ok) startFastPoll();
 }
 
 function updateCache(msId, changes) {
