@@ -54,7 +54,7 @@
     }
     .nav-btn:hover:not(:disabled) { background: #f0f0f0; color: #333; }
     .nav-btn:disabled { opacity: 0.4; cursor: not-allowed; }
-    #sync-btn { margin-bottom: 1px; }
+    #sync-btn { margin-bottom: 4px; }
     .imp-star { font-size: 12px; color: #e0e0e0; cursor: pointer; flex-shrink: 0; padding: 2px 0 2px 2px; transition: color 0.15s; line-height: 1; }
     .imp-star:hover { color: #f5a623; }
     .imp-star.high { color: #f5a623; }
@@ -258,6 +258,7 @@ const PLANNER_URL = 'https://raw.githubusercontent.com/aveicea/todo/main/data/pl
 const WORKFLOW    = 'sync.yml';
 
 let allTasks = [];
+const pendingImportance = new Map();
 let allPlanner = [];
 let currentFilter = 'today';
 let editingTaskId = null;
@@ -295,6 +296,12 @@ async function loadTasks() {
     const data = await r.json();
     localStorage.setItem('tasks_cache', JSON.stringify(data));
     allTasks = data.tasks || [];
+    pendingImportance.forEach((imp, msId) => {
+      const t = allTasks.find(t => t.ms_id === msId);
+      if (!t) { pendingImportance.delete(msId); return; }
+      if (t.importance === imp) pendingImportance.delete(msId);
+      else t.importance = imp;
+    });
     document.getElementById('badge').className = 'dot';
     renderTasks();
   } catch {
@@ -443,10 +450,11 @@ async function toggleImportance(e, msId, cur) {
   const next = cur === 'high' ? 'normal' : 'high';
   const task = allTasks.find(t => t.ms_id === msId);
   if (task) task.importance = next;
+  pendingImportance.set(msId, next);
   updateCache(msId, { importance: next });
   renderTasks();
   const ok = await triggerUpdate({ action: 'update', task_id: msId, completed: '', title: '', due_date: '', due_time: '', importance: next });
-  if (!ok) { if (task) { task.importance = cur; updateCache(msId, { importance: cur }); renderTasks(); } }
+  if (!ok) { pendingImportance.delete(msId); if (task) { task.importance = cur; updateCache(msId, { importance: cur }); renderTasks(); } }
 }
 
 async function togglePlanner(e, notionId, cur) {
