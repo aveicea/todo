@@ -409,6 +409,15 @@ def run_planner(input_action, input_task_id):
 # ── 메인 ─────────────────────────────────────────────────
 def main():
     os.makedirs("data", exist_ok=True)
+
+    input_action  = os.environ.get("INPUT_ACTION",  "").strip()
+    input_task_id = os.environ.get("INPUT_TASK_ID", "").strip()
+
+    # 플래너 전용 액션은 MS 동기화 불필요 → 바로 처리 후 종료
+    if input_action.startswith("planner_"):
+        run_planner(input_action, input_task_id)
+        return
+
     mapping = load_json(MAPPING_FILE, {"ms_to_notion": {}})
     ms_to_notion = mapping["ms_to_notion"]  # ms_task_id → notion_page_id
 
@@ -502,9 +511,7 @@ def main():
 
     # ── 직접 업데이트 처리 (위젯에서 트리거) ─────────────
     directly_updated_ms_ids = set()
-    input_action  = os.environ.get("INPUT_ACTION",    "").strip()
-    input_task_id = os.environ.get("INPUT_TASK_ID",   "").strip()
-    if input_action and input_task_id and not input_action.startswith("planner_"):
+    if input_action and input_task_id:
         print(f"🎯 직접 업데이트: action={input_action}, task={input_task_id}")
         input_completed_str = os.environ.get("INPUT_COMPLETED", "").strip()
         input_title    = os.environ.get("INPUT_TITLE",    "").strip()
