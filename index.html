@@ -286,7 +286,7 @@ async function loadTasks() {
 function renderTasks() {
   const today = todayStr();
   const tasks = allTasks.filter(t => {
-    if (currentFilter === 'today')   return t.completed ? t.due_date === today : (!t.due_date || t.due_date <= today);
+    if (currentFilter === 'today')   return t.completed ? (t.due_date && t.due_date.startsWith(today)) : (!t.due_date || t.due_date <= today);
     if (currentFilter === 'pending') return !t.completed;
     return true;
   });
