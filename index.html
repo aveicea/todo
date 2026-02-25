@@ -330,6 +330,9 @@ function renderTasks() {
     const da = a.due_date || '9999-12-31', db = b.due_date || '9999-12-31';
     const dateCmp = sortAsc ? da.localeCompare(db) : db.localeCompare(da);
     if (dateCmp !== 0) return dateCmp;
+    const ta = a.due_time || '99:99', tb = b.due_time || '99:99';
+    const timeCmp = sortAsc ? ta.localeCompare(tb) : tb.localeCompare(ta);
+    if (timeCmp !== 0) return timeCmp;
     return (a.title || '').localeCompare(b.title || '', 'ko');
   };
   const pending = tasks.filter(t => !t.completed).sort(sortFn);
