@@ -412,6 +412,10 @@ def main():
             notion_date = get_page_date(page, date_prop)
             task = create_todo_task(ms_token, list_id, title, completed, due_date=notion_date)
             ms_tasks[task["id"]] = task  # 동기화 루프에서 "없음"으로 오인하지 않도록
+            # stale 매핑 제거: old_ms_id가 ms_to_notion에 남아 있으면 sync 루프가
+            # "MS에 없음 → Notion 아카이브"를 실행해버리는 버그 방지
+            if page_id in notion_to_ms:
+                ms_to_notion.pop(notion_to_ms[page_id], None)
             ms_to_notion[task["id"]] = page_id
             notion_to_ms[page_id] = task["id"]
             # Notion 페이지에 MS Todo ID 저장
@@ -530,7 +534,8 @@ def main():
                 update_todo_task(
                     ms_token, list_id, ms_id,
                     completed=notion_done,
-                    due_date=notion_date if date_changed else None,
+                    # notion_date가 None이면 빈 문자열로 → MS 날짜 클리어
+                    due_date=(notion_date or "") if date_changed else None,
                 )
                 msg = f"{'완료' if notion_done else '미완료'}"
                 if date_changed:
