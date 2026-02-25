@@ -291,8 +291,6 @@ function renderTasks() {
     return true;
   });
   const list = document.getElementById('task-list');
-  if (!tasks.length) { list.innerHTML = '<div class="empty-msg">항목이 없어요</div>'; return; }
-
   const sortFn = (a, b) => {
     const da = a.due_date || '9999-12-31', db = b.due_date || '9999-12-31';
     return sortAsc ? da.localeCompare(db) : db.localeCompare(da);
@@ -301,16 +299,24 @@ function renderTasks() {
   const done    = tasks.filter(t =>  t.completed).sort(sortFn);
   let html = '';
 
-  const showGroups = currentFilter === 'all' || currentFilter === 'today';
-  if (pending.length) {
-    if (showGroups && done.length)
-      html += `<div class="task-group-label">미완료 ${pending.length}</div>`;
-    html += pending.map(taskHTML).join('');
-  }
-  if (done.length && showGroups) {
-    if (pending.length)
-      html += `<div class="task-group-label">완료 ${done.length}</div>`;
-    html += done.map(taskHTML).join('');
+  if (currentFilter === 'today') {
+    html += `<div class="task-group-label">미완료 ${pending.length}</div>`;
+    html += pending.length ? pending.map(taskHTML).join('') : '<div class="empty-msg">없어요</div>';
+    html += `<div class="task-group-label">완료 ${done.length}</div>`;
+    html += done.length ? done.map(taskHTML).join('') : '<div class="empty-msg">없어요</div>';
+  } else if (currentFilter === 'all') {
+    if (!tasks.length) { list.innerHTML = '<div class="empty-msg">항목이 없어요</div>'; return; }
+    if (pending.length) {
+      if (done.length) html += `<div class="task-group-label">미완료 ${pending.length}</div>`;
+      html += pending.map(taskHTML).join('');
+    }
+    if (done.length) {
+      if (pending.length) html += `<div class="task-group-label">완료 ${done.length}</div>`;
+      html += done.map(taskHTML).join('');
+    }
+  } else {
+    if (!tasks.length) { list.innerHTML = '<div class="empty-msg">항목이 없어요</div>'; return; }
+    html += tasks.sort(sortFn).map(taskHTML).join('');
   }
   list.innerHTML = html;
 }
