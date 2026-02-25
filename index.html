@@ -305,6 +305,7 @@ async function loadPlanner() {
   if (cached && !allPlanner.length) {
     try { const c = JSON.parse(cached); allPlanner = c.tasks || []; renderTasks(); } catch {}
   }
+  if (plannerPollTimer) return; // 낙관적 업데이트 보호 중이면 fetch 건너뜀
   try {
     const pat = localStorage.getItem('gh_pat');
     const headers = pat ? { Authorization: `Bearer ${pat}`, Accept: 'application/vnd.github.raw+json' } : {};
@@ -605,7 +606,13 @@ function startPlannerPoll(preSaveHash) {
       if (!r.ok) throw new Error();
       const data = await r.json();
       const serverHash = JSON.stringify(data.tasks || []);
-      if (preSaveHash && serverHash === preSaveHash && attempts < 24) return;
+      if (preSaveHash && serverHash === preSaveHash) {
+        if (attempts < 24) return; // 아직 서버 반영 대기 중
+        // 72초 지났는데도 서버가 안 바뀜 → 낙관적 상태 그대로 유지하고 종료
+        clearInterval(plannerPollTimer);
+        plannerPollTimer = null;
+        return;
+      }
       allPlanner = data.tasks || [];
       localStorage.setItem('planner_cache', JSON.stringify(data));
       renderTasks();
