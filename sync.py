@@ -303,6 +303,10 @@ def run_planner(input_action, input_task_id):
         print(f"  ✅ 완료 속성: status '{comp_prop}' (완료={done_value})")
 
     # 플래너 직접 액션 처리
+    # Notion API는 eventually consistent이므로 PATCH 직후 GET이 stale 데이터를 반환할 수 있음.
+    # 업데이트한 항목의 completed 값을 override_completed에 기록해두고 planner.json 저장 시 덮어씀.
+    override_completed = {}  # notion_id → bool
+
     if input_action.startswith("planner_"):
         action = input_action[len("planner_"):]
         input_title = os.environ.get("INPUT_TITLE", "").strip()
@@ -315,6 +319,7 @@ def run_planner(input_action, input_task_id):
             try:
                 completed = input_completed_str.lower() == "true"
                 update_notion_page(input_task_id, completed, comp_prop, done_value, todo_value, comp_type=comp_type)
+                override_completed[input_task_id] = completed
                 print(f"  ✅ 플래너 완료 토글: {completed}")
             except Exception as e:
                 print(f"  ⚠️ 플래너 토글 실패: {e}")
@@ -331,6 +336,7 @@ def run_planner(input_action, input_task_id):
                     title=input_title if input_title else None,
                     comp_type=comp_type,
                 )
+                override_completed[input_task_id] = completed
                 print(f"  ✅ 플래너 업데이트")
             except Exception as e:
                 print(f"  ⚠️ 플래너 업데이트 실패: {e}")
@@ -387,11 +393,15 @@ def run_planner(input_action, input_task_id):
             rel_ids = [r["id"] for r in page["properties"].get(book_rel_prop, {}).get("relation", [])]
             if rel_ids:
                 book_title = book_title_map.get(rel_ids[0], "")
+        page_id = page["id"]
+        # Notion eventual consistency 대응: PATCH 직후 stale 데이터 반환 가능 → override 우선 사용
+        comp_val = override_completed[page_id] if page_id in override_completed \
+                   else get_page_completed(page, comp_prop, done_value, comp_type)
         planner_tasks.append({
-            "notion_id": page["id"],
+            "notion_id": page_id,
             "title": title,
             "book_title": book_title or None,
-            "completed": get_page_completed(page, comp_prop, done_value, comp_type),
+            "completed": comp_val,
             "due_date": get_page_date(page, date_prop) if date_prop else None,
             "due_time": None,
         })
