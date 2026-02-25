@@ -246,13 +246,16 @@
 
 </div>
 <script>
-const REPO      = 'aveicea/todo';
-const TASKS_URL = 'https://raw.githubusercontent.com/aveicea/todo/main/data/tasks.json';
-const WORKFLOW  = 'sync.yml';
+const REPO        = 'aveicea/todo';
+const TASKS_URL   = 'https://raw.githubusercontent.com/aveicea/todo/main/data/tasks.json';
+const PLANNER_URL = 'https://raw.githubusercontent.com/aveicea/todo/main/data/planner.json';
+const WORKFLOW    = 'sync.yml';
 
 let allTasks = [];
+let allPlanner = [];
 let currentFilter = 'today';
 let editingTaskId = null;
+let editingSource = 'todo'; // 'todo' | 'planner'
 let sortAsc = true;
 
 document.documentElement.style.setProperty('--accent', '#888');
@@ -295,6 +298,23 @@ async function loadTasks() {
   }
 }
 
+async function loadPlanner() {
+  const cached = localStorage.getItem('planner_cache');
+  if (cached && !allPlanner.length) {
+    try { const c = JSON.parse(cached); allPlanner = c.tasks || []; renderTasks(); } catch {}
+  }
+  try {
+    const pat = localStorage.getItem('gh_pat');
+    const headers = pat ? { Authorization: `Bearer ${pat}`, Accept: 'application/vnd.github.raw+json' } : {};
+    const r = await fetch(pat ? `https://api.github.com/repos/${REPO}/contents/data/planner.json` : PLANNER_URL + '?t=' + Date.now(), { headers });
+    if (!r.ok) throw new Error();
+    const data = await r.json();
+    localStorage.setItem('planner_cache', JSON.stringify(data));
+    allPlanner = data.tasks || [];
+    renderTasks();
+  } catch {}
+}
+
 function renderTasks() {
   const today = todayStr();
   const tasks = allTasks.filter(t => {
@@ -316,6 +336,10 @@ function renderTasks() {
     html += pending.length ? pending.map(taskHTML).join('') : '<div style="height:6px"></div>';
     html += `<div class="task-group-label">완료 ${done.length}</div>`;
     html += done.length ? done.map(taskHTML).join('') : '<div style="height:4px"></div>';
+    if (allPlanner.length) {
+      html += `<div class="task-group-label">플래너 ${allPlanner.length}</div>`;
+      html += allPlanner.map(plannerTaskHTML).join('');
+    }
   } else if (currentFilter === 'all') {
     html += `<div class="task-group-label">미완료 ${pending.length}</div>`;
     html += pending.length ? pending.map(taskHTML).join('') : '<div style="height:6px"></div>';
@@ -336,6 +360,19 @@ function taskHTML(t) {
   return `<div class="task-item">
     <div class="task-check ${done}" onclick="toggleTask(event,'${id}',${t.completed})">${t.completed?'✓':''}</div>
     <div class="task-body" onclick="openDetail('${id}')">
+      <div class="task-title ${done}">${escHtml(t.title)}</div>${dueHTML}
+    </div>
+  </div>`;
+}
+
+function plannerTaskHTML(t) {
+  const due = formatDue(t.due_date, t.due_time, t.completed);
+  const dueHTML = due ? `<div class="task-due ${due.cls}">${due.label}</div>` : '';
+  const id = (t.notion_id || '').replace(/'/g, "\\'");
+  const done = t.completed ? 'done' : '';
+  return `<div class="task-item">
+    <div class="task-check ${done}" onclick="togglePlanner(event,'${id}',${t.completed})">${t.completed?'✓':''}</div>
+    <div class="task-body" onclick="openPlannerDetail('${id}')">
       <div class="task-title ${done}">${escHtml(t.title)}</div>${dueHTML}
     </div>
   </div>`;
@@ -374,6 +411,34 @@ async function toggleTask(e, msId, cur) {
   }
 }
 
+async function togglePlanner(e, notionId, cur) {
+  e.stopPropagation();
+  if (!notionId) return;
+  const next = !cur;
+  const task = allPlanner.find(t => t.notion_id === notionId);
+  if (task) task.completed = next;
+  renderTasks();
+  const preSave = JSON.stringify(allPlanner);
+  const ok = await triggerUpdate({ action: 'planner_toggle', task_id: notionId, completed: String(next), title: '', due_date: '', due_time: '' });
+  if (!ok) {
+    if (task) task.completed = cur;
+    renderTasks();
+  } else startPlannerPoll(preSave);
+}
+
+function openPlannerDetail(notionId) {
+  const task = allPlanner.find(t => t.notion_id === notionId);
+  if (!task) return;
+  editingTaskId = notionId;
+  editingSource = 'planner';
+  document.getElementById('detail-label').textContent = '편집';
+  document.getElementById('detail-title').value = task.title || '';
+  document.getElementById('detail-date').value  = task.due_date || '';
+  document.getElementById('detail-time').value  = task.due_time || '';
+  document.getElementById('delete-btn').style.display = '';
+  document.getElementById('detail-panel').classList.add('visible');
+}
+
 function openDetail(msId) {
   const task = allTasks.find(t => t.ms_id === msId);
   if (!task) return;
@@ -388,6 +453,7 @@ function openDetail(msId) {
 
 function openAddPanel() {
   editingTaskId = 'new';
+  editingSource = 'todo';
   document.getElementById('detail-label').textContent = '추가';
   document.getElementById('detail-title').value = '';
   document.getElementById('detail-date').value  = '';
@@ -399,6 +465,7 @@ function openAddPanel() {
 function closeDetail() {
   document.getElementById('detail-panel').classList.remove('visible');
   editingTaskId = null;
+  editingSource = 'todo';
 }
 
 async function saveTask() {
@@ -411,7 +478,14 @@ async function saveTask() {
   const btn = document.getElementById('save-btn');
   btn.disabled = true; btn.textContent = '저장 중...';
 
-  if (editingTaskId === 'new') {
+  if (editingSource === 'planner') {
+    const task = allPlanner.find(t => t.notion_id === editingTaskId);
+    if (task) { task.title = title; task.due_date = dateVal || null; task.due_time = timeVal || null; }
+    const preSave = JSON.stringify(allPlanner);
+    closeDetail(); renderTasks();
+    const ok = await triggerUpdate({ action: 'planner_update', task_id: editingTaskId, title, due_date: dateVal || 'none', due_time: timeVal || '', completed: String(task?.completed ?? false) });
+    if (ok) startPlannerPoll(preSave);
+  } else if (editingTaskId === 'new') {
     const preSave = JSON.stringify(allTasks);
     const tmpId = 'tmp_' + Date.now();
     const newTask = { ms_id: tmpId, title, due_date: dateVal || null, due_time: timeVal || null, completed: false };
@@ -441,6 +515,19 @@ async function deleteTask() {
     return;
   }
   btn.dataset.confirm = '';
+  if (editingSource === 'planner') {
+    const notionId = editingTaskId;
+    const preSave = JSON.stringify(allPlanner);
+    allPlanner = allPlanner.filter(t => t.notion_id !== notionId);
+    try {
+      const cached = JSON.parse(localStorage.getItem('planner_cache') || '{}');
+      if (cached.tasks) { cached.tasks = cached.tasks.filter(t => t.notion_id !== notionId); localStorage.setItem('planner_cache', JSON.stringify(cached)); }
+    } catch {}
+    closeDetail(); renderTasks();
+    const ok = await triggerUpdate({ action: 'planner_delete', task_id: notionId, completed: '', title: '', due_date: '', due_time: '' });
+    if (ok) startPlannerPoll(preSave);
+    return;
+  }
   const msId = editingTaskId;
   const preSave = JSON.stringify(allTasks);
   allTasks = allTasks.filter(t => t.ms_id !== msId);
@@ -492,6 +579,33 @@ function startFastPoll(preSaveHash) {
   }, 3000);
 }
 
+let plannerPollTimer = null;
+function startPlannerPoll(preSaveHash) {
+  if (plannerPollTimer) clearInterval(plannerPollTimer);
+  let attempts = 0;
+  plannerPollTimer = setInterval(async () => {
+    attempts++;
+    try {
+      const pat = localStorage.getItem('gh_pat');
+      const headers = pat ? { Authorization: `Bearer ${pat}`, Accept: 'application/vnd.github.raw+json' } : {};
+      const r = await fetch(
+        pat ? `https://api.github.com/repos/${REPO}/contents/data/planner.json`
+            : PLANNER_URL + '?t=' + Date.now(),
+        { headers }
+      );
+      if (!r.ok) throw new Error();
+      const data = await r.json();
+      const serverHash = JSON.stringify(data.tasks || []);
+      if (preSaveHash && serverHash === preSaveHash && attempts < 24) return;
+      allPlanner = data.tasks || [];
+      localStorage.setItem('planner_cache', JSON.stringify(data));
+      renderTasks();
+      clearInterval(plannerPollTimer);
+      plannerPollTimer = null;
+    } catch {}
+  }, 3000);
+}
+
 async function triggerUpdate(inputs) {
   const pat = localStorage.getItem('gh_pat');
   if (!pat) { showSetup(); return false; }
@@ -533,7 +647,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const input = document.getElementById('pat-input');
   if (input) input.addEventListener('keydown', e => { if (e.key === 'Enter') savePAT(); });
   loadTasks();
-  setInterval(loadTasks, 120000);
+  loadPlanner();
+  setInterval(() => { loadTasks(); loadPlanner(); }, 120000);
 });
 </script>
 </body>

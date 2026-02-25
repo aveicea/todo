@@ -19,6 +19,9 @@ MSTODO_LIST_ID = os.environ.get("MSTODO_LIST_ID", "")
 _raw_db_id = os.environ.get("NOTION_DB_ID", "dadf27b55389404296df607af4d16e26").replace("-", "")
 NOTION_DB_ID = f"{_raw_db_id[:8]}-{_raw_db_id[8:12]}-{_raw_db_id[12:16]}-{_raw_db_id[16:20]}-{_raw_db_id[20:]}"
 
+_planner_raw = "468bf987e6cd4372abf96a8f30f165b1"
+PLANNER_DB_ID = f"{_planner_raw[:8]}-{_planner_raw[8:12]}-{_planner_raw[12:16]}-{_planner_raw[16:20]}-{_planner_raw[20:]}"
+
 SCOPES = [
     "https://graph.microsoft.com/Tasks.ReadWrite",
     "https://graph.microsoft.com/User.Read",
@@ -27,6 +30,7 @@ AUTHORITY = "https://login.microsoftonline.com/consumers"
 
 MAPPING_FILE = "data/mapping.json"
 STATUS_FILE = "data/status.json"
+PLANNER_FILE = "data/planner.json"
 
 NOTION_HEADERS = {
     "Authorization": f"Bearer {NOTION_TOKEN}",
@@ -243,6 +247,114 @@ def save_json(path, data):
         json.dump(data, f, indent=2, ensure_ascii=False)
 
 
+# ── 플래너 ───────────────────────────────────────────────
+def run_planner(input_action, input_task_id):
+    """플래너 Notion DB 처리 (MS Todo 연동 없이 단독 읽기/쓰기)"""
+    print("\n📋 플래너 처리 중...")
+    try:
+        schema = get_db_schema(PLANNER_DB_ID)
+    except Exception as e:
+        print(f"  ⚠️ 플래너 DB 접근 실패 (Notion 통합 권한 확인 필요): {e}")
+        return
+
+    title_prop = find_prop(schema, "title") or "이름"
+    status_prop = find_prop(schema, "status") or "상태"
+    date_prop = find_prop(schema, "date")
+
+    status_opts = schema["properties"].get(status_prop, {}).get("status", {})
+    options = status_opts.get("options", [])
+    groups = status_opts.get("groups", [])
+
+    done_group = next((g for g in groups if g.get("name") in ("Complete", "완료됨")), None)
+    todo_group = next((g for g in groups if g.get("name") in ("To-do", "할 일")), None)
+    done_option_ids = set(done_group.get("option_ids", [])) if done_group else set()
+    todo_option_ids = set(todo_group.get("option_ids", [])) if todo_group else set()
+
+    done_value = next((o["name"] for o in options if o["id"] in done_option_ids), None)
+    todo_value = next((o["name"] for o in options if o["id"] in todo_option_ids), None)
+    if not done_value:
+        done_value = next((o["name"] for o in options if o["name"] in ("완료", "Done", "Completed", "완료됨")), None)
+    if not todo_value:
+        todo_value = next((o["name"] for o in options if o["name"] in ("시작 안 함", "Not started", "할 일", "예정", "To-do")), None)
+    if not done_value and options:
+        done_value = options[-1]["name"]
+    if not todo_value and options:
+        todo_value = options[0]["name"]
+
+    # 플래너 직접 액션 처리
+    if input_action.startswith("planner_"):
+        action = input_action[len("planner_"):]
+        input_title = os.environ.get("INPUT_TITLE", "").strip()
+        input_due_date = os.environ.get("INPUT_DUE_DATE", "").strip()
+        input_due_time = os.environ.get("INPUT_DUE_TIME", "").strip()
+        input_completed_str = os.environ.get("INPUT_COMPLETED", "").strip()
+        print(f"  🎯 플래너 액션: {action} / id={input_task_id or '(없음)'}")
+
+        if action == "toggle" and input_task_id:
+            try:
+                completed = input_completed_str.lower() == "true"
+                update_notion_page(input_task_id, completed, status_prop, done_value, todo_value)
+                print(f"  ✅ 플래너 완료 토글: {completed}")
+            except Exception as e:
+                print(f"  ⚠️ 플래너 토글 실패: {e}")
+
+        elif action == "update" and input_task_id:
+            try:
+                completed = input_completed_str.lower() == "true" if input_completed_str else False
+                due_date = None if input_due_date in ("", "none") else input_due_date
+                update_notion_page(
+                    input_task_id, completed, status_prop, done_value, todo_value,
+                    date_prop=date_prop if input_due_date else None,
+                    due_date=due_date,
+                    title_prop=title_prop if input_title else None,
+                    title=input_title if input_title else None,
+                )
+                print(f"  ✅ 플래너 업데이트")
+            except Exception as e:
+                print(f"  ⚠️ 플래너 업데이트 실패: {e}")
+
+        elif action == "delete" and input_task_id:
+            try:
+                requests.patch(
+                    f"https://api.notion.com/v1/pages/{input_task_id}",
+                    headers=NOTION_HEADERS,
+                    json={"archived": True},
+                    timeout=30,
+                )
+                print(f"  🗑️ 플래너 아카이브 완료")
+            except Exception as e:
+                print(f"  ⚠️ 플래너 아카이브 실패: {e}")
+
+    # 플래너 전체 조회 후 저장
+    try:
+        pages = get_notion_pages(PLANNER_DB_ID)
+    except Exception as e:
+        print(f"  ⚠️ 플래너 데이터 조회 실패: {e}")
+        return
+
+    planner_tasks = []
+    for page in pages:
+        title = get_page_title(page, title_prop)
+        if not title.strip():
+            continue
+        planner_tasks.append({
+            "notion_id": page["id"],
+            "title": title,
+            "completed": get_page_completed(page, status_prop, done_value),
+            "due_date": get_page_date(page, date_prop) if date_prop else None,
+            "due_time": None,
+        })
+
+    planner_tasks.sort(key=lambda x: (x["completed"], x["due_date"] or "9999-12-31"))
+    now_iso = datetime.now(timezone.utc).isoformat()
+    save_json(PLANNER_FILE, {
+        "tasks": planner_tasks,
+        "last_sync": now_iso,
+        "total": len(planner_tasks),
+    })
+    print(f"  📋 플래너 {len(planner_tasks)}개 항목 저장 완료")
+
+
 # ── 메인 ─────────────────────────────────────────────────
 def main():
     os.makedirs("data", exist_ok=True)
@@ -341,7 +453,7 @@ def main():
     directly_updated_ms_ids = set()
     input_action  = os.environ.get("INPUT_ACTION",    "").strip()
     input_task_id = os.environ.get("INPUT_TASK_ID",   "").strip()
-    if input_action and input_task_id:
+    if input_action and input_task_id and not input_action.startswith("planner_"):
         print(f"🎯 직접 업데이트: action={input_action}, task={input_task_id}")
         input_completed_str = os.environ.get("INPUT_COMPLETED", "").strip()
         input_title    = os.environ.get("INPUT_TITLE",    "").strip()
@@ -650,6 +762,8 @@ def main():
 
     print(f"\n✨ 동기화 완료!")
     print(f"  MS 생성: {stats['created_in_ms']} | Notion 생성: {stats['created_in_notion']} | 업데이트: {stats['updated']} | 오류: {stats['errors']}")
+
+    run_planner(input_action, input_task_id)
 
 
 if __name__ == "__main__":
