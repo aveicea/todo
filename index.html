@@ -419,10 +419,10 @@ async function togglePlanner(e, notionId, cur) {
   e.stopPropagation();
   if (!notionId) return;
   const next = !cur;
+  const preSave = JSON.stringify(allPlanner);
   const task = allPlanner.find(t => t.notion_id === notionId);
   if (task) task.completed = next;
   renderTasks();
-  const preSave = JSON.stringify(allPlanner);
   const ok = await triggerUpdate({ action: 'planner_toggle', task_id: notionId, completed: String(next), title: '', due_date: '', due_time: '' });
   if (!ok) {
     if (task) task.completed = cur;
