@@ -298,7 +298,7 @@ async function loadTasks() {
 function renderTasks() {
   const today = todayStr();
   const tasks = allTasks.filter(t => {
-    if (currentFilter === 'today')   return t.completed ? (t.due_date && t.due_date.startsWith(today)) : true;
+    if (currentFilter === 'today')   return t.completed ? (t.due_date && t.due_date.startsWith(today)) : (!t.due_date || t.due_date <= today);
     if (currentFilter === 'pending') return !t.completed;
     return true;
   });
@@ -490,7 +490,7 @@ async function triggerUpdate(inputs) {
         body: JSON.stringify({ ref: 'main', inputs }) }
     );
     if (r.status === 401 || r.status === 403) { localStorage.removeItem('gh_pat'); showSetup(); return false; }
-    if (r.status === 204) { startFastPoll(); return true; }
+    if (r.status === 204) { return true; }
     return false;
   } catch { return false; }
 }
@@ -500,6 +500,7 @@ async function triggerSync() {
   btn.disabled = true; btn.textContent = '…';
   await loadTasks();
   const ok = await triggerUpdate({ action: '', task_id: '', completed: '', title: '', due_date: '', due_time: '' });
+  if (ok) startFastPoll();
   btn.textContent = ok ? '✓' : '!';
   setTimeout(() => { btn.textContent = '↺'; btn.disabled = false; }, 3000);
 }
