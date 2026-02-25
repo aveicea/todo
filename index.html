@@ -317,15 +317,10 @@ function renderTasks() {
     html += `<div class="task-group-label">완료 ${done.length}</div>`;
     html += done.length ? done.map(taskHTML).join('') : '<div style="height:4px"></div>';
   } else if (currentFilter === 'all') {
-    if (!tasks.length) { list.innerHTML = ''; return; }
-    if (pending.length) {
-      if (done.length) html += `<div class="task-group-label">미완료 ${pending.length}</div>`;
-      html += pending.map(taskHTML).join('');
-    }
-    if (done.length) {
-      if (pending.length) html += `<div class="task-group-label">완료 ${done.length}</div>`;
-      html += done.map(taskHTML).join('');
-    }
+    html += `<div class="task-group-label">미완료 ${pending.length}</div>`;
+    html += pending.length ? pending.map(taskHTML).join('') : '<div style="height:6px"></div>';
+    html += `<div class="task-group-label">완료 ${done.length}</div>`;
+    html += done.length ? done.map(taskHTML).join('') : '<div style="height:4px"></div>';
   } else {
     if (!tasks.length) { list.innerHTML = ''; return; }
     html += tasks.sort(sortFn).map(taskHTML).join('');
