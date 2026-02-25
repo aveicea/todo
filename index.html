@@ -442,13 +442,11 @@ async function toggleImportance(e, msId, cur) {
   if (!msId) return;
   const next = cur === 'high' ? 'normal' : 'high';
   const task = allTasks.find(t => t.ms_id === msId);
-  const preSave = JSON.stringify(allTasks);
   if (task) task.importance = next;
   updateCache(msId, { importance: next });
   renderTasks();
   const ok = await triggerUpdate({ action: 'update', task_id: msId, completed: '', title: '', due_date: '', due_time: '', importance: next });
   if (!ok) { if (task) { task.importance = cur; updateCache(msId, { importance: cur }); renderTasks(); } }
-  else startFastPoll(preSave);
 }
 
 async function togglePlanner(e, notionId, cur) {
