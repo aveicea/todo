@@ -286,7 +286,7 @@ async function loadTasks() {
 function renderTasks() {
   const today = todayStr();
   const tasks = allTasks.filter(t => {
-    if (currentFilter === 'today')   return !t.completed && (!t.due_date || t.due_date <= today);
+    if (currentFilter === 'today')   return !t.due_date || t.due_date <= today;
     if (currentFilter === 'pending') return !t.completed;
     return true;
   });
@@ -301,12 +301,13 @@ function renderTasks() {
   const done    = tasks.filter(t =>  t.completed).sort(sortFn);
   let html = '';
 
+  const showGroups = currentFilter === 'all' || currentFilter === 'today';
   if (pending.length) {
-    if (currentFilter === 'all' && done.length)
+    if (showGroups && done.length)
       html += `<div class="task-group-label">미완료 ${pending.length}</div>`;
     html += pending.map(taskHTML).join('');
   }
-  if (done.length && currentFilter === 'all') {
+  if (done.length && showGroups) {
     if (pending.length)
       html += `<div class="task-group-label">완료 ${done.length}</div>`;
     html += done.map(taskHTML).join('');
