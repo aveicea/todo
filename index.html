@@ -339,8 +339,14 @@ function renderTasks() {
     if (timeCmp !== 0) return timeCmp;
     return (a.title || '').localeCompare(b.title || '', 'ko');
   };
-  const pending = tasks.filter(t => !t.completed).sort(sortFn);
-  const done    = tasks.filter(t =>  t.completed).sort(sortFn);
+  const todaySortFn = (a, b) => {
+    const ia = a.importance === 'high' ? 0 : 1, ib = b.importance === 'high' ? 0 : 1;
+    if (ia !== ib) return ia - ib;
+    return sortFn(a, b);
+  };
+  const activeSortFn = currentFilter === 'today' ? todaySortFn : sortFn;
+  const pending = tasks.filter(t => !t.completed).sort(activeSortFn);
+  const done    = tasks.filter(t =>  t.completed).sort(activeSortFn);
   let html = '';
 
   if (currentFilter === 'today') {
