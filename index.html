@@ -328,7 +328,9 @@ function renderTasks() {
   const list = document.getElementById('task-list');
   const sortFn = (a, b) => {
     const da = a.due_date || '9999-12-31', db = b.due_date || '9999-12-31';
-    return sortAsc ? da.localeCompare(db) : db.localeCompare(da);
+    const dateCmp = sortAsc ? da.localeCompare(db) : db.localeCompare(da);
+    if (dateCmp !== 0) return dateCmp;
+    return (a.title || '').localeCompare(b.title || '', 'ko');
   };
   const pending = tasks.filter(t => !t.completed).sort(sortFn);
   const done    = tasks.filter(t =>  t.completed).sort(sortFn);
@@ -339,7 +341,7 @@ function renderTasks() {
     html += pending.length ? pending.map(taskHTML).join('') : '<div style="height:6px"></div>';
     html += `<div class="task-group-label">완료 ${done.length}</div>`;
     html += done.length ? done.map(taskHTML).join('') : '<div style="height:4px"></div>';
-    const todayPlanner = allPlanner.filter(t => t.due_date && t.due_date.startsWith(today));
+    const todayPlanner = allPlanner.filter(t => t.due_date && t.due_date.startsWith(today)).sort(sortFn);
     if (todayPlanner.length) {
       const plannerPending = todayPlanner.filter(t => !t.completed).length;
       const plannerTotal = todayPlanner.length;
