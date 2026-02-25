@@ -2,7 +2,7 @@ name: Sync Microsoft To Do ↔ Notion
 
 on:
   schedule:
-    - cron: '*/30 * * * *'  # 30분마다 자동 실행
+    - cron: '*/5 * * * *'  # 5분마다 자동 실행
   workflow_dispatch:
     inputs:
       action:

@@ -317,6 +317,22 @@ def main():
                 ms_to_notion[stored_id] = page_id
                 print(f"  🔗 ID 속성으로 매핑 복구: {ms_tasks[stored_id].get('title', '')}")
 
+    # 중복 매핑 정리: 같은 notion_id를 여러 ms_id가 가리키면 유효한 것(ms_tasks에 있는) 하나만 유지
+    # (이전 버그로 생성된 stale 매핑 파일 일괄 정리)
+    seen_notion_ids: dict[str, str] = {}
+    for ms_id in list(ms_to_notion.keys()):
+        notion_id = ms_to_notion[ms_id]
+        if notion_id in seen_notion_ids:
+            prev_ms_id = seen_notion_ids[notion_id]
+            # ms_tasks에 있는 쪽 우선, 둘 다 없으면 나중 것 제거
+            if ms_id in ms_tasks:
+                ms_to_notion.pop(prev_ms_id, None)
+                seen_notion_ids[notion_id] = ms_id
+            else:
+                ms_to_notion.pop(ms_id, None)
+        else:
+            seen_notion_ids[notion_id] = ms_id
+
     notion_to_ms = {v: k for k, v in ms_to_notion.items()}
 
     stats = {"created_in_ms": 0, "created_in_notion": 0, "updated": 0, "errors": 0}
