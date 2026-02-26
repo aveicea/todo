@@ -243,19 +243,20 @@
   </div>
 
   <div class="setup-panel" id="setup-panel">
-    <p class="setup-desc">GitHub PAT 입력 (Actions Read/Write)</p>
+    <p class="setup-desc">Vercel URL 및 API 키 입력</p>
+    <div class="input-row" style="margin-bottom:5px;">
+      <input type="text" id="vercel-url-input" placeholder="https://xxx.vercel.app" autocomplete="off">
+    </div>
     <div class="input-row">
-      <input type="password" id="pat-input" placeholder="ghp_..." autocomplete="off">
-      <button onclick="savePAT()">저장</button>
+      <input type="password" id="api-key-input" placeholder="API 키" autocomplete="off">
+      <button onclick="saveVercelConfig()">저장</button>
     </div>
   </div>
 
 </div>
 <script>
-const REPO        = 'aveicea/todo';
 const TASKS_URL   = 'https://raw.githubusercontent.com/aveicea/todo/main/data/tasks.json';
 const PLANNER_URL = 'https://raw.githubusercontent.com/aveicea/todo/main/data/planner.json';
-const WORKFLOW    = 'sync.yml';
 
 let allTasks = [];
 const pendingImportance = new Map();
@@ -264,6 +265,39 @@ let currentFilter = 'today';
 let editingTaskId = null;
 let editingSource = 'todo'; // 'todo' | 'planner'
 let sortAsc = true;
+
+// ── Vercel API ────────────────────────────────────────────
+function vercelUrl() { return (localStorage.getItem('vercel_url') || '').replace(/\/$/, ''); }
+function vercelKey() { return localStorage.getItem('api_key') || ''; }
+
+async function callVercel(params) {
+  const url = vercelUrl();
+  const key = vercelKey();
+  if (!url || !key) { showSetup(); return false; }
+  try {
+    const r = await fetch(`${url}/api/action`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'X-API-Key': key },
+      body: JSON.stringify(params),
+    });
+    if (r.status === 401 || r.status === 403) { showSetup(); return 'auth'; }
+    if (!r.ok) return false;
+    return await r.json();
+  } catch { return false; }
+}
+
+// create 후 GitHub 파일 반영 전까지 유지할 pending 태스크
+function getPendingTasks() {
+  try { return JSON.parse(localStorage.getItem('pending_tasks') || '[]'); } catch { return []; }
+}
+function addPendingTask(task) {
+  const p = getPendingTasks(); p.push(task);
+  localStorage.setItem('pending_tasks', JSON.stringify(p));
+}
+function cleanPendingTasks(serverIds) {
+  const p = getPendingTasks().filter(t => !serverIds.has(t.ms_id));
+  localStorage.setItem('pending_tasks', JSON.stringify(p));
+}
 
 document.documentElement.style.setProperty('--accent', '#888');
 
@@ -288,14 +322,15 @@ async function loadTasks() {
     try { const c = JSON.parse(cached); allTasks = c.tasks || []; renderTasks(); } catch {}
   }
   try {
-    const pat = localStorage.getItem('gh_pat');
-    const headers = pat ? { Authorization: `Bearer ${pat}`, Accept: 'application/vnd.github.raw+json' } : {};
-    const apiUrl = `https://api.github.com/repos/${REPO}/contents/data/tasks.json`;
-    const r = await fetch(pat ? apiUrl : TASKS_URL + '?t=' + Date.now(), { headers });
+    const r = await fetch(TASKS_URL + '?t=' + Date.now());
     if (!r.ok) throw new Error();
     const data = await r.json();
+    // pending_tasks: Vercel로 만든 태스크가 GitHub 파일에 아직 없을 때 보정
+    const serverIds = new Set((data.tasks || []).map(t => t.ms_id));
+    cleanPendingTasks(serverIds);
+    const pending = getPendingTasks().filter(t => !serverIds.has(t.ms_id));
+    allTasks = [...(data.tasks || []), ...pending];
     localStorage.setItem('tasks_cache', JSON.stringify(data));
-    allTasks = data.tasks || [];
     pendingImportance.forEach((imp, msId) => {
       const t = allTasks.find(t => t.ms_id === msId);
       if (!t) { pendingImportance.delete(msId); return; }
@@ -316,11 +351,8 @@ async function loadPlanner() {
   if (cached && !allPlanner.length) {
     try { const c = JSON.parse(cached); allPlanner = c.tasks || []; renderTasks(); } catch {}
   }
-  if (plannerPollTimer && !arguments[0]) return; // 낙관적 업데이트 보호 중이면 fetch 건너뜀
   try {
-    const pat = localStorage.getItem('gh_pat');
-    const headers = pat ? { Authorization: `Bearer ${pat}`, Accept: 'application/vnd.github.raw+json' } : {};
-    const r = await fetch(pat ? `https://api.github.com/repos/${REPO}/contents/data/planner.json` : PLANNER_URL + '?t=' + Date.now(), { headers });
+    const r = await fetch(PLANNER_URL + '?t=' + Date.now());
     if (!r.ok) throw new Error();
     const data = await r.json();
     localStorage.setItem('planner_cache', JSON.stringify(data));
@@ -436,8 +468,8 @@ async function toggleTask(e, msId, cur) {
   if (task) task.completed = next;
   updateCache(msId, { completed: next });
   renderTasks();
-  const ok = await triggerUpdate({ action: 'toggle_complete', task_id: msId, completed: String(next) });
-  if (ok !== true) {
+  const result = await callVercel({ action: 'toggle_complete', ms_id: msId, notion_id: task?.notion_id || '', completed: String(next) });
+  if (!result?.ok) {
     if (task) task.completed = cur;
     updateCache(msId, { completed: cur });
     renderTasks();
@@ -453,23 +485,27 @@ async function toggleImportance(e, msId, cur) {
   pendingImportance.set(msId, next);
   updateCache(msId, { importance: next });
   renderTasks();
-  const ok = await triggerUpdate({ action: 'update', task_id: msId, completed: '', title: '', due_date: '', due_time: '', importance: next });
-  if (ok !== true) { pendingImportance.delete(msId); if (task) { task.importance = cur; updateCache(msId, { importance: cur }); renderTasks(); } }
+  const result = await callVercel({ action: 'update', ms_id: msId, notion_id: task?.notion_id || '', importance: next });
+  if (!result?.ok) {
+    pendingImportance.delete(msId);
+    if (task) { task.importance = cur; updateCache(msId, { importance: cur }); renderTasks(); }
+  } else {
+    pendingImportance.delete(msId);
+  }
 }
 
 async function togglePlanner(e, notionId, cur) {
   e.stopPropagation();
   if (!notionId) return;
   const next = !cur;
-  const preSave = JSON.stringify(allPlanner);
   const task = allPlanner.find(t => t.notion_id === notionId);
   if (task) task.completed = next;
   renderTasks();
-  const ok = await triggerUpdate({ action: 'planner_toggle', task_id: notionId, completed: String(next), title: '', due_date: '', due_time: '' });
-  if (ok !== true) {
+  const result = await callVercel({ action: 'planner_toggle', task_id: notionId, completed: String(next) });
+  if (!result?.ok) {
     if (task) task.completed = cur;
     renderTasks();
-  } else startPlannerPoll(preSave);
+  }
 }
 
 function openPlannerDetail(notionId) {
@@ -531,28 +567,38 @@ async function saveTask() {
   if (editingSource === 'planner') {
     const task = allPlanner.find(t => t.notion_id === editingTaskId);
     if (task) { task.title = title; task.due_date = dateVal || null; task.due_time = timeVal || null; }
-    const preSave = JSON.stringify(allPlanner);
     const savedId = editingTaskId;
     closeDetail(); renderTasks();
-    const ok = await triggerUpdate({ action: 'planner_update', task_id: savedId, title, due_date: dateVal || 'none', due_time: timeVal || '', completed: String(task?.completed ?? false) });
-    if (ok === true) startPlannerPoll(preSave);
+    await callVercel({ action: 'planner_update', task_id: savedId, title, due_date: dateVal || 'none', due_time: timeVal || '', completed: String(task?.completed ?? false) });
   } else if (editingTaskId === 'new') {
-    const preSave = JSON.stringify(allTasks);
     const tmpId = 'tmp_' + Date.now();
-    const newTask = { ms_id: tmpId, title, due_date: dateVal || null, due_time: timeVal || null, completed: false };
+    const newTask = { ms_id: tmpId, title, due_date: dateVal || null, due_time: timeVal || null, completed: false, importance: 'normal' };
     allTasks.push(newTask);
     closeDetail(); renderTasks();
-    const ok1 = await triggerUpdate({ action: 'create', task_id: '', title, due_date: dateVal || 'none', due_time: timeVal || '', completed: '' });
-    if (ok1 === true) startFastPoll(preSave);
+    const result = await callVercel({ action: 'create', title, due_date: dateVal || null, due_time: timeVal || null, importance: 'normal' });
+    if (result?.ok && result.task) {
+      const idx = allTasks.findIndex(t => t.ms_id === tmpId);
+      if (idx >= 0) allTasks[idx] = result.task; else allTasks.push(result.task);
+      addPendingTask(result.task);
+      const cached = JSON.parse(localStorage.getItem('tasks_cache') || '{}');
+      if (cached.tasks) {
+        const ci = cached.tasks.findIndex(t => t.ms_id === tmpId);
+        if (ci >= 0) cached.tasks[ci] = result.task; else cached.tasks.push(result.task);
+        localStorage.setItem('tasks_cache', JSON.stringify(cached));
+      }
+      renderTasks();
+    } else if (!result?.ok) {
+      allTasks = allTasks.filter(t => t.ms_id !== tmpId);
+      renderTasks();
+    }
   } else {
-    const preSave = JSON.stringify(allTasks);
     const task = allTasks.find(t => t.ms_id === editingTaskId);
     if (task) { task.title = title; task.due_date = dateVal || null; task.due_time = timeVal || null; }
     updateCache(editingTaskId, { title, due_date: dateVal || null, due_time: timeVal || null });
     const savedId = editingTaskId;
+    const savedNotion = task?.notion_id || '';
     closeDetail(); renderTasks();
-    const ok2 = await triggerUpdate({ action: 'update', task_id: savedId, title, due_date: dateVal || 'none', due_time: timeVal || '' });
-    if (ok2 === true) startFastPoll(preSave);
+    await callVercel({ action: 'update', ms_id: savedId, notion_id: savedNotion, title, due_date: dateVal || 'none', due_time: timeVal || '' });
   }
   btn.disabled = false; btn.textContent = '저장';
 }
@@ -569,27 +615,25 @@ async function deleteTask() {
   btn.dataset.confirm = '';
   if (editingSource === 'planner') {
     const notionId = editingTaskId;
-    const preSave = JSON.stringify(allPlanner);
     allPlanner = allPlanner.filter(t => t.notion_id !== notionId);
     try {
       const cached = JSON.parse(localStorage.getItem('planner_cache') || '{}');
       if (cached.tasks) { cached.tasks = cached.tasks.filter(t => t.notion_id !== notionId); localStorage.setItem('planner_cache', JSON.stringify(cached)); }
     } catch {}
     closeDetail(); renderTasks();
-    const ok = await triggerUpdate({ action: 'planner_delete', task_id: notionId, completed: '', title: '', due_date: '', due_time: '' });
-    if (ok === true) startPlannerPoll(preSave);
+    await callVercel({ action: 'planner_delete', task_id: notionId });
     return;
   }
   const msId = editingTaskId;
-  const preSave = JSON.stringify(allTasks);
+  const msTask = allTasks.find(t => t.ms_id === msId);
+  const notionId = msTask?.notion_id || '';
   allTasks = allTasks.filter(t => t.ms_id !== msId);
   try {
     const cached = JSON.parse(localStorage.getItem('tasks_cache') || '{}');
     if (cached.tasks) { cached.tasks = cached.tasks.filter(t => t.ms_id !== msId); localStorage.setItem('tasks_cache', JSON.stringify(cached)); }
   } catch {}
   closeDetail(); renderTasks();
-  const ok = await triggerUpdate({ action: 'delete', task_id: msId, completed: '', title: '', due_date: '', due_time: '' });
-  if (ok === true) startFastPoll(preSave);
+  await callVercel({ action: 'delete', ms_id: msId, notion_id: notionId });
 }
 
 function updateCache(msId, changes) {
@@ -603,109 +647,40 @@ function updateCache(msId, changes) {
   } catch {}
 }
 
-let fastPollTimer = null;
-function startFastPoll(preSaveHash) {
-  if (fastPollTimer) clearInterval(fastPollTimer);
-  let attempts = 0;
-  fastPollTimer = setInterval(async () => {
-    attempts++;
-    try {
-      const pat = localStorage.getItem('gh_pat');
-      const headers = pat ? { Authorization: `Bearer ${pat}`, Accept: 'application/vnd.github.raw+json' } : {};
-      const r = await fetch(
-        pat ? `https://api.github.com/repos/${REPO}/contents/data/tasks.json`
-            : TASKS_URL + '?t=' + Date.now(),
-        { headers }
-      );
-      if (!r.ok) throw new Error();
-      const data = await r.json();
-      const serverHash = JSON.stringify(data.tasks || []);
-      if (preSaveHash && serverHash === preSaveHash && attempts < 24) return;
-      allTasks = data.tasks || [];
-      localStorage.setItem('tasks_cache', JSON.stringify(data));
-      document.getElementById('badge').className = 'dot';
-      renderTasks();
-      clearInterval(fastPollTimer);
-      fastPollTimer = null;
-    } catch {}
-  }, 3000);
-}
-
-let plannerPollTimer = null;
-function startPlannerPoll(preSaveHash) {
-  if (plannerPollTimer) clearInterval(plannerPollTimer);
-  let attempts = 0;
-  plannerPollTimer = setInterval(async () => {
-    attempts++;
-    try {
-      const pat = localStorage.getItem('gh_pat');
-      const headers = pat ? { Authorization: `Bearer ${pat}`, Accept: 'application/vnd.github.raw+json' } : {};
-      const r = await fetch(
-        pat ? `https://api.github.com/repos/${REPO}/contents/data/planner.json`
-            : PLANNER_URL + '?t=' + Date.now(),
-        { headers }
-      );
-      if (!r.ok) throw new Error();
-      const data = await r.json();
-      const serverHash = JSON.stringify(data.tasks || []);
-      if (preSaveHash && serverHash === preSaveHash) {
-        if (attempts < 24) return; // 아직 서버 반영 대기 중
-        // 72초 지났는데도 서버가 안 바뀜 → 낙관적 상태 그대로 유지하고 종료
-        clearInterval(plannerPollTimer);
-        plannerPollTimer = null;
-        return;
-      }
-      allPlanner = data.tasks || [];
-      localStorage.setItem('planner_cache', JSON.stringify(data));
-      renderTasks();
-      clearInterval(plannerPollTimer);
-      plannerPollTimer = null;
-    } catch {}
-  }, 3000);
-}
-
-async function triggerUpdate(inputs) {
-  const pat = localStorage.getItem('gh_pat');
-  if (!pat) { showSetup(); return false; }
-  const payload = { importance: '', ...inputs };
-  try {
-    const r = await fetch(
-      `https://api.github.com/repos/${REPO}/actions/workflows/${WORKFLOW}/dispatches`,
-      { method: 'POST',
-        headers: { Authorization: `Bearer ${pat}`, Accept: 'application/vnd.github+json', 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ref: 'main', inputs: payload }) }
-    );
-    if (r.status === 401 || r.status === 403) { localStorage.removeItem('gh_pat'); showSetup(); return 'auth'; }
-    if (r.status === 204) { return true; }
-    return false;
-  } catch { return false; }
-}
 
 async function triggerSync() {
   const btn = document.getElementById('sync-btn');
   btn.disabled = true; btn.textContent = '…';
-  await Promise.all([loadTasks(), loadPlanner(true)]);
-  const preSaveTasks = JSON.stringify(allTasks);
-  const preSavePlanner = JSON.stringify(allPlanner);
-  const ok = await triggerUpdate({ action: '', task_id: '', completed: '', title: '', due_date: '', due_time: '' });
-  if (ok === true) { startFastPoll(preSaveTasks); startPlannerPoll(preSavePlanner); }
-  btn.textContent = ok === true ? '✓' : '!';
-  setTimeout(() => { btn.textContent = '↺'; btn.disabled = false; }, 3000);
+  try {
+    await Promise.all([loadTasks(), loadPlanner()]);
+    btn.textContent = '✓';
+  } catch {
+    btn.textContent = '!';
+  }
+  setTimeout(() => { btn.textContent = '↺'; btn.disabled = false; }, 2000);
 }
 
-function showSetup() { document.getElementById('setup-panel').classList.add('visible'); }
+function showSetup() {
+  document.getElementById('vercel-url-input').value = vercelUrl();
+  document.getElementById('api-key-input').value = '';
+  document.getElementById('setup-panel').classList.add('visible');
+}
 
-function savePAT() {
-  const val = document.getElementById('pat-input').value.trim();
-  if (!val) return;
-  localStorage.setItem('gh_pat', val);
-  document.getElementById('pat-input').value = '';
+function saveVercelConfig() {
+  const url = document.getElementById('vercel-url-input').value.trim().replace(/\/$/, '');
+  const key = document.getElementById('api-key-input').value.trim();
+  if (!url || !key) return;
+  localStorage.setItem('vercel_url', url);
+  localStorage.setItem('api_key', key);
+  document.getElementById('vercel-url-input').value = '';
+  document.getElementById('api-key-input').value = '';
   document.getElementById('setup-panel').classList.remove('visible');
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  const input = document.getElementById('pat-input');
-  if (input) input.addEventListener('keydown', e => { if (e.key === 'Enter') savePAT(); });
+  const keyInput = document.getElementById('api-key-input');
+  if (keyInput) keyInput.addEventListener('keydown', e => { if (e.key === 'Enter') saveVercelConfig(); });
+  if (!vercelUrl() || !vercelKey()) showSetup();
   loadTasks();
   loadPlanner();
   setInterval(() => { loadTasks(); loadPlanner(); }, 120000);
