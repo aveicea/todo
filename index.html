@@ -54,7 +54,6 @@
     }
     .nav-btn:hover:not(:disabled) { background: #f0f0f0; color: #333; }
     .nav-btn:disabled { opacity: 0.4; cursor: not-allowed; }
-    #sync-btn { margin-bottom: 4px; }
     .imp-star { font-size: 12px; color: #e0e0e0; cursor: pointer; flex-shrink: 0; padding: 2px 0 2px 2px; transition: color 0.15s; line-height: 1; }
     .imp-star:hover { color: #f5a623; }
     .imp-star.high { color: #f5a623; }
@@ -401,7 +400,7 @@ function renderTasks() {
     html += `<div class="task-group-label">완료 ${done.length}</div>`;
     html += done.length ? done.map(taskHTML).join('') : '<div style="height:4px"></div>';
   } else {
-    if (!tasks.length) { list.innerHTML = ''; return; }
+    if (!tasks.length) { list.innerHTML = '<div class="empty-msg">미완료 항목이 없습니다</div>'; return; }
     html += tasks.sort(sortFn).map(taskHTML).join('');
   }
   list.innerHTML = html;
@@ -503,7 +502,7 @@ function openPlannerDetail(notionId) {
   const task = allPlanner.find(t => t.notion_id === notionId);
   if (!task) return;
   editingTaskId = notionId;
-  document.querySelector('.detail-field:has(#detail-time)').style.display = 'none';
+  document.getElementById('detail-time').closest('.detail-field').style.display = 'none';
   editingSource = 'planner';
   document.getElementById('detail-label').textContent = '편집';
   document.getElementById('detail-title').value = task.title || '';
@@ -518,7 +517,7 @@ function openDetail(msId) {
   if (!task) return;
   editingTaskId = msId;
   editingSource = 'todo';
-  document.querySelector('.detail-field:has(#detail-time)').style.display = '';
+  document.getElementById('detail-time').closest('.detail-field').style.display = '';
   document.getElementById('detail-label').textContent = '편집';
   document.getElementById('detail-title').value = task.title || '';
   document.getElementById('detail-date').value  = task.due_date || '';
@@ -530,7 +529,7 @@ function openDetail(msId) {
 function openAddPanel() {
   editingTaskId = 'new';
   editingSource = 'todo';
-  document.querySelector('.detail-field:has(#detail-time)').style.display = '';
+  document.getElementById('detail-time').closest('.detail-field').style.display = '';
   document.getElementById('detail-label').textContent = '추가';
   document.getElementById('detail-title').value = '';
   document.getElementById('detail-date').value  = '';
@@ -642,12 +641,9 @@ function updateCache(msId, changes) {
 async function triggerSync() {
   const btn = document.getElementById('sync-btn');
   btn.disabled = true; btn.textContent = '…';
-  try {
-    await Promise.all([loadTasks(), loadPlanner()]);
-    btn.textContent = '✓';
-  } catch {
-    btn.textContent = '!';
-  }
+  await Promise.all([loadTasks(), loadPlanner()]);
+  const hasError = document.getElementById('badge').className.includes('error');
+  btn.textContent = hasError ? '!' : '✓';
   setTimeout(() => { btn.textContent = '↺'; btn.disabled = false; }, 2000);
 }
 
