@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
     inputs:
       action:
-        description: 'toggle_complete | update'
+        description: 'toggle_complete | update | create | delete | planner_toggle | planner_update | planner_delete'
         required: false
         default: ''
       task_id:
@@ -76,5 +76,7 @@ jobs:
             git push && break
             echo "push failed, retry $i..."
             sleep $((i * 2))
-            git pull --rebase --autostash origin main
+            git fetch origin main
+            git rebase --abort 2>/dev/null || true
+            git rebase --autostash FETCH_HEAD || (git rebase --abort && git merge FETCH_HEAD -X ours --no-edit)
           done
