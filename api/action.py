@@ -400,16 +400,6 @@ class handler(BaseHTTPRequestHandler):
         self.end_headers()
 
     def do_POST(self):
-        api_key = self.headers.get("X-API-Key", "")
-        expected = _env("API_SECRET")
-        if expected and api_key != expected:
-            self.send_response(401)
-            self._cors()
-            self.send_header("Content-Type", "application/json")
-            self.end_headers()
-            self.wfile.write(b'{"ok":false,"error":"Unauthorized"}')
-            return
-
         content_len = int(self.headers.get("Content-Length", 0))
         try:
             body = json.loads(self.rfile.read(content_len) or b"{}")

@@ -243,12 +243,9 @@
   </div>
 
   <div class="setup-panel" id="setup-panel">
-    <p class="setup-desc">Vercel URL 및 API 키 입력</p>
-    <div class="input-row" style="margin-bottom:5px;">
-      <input type="text" id="vercel-url-input" placeholder="https://xxx.vercel.app" autocomplete="off">
-    </div>
+    <p class="setup-desc">Vercel URL 입력</p>
     <div class="input-row">
-      <input type="password" id="api-key-input" placeholder="API 키" autocomplete="off">
+      <input type="text" id="vercel-url-input" placeholder="https://xxx.vercel.app" autocomplete="off">
       <button onclick="saveVercelConfig()">저장</button>
     </div>
   </div>
@@ -268,19 +265,16 @@ let sortAsc = true;
 
 // ── Vercel API ────────────────────────────────────────────
 function vercelUrl() { return (localStorage.getItem('vercel_url') || '').replace(/\/$/, ''); }
-function vercelKey() { return localStorage.getItem('api_key') || ''; }
 
 async function callVercel(params) {
   const url = vercelUrl();
-  const key = vercelKey();
-  if (!url || !key) { showSetup(); return false; }
+  if (!url) { showSetup(); return false; }
   try {
     const r = await fetch(`${url}/api/action`, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'X-API-Key': key },
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(params),
     });
-    if (r.status === 401 || r.status === 403) { showSetup(); return 'auth'; }
     if (!r.ok) return false;
     return await r.json();
   } catch { return false; }
@@ -662,25 +656,21 @@ async function triggerSync() {
 
 function showSetup() {
   document.getElementById('vercel-url-input').value = vercelUrl();
-  document.getElementById('api-key-input').value = '';
   document.getElementById('setup-panel').classList.add('visible');
 }
 
 function saveVercelConfig() {
   const url = document.getElementById('vercel-url-input').value.trim().replace(/\/$/, '');
-  const key = document.getElementById('api-key-input').value.trim();
-  if (!url || !key) return;
+  if (!url) return;
   localStorage.setItem('vercel_url', url);
-  localStorage.setItem('api_key', key);
   document.getElementById('vercel-url-input').value = '';
-  document.getElementById('api-key-input').value = '';
   document.getElementById('setup-panel').classList.remove('visible');
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  const keyInput = document.getElementById('api-key-input');
-  if (keyInput) keyInput.addEventListener('keydown', e => { if (e.key === 'Enter') saveVercelConfig(); });
-  if (!vercelUrl() || !vercelKey()) showSetup();
+  const urlInput = document.getElementById('vercel-url-input');
+  if (urlInput) urlInput.addEventListener('keydown', e => { if (e.key === 'Enter') saveVercelConfig(); });
+  if (!vercelUrl()) showSetup();
   loadTasks();
   loadPlanner();
   setInterval(() => { loadTasks(); loadPlanner(); }, 120000);
