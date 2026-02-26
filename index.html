@@ -389,7 +389,7 @@ function taskHTML(t) {
   return `<div class="task-item">
     <div class="task-check ${done}" onclick="toggleTask(event,'${id}',${t.completed})">${t.completed?'✓':''}</div>
     <div class="task-body" onclick="openDetail('${id}')">
-      <div style="display:flex;align-items:center;gap:3px;min-width:0;overflow:hidden">
+      <div style="display:flex;align-items:center;gap:7px;min-width:0;overflow:hidden">
         <div class="task-title ${done}">${escHtml(t.title)}</div>
         <div class="imp-star${imp==='high'?' high':''}" onclick="toggleImportance(event,'${id}','${imp}')" title="중요도">★</div>
       </div>${dueHTML}
