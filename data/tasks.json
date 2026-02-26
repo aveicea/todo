@@ -16,7 +16,7 @@
       "completed": true,
       "due_date": "2026-02-24",
       "due_time": null,
-      "importance": "high"
+      "importance": "normal"
     },
     {
       "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAefbc24AAA=",
@@ -25,10 +25,10 @@
       "completed": true,
       "due_date": "2026-02-25",
       "due_time": "16:00",
-      "importance": "high"
+      "importance": "normal"
     }
   ],
-  "last_sync": "2026-02-26T04:05:00.260037+00:00",
+  "last_sync": "2026-02-26T04:05:52.046369+00:00",
   "total": 3,
   "completed": 2,
   "pending": 1
