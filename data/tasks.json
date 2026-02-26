@@ -24,11 +24,11 @@
       "title": "다이소 5공 펀치",
       "completed": true,
       "due_date": "2026-02-25",
-      "due_time": "16:00",
+      "due_time": null,
       "importance": "normal"
     }
   ],
-  "last_sync": "2026-02-26T04:09:05.916904+00:00",
+  "last_sync": "2026-02-26T04:14:20.460872+00:00",
   "total": 3,
   "completed": 2,
   "pending": 1
