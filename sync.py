@@ -669,6 +669,8 @@ def main():
                             ms_tasks[input_task_id]["dueDateTime"] = (
                                 {"dateTime": f"{d}T{t}:00.0000000", "timeZone": "Korea Standard Time"} if d else None
                             )
+                        if "importance" in ms_kwargs:
+                            ms_tasks[input_task_id]["importance"] = ms_kwargs["importance"]
                 print(f"  ✅ MS Todo 업데이트 완료")
             except Exception as e:
                 print(f"  ⚠️ MS Todo 업데이트 실패: {e}")
