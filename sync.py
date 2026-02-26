@@ -869,6 +869,18 @@ def main():
                     due_date=(notion_date or "") if date_changed else None,
                     importance=notion_importance if imp_changed else None,
                 )
+                # ms_tasks 메모리 갱신: tasks.json 저장 시 최신 상태 반영
+                ms_tasks[ms_id]["status"] = "completed" if notion_done else "notStarted"
+                if date_changed:
+                    if notion_date:
+                        ms_tasks[ms_id]["dueDateTime"] = {
+                            "dateTime": f"{notion_date}T00:00:00.0000000",
+                            "timeZone": "Korea Standard Time",
+                        }
+                    else:
+                        ms_tasks[ms_id]["dueDateTime"] = None
+                if imp_changed:
+                    ms_tasks[ms_id]["importance"] = notion_importance
                 msg = f"{'완료' if notion_done else '미완료'}"
                 if date_changed:
                     msg += f" / 날짜={notion_date}"

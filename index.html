@@ -532,8 +532,9 @@ async function saveTask() {
     const task = allPlanner.find(t => t.notion_id === editingTaskId);
     if (task) { task.title = title; task.due_date = dateVal || null; task.due_time = timeVal || null; }
     const preSave = JSON.stringify(allPlanner);
+    const savedId = editingTaskId;
     closeDetail(); renderTasks();
-    const ok = await triggerUpdate({ action: 'planner_update', task_id: editingTaskId, title, due_date: dateVal || 'none', due_time: timeVal || '', completed: String(task?.completed ?? false) });
+    const ok = await triggerUpdate({ action: 'planner_update', task_id: savedId, title, due_date: dateVal || 'none', due_time: timeVal || '', completed: String(task?.completed ?? false) });
     if (ok === true) startPlannerPoll(preSave);
   } else if (editingTaskId === 'new') {
     const preSave = JSON.stringify(allTasks);
@@ -548,8 +549,9 @@ async function saveTask() {
     const task = allTasks.find(t => t.ms_id === editingTaskId);
     if (task) { task.title = title; task.due_date = dateVal || null; task.due_time = timeVal || null; }
     updateCache(editingTaskId, { title, due_date: dateVal || null, due_time: timeVal || null });
+    const savedId = editingTaskId;
     closeDetail(); renderTasks();
-    const ok2 = await triggerUpdate({ action: 'update', task_id: editingTaskId, title, due_date: dateVal || 'none', due_time: timeVal || '' });
+    const ok2 = await triggerUpdate({ action: 'update', task_id: savedId, title, due_date: dateVal || 'none', due_time: timeVal || '' });
     if (ok2 === true) startFastPoll(preSave);
   }
   btn.disabled = false; btn.textContent = '저장';
