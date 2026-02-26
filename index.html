@@ -204,6 +204,7 @@
     <div style="display:flex;gap:4px;">
       <button class="nav-btn" id="add-btn" title="추가" onclick="openAddPanel()">＋</button>
       <button class="nav-btn" id="sync-btn" title="동기화" onclick="triggerSync()">↺</button>
+      <button class="nav-btn" id="config-btn" title="Vercel URL 설정" onclick="toggleSetup()">⚙</button>
     </div>
   </div>
 
@@ -242,9 +243,11 @@
     </div>
   </div>
 
-  <div class="setup-panel" id="setup-panel" style="display:none">
+  <div class="setup-panel" id="setup-panel">
+    <p class="setup-desc">Vercel URL이 자동 감지되지 않으면 직접 입력하세요</p>
     <div class="input-row">
-      <input type="text" id="vercel-url-input" style="display:none" autocomplete="off">
+      <input type="text" id="vercel-url-input" placeholder="https://xxx.vercel.app" autocomplete="off">
+      <button onclick="saveVercelConfig()">저장</button>
     </div>
   </div>
 
@@ -462,9 +465,7 @@ async function toggleTask(e, msId, cur) {
   renderTasks();
   const result = await callVercel({ action: 'toggle_complete', ms_id: msId, notion_id: task?.notion_id || '', completed: String(next) });
   if (!result?.ok) {
-    if (task) task.completed = cur;
-    updateCache(msId, { completed: cur });
-    renderTasks();
+    document.getElementById('badge').className = 'dot error';
   }
 }
 
@@ -479,8 +480,7 @@ async function toggleImportance(e, msId, cur) {
   renderTasks();
   const result = await callVercel({ action: 'update', ms_id: msId, notion_id: task?.notion_id || '', importance: next });
   if (!result?.ok) {
-    pendingImportance.delete(msId);
-    if (task) { task.importance = cur; updateCache(msId, { importance: cur }); renderTasks(); }
+    document.getElementById('badge').className = 'dot error';
   } else {
     pendingImportance.delete(msId);
   }
@@ -495,8 +495,7 @@ async function togglePlanner(e, notionId, cur) {
   renderTasks();
   const result = await callVercel({ action: 'planner_toggle', task_id: notionId, completed: String(next) });
   if (!result?.ok) {
-    if (task) task.completed = cur;
-    renderTasks();
+    document.getElementById('badge').className = 'dot error';
   }
 }
 
@@ -652,8 +651,18 @@ async function triggerSync() {
   setTimeout(() => { btn.textContent = '↺'; btn.disabled = false; }, 2000);
 }
 
+function toggleSetup() {
+  const panel = document.getElementById('setup-panel');
+  if (panel.classList.contains('visible')) {
+    panel.classList.remove('visible');
+  } else {
+    document.getElementById('vercel-url-input').value = localStorage.getItem('vercel_url') || '';
+    panel.classList.add('visible');
+  }
+}
+
 function showSetup() {
-  document.getElementById('vercel-url-input').value = vercelUrl();
+  document.getElementById('vercel-url-input').value = localStorage.getItem('vercel_url') || '';
   document.getElementById('setup-panel').classList.add('visible');
 }
 
