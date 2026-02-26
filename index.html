@@ -242,11 +242,9 @@
     </div>
   </div>
 
-  <div class="setup-panel" id="setup-panel">
-    <p class="setup-desc">Vercel URL 입력</p>
+  <div class="setup-panel" id="setup-panel" style="display:none">
     <div class="input-row">
-      <input type="text" id="vercel-url-input" placeholder="https://xxx.vercel.app" autocomplete="off">
-      <button onclick="saveVercelConfig()">저장</button>
+      <input type="text" id="vercel-url-input" style="display:none" autocomplete="off">
     </div>
   </div>
 
@@ -264,7 +262,7 @@ let editingSource = 'todo'; // 'todo' | 'planner'
 let sortAsc = true;
 
 // ── Vercel API ────────────────────────────────────────────
-function vercelUrl() { return (localStorage.getItem('vercel_url') || '').replace(/\/$/, ''); }
+function vercelUrl() { return (localStorage.getItem('vercel_url') || window.location.origin).replace(/\/$/, ''); }
 
 async function callVercel(params) {
   const url = vercelUrl();
@@ -670,7 +668,7 @@ function saveVercelConfig() {
 document.addEventListener('DOMContentLoaded', () => {
   const urlInput = document.getElementById('vercel-url-input');
   if (urlInput) urlInput.addEventListener('keydown', e => { if (e.key === 'Enter') saveVercelConfig(); });
-  if (!vercelUrl()) showSetup();
+  // vercel URL은 window.location.origin으로 자동 감지되므로 setup 불필요
   loadTasks();
   loadPlanner();
   setInterval(() => { loadTasks(); loadPlanner(); }, 120000);
