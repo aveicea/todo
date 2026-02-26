@@ -389,7 +389,7 @@ function taskHTML(t) {
   return `<div class="task-item">
     <div class="task-check ${done}" onclick="toggleTask(event,'${id}',${t.completed})">${t.completed?'✓':''}</div>
     <div class="task-body" onclick="openDetail('${id}')">
-      <div style="display:flex;align-items:center;gap:3px;min-width:0;overflow:hidden">
+      <div style="display:flex;align-items:center;gap:7px;min-width:0;overflow:hidden">
         <div class="task-title ${done}">${escHtml(t.title)}</div>
         <div class="imp-star${imp==='high'?' high':''}" onclick="toggleImportance(event,'${id}','${imp}')" title="중요도">★</div>
       </div>${dueHTML}
@@ -437,7 +437,7 @@ async function toggleTask(e, msId, cur) {
   updateCache(msId, { completed: next });
   renderTasks();
   const ok = await triggerUpdate({ action: 'toggle_complete', task_id: msId, completed: String(next) });
-  if (!ok) {
+  if (ok !== true) {
     if (task) task.completed = cur;
     updateCache(msId, { completed: cur });
     renderTasks();
@@ -454,7 +454,7 @@ async function toggleImportance(e, msId, cur) {
   updateCache(msId, { importance: next });
   renderTasks();
   const ok = await triggerUpdate({ action: 'update', task_id: msId, completed: '', title: '', due_date: '', due_time: '', importance: next });
-  if (ok === 'auth') { pendingImportance.delete(msId); if (task) { task.importance = cur; updateCache(msId, { importance: cur }); renderTasks(); } }
+  if (ok !== true) { pendingImportance.delete(msId); if (task) { task.importance = cur; updateCache(msId, { importance: cur }); renderTasks(); } }
 }
 
 async function togglePlanner(e, notionId, cur) {
@@ -466,7 +466,7 @@ async function togglePlanner(e, notionId, cur) {
   if (task) task.completed = next;
   renderTasks();
   const ok = await triggerUpdate({ action: 'planner_toggle', task_id: notionId, completed: String(next), title: '', due_date: '', due_time: '' });
-  if (!ok) {
+  if (ok !== true) {
     if (task) task.completed = cur;
     renderTasks();
   } else startPlannerPoll(preSave);
@@ -490,6 +490,7 @@ function openDetail(msId) {
   const task = allTasks.find(t => t.ms_id === msId);
   if (!task) return;
   editingTaskId = msId;
+  editingSource = 'todo';
   document.querySelector('.detail-field:has(#detail-time)').style.display = '';
   document.getElementById('detail-label').textContent = '편집';
   document.getElementById('detail-title').value = task.title || '';
@@ -531,9 +532,10 @@ async function saveTask() {
     const task = allPlanner.find(t => t.notion_id === editingTaskId);
     if (task) { task.title = title; task.due_date = dateVal || null; task.due_time = timeVal || null; }
     const preSave = JSON.stringify(allPlanner);
+    const savedId = editingTaskId;
     closeDetail(); renderTasks();
-    const ok = await triggerUpdate({ action: 'planner_update', task_id: editingTaskId, title, due_date: dateVal || 'none', due_time: timeVal || '', completed: String(task?.completed ?? false) });
-    if (ok) startPlannerPoll(preSave);
+    const ok = await triggerUpdate({ action: 'planner_update', task_id: savedId, title, due_date: dateVal || 'none', due_time: timeVal || '', completed: String(task?.completed ?? false) });
+    if (ok === true) startPlannerPoll(preSave);
   } else if (editingTaskId === 'new') {
     const preSave = JSON.stringify(allTasks);
     const tmpId = 'tmp_' + Date.now();
@@ -541,15 +543,16 @@ async function saveTask() {
     allTasks.push(newTask);
     closeDetail(); renderTasks();
     const ok1 = await triggerUpdate({ action: 'create', task_id: '', title, due_date: dateVal || 'none', due_time: timeVal || '', completed: '' });
-    if (ok1) startFastPoll(preSave);
+    if (ok1 === true) startFastPoll(preSave);
   } else {
     const preSave = JSON.stringify(allTasks);
     const task = allTasks.find(t => t.ms_id === editingTaskId);
     if (task) { task.title = title; task.due_date = dateVal || null; task.due_time = timeVal || null; }
     updateCache(editingTaskId, { title, due_date: dateVal || null, due_time: timeVal || null });
+    const savedId = editingTaskId;
     closeDetail(); renderTasks();
-    const ok2 = await triggerUpdate({ action: 'update', task_id: editingTaskId, title, due_date: dateVal || 'none', due_time: timeVal || '' });
-    if (ok2) startFastPoll(preSave);
+    const ok2 = await triggerUpdate({ action: 'update', task_id: savedId, title, due_date: dateVal || 'none', due_time: timeVal || '' });
+    if (ok2 === true) startFastPoll(preSave);
   }
   btn.disabled = false; btn.textContent = '저장';
 }
@@ -574,7 +577,7 @@ async function deleteTask() {
     } catch {}
     closeDetail(); renderTasks();
     const ok = await triggerUpdate({ action: 'planner_delete', task_id: notionId, completed: '', title: '', due_date: '', due_time: '' });
-    if (ok) startPlannerPoll(preSave);
+    if (ok === true) startPlannerPoll(preSave);
     return;
   }
   const msId = editingTaskId;
@@ -586,7 +589,7 @@ async function deleteTask() {
   } catch {}
   closeDetail(); renderTasks();
   const ok = await triggerUpdate({ action: 'delete', task_id: msId, completed: '', title: '', due_date: '', due_time: '' });
-  if (ok) startFastPoll(preSave);
+  if (ok === true) startFastPoll(preSave);
 }
 
 function updateCache(msId, changes) {
@@ -685,8 +688,8 @@ async function triggerSync() {
   const preSaveTasks = JSON.stringify(allTasks);
   const preSavePlanner = JSON.stringify(allPlanner);
   const ok = await triggerUpdate({ action: '', task_id: '', completed: '', title: '', due_date: '', due_time: '' });
-  if (ok) { startFastPoll(preSaveTasks); startPlannerPoll(preSavePlanner); }
-  btn.textContent = ok ? '✓' : '!';
+  if (ok === true) { startFastPoll(preSaveTasks); startPlannerPoll(preSavePlanner); }
+  btn.textContent = ok === true ? '✓' : '!';
   setTimeout(() => { btn.textContent = '↺'; btn.disabled = false; }, 3000);
 }
 

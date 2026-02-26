@@ -265,7 +265,12 @@ def ms_importance_to_notion(ms_val, options):
             return c
     if len(names) >= 3:
         return names[len(names) // 2]
-    return names[0]
+    # 옵션이 2개 이하이고 "normal"에 해당하는 이름도 없으면 None 반환
+    # (high/low 후보가 아닌 옵션이 있으면 그것을 사용, 없으면 None)
+    high_candidates = {"높음", "중요", "High", "Important"}
+    low_candidates = {"낮음", "Low"}
+    neutral = [n for n in names if n not in high_candidates and n not in low_candidates]
+    return neutral[0] if neutral else None
 
 
 def extract_ms_due(due_dt_obj):
@@ -389,12 +394,13 @@ def run_planner(input_action, input_task_id):
 
         elif action == "delete" and input_task_id:
             try:
-                requests.patch(
+                r = requests.patch(
                     f"https://api.notion.com/v1/pages/{input_task_id}",
                     headers=NOTION_HEADERS,
                     json={"archived": True},
                     timeout=30,
                 )
+                r.raise_for_status()
                 print(f"  🗑️ 플래너 아카이브 완료")
             except Exception as e:
                 print(f"  ⚠️ 플래너 아카이브 실패: {e}")
@@ -603,13 +609,16 @@ def main():
             due_time = input_due_time or None
             if title:
                 try:
-                    task = create_todo_task(ms_token, list_id, title, due_date=due_date, due_time=due_time)
+                    task = create_todo_task(ms_token, list_id, title, due_date=due_date, due_time=due_time,
+                                           importance=input_importance or "normal")
                     ms_tasks[task["id"]] = task
                     print(f"  ➕ MS Todo 생성: {title}")
+                    notion_imp_val = ms_importance_to_notion(input_importance or "normal", importance_options) if importance_prop else None
                     page = create_notion_page(
                         NOTION_DB_ID, title, False, title_prop, status_prop, done_value, todo_value,
                         date_prop=date_prop, due_date=due_date,
-                        id_prop=id_prop, ms_task_id=task["id"]
+                        id_prop=id_prop, ms_task_id=task["id"],
+                        importance_prop=importance_prop, importance_value=notion_imp_val,
                     )
                     notion_pages[page["id"]] = page
                     ms_to_notion[task["id"]] = page["id"]
@@ -631,12 +640,13 @@ def main():
             notion_id = ms_to_notion.get(input_task_id)
             if notion_id:
                 try:
-                    requests.patch(
+                    r = requests.patch(
                         f"https://api.notion.com/v1/pages/{notion_id}",
                         headers=NOTION_HEADERS,
                         json={"archived": True},
                         timeout=30,
                     )
+                    r.raise_for_status()
                     print(f"  🗑️ Notion 아카이브 완료")
                 except Exception as e:
                     print(f"  ⚠️ Notion 아카이브 실패: {e}")
@@ -785,12 +795,13 @@ def main():
             elif not ms_exists:
                 # MS에서 삭제됨 → Notion 페이지도 아카이브
                 try:
-                    requests.patch(
+                    r = requests.patch(
                         f"https://api.notion.com/v1/pages/{notion_id}",
                         headers=NOTION_HEADERS,
                         json={"archived": True},
                         timeout=30,
                     )
+                    r.raise_for_status()
                     del ms_to_notion[ms_id]
                     stats["updated"] += 1
                     title = get_page_title(notion_pages[notion_id], title_prop)
@@ -858,6 +869,18 @@ def main():
                     due_date=(notion_date or "") if date_changed else None,
                     importance=notion_importance if imp_changed else None,
                 )
+                # ms_tasks 메모리 갱신: tasks.json 저장 시 최신 상태 반영
+                ms_tasks[ms_id]["status"] = "completed" if notion_done else "notStarted"
+                if date_changed:
+                    if notion_date:
+                        ms_tasks[ms_id]["dueDateTime"] = {
+                            "dateTime": f"{notion_date}T00:00:00.0000000",
+                            "timeZone": "Korea Standard Time",
+                        }
+                    else:
+                        ms_tasks[ms_id]["dueDateTime"] = None
+                if imp_changed:
+                    ms_tasks[ms_id]["importance"] = notion_importance
                 msg = f"{'완료' if notion_done else '미완료'}"
                 if date_changed:
                     msg += f" / 날짜={notion_date}"
