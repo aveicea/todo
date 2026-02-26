@@ -363,9 +363,9 @@ function renderTasks() {
     html += done.length ? done.map(taskHTML).join('') : '<div style="height:4px"></div>';
     const todayPlanner = allPlanner.filter(t => t.due_date && t.due_date.startsWith(today)).sort(sortFn);
     if (todayPlanner.length) {
-      const plannerPending = todayPlanner.filter(t => !t.completed).length;
+      const plannerDone = todayPlanner.filter(t => t.completed).length;
       const plannerTotal = todayPlanner.length;
-      html += `<div class="task-group-label">플래너 (${plannerPending}/${plannerTotal})</div>`;
+      html += `<div class="task-group-label">플래너 (${plannerDone}/${plannerTotal})</div>`;
       html += todayPlanner.map(plannerTaskHTML).join('');
     }
   } else if (currentFilter === 'all') {
