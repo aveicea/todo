@@ -1,12 +1,21 @@
 {
   "tasks": [
     {
+      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAehwVgOAAA=",
+      "notion_id": "313c2bbd-5973-8199-9ac5-d986c797cb8d",
+      "title": "교수님 메일",
+      "completed": false,
+      "due_date": "2026-02-26",
+      "due_time": "13:00",
+      "importance": "normal"
+    },
+    {
       "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAegn-8xAAA=",
       "notion_id": "311c2bbd-5973-8198-88eb-df671fe340c3",
       "title": "키레나 형광펜 페일 그린",
       "completed": true,
       "due_date": "2026-02-24",
-      "due_time": "16:30",
+      "due_time": null,
       "importance": "high"
     },
     {
@@ -15,12 +24,12 @@
       "title": "다이소 5공 펀치",
       "completed": true,
       "due_date": "2026-02-25",
-      "due_time": "16:15",
+      "due_time": "16:00",
       "importance": "high"
     }
   ],
-  "last_sync": "2026-02-26T02:46:33.791278+00:00",
-  "total": 2,
+  "last_sync": "2026-02-26T04:05:00.260037+00:00",
+  "total": 3,
   "completed": 2,
-  "pending": 0
+  "pending": 1
 }
