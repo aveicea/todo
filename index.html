@@ -454,7 +454,7 @@ async function toggleImportance(e, msId, cur) {
   updateCache(msId, { importance: next });
   renderTasks();
   const ok = await triggerUpdate({ action: 'update', task_id: msId, completed: '', title: '', due_date: '', due_time: '', importance: next });
-  if (!ok) { pendingImportance.delete(msId); if (task) { task.importance = cur; updateCache(msId, { importance: cur }); renderTasks(); } }
+  if (ok === 'auth') { pendingImportance.delete(msId); if (task) { task.importance = cur; updateCache(msId, { importance: cur }); renderTasks(); } }
 }
 
 async function togglePlanner(e, notionId, cur) {
@@ -672,7 +672,7 @@ async function triggerUpdate(inputs) {
         headers: { Authorization: `Bearer ${pat}`, Accept: 'application/vnd.github+json', 'Content-Type': 'application/json' },
         body: JSON.stringify({ ref: 'main', inputs: payload }) }
     );
-    if (r.status === 401 || r.status === 403) { localStorage.removeItem('gh_pat'); showSetup(); return false; }
+    if (r.status === 401 || r.status === 403) { localStorage.removeItem('gh_pat'); showSetup(); return 'auth'; }
     if (r.status === 204) { return true; }
     return false;
   } catch { return false; }
