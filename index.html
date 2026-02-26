@@ -316,7 +316,7 @@ async function loadPlanner() {
   if (cached && !allPlanner.length) {
     try { const c = JSON.parse(cached); allPlanner = c.tasks || []; renderTasks(); } catch {}
   }
-  if (plannerPollTimer) return; // 낙관적 업데이트 보호 중이면 fetch 건너뜀
+  if (plannerPollTimer && !arguments[0]) return; // 낙관적 업데이트 보호 중이면 fetch 건너뜀
   try {
     const pat = localStorage.getItem('gh_pat');
     const headers = pat ? { Authorization: `Bearer ${pat}`, Accept: 'application/vnd.github.raw+json' } : {};
@@ -454,7 +454,7 @@ async function toggleImportance(e, msId, cur) {
   updateCache(msId, { importance: next });
   renderTasks();
   const ok = await triggerUpdate({ action: 'update', task_id: msId, completed: '', title: '', due_date: '', due_time: '', importance: next });
-  if (!ok) { pendingImportance.delete(msId); if (task) { task.importance = cur; updateCache(msId, { importance: cur }); renderTasks(); } }
+  if (ok === 'auth') { pendingImportance.delete(msId); if (task) { task.importance = cur; updateCache(msId, { importance: cur }); renderTasks(); } }
 }
 
 async function togglePlanner(e, notionId, cur) {
@@ -672,7 +672,7 @@ async function triggerUpdate(inputs) {
         headers: { Authorization: `Bearer ${pat}`, Accept: 'application/vnd.github+json', 'Content-Type': 'application/json' },
         body: JSON.stringify({ ref: 'main', inputs: payload }) }
     );
-    if (r.status === 401 || r.status === 403) { localStorage.removeItem('gh_pat'); showSetup(); return false; }
+    if (r.status === 401 || r.status === 403) { localStorage.removeItem('gh_pat'); showSetup(); return 'auth'; }
     if (r.status === 204) { return true; }
     return false;
   } catch { return false; }
@@ -681,10 +681,11 @@ async function triggerUpdate(inputs) {
 async function triggerSync() {
   const btn = document.getElementById('sync-btn');
   btn.disabled = true; btn.textContent = '…';
-  await loadTasks();
-  const preSave = JSON.stringify(allTasks);
+  await Promise.all([loadTasks(), loadPlanner(true)]);
+  const preSaveTasks = JSON.stringify(allTasks);
+  const preSavePlanner = JSON.stringify(allPlanner);
   const ok = await triggerUpdate({ action: '', task_id: '', completed: '', title: '', due_date: '', due_time: '' });
-  if (ok) startFastPoll(preSave);
+  if (ok) { startFastPoll(preSaveTasks); startPlannerPoll(preSavePlanner); }
   btn.textContent = ok ? '✓' : '!';
   setTimeout(() => { btn.textContent = '↺'; btn.disabled = false; }, 3000);
 }
