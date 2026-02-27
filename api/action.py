@@ -269,9 +269,13 @@ def _extract_ms_due(due_dt_obj):
         return None, None
     try:
         dt = datetime.fromisoformat(dt_str[:19])
+        # MS Todo 앱에서 날짜만 설정하면 UTC 00:00으로 저장 → 시간 미설정으로 간주
+        utc_midnight = tz.upper() == "UTC" and dt_str[11:19] == "00:00:00"
         if tz.upper() == "UTC":
             dt = dt + timedelta(hours=9)
         date_str = dt.strftime("%Y-%m-%d")
+        if utc_midnight:
+            return date_str, None
         time_val = dt.strftime("%H:%M")
         return date_str, (None if time_val == "00:00" else time_val)
     except Exception:
