@@ -10,15 +10,6 @@
       "importance": "normal"
     },
     {
-      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAehx9M-AAA=",
-      "notion_id": "314c2bbd-5973-8112-bf45-fd148bbb1d52",
-      "title": "쿠션 리필 구매",
-      "completed": false,
-      "due_date": "2026-02-28",
-      "due_time": "06:11",
-      "importance": "normal"
-    },
-    {
       "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAehx9NAAAA=",
       "notion_id": "314c2bbd-5973-813a-b3da-dc68c254e441",
       "title": "보조배터리",
@@ -26,6 +17,15 @@
       "due_date": "2026-02-28",
       "due_time": null,
       "importance": "normal"
+    },
+    {
+      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAehx9M-AAA=",
+      "notion_id": "314c2bbd-5973-8112-bf45-fd148bbb1d52",
+      "title": "쿠션 리필 구매",
+      "completed": false,
+      "due_date": "2026-02-28",
+      "due_time": null,
+      "importance": "high"
     },
     {
       "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAegn-8xAAA=",
@@ -64,7 +64,7 @@
       "importance": "normal"
     }
   ],
-  "last_sync": "2026-02-27T14:05:29.040043+00:00",
+  "last_sync": "2026-02-27T14:53:10.723694+00:00",
   "total": 7,
   "completed": 4,
   "pending": 3
