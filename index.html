@@ -93,11 +93,9 @@
     }
     .task-group-label:hover { color: #999; }
     .group-chevron {
-      font-size: 8px; color: #ccc; transition: transform 0.2s;
+      font-size: 9px; color: #ccc;
       display: inline-flex; align-items: center; padding: 2px 4px;
-      transform: rotate(180deg);
     }
-    .group-chevron.collapsed { transform: rotate(0deg); }
 
     .task-item {
       display: flex; align-items: center; gap: 7px;
@@ -396,25 +394,25 @@ function renderTasks() {
 
   if (currentFilter === 'today') {
     const pc = collapsedGroups.pending;
-    html += `<div class="task-group-label" onclick="toggleGroup('pending')">미완료 ${pending.length}<span class="group-chevron${pc?' collapsed':''}">▾</span></div>`;
+    html += `<div class="task-group-label" onclick="toggleGroup('pending')">미완료 ${pending.length}<span class="group-chevron">${pc?'∨':'∧'}</span></div>`;
     if (!pc) html += pending.length ? pending.map(taskHTML).join('') : '<div style="height:6px"></div>';
     const dc = collapsedGroups.done;
-    html += `<div class="task-group-label" onclick="toggleGroup('done')">완료 ${done.length}<span class="group-chevron${dc?' collapsed':''}">▾</span></div>`;
+    html += `<div class="task-group-label" onclick="toggleGroup('done')">완료 ${done.length}<span class="group-chevron">${dc?'∨':'∧'}</span></div>`;
     if (!dc) html += done.length ? done.map(taskHTML).join('') : '<div style="height:4px"></div>';
     const todayPlanner = allPlanner.filter(t => t.due_date && t.due_date.startsWith(today)).sort(sortFn);
     if (todayPlanner.length) {
       const plannerDone = todayPlanner.filter(t => t.completed).length;
       const plannerTotal = todayPlanner.length;
       const plc = collapsedGroups.planner;
-      html += `<div class="task-group-label" onclick="toggleGroup('planner')">플래너 (${plannerDone}/${plannerTotal})<span class="group-chevron${plc?' collapsed':''}">▾</span></div>`;
+      html += `<div class="task-group-label" onclick="toggleGroup('planner')">플래너 (${plannerDone}/${plannerTotal})<span class="group-chevron">${plc?'∨':'∧'}</span></div>`;
       if (!plc) html += todayPlanner.map(plannerTaskHTML).join('');
     }
   } else if (currentFilter === 'all') {
     const pc = collapsedGroups.pending;
-    html += `<div class="task-group-label" onclick="toggleGroup('pending')">미완료 ${pending.length}<span class="group-chevron${pc?' collapsed':''}">▾</span></div>`;
+    html += `<div class="task-group-label" onclick="toggleGroup('pending')">미완료 ${pending.length}<span class="group-chevron">${pc?'∨':'∧'}</span></div>`;
     if (!pc) html += pending.length ? pending.map(taskHTML).join('') : '<div style="height:6px"></div>';
     const dc = collapsedGroups.done;
-    html += `<div class="task-group-label" onclick="toggleGroup('done')">완료 ${done.length}<span class="group-chevron${dc?' collapsed':''}">▾</span></div>`;
+    html += `<div class="task-group-label" onclick="toggleGroup('done')">완료 ${done.length}<span class="group-chevron">${dc?'∨':'∧'}</span></div>`;
     if (!dc) html += done.length ? done.map(taskHTML).join('') : '<div style="height:4px"></div>';
   } else {
     if (!tasks.length) { list.innerHTML = ''; return; }
