@@ -270,7 +270,10 @@ def _extract_ms_due(due_dt_obj):
     try:
         dt = datetime.fromisoformat(dt_str[:19])
         if tz.upper() == "UTC":
+            # MS Todo 앱에서 날짜만 설정하면 UTC 임의 시간으로 저장됨 → 시간 미설정으로 간주
+            # (위젯/Notion에서 실제 시간을 설정할 때는 항상 Korea Standard Time으로 기록)
             dt = dt + timedelta(hours=9)
+            return dt.strftime("%Y-%m-%d"), None
         date_str = dt.strftime("%Y-%m-%d")
         time_val = dt.strftime("%H:%M")
         return date_str, (None if time_val == "00:00" else time_val)
