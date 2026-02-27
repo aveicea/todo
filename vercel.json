@@ -1,8 +1,17 @@
 {
   "version": 2,
   "functions": {
-    "api/*.py": {
+    "api/action.py": {
       "maxDuration": 30
+    },
+    "api/cron.py": {
+      "maxDuration": 60
     }
-  }
+  },
+  "crons": [
+    {
+      "path": "/api/cron",
+      "schedule": "*/5 * * * *"
+    }
+  ]
 }
