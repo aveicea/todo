@@ -425,11 +425,51 @@
       "due_time": null
     },
     {
-      "notion_id": "314c2bbd-5973-8167-8514-f055bfb1e419",
-      "title": "27강 운영체제'",
+      "notion_id": "314c2bbd-5973-8002-a888-f8692ce3b5de",
+      "title": "36강 운영체제",
       "book_title": "교과내용학",
       "completed": false,
       "due_date": "2026-02-27",
+      "due_time": null
+    },
+    {
+      "notion_id": "314c2bbd-5973-8013-a31f-c2fdc32095a3",
+      "title": "33강 운영체제",
+      "book_title": "교과내용학",
+      "completed": false,
+      "due_date": "2026-02-27",
+      "due_time": null
+    },
+    {
+      "notion_id": "314c2bbd-5973-8019-96c6-dc0a743ca52d",
+      "title": "35강 운영체제",
+      "book_title": "교과내용학",
+      "completed": false,
+      "due_date": "2026-02-27",
+      "due_time": null
+    },
+    {
+      "notion_id": "314c2bbd-5973-8047-be92-f2e4d6cc4930",
+      "title": "32강 운영체제",
+      "book_title": "교과내용학",
+      "completed": false,
+      "due_date": "2026-02-27",
+      "due_time": null
+    },
+    {
+      "notion_id": "314c2bbd-5973-80db-9a82-d1586551b912",
+      "title": "34강 운영체제",
+      "book_title": "교과내용학",
+      "completed": false,
+      "due_date": "2026-02-27",
+      "due_time": null
+    },
+    {
+      "notion_id": "314c2bbd-5973-80ad-adbc-d7e4757f389f",
+      "title": "인기초 교과서 분석 ",
+      "book_title": "스터디",
+      "completed": false,
+      "due_date": "2026-03-03",
       "due_time": null
     },
     {
@@ -1087,8 +1127,16 @@
       "completed": true,
       "due_date": "2026-02-26",
       "due_time": null
+    },
+    {
+      "notion_id": "314c2bbd-5973-8167-8514-f055bfb1e419",
+      "title": "27강 운영체제'",
+      "book_title": "교과내용학",
+      "completed": true,
+      "due_date": "2026-02-27",
+      "due_time": null
     }
   ],
-  "last_sync": "2026-02-27T05:20:18.877577+00:00",
-  "total": 136
+  "last_sync": "2026-02-27T06:08:40.666093+00:00",
+  "total": 142
 }
