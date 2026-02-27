@@ -20,8 +20,9 @@ def _raw_to_uuid(raw):
     return f"{r[:8]}-{r[8:12]}-{r[12:16]}-{r[16:20]}-{r[20:]}"
 
 
-NOTION_DB_ID = _raw_to_uuid(_env("NOTION_DB_ID", "dadf27b55389404296df607af4d16e26"))
+NOTION_DB_ID  = _raw_to_uuid(_env("NOTION_DB_ID",  "dadf27b55389404296df607af4d16e26"))
 PLANNER_DB_ID = _raw_to_uuid(_env("PLANNER_DB_ID", "468bf987e6cd4372abf96a8f30f165b1"))
+BOOK_DB_ID    = _raw_to_uuid("41c3889d4617465db9df008e96ca5af1")
 
 
 def _notion_headers():
@@ -135,6 +136,12 @@ def _planner_schema():
         comp_prop = next((n for n, p in props.items() if p["type"] == "status"), "상태")
         comp_type = "status"
         done_value, todo_value = _detect_status_values(props, comp_prop)
+    book_raw = "41c3889d4617465db9df008e96ca5af1"
+    book_rel_prop = next(
+        (n for n, p in props.items()
+         if p["type"] == "relation" and p.get("relation", {}).get("database_id", "").replace("-", "") == book_raw),
+        None,
+    )
     _planner_schema_info = {
         "title_prop": title_prop,
         "date_prop": date_prop,
@@ -142,6 +149,7 @@ def _planner_schema():
         "comp_type": comp_type,
         "done_value": done_value,
         "todo_value": todo_value,
+        "book_rel_prop": book_rel_prop,
     }
     return _planner_schema_info
 
@@ -210,7 +218,86 @@ def _ms_importance_to_notion(ms_val, options):
     return names[len(names) // 2] if len(names) >= 3 else None
 
 
+# ── Notion 페이지 조회 헬퍼 ───────────────────────────────
+def _notion_query_all(db_id):
+    pages, cursor = [], None
+    while True:
+        body = {"page_size": 100}
+        if cursor:
+            body["start_cursor"] = cursor
+        r = requests.post(
+            f"https://api.notion.com/v1/databases/{db_id}/query",
+            headers=_notion_headers(), json=body, timeout=30,
+        )
+        r.raise_for_status()
+        data = r.json()
+        pages.extend(data.get("results", []))
+        if not data.get("has_more"):
+            break
+        cursor = data.get("next_cursor")
+    return pages
+
+
+def _page_title(page, prop_name):
+    items = page["properties"].get(prop_name, {}).get("title", [])
+    return "".join(t.get("plain_text", "") for t in items)
+
+
+def _page_date(page, prop_name):
+    if not prop_name:
+        return None
+    d = page["properties"].get(prop_name, {}).get("date")
+    if not d or not d.get("start"):
+        return None
+    return d["start"][:10]
+
+
+def _page_completed(page, comp_prop, done_value, comp_type):
+    prop = page["properties"].get(comp_prop, {})
+    if comp_type == "checkbox":
+        return prop.get("checkbox", False)
+    return prop.get("status", {}).get("name", "") == done_value
+
+
 # ── 액션 핸들러 ───────────────────────────────────────────
+def handle_get_planner():
+    s = _planner_schema()
+    # 책 제목 맵 구축
+    book_title_map = {}
+    if s["book_rel_prop"]:
+        book_schema_r = requests.get(
+            f"https://api.notion.com/v1/databases/{BOOK_DB_ID}",
+            headers=_notion_headers(), timeout=30,
+        )
+        book_schema_r.raise_for_status()
+        book_props = book_schema_r.json()["properties"]
+        book_title_prop = next((n for n, p in book_props.items() if p["type"] == "title"), "이름")
+        for bp in _notion_query_all(BOOK_DB_ID):
+            book_title_map[bp["id"]] = _page_title(bp, book_title_prop)
+
+    pages = _notion_query_all(PLANNER_DB_ID)
+    tasks = []
+    for page in pages:
+        title = _page_title(page, s["title_prop"])
+        if not title.strip():
+            continue
+        book_title = None
+        if s["book_rel_prop"]:
+            rel_ids = [r["id"] for r in page["properties"].get(s["book_rel_prop"], {}).get("relation", [])]
+            if rel_ids:
+                book_title = book_title_map.get(rel_ids[0])
+        tasks.append({
+            "notion_id": page["id"],
+            "title": title,
+            "book_title": book_title or None,
+            "completed": _page_completed(page, s["comp_prop"], s["done_value"], s["comp_type"]),
+            "due_date": _page_date(page, s["date_prop"]),
+            "due_time": None,
+        })
+    tasks.sort(key=lambda x: (x["completed"], x["due_date"] or "9999-12-31"))
+    return {"ok": True, "tasks": tasks}
+
+
 def handle_planner_toggle(notion_id, completed):
     s = _planner_schema()
     _notion_update(notion_id, completed, s["comp_prop"], s["done_value"], s["todo_value"], comp_type=s["comp_type"])
@@ -367,6 +454,8 @@ def route(body):
     ms_id = body.get("ms_id") or task_id
     notion_id = body.get("notion_id", "")
 
+    if action == "get_planner":
+        return handle_get_planner()
     if action == "planner_toggle":
         return handle_planner_toggle(task_id, body.get("completed", "false").lower() == "true")
     if action == "planner_update":
