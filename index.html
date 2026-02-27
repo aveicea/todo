@@ -260,8 +260,6 @@
 
 </div>
 <script>
-const TASKS_URL = 'https://raw.githubusercontent.com/aveicea/todo/main/data/tasks.json';
-
 let allTasks = [];
 const pendingImportance = new Map();
 const completedTodayIds = new Set(); // 이번 세션에서 완료한 할일 ID
@@ -345,16 +343,14 @@ async function loadTasks() {
   if (cached && !allTasks.length) {
     try { const c = JSON.parse(cached); allTasks = c.tasks || []; renderTasks(); } catch {}
   }
-  try {
-    const r = await fetch(TASKS_URL + '?t=' + Date.now());
-    if (!r.ok) throw new Error();
-    const data = await r.json();
-    // pending_tasks: Vercel로 만든 태스크가 GitHub 파일에 아직 없을 때 보정
+  const data = await callVercel({ action: 'get_tasks' });
+  if (data?.ok) {
+    // pending_tasks: Vercel로 만든 태스크가 MS Todo에 아직 없을 때 보정
     const serverIds = new Set((data.tasks || []).map(t => t.ms_id));
     cleanPendingTasks(serverIds);
     const pending = getPendingTasks().filter(t => !serverIds.has(t.ms_id));
     allTasks = [...(data.tasks || []), ...pending];
-    _applyOverrides('_taskOvs', allTasks, 'ms_id', 600000); // GitHub CDN 최대 10분 캐시 대응
+    _applyOverrides('_taskOvs', allTasks, 'ms_id', 60000);
     localStorage.setItem('tasks_cache', JSON.stringify(data));
     pendingImportance.forEach((imp, msId) => {
       const t = allTasks.find(t => t.ms_id === msId);
@@ -364,9 +360,8 @@ async function loadTasks() {
     });
     document.getElementById('badge').className = 'dot';
     renderTasks();
-  } catch {
-    if (!allTasks.length)
-      document.getElementById('task-list').innerHTML = '<div class="empty-msg">동기화 후 표시됩니다.</div>';
+  } else if (!allTasks.length) {
+    document.getElementById('task-list').innerHTML = '<div class="empty-msg">동기화 후 표시됩니다.</div>';
     document.getElementById('badge').className = 'dot error';
   }
 }
