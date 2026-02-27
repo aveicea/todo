@@ -258,6 +258,7 @@ const PLANNER_URL = 'https://raw.githubusercontent.com/aveicea/todo/main/data/pl
 
 let allTasks = [];
 const pendingImportance = new Map();
+const completedTodayIds = new Set(); // 이번 세션에서 완료한 할일 ID
 let allPlanner = [];
 let currentFilter = 'today';
 let editingTaskId = null;
@@ -359,7 +360,7 @@ async function loadPlanner() {
 function renderTasks() {
   const today = todayStr();
   const tasks = allTasks.filter(t => {
-    if (currentFilter === 'today')   return !t.due_date || t.due_date <= today;
+    if (currentFilter === 'today')   return t.completed ? ((t.due_date && t.due_date.startsWith(today)) || completedTodayIds.has(t.ms_id)) : (!t.due_date || t.due_date <= today);
     if (currentFilter === 'pending') return !t.completed;
     return true;
   });
@@ -461,6 +462,7 @@ async function toggleTask(e, msId, cur) {
   const next = !cur;
   const task = allTasks.find(t => t.ms_id === msId);
   if (task) task.completed = next;
+  if (next) completedTodayIds.add(msId); else completedTodayIds.delete(msId);
   updateCache(msId, { completed: next });
   renderTasks();
   const result = await callVercel({ action: 'toggle_complete', ms_id: msId, notion_id: task?.notion_id || '', completed: String(next) });
