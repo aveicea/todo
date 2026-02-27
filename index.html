@@ -354,7 +354,7 @@ async function loadTasks() {
     cleanPendingTasks(serverIds);
     const pending = getPendingTasks().filter(t => !serverIds.has(t.ms_id));
     allTasks = [...(data.tasks || []), ...pending];
-    _applyOverrides('_taskOvs', allTasks, 'ms_id');
+    _applyOverrides('_taskOvs', allTasks, 'ms_id', 600000); // GitHub CDN 최대 10분 캐시 대응
     localStorage.setItem('tasks_cache', JSON.stringify(data));
     pendingImportance.forEach((imp, msId) => {
       const t = allTasks.find(t => t.ms_id === msId);
