@@ -283,7 +283,25 @@ def handle_get_tasks():
     token = _ms_token()
     list_id = _get_list_id(token)
 
-    # MS Todo 전체 태스크 조회 (페이지네이션)
+    # ① Notion 전체 조회 → ms_id 매핑 + ms_id 없는 페이지 수집
+    notion_pages = _notion_query_all(NOTION_DB_ID)
+    notion_id_to_page = {page["id"]: page for page in notion_pages}
+    ms_to_notion = {}      # ms_id → notion_page_id
+    notion_only = []       # ms_id 없는 미완료 Notion 페이지
+    for page in notion_pages:
+        if s["id_prop"]:
+            rt = page["properties"].get(s["id_prop"], {}).get("rich_text", [])
+            ms_id_val = "".join(t.get("plain_text", "") for t in rt).strip()
+        else:
+            ms_id_val = ""
+        if ms_id_val:
+            ms_to_notion[ms_id_val] = page["id"]
+        else:
+            completed = _page_completed(page, s["comp_prop"], s["done_value"], s["comp_type"])
+            if not completed and _page_title(page, s["title_prop"]).strip():
+                notion_only.append(page)
+
+    # ② MS Todo 전체 조회 (페이지네이션)
     tasks_raw = []
     url = f"https://graph.microsoft.com/v1.0/me/todo/lists/{list_id}/tasks?$top=100"
     while url:
@@ -292,17 +310,40 @@ def handle_get_tasks():
         data = r.json()
         tasks_raw.extend(data.get("value", []))
         url = data.get("@odata.nextLink")
+    ms_id_to_task = {task["id"]: task for task in tasks_raw}
+    pre_existing = dict(ms_to_notion)  # ③④ 이전 기존 매핑만 보존
 
-    # Notion에서 ms_id → notion_id 매핑 구축 (id_prop 기준, 항상 최신)
-    ms_to_notion = {}
-    if s["id_prop"]:
-        for page in _notion_query_all(NOTION_DB_ID):
-            rt = page["properties"].get(s["id_prop"], {}).get("rich_text", [])
-            ms_id_val = "".join(t.get("plain_text", "") for t in rt).strip()
-            if ms_id_val:
-                ms_to_notion[ms_id_val] = page["id"]
+    # ③ Notion에만 있는 페이지 → MS Todo 생성 + Notion에 ms_id 기록
+    for page in notion_only:
+        title = _page_title(page, s["title_prop"])
+        due_date = _page_date(page, s["date_prop"])
+        ms_body = {"title": title, "status": "notStarted", "importance": "normal"}
+        if due_date:
+            ms_body["dueDateTime"] = {"dateTime": f"{due_date}T00:00:00.0000000", "timeZone": "Korea Standard Time"}
+        try:
+            tr = requests.post(
+                f"https://graph.microsoft.com/v1.0/me/todo/lists/{list_id}/tasks",
+                headers=_ms_headers(token), json=ms_body, timeout=30,
+            )
+            tr.raise_for_status()
+            new_ms_id = tr.json()["id"]
+            if s["id_prop"]:
+                requests.patch(
+                    f"https://api.notion.com/v1/pages/{page['id']}",
+                    headers=_notion_headers(),
+                    json={"properties": {s["id_prop"]: {"rich_text": [{"text": {"content": new_ms_id}}]}}},
+                    timeout=30,
+                ).raise_for_status()
+            ms_to_notion[new_ms_id] = page["id"]
+            tasks_raw.append({
+                "id": new_ms_id, "title": title, "status": "notStarted",
+                "importance": "normal",
+                "dueDateTime": {"dateTime": f"{due_date}T00:00:00.0000000", "timeZone": "Korea Standard Time"} if due_date else None,
+            })
+        except Exception:
+            pass
 
-    # Notion에 없는 미완료 태스크 → 즉시 생성
+    # ④ MS Todo에만 있는 미완료 태스크 → Notion 생성
     for task in tasks_raw:
         task_id = task["id"]
         if task_id in ms_to_notion or task.get("status") == "completed":
@@ -322,6 +363,68 @@ def handle_get_tasks():
         except Exception:
             pass
 
+    # ⑤ 기존 매핑 태스크 수정 동기화 (최신 수정 시각 기준, 필드 변경 시만)
+    for ms_id, notion_page_id in pre_existing.items():
+        ms_task = ms_id_to_task.get(ms_id)
+        notion_page = notion_id_to_page.get(notion_page_id)
+        if not ms_task or not notion_page:
+            continue
+
+        ms_title = ms_task.get("title", "")
+        ms_completed = ms_task.get("status") == "completed"
+        ms_due_date, _ = _extract_ms_due(ms_task.get("dueDateTime"))
+        ms_importance = ms_task.get("importance", "normal")
+
+        notion_title = _page_title(notion_page, s["title_prop"])
+        notion_completed = _page_completed(notion_page, s["comp_prop"], s["done_value"], s["comp_type"])
+        notion_due_date = _page_date(notion_page, s["date_prop"])
+
+        # 필드 값이 같으면 skip (sync 루프 방지)
+        if ms_title == notion_title and ms_completed == notion_completed and ms_due_date == notion_due_date:
+            continue
+
+        ms_time = ms_task.get("lastModifiedDateTime", "")
+        notion_time = notion_page.get("last_edited_time", "")
+
+        if ms_time >= notion_time:
+            # MS가 최신 → Notion 업데이트
+            notion_imp = _ms_importance_to_notion(ms_importance, s["importance_options"]) if s["importance_prop"] else None
+            try:
+                _notion_update(
+                    notion_page_id, ms_completed,
+                    s["status_prop"], s["done_value"], s["todo_value"],
+                    comp_type=s["comp_type"],
+                    date_prop=s["date_prop"], due_date=ms_due_date,
+                    title_prop=s["title_prop"] if ms_title != notion_title else None,
+                    title=ms_title if ms_title != notion_title else None,
+                    importance_prop=s["importance_prop"] if notion_imp else None,
+                    importance_value=notion_imp,
+                )
+            except Exception:
+                pass
+        else:
+            # Notion이 최신 → MS 업데이트
+            ms_body = {}
+            if notion_title != ms_title:
+                ms_body["title"] = notion_title
+            if notion_completed != ms_completed:
+                ms_body["status"] = "completed" if notion_completed else "notStarted"
+            if notion_due_date != ms_due_date:
+                ms_body["dueDateTime"] = (
+                    {"dateTime": f"{notion_due_date}T00:00:00.0000000", "timeZone": "Korea Standard Time"}
+                    if notion_due_date else None
+                )
+            if ms_body:
+                try:
+                    requests.patch(
+                        f"https://graph.microsoft.com/v1.0/me/todo/lists/{list_id}/tasks/{ms_id}",
+                        headers=_ms_headers(token), json=ms_body, timeout=30,
+                    ).raise_for_status()
+                    ms_task.update(ms_body)  # ⑥ 결과 조립 시 최신 값 반환
+                except Exception:
+                    pass
+
+    # ⑥ 결과 조립
     tasks = []
     for task in tasks_raw:
         task_id = task["id"]
