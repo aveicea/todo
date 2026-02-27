@@ -482,7 +482,7 @@ async function toggleTask(e, notionId, cur) {
   updateCache(notionId, { completed: next });
   _saveOverride('_taskOvs', notionId, { completed: next });
   renderTasks();
-  const result = await callVercel({ action: 'toggle_complete', notion_id: notionId, completed: String(next) });
+  const result = await callVercel({ action: 'toggle_complete', notion_id: notionId, ms_id: task?.ms_id || '', completed: String(next) });
   if (!result?.ok) {
     document.getElementById('badge').className = 'dot error';
   }
@@ -497,7 +497,7 @@ async function toggleImportance(e, notionId, cur) {
   pendingImportance.set(notionId, next);
   updateCache(notionId, { importance: next });
   renderTasks();
-  const result = await callVercel({ action: 'update', notion_id: notionId, importance: next });
+  const result = await callVercel({ action: 'update', notion_id: notionId, ms_id: task?.ms_id || '', importance: next });
   if (!result?.ok) {
     document.getElementById('badge').className = 'dot error';
   } else {
@@ -606,8 +606,9 @@ async function saveTask() {
     if (task) { task.title = title; task.due_date = dateVal || null; task.due_time = timeVal || null; }
     updateCache(editingTaskId, { title, due_date: dateVal || null, due_time: timeVal || null });
     const savedId = editingTaskId;
+    const savedMsId = task?.ms_id || '';
     closeDetail(); renderTasks();
-    await callVercel({ action: 'update', notion_id: savedId, title, due_date: dateVal || 'none', due_time: timeVal || '' });
+    await callVercel({ action: 'update', notion_id: savedId, ms_id: savedMsId, title, due_date: dateVal || 'none', due_time: timeVal || '' });
   }
   btn.disabled = false; btn.textContent = '저장';
 }
@@ -634,13 +635,14 @@ async function deleteTask() {
     return;
   }
   const notionId = editingTaskId;
+  const msId = allTasks.find(t => t.notion_id === notionId)?.ms_id || '';
   allTasks = allTasks.filter(t => t.notion_id !== notionId);
   try {
     const cached = JSON.parse(localStorage.getItem('tasks_cache') || '{}');
     if (cached.tasks) { cached.tasks = cached.tasks.filter(t => t.notion_id !== notionId); localStorage.setItem('tasks_cache', JSON.stringify(cached)); }
   } catch {}
   closeDetail(); renderTasks();
-  await callVercel({ action: 'delete', notion_id: notionId });
+  await callVercel({ action: 'delete', notion_id: notionId, ms_id: msId });
 }
 
 function updateCache(notionId, changes) {
