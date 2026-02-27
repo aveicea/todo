@@ -10,21 +10,21 @@
       "importance": "normal"
     },
     {
-      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAehx9M-AAA=",
-      "notion_id": "314c2bbd-5973-8112-bf45-fd148bbb1d52",
-      "title": "쿠션 리필 구매",
-      "completed": false,
-      "due_date": "2026-02-27",
-      "due_time": null,
-      "importance": "normal"
-    },
-    {
       "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAehx9M_AAA=",
       "notion_id": "314c2bbd-5973-8119-b6a3-dc0de2b454e7",
       "title": "초반 교재 정리",
       "completed": false,
       "due_date": "2026-02-27",
       "due_time": null,
+      "importance": "normal"
+    },
+    {
+      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAehx9M-AAA=",
+      "notion_id": "314c2bbd-5973-8112-bf45-fd148bbb1d52",
+      "title": "쿠션 리필 구매",
+      "completed": false,
+      "due_date": "2026-02-28",
+      "due_time": "06:11",
       "importance": "normal"
     },
     {
@@ -55,7 +55,7 @@
       "importance": "normal"
     }
   ],
-  "last_sync": "2026-02-27T07:10:07.465465+00:00",
+  "last_sync": "2026-02-27T07:54:33.262212+00:00",
   "total": 6,
   "completed": 3,
   "pending": 3
