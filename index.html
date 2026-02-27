@@ -54,6 +54,7 @@
     }
     .nav-btn:hover:not(:disabled) { background: #f0f0f0; color: #333; }
     .nav-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+    #sync-btn { margin-bottom: 4px; }
     .imp-star { font-size: 12px; color: #e0e0e0; cursor: pointer; flex-shrink: 0; padding: 2px 0 2px 2px; transition: color 0.15s; line-height: 1; }
     .imp-star:hover { color: #f5a623; }
     .imp-star.high { color: #f5a623; }
@@ -400,7 +401,7 @@ function renderTasks() {
     html += `<div class="task-group-label">완료 ${done.length}</div>`;
     html += done.length ? done.map(taskHTML).join('') : '<div style="height:4px"></div>';
   } else {
-    if (!tasks.length) { list.innerHTML = '<div class="empty-msg">미완료 항목이 없습니다</div>'; return; }
+    if (!tasks.length) { list.innerHTML = ''; return; }
     html += tasks.sort(sortFn).map(taskHTML).join('');
   }
   list.innerHTML = html;
