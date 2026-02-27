@@ -660,6 +660,9 @@ function updateCache(notionId, changes) {
 async function triggerSync() {
   const btn = document.getElementById('sync-btn');
   btn.disabled = true; btn.textContent = '…';
+  const url = vercelUrl();
+  if (url) { fetch(`${url}/api/cron`).catch(() => {}); }
+  await new Promise(r => setTimeout(r, 3000));
   await Promise.all([loadTasks(), loadPlanner()]);
   const hasError = document.getElementById('badge').className.includes('error');
   btn.textContent = hasError ? '!' : '✓';
