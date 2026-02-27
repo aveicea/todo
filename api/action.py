@@ -260,6 +260,85 @@ def _page_completed(page, comp_prop, done_value, comp_type):
 
 
 # ── 액션 핸들러 ───────────────────────────────────────────
+def _extract_ms_due(due_dt_obj):
+    if not due_dt_obj:
+        return None, None
+    dt_str = due_dt_obj.get("dateTime", "")
+    tz = due_dt_obj.get("timeZone", "UTC")
+    if not dt_str or len(dt_str) < 10:
+        return None, None
+    try:
+        dt = datetime.fromisoformat(dt_str[:19])
+        if tz.upper() == "UTC":
+            dt = dt + timedelta(hours=9)
+        date_str = dt.strftime("%Y-%m-%d")
+        time_val = dt.strftime("%H:%M")
+        return date_str, (None if time_val == "00:00" else time_val)
+    except Exception:
+        return (dt_str[:10] or None), None
+
+
+def handle_get_tasks():
+    s = _todo_schema()
+    token = _ms_token()
+    list_id = _get_list_id(token)
+
+    # MS Todo 전체 태스크 조회 (페이지네이션)
+    tasks_raw = []
+    url = f"https://graph.microsoft.com/v1.0/me/todo/lists/{list_id}/tasks?$top=100"
+    while url:
+        r = requests.get(url, headers={"Authorization": f"Bearer {token}"}, timeout=30)
+        r.raise_for_status()
+        data = r.json()
+        tasks_raw.extend(data.get("value", []))
+        url = data.get("@odata.nextLink")
+
+    # Notion에서 ms_id → notion_id 매핑 구축 (id_prop 기준, 항상 최신)
+    ms_to_notion = {}
+    if s["id_prop"]:
+        for page in _notion_query_all(NOTION_DB_ID):
+            rt = page["properties"].get(s["id_prop"], {}).get("rich_text", [])
+            ms_id_val = "".join(t.get("plain_text", "") for t in rt).strip()
+            if ms_id_val:
+                ms_to_notion[ms_id_val] = page["id"]
+
+    # Notion에 없는 미완료 태스크 → 즉시 생성
+    for task in tasks_raw:
+        task_id = task["id"]
+        if task_id in ms_to_notion or task.get("status") == "completed":
+            continue
+        due_date, _ = _extract_ms_due(task.get("dueDateTime"))
+        importance = task.get("importance", "normal")
+        notion_imp = _ms_importance_to_notion(importance, s["importance_options"]) if s["importance_prop"] else None
+        try:
+            page = _notion_create(
+                NOTION_DB_ID, task.get("title", ""), False,
+                s["title_prop"], s["status_prop"], s["done_value"], s["todo_value"],
+                date_prop=s["date_prop"], due_date=due_date,
+                id_prop=s["id_prop"], ms_task_id=task_id,
+                importance_prop=s["importance_prop"], importance_value=notion_imp,
+            )
+            ms_to_notion[task_id] = page["id"]
+        except Exception:
+            pass
+
+    tasks = []
+    for task in tasks_raw:
+        task_id = task["id"]
+        due_date, due_time = _extract_ms_due(task.get("dueDateTime"))
+        tasks.append({
+            "ms_id": task_id,
+            "notion_id": ms_to_notion.get(task_id, ""),
+            "title": task.get("title", ""),
+            "completed": task.get("status") == "completed",
+            "due_date": due_date,
+            "due_time": due_time,
+            "importance": task.get("importance", "normal"),
+        })
+    tasks.sort(key=lambda x: (x["completed"], x["due_date"] or "9999-12-31", x["due_time"] or "99:99"))
+    return {"ok": True, "tasks": tasks}
+
+
 def handle_get_planner():
     s = _planner_schema()
     # 책 제목 맵 구축
@@ -454,6 +533,8 @@ def route(body):
     ms_id = body.get("ms_id") or task_id
     notion_id = body.get("notion_id", "")
 
+    if action == "get_tasks":
+        return handle_get_tasks()
     if action == "get_planner":
         return handle_get_planner()
     if action == "planner_toggle":
