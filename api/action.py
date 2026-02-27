@@ -191,13 +191,26 @@ def _page_title(page, prop_name):
 
 
 def _page_date_time(page, prop_name):
-    """Notion date 필드에서 (date_str, time_str) 추출."""
+    """Notion date 필드에서 (date_str, time_str) 추출.
+    Notion이 UTC 형식("...Z")으로 반환할 경우 KST(+9h)로 변환 후 날짜 추출."""
     if not prop_name:
         return None, None
     d = page["properties"].get(prop_name, {}).get("date")
     if not d or not d.get("start"):
         return None, None
     start = d["start"]
+    if len(start) > 10 and start.endswith("Z"):
+        # UTC 형식 → KST 변환
+        from datetime import datetime, timedelta
+        try:
+            dt = datetime.fromisoformat(start.rstrip("Z").split(".")[0])
+            dt = dt + timedelta(hours=9)
+            date_str = dt.strftime("%Y-%m-%d")
+            time_val = dt.strftime("%H:%M")
+            time_str = None if time_val == "00:00" else time_val
+            return date_str, time_str
+        except Exception:
+            pass
     date_str = start[:10]
     time_str = None
     if len(start) > 10 and "T" in start:

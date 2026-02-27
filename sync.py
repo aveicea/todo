@@ -225,7 +225,21 @@ def get_page_date(page, date_prop):
     if not date_prop:
         return None
     date_obj = page["properties"].get(date_prop, {}).get("date") or {}
-    return date_obj.get("start", None)
+    start = date_obj.get("start", None)
+    if not start or len(start) <= 10:
+        return start
+    # datetime 형식(예: "2026-02-28T00:00:00+09:00", "2026-02-27T15:00:00.000Z") → YYYY-MM-DD 정규화
+    try:
+        if start.endswith("Z"):
+            # UTC → KST 변환 후 날짜만 추출
+            dt = datetime.fromisoformat(start.rstrip("Z").split(".")[0])
+            dt = dt + timedelta(hours=9)
+            return dt.strftime("%Y-%m-%d")
+        else:
+            # 오프셋 포함(+09:00 등) → 날짜 부분만
+            return start[:10]
+    except Exception:
+        return start[:10]
 
 
 def get_page_importance(page, importance_prop):
@@ -275,7 +289,8 @@ def ms_importance_to_notion(ms_val, options):
 
 def extract_ms_due(due_dt_obj):
     """MS Todo dueDateTime에서 날짜·시간 추출 (KST = UTC+9 기준)
-    MS가 UTC로 반환하는 경우 +9시간 보정해 한국 날짜로 변환."""
+    MS가 UTC로 반환하는 경우 +9시간 보정해 한국 날짜로 변환.
+    UTC 자정(00:00)은 종일 할일 표시 방식이므로 시간 없이 날짜만 반환."""
     if not due_dt_obj:
         return None, None
     dt_str = due_dt_obj.get("dateTime", "")
@@ -285,6 +300,9 @@ def extract_ms_due(due_dt_obj):
     try:
         dt = datetime.fromisoformat(dt_str[:19])
         if tz.upper() == "UTC":
+            # UTC 자정(00:00)은 종일 할일을 UTC로 저장한 것 → +9h 하면 09:00이 되므로 날짜만 사용
+            if dt.hour == 0 and dt.minute == 0 and dt.second == 0:
+                return dt_str[:10], None
             dt = dt + timedelta(hours=9)  # UTC → KST 변환
         date_str = dt.strftime("%Y-%m-%d")
         time_val = dt.strftime("%H:%M")
