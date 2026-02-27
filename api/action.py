@@ -198,6 +198,27 @@ def _notion_create(db_id, title, completed, title_prop, status_prop, done_value,
     return r.json()
 
 
+def _get_notion_linked_id(task):
+    """MS task의 linkedResources에서 연결된 Notion 페이지 ID 반환"""
+    for lr in task.get("linkedResources", []):
+        if lr.get("displayName") == "Notion" and lr.get("externalId"):
+            return lr["externalId"]
+    return None
+
+
+def _add_notion_linked_resource(token, list_id, task_id, notion_page_id):
+    """MS task에 Notion page ID를 linkedResource로 저장 (이미 있으면 스킵)"""
+    try:
+        requests.post(
+            f"https://graph.microsoft.com/v1.0/me/todo/lists/{list_id}/tasks/{task_id}/linkedResources",
+            headers=_ms_headers(token),
+            json={"displayName": "Notion", "externalId": notion_page_id},
+            timeout=30,
+        ).raise_for_status()
+    except Exception:
+        pass
+
+
 def _ms_importance_to_notion(ms_val, options):
     names = [o["name"] for o in options]
     if not names:
@@ -304,9 +325,9 @@ def handle_get_tasks():
             if not completed and _page_title(page, s["title_prop"]).strip():
                 notion_only.append(page)
 
-    # ② MS Todo 전체 조회 (페이지네이션)
+    # ② MS Todo 전체 조회 (페이지네이션, linkedResources 포함)
     tasks_raw = []
-    url = f"https://graph.microsoft.com/v1.0/me/todo/lists/{list_id}/tasks?$top=100"
+    url = f"https://graph.microsoft.com/v1.0/me/todo/lists/{list_id}/tasks?$top=100&$expand=linkedResources"
     while url:
         r = requests.get(url, headers={"Authorization": f"Bearer {token}"}, timeout=30)
         r.raise_for_status()
@@ -314,6 +335,16 @@ def handle_get_tasks():
         tasks_raw.extend(data.get("value", []))
         url = data.get("@odata.nextLink")
     ms_id_to_task = {task["id"]: task for task in tasks_raw}
+
+    # ②' MS task linkedResources로 ms_to_notion 보완 (Notion id_prop 없을 때 보정)
+    for task in tasks_raw:
+        task_id = task["id"]
+        if task_id in ms_to_notion:
+            continue
+        linked_id = _get_notion_linked_id(task)
+        if linked_id and linked_id in notion_id_to_page:
+            ms_to_notion[task_id] = linked_id
+
     pre_existing = dict(ms_to_notion)  # ③④ 이전 기존 매핑만 보존
 
     # ③ Notion에만 있는 페이지 → MS Todo 생성 + Notion에 ms_id 기록
@@ -338,6 +369,7 @@ def handle_get_tasks():
                     timeout=30,
                 ).raise_for_status()
             ms_to_notion[new_ms_id] = page["id"]
+            _add_notion_linked_resource(token, list_id, new_ms_id, page["id"])
             tasks_raw.append({
                 "id": new_ms_id, "title": title, "status": "notStarted",
                 "importance": "normal",
@@ -362,6 +394,46 @@ def handle_get_tasks():
             except Exception:
                 pass
             continue
+
+        # linkedResources에 Notion 페이지 ID가 저장된 경우 → 이전에 연결된 적 있음
+        linked_id = _get_notion_linked_id(task)
+        if linked_id:
+            # Notion 페이지 상태 직접 확인
+            try:
+                page_r = requests.get(
+                    f"https://api.notion.com/v1/pages/{linked_id}",
+                    headers=_notion_headers(), timeout=30,
+                )
+                if page_r.status_code == 200:
+                    page_data = page_r.json()
+                    if page_data.get("archived"):
+                        # Notion에서 삭제됨 → MS task도 삭제 → 위젯에서 제거
+                        try:
+                            requests.delete(
+                                f"https://graph.microsoft.com/v1.0/me/todo/lists/{list_id}/tasks/{task_id}",
+                                headers={"Authorization": f"Bearer {token}"}, timeout=30,
+                            ).raise_for_status()
+                            task["_deleted"] = True
+                        except Exception:
+                            pass
+                    else:
+                        # 페이지 존재, 매핑 복구 (id_prop 미설정 등으로 쿼리에 안 잡힌 경우)
+                        ms_to_notion[task_id] = linked_id
+                        notion_id_to_page[linked_id] = page_data
+                else:
+                    # 페이지 없음 (404 등) → MS task 삭제
+                    try:
+                        requests.delete(
+                            f"https://graph.microsoft.com/v1.0/me/todo/lists/{list_id}/tasks/{task_id}",
+                            headers={"Authorization": f"Bearer {token}"}, timeout=30,
+                        ).raise_for_status()
+                        task["_deleted"] = True
+                    except Exception:
+                        pass
+            except Exception:
+                pass
+            continue
+
         # 진짜 신규 MS task → Notion 생성
         due_date, _ = _extract_ms_due(task.get("dueDateTime"))
         importance = task.get("importance", "normal")
@@ -375,6 +447,7 @@ def handle_get_tasks():
                 importance_prop=s["importance_prop"], importance_value=notion_imp,
             )
             ms_to_notion[task_id] = page["id"]
+            _add_notion_linked_resource(token, list_id, task_id, page["id"])
         except Exception:
             pass
 
@@ -399,7 +472,11 @@ def handle_get_tasks():
             # Notion에서 삭제됨 → ④에서 MS 삭제 처리됨
             continue
 
-        # 양쪽 다 있음 → 수정 동기화
+        # 양쪽 다 있음 → linkedResource 없으면 추가 (기존 태스크 마이그레이션)
+        if not _get_notion_linked_id(ms_task):
+            _add_notion_linked_resource(token, list_id, ms_id, notion_page_id)
+
+        # 수정 동기화
         ms_title = ms_task.get("title", "")
         ms_completed = ms_task.get("status") == "completed"
         ms_due_date, _ = _extract_ms_due(ms_task.get("dueDateTime"))
