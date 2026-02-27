@@ -260,8 +260,7 @@
 
 </div>
 <script>
-const TASKS_URL   = 'https://raw.githubusercontent.com/aveicea/todo/main/data/tasks.json';
-const PLANNER_URL = 'https://raw.githubusercontent.com/aveicea/todo/main/data/planner.json';
+const TASKS_URL = 'https://raw.githubusercontent.com/aveicea/todo/main/data/tasks.json';
 
 let allTasks = [];
 const pendingImportance = new Map();
@@ -355,14 +354,12 @@ async function loadPlanner() {
   if (cached && !allPlanner.length) {
     try { const c = JSON.parse(cached); allPlanner = c.tasks || []; renderTasks(); } catch {}
   }
-  try {
-    const r = await fetch(PLANNER_URL + '?t=' + Date.now());
-    if (!r.ok) throw new Error();
-    const data = await r.json();
+  const data = await callVercel({ action: 'get_planner' });
+  if (data?.ok) {
     localStorage.setItem('planner_cache', JSON.stringify(data));
     allPlanner = data.tasks || [];
     renderTasks();
-  } catch {}
+  }
 }
 
 function renderTasks() {
