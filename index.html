@@ -88,7 +88,16 @@
       font-size: 9px; font-weight: 600; color: #bbb;
       text-transform: uppercase; letter-spacing: 0.4px;
       padding: 4px 6px 2px;
+      display: flex; align-items: center; justify-content: space-between;
+      cursor: pointer; user-select: none;
     }
+    .task-group-label:hover { color: #999; }
+    .group-chevron {
+      font-size: 8px; color: #ccc; transition: transform 0.2s;
+      display: inline-flex; align-items: center; padding: 2px 4px;
+      transform: rotate(180deg);
+    }
+    .group-chevron.collapsed { transform: rotate(0deg); }
 
     .task-item {
       display: flex; align-items: center; gap: 7px;
@@ -264,6 +273,7 @@ let currentFilter = 'today';
 let editingTaskId = null;
 let editingSource = 'todo'; // 'todo' | 'planner'
 let sortAsc = true;
+let collapsedGroups = { pending: false, done: false, planner: false };
 
 // ── Vercel API ────────────────────────────────────────────
 function vercelUrl() { return (localStorage.getItem('vercel_url') || window.location.origin).replace(/\/$/, ''); }
@@ -385,22 +395,27 @@ function renderTasks() {
   let html = '';
 
   if (currentFilter === 'today') {
-    html += `<div class="task-group-label">미완료 ${pending.length}</div>`;
-    html += pending.length ? pending.map(taskHTML).join('') : '<div style="height:6px"></div>';
-    html += `<div class="task-group-label">완료 ${done.length}</div>`;
-    html += done.length ? done.map(taskHTML).join('') : '<div style="height:4px"></div>';
+    const pc = collapsedGroups.pending;
+    html += `<div class="task-group-label" onclick="toggleGroup('pending')">미완료 ${pending.length}<span class="group-chevron${pc?' collapsed':''}">▾</span></div>`;
+    if (!pc) html += pending.length ? pending.map(taskHTML).join('') : '<div style="height:6px"></div>';
+    const dc = collapsedGroups.done;
+    html += `<div class="task-group-label" onclick="toggleGroup('done')">완료 ${done.length}<span class="group-chevron${dc?' collapsed':''}">▾</span></div>`;
+    if (!dc) html += done.length ? done.map(taskHTML).join('') : '<div style="height:4px"></div>';
     const todayPlanner = allPlanner.filter(t => t.due_date && t.due_date.startsWith(today)).sort(sortFn);
     if (todayPlanner.length) {
       const plannerDone = todayPlanner.filter(t => t.completed).length;
       const plannerTotal = todayPlanner.length;
-      html += `<div class="task-group-label">플래너 (${plannerDone}/${plannerTotal})</div>`;
-      html += todayPlanner.map(plannerTaskHTML).join('');
+      const plc = collapsedGroups.planner;
+      html += `<div class="task-group-label" onclick="toggleGroup('planner')">플래너 (${plannerDone}/${plannerTotal})<span class="group-chevron${plc?' collapsed':''}">▾</span></div>`;
+      if (!plc) html += todayPlanner.map(plannerTaskHTML).join('');
     }
   } else if (currentFilter === 'all') {
-    html += `<div class="task-group-label">미완료 ${pending.length}</div>`;
-    html += pending.length ? pending.map(taskHTML).join('') : '<div style="height:6px"></div>';
-    html += `<div class="task-group-label">완료 ${done.length}</div>`;
-    html += done.length ? done.map(taskHTML).join('') : '<div style="height:4px"></div>';
+    const pc = collapsedGroups.pending;
+    html += `<div class="task-group-label" onclick="toggleGroup('pending')">미완료 ${pending.length}<span class="group-chevron${pc?' collapsed':''}">▾</span></div>`;
+    if (!pc) html += pending.length ? pending.map(taskHTML).join('') : '<div style="height:6px"></div>';
+    const dc = collapsedGroups.done;
+    html += `<div class="task-group-label" onclick="toggleGroup('done')">완료 ${done.length}<span class="group-chevron${dc?' collapsed':''}">▾</span></div>`;
+    if (!dc) html += done.length ? done.map(taskHTML).join('') : '<div style="height:4px"></div>';
   } else {
     if (!tasks.length) { list.innerHTML = ''; return; }
     html += tasks.sort(sortFn).map(taskHTML).join('');
@@ -452,6 +467,11 @@ function setFilter(f) {
 function toggleSort() {
   sortAsc = !sortAsc;
   document.getElementById('sort-btn').textContent = sortAsc ? '오름차순' : '내림차순';
+  renderTasks();
+}
+
+function toggleGroup(group) {
+  collapsedGroups[group] = !collapsedGroups[group];
   renderTasks();
 }
 
