@@ -104,6 +104,19 @@ def _todo_schema():
         (n for n, p in props.items() if p["type"] == "rich_text" and any(k in n.lower() for k in ("todo", "id", "ms"))),
         None,
     )
+    # id_prop이 없으면 Notion DB에 자동 생성 (MS 삭제 → Notion 아카이브 추적에 필수)
+    if not id_prop:
+        try:
+            pr = requests.patch(
+                f"https://api.notion.com/v1/databases/{NOTION_DB_ID}",
+                headers=_notion_headers(),
+                json={"properties": {"MS Todo ID": {"rich_text": {}}}},
+                timeout=30,
+            )
+            if pr.ok:
+                id_prop = "MS Todo ID"
+        except Exception:
+            pass
     importance_prop = next((n for n, p in props.items() if p["type"] == "select" and "중요" in n), None)
     importance_options = props.get(importance_prop, {}).get("select", {}).get("options", []) if importance_prop else []
     done_value, todo_value = _detect_status_values(props, status_prop)
@@ -348,9 +361,33 @@ def handle_get_tasks():
     pre_existing = dict(ms_to_notion)  # ③④ 이전 기존 매핑만 보존
 
     # ③ Notion에만 있는 페이지 → MS Todo 생성 + Notion에 ms_id 기록
+    # 미연결 MS task 제목 → ID 역색인 (중복 생성 방지용)
+    unmatched_ms_by_title: dict[str, str] = {
+        task.get("title", ""): task["id"]
+        for task in tasks_raw
+        if task["id"] not in ms_to_notion and task.get("status") != "completed"
+    }
     for page in notion_only:
         title = _page_title(page, s["title_prop"])
         due_date = _page_date(page, s["date_prop"])
+
+        # 같은 제목의 미연결 MS task가 있으면 새로 만들지 않고 기존 것과 연결
+        existing_ms_id = unmatched_ms_by_title.pop(title, None)
+        if existing_ms_id:
+            ms_to_notion[existing_ms_id] = page["id"]
+            _add_notion_linked_resource(token, list_id, existing_ms_id, page["id"])
+            if s["id_prop"]:
+                try:
+                    requests.patch(
+                        f"https://api.notion.com/v1/pages/{page['id']}",
+                        headers=_notion_headers(),
+                        json={"properties": {s["id_prop"]: {"rich_text": [{"text": {"content": existing_ms_id}}]}}},
+                        timeout=30,
+                    )
+                except Exception:
+                    pass
+            continue
+
         ms_body = {"title": title, "status": "notStarted", "importance": "normal"}
         if due_date:
             ms_body["dueDateTime"] = {"dateTime": f"{due_date}T00:00:00.0000000", "timeZone": "Korea Standard Time"}
