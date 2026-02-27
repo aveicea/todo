@@ -302,6 +302,27 @@ function cleanPendingTasks(serverIds) {
   localStorage.setItem('pending_tasks', JSON.stringify(p));
 }
 
+// ── Eventual-consistency 보정: 토글 결과를 60초간 localStorage에 유지 ──
+function _saveOverride(key, id, changes) {
+  try {
+    const ovs = JSON.parse(localStorage.getItem(key) || '{}');
+    ovs[id] = { ...changes, ts: Date.now() };
+    localStorage.setItem(key, JSON.stringify(ovs));
+  } catch {}
+}
+function _applyOverrides(key, tasks, idField, ttlMs = 60000) {
+  try {
+    const ovs = JSON.parse(localStorage.getItem(key) || '{}');
+    const now = Date.now(); let dirty = false;
+    for (const [id, ov] of Object.entries(ovs)) {
+      if (now - ov.ts > ttlMs) { delete ovs[id]; dirty = true; continue; }
+      const t = tasks.find(x => x[idField] === id);
+      if (t) { const { ts, ...fields } = ov; Object.assign(t, fields); }
+    }
+    if (dirty) localStorage.setItem(key, JSON.stringify(ovs));
+  } catch {}
+}
+
 document.documentElement.style.setProperty('--accent', '#888');
 
 function todayStr() {
@@ -333,6 +354,7 @@ async function loadTasks() {
     cleanPendingTasks(serverIds);
     const pending = getPendingTasks().filter(t => !serverIds.has(t.ms_id));
     allTasks = [...(data.tasks || []), ...pending];
+    _applyOverrides('_taskOvs', allTasks, 'ms_id');
     localStorage.setItem('tasks_cache', JSON.stringify(data));
     pendingImportance.forEach((imp, msId) => {
       const t = allTasks.find(t => t.ms_id === msId);
@@ -356,6 +378,7 @@ async function loadPlanner() {
   }
   const data = await callVercel({ action: 'get_planner' });
   if (data?.ok) {
+    _applyOverrides('_plannerOvs', data.tasks || [], 'notion_id');
     localStorage.setItem('planner_cache', JSON.stringify(data));
     allPlanner = data.tasks || [];
     renderTasks();
@@ -479,6 +502,7 @@ async function toggleTask(e, msId, cur) {
   if (task) task.completed = next;
   if (next) completedTodayIds.add(msId); else completedTodayIds.delete(msId);
   updateCache(msId, { completed: next });
+  _saveOverride('_taskOvs', msId, { completed: next });
   renderTasks();
   const result = await callVercel({ action: 'toggle_complete', ms_id: msId, notion_id: task?.notion_id || '', completed: String(next) });
   if (!result?.ok) {
@@ -509,6 +533,7 @@ async function togglePlanner(e, notionId, cur) {
   const next = !cur;
   const task = allPlanner.find(t => t.notion_id === notionId);
   if (task) task.completed = next;
+  _saveOverride('_plannerOvs', notionId, { completed: next });
   renderTasks();
   const result = await callVercel({ action: 'planner_toggle', task_id: notionId, completed: String(next) });
   if (!result?.ok) {
