@@ -262,7 +262,7 @@
 <script>
 let allTasks = [];
 const pendingImportance = new Map();
-const completedTodayIds = new Set(); // 이번 세션에서 완료한 할일 ID
+const completedTodayIds = new Set();
 let allPlanner = [];
 let currentFilter = 'today';
 let editingTaskId = null;
@@ -285,19 +285,6 @@ async function callVercel(params) {
     if (!r.ok) return false;
     return await r.json();
   } catch { return false; }
-}
-
-// create 후 GitHub 파일 반영 전까지 유지할 pending 태스크
-function getPendingTasks() {
-  try { return JSON.parse(localStorage.getItem('pending_tasks') || '[]'); } catch { return []; }
-}
-function addPendingTask(task) {
-  const p = getPendingTasks(); p.push(task);
-  localStorage.setItem('pending_tasks', JSON.stringify(p));
-}
-function cleanPendingTasks(serverIds) {
-  const p = getPendingTasks().filter(t => !serverIds.has(t.ms_id));
-  localStorage.setItem('pending_tasks', JSON.stringify(p));
 }
 
 // ── Eventual-consistency 보정: 토글 결과를 60초간 localStorage에 유지 ──
@@ -345,17 +332,13 @@ async function loadTasks() {
   }
   const data = await callVercel({ action: 'get_tasks' });
   if (data?.ok) {
-    // pending_tasks: Vercel로 만든 태스크가 MS Todo에 아직 없을 때 보정
-    const serverIds = new Set((data.tasks || []).map(t => t.ms_id));
-    cleanPendingTasks(serverIds);
-    const pending = getPendingTasks().filter(t => !serverIds.has(t.ms_id));
-    allTasks = [...(data.tasks || []), ...pending];
-    _applyOverrides('_taskOvs', allTasks, 'ms_id', 60000);
     localStorage.setItem('tasks_cache', JSON.stringify(data));
-    pendingImportance.forEach((imp, msId) => {
-      const t = allTasks.find(t => t.ms_id === msId);
-      if (!t) { pendingImportance.delete(msId); return; }
-      if (t.importance === imp) pendingImportance.delete(msId);
+    allTasks = data.tasks || [];
+    _applyOverrides('_taskOvs', allTasks, 'notion_id', 60000);
+    pendingImportance.forEach((imp, notionId) => {
+      const t = allTasks.find(t => t.notion_id === notionId);
+      if (!t) { pendingImportance.delete(notionId); return; }
+      if (t.importance === imp) pendingImportance.delete(notionId);
       else t.importance = imp;
     });
     document.getElementById('badge').className = 'dot';
@@ -373,8 +356,8 @@ async function loadPlanner() {
   }
   const data = await callVercel({ action: 'get_planner' });
   if (data?.ok) {
+    localStorage.setItem('planner_cache', JSON.stringify(data)); // 원본 저장 후 override 적용
     _applyOverrides('_plannerOvs', data.tasks || [], 'notion_id');
-    localStorage.setItem('planner_cache', JSON.stringify(data));
     allPlanner = data.tasks || [];
     renderTasks();
   }
@@ -383,7 +366,7 @@ async function loadPlanner() {
 function renderTasks() {
   const today = todayStr();
   const tasks = allTasks.filter(t => {
-    if (currentFilter === 'today')   return t.completed ? ((t.due_date && t.due_date.startsWith(today)) || completedTodayIds.has(t.ms_id)) : (!t.due_date || t.due_date <= today);
+    if (currentFilter === 'today')   return t.completed ? ((t.due_date && t.due_date.startsWith(today)) || completedTodayIds.has(t.notion_id)) : (!t.due_date || t.due_date <= today);
     if (currentFilter === 'pending') return !t.completed;
     return true;
   });
@@ -439,7 +422,7 @@ function renderTasks() {
 function taskHTML(t) {
   const due = formatDue(t.due_date, t.due_time, t.completed);
   const dueHTML = due ? `<div class="task-due ${due.cls}">${due.label}</div>` : '';
-  const id = (t.ms_id || '').replace(/'/g, "\\'");
+  const id = (t.notion_id || '').replace(/'/g, "\\'");
   const done = t.completed ? 'done' : '';
   const imp = t.importance || 'normal';
   return `<div class="task-item">
@@ -489,36 +472,36 @@ function toggleGroup(group) {
 }
 
 
-async function toggleTask(e, msId, cur) {
+async function toggleTask(e, notionId, cur) {
   e.stopPropagation();
-  if (!msId) return;
+  if (!notionId) return;
   const next = !cur;
-  const task = allTasks.find(t => t.ms_id === msId);
+  const task = allTasks.find(t => t.notion_id === notionId);
   if (task) task.completed = next;
-  if (next) completedTodayIds.add(msId); else completedTodayIds.delete(msId);
-  updateCache(msId, { completed: next });
-  _saveOverride('_taskOvs', msId, { completed: next });
+  if (next) completedTodayIds.add(notionId); else completedTodayIds.delete(notionId);
+  updateCache(notionId, { completed: next });
+  _saveOverride('_taskOvs', notionId, { completed: next });
   renderTasks();
-  const result = await callVercel({ action: 'toggle_complete', ms_id: msId, notion_id: task?.notion_id || '', completed: String(next) });
+  const result = await callVercel({ action: 'toggle_complete', notion_id: notionId, ms_id: task?.ms_id || '', completed: String(next) });
   if (!result?.ok) {
     document.getElementById('badge').className = 'dot error';
   }
 }
 
-async function toggleImportance(e, msId, cur) {
+async function toggleImportance(e, notionId, cur) {
   e.stopPropagation();
-  if (!msId) return;
+  if (!notionId) return;
   const next = cur === 'high' ? 'normal' : 'high';
-  const task = allTasks.find(t => t.ms_id === msId);
+  const task = allTasks.find(t => t.notion_id === notionId);
   if (task) task.importance = next;
-  pendingImportance.set(msId, next);
-  updateCache(msId, { importance: next });
+  pendingImportance.set(notionId, next);
+  updateCache(notionId, { importance: next });
   renderTasks();
-  const result = await callVercel({ action: 'update', ms_id: msId, notion_id: task?.notion_id || '', importance: next });
+  const result = await callVercel({ action: 'update', notion_id: notionId, ms_id: task?.ms_id || '', importance: next });
   if (!result?.ok) {
     document.getElementById('badge').className = 'dot error';
   } else {
-    pendingImportance.delete(msId);
+    pendingImportance.delete(notionId);
   }
 }
 
@@ -550,10 +533,10 @@ function openPlannerDetail(notionId) {
   document.getElementById('detail-panel').classList.add('visible');
 }
 
-function openDetail(msId) {
-  const task = allTasks.find(t => t.ms_id === msId);
+function openDetail(notionId) {
+  const task = allTasks.find(t => t.notion_id === notionId);
   if (!task) return;
-  editingTaskId = msId;
+  editingTaskId = notionId;
   editingSource = 'todo';
   document.getElementById('detail-time').closest('.detail-field').style.display = '';
   document.getElementById('detail-label').textContent = '편집';
@@ -597,36 +580,35 @@ async function saveTask() {
     if (task) { task.title = title; task.due_date = dateVal || null; task.due_time = timeVal || null; }
     const savedId = editingTaskId;
     closeDetail(); renderTasks();
-    await callVercel({ action: 'planner_update', task_id: savedId, title, due_date: dateVal || 'none', due_time: timeVal || '', completed: String(task?.completed ?? false) });
+    await callVercel({ action: 'planner_update', notion_id: savedId, title, due_date: dateVal || 'none', due_time: timeVal || '', completed: String(task?.completed ?? false) });
   } else if (editingTaskId === 'new') {
     const tmpId = 'tmp_' + Date.now();
-    const newTask = { ms_id: tmpId, title, due_date: dateVal || null, due_time: timeVal || null, completed: false, importance: 'normal' };
+    const newTask = { notion_id: tmpId, title, due_date: dateVal || null, due_time: timeVal || null, completed: false, importance: 'normal' };
     allTasks.push(newTask);
     closeDetail(); renderTasks();
     const result = await callVercel({ action: 'create', title, due_date: dateVal || null, due_time: timeVal || null, importance: 'normal' });
     if (result?.ok && result.task) {
-      const idx = allTasks.findIndex(t => t.ms_id === tmpId);
+      const idx = allTasks.findIndex(t => t.notion_id === tmpId);
       if (idx >= 0) allTasks[idx] = result.task; else allTasks.push(result.task);
-      addPendingTask(result.task);
       const cached = JSON.parse(localStorage.getItem('tasks_cache') || '{}');
       if (cached.tasks) {
-        const ci = cached.tasks.findIndex(t => t.ms_id === tmpId);
+        const ci = cached.tasks.findIndex(t => t.notion_id === tmpId);
         if (ci >= 0) cached.tasks[ci] = result.task; else cached.tasks.push(result.task);
         localStorage.setItem('tasks_cache', JSON.stringify(cached));
       }
       renderTasks();
     } else if (!result?.ok) {
-      allTasks = allTasks.filter(t => t.ms_id !== tmpId);
+      allTasks = allTasks.filter(t => t.notion_id !== tmpId);
       renderTasks();
     }
   } else {
-    const task = allTasks.find(t => t.ms_id === editingTaskId);
+    const task = allTasks.find(t => t.notion_id === editingTaskId);
     if (task) { task.title = title; task.due_date = dateVal || null; task.due_time = timeVal || null; }
     updateCache(editingTaskId, { title, due_date: dateVal || null, due_time: timeVal || null });
     const savedId = editingTaskId;
-    const savedNotion = task?.notion_id || '';
+    const savedMsId = task?.ms_id || '';
     closeDetail(); renderTasks();
-    await callVercel({ action: 'update', ms_id: savedId, notion_id: savedNotion, title, due_date: dateVal || 'none', due_time: timeVal || '' });
+    await callVercel({ action: 'update', notion_id: savedId, ms_id: savedMsId, title, due_date: dateVal || 'none', due_time: timeVal || '' });
   }
   btn.disabled = false; btn.textContent = '저장';
 }
@@ -649,27 +631,26 @@ async function deleteTask() {
       if (cached.tasks) { cached.tasks = cached.tasks.filter(t => t.notion_id !== notionId); localStorage.setItem('planner_cache', JSON.stringify(cached)); }
     } catch {}
     closeDetail(); renderTasks();
-    await callVercel({ action: 'planner_delete', task_id: notionId });
+    await callVercel({ action: 'planner_delete', notion_id: notionId });
     return;
   }
-  const msId = editingTaskId;
-  const msTask = allTasks.find(t => t.ms_id === msId);
-  const notionId = msTask?.notion_id || '';
-  allTasks = allTasks.filter(t => t.ms_id !== msId);
+  const notionId = editingTaskId;
+  const msId = allTasks.find(t => t.notion_id === notionId)?.ms_id || '';
+  allTasks = allTasks.filter(t => t.notion_id !== notionId);
   try {
     const cached = JSON.parse(localStorage.getItem('tasks_cache') || '{}');
-    if (cached.tasks) { cached.tasks = cached.tasks.filter(t => t.ms_id !== msId); localStorage.setItem('tasks_cache', JSON.stringify(cached)); }
+    if (cached.tasks) { cached.tasks = cached.tasks.filter(t => t.notion_id !== notionId); localStorage.setItem('tasks_cache', JSON.stringify(cached)); }
   } catch {}
   closeDetail(); renderTasks();
-  await callVercel({ action: 'delete', ms_id: msId, notion_id: notionId });
+  await callVercel({ action: 'delete', notion_id: notionId, ms_id: msId });
 }
 
-function updateCache(msId, changes) {
+function updateCache(notionId, changes) {
   try {
     const cached = localStorage.getItem('tasks_cache');
     if (!cached) return;
     const data = JSON.parse(cached);
-    const t = (data.tasks||[]).find(x => x.ms_id === msId);
+    const t = (data.tasks||[]).find(x => x.notion_id === notionId);
     if (t) Object.assign(t, changes);
     localStorage.setItem('tasks_cache', JSON.stringify(data));
   } catch {}
