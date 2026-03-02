@@ -457,8 +457,8 @@
       "due_time": null
     },
     {
-      "notion_id": "317c2bbd-5973-8018-9d09-e1a1497f4ec2",
-      "title": "39강 컴퓨터네트워크",
+      "notion_id": "317c2bbd-5973-809f-a753-db781a324e93",
+      "title": "40강 컴퓨터네트워크",
       "book_title": "교과내용학",
       "completed": false,
       "due_date": "2026-03-02",
@@ -483,14 +483,6 @@
     {
       "notion_id": "317c2bbd-5973-804f-965e-e783c6a5f35a",
       "title": "41강 컴퓨터네트워크",
-      "book_title": "교과내용학",
-      "completed": false,
-      "due_date": "2026-03-05",
-      "due_time": null
-    },
-    {
-      "notion_id": "317c2bbd-5973-809f-a753-db781a324e93",
-      "title": "40강 컴퓨터네트워크",
       "book_title": "교과내용학",
       "completed": false,
       "due_date": "2026-03-05",
@@ -1337,6 +1329,14 @@
       "due_time": null
     },
     {
+      "notion_id": "317c2bbd-5973-8018-9d09-e1a1497f4ec2",
+      "title": "39강 컴퓨터네트워크",
+      "book_title": "교과내용학",
+      "completed": true,
+      "due_date": "2026-03-02",
+      "due_time": null
+    },
+    {
       "notion_id": "317c2bbd-5973-8056-b8b8-dc0b90c8ea8b",
       "title": "37강 컴퓨터네트워크",
       "book_title": "교과내용학",
@@ -1353,6 +1353,6 @@
       "due_time": null
     }
   ],
-  "last_sync": "2026-03-02T06:03:01.115340+00:00",
+  "last_sync": "2026-03-02T07:10:59.095082+00:00",
   "total": 169
 }
