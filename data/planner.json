@@ -449,14 +449,6 @@
       "due_time": null
     },
     {
-      "notion_id": "315c2bbd-5973-814c-b2e2-d238c8f2fd5e",
-      "title": "31강 운영체제'",
-      "book_title": "교과내용학",
-      "completed": false,
-      "due_date": "2026-02-28",
-      "due_time": null
-    },
-    {
       "notion_id": "315c2bbd-5973-8176-a96b-fda481104f23",
       "title": "35강 운영체제'",
       "book_title": "교과내용학",
@@ -465,11 +457,27 @@
       "due_time": null
     },
     {
-      "notion_id": "315c2bbd-5973-81de-ae4e-e6956d2bc12e",
-      "title": "32강 운영체제'",
+      "notion_id": "317c2bbd-5973-8018-9d09-e1a1497f4ec2",
+      "title": "39강 컴퓨터네트워크",
       "book_title": "교과내용학",
       "completed": false,
-      "due_date": "2026-02-28",
+      "due_date": "2026-03-02",
+      "due_time": null
+    },
+    {
+      "notion_id": "317c2bbd-5973-8056-b8b8-dc0b90c8ea8b",
+      "title": "37강 컴퓨터네트워크",
+      "book_title": "교과내용학",
+      "completed": false,
+      "due_date": "2026-03-02",
+      "due_time": null
+    },
+    {
+      "notion_id": "317c2bbd-5973-80ad-9a5c-f8d7df756de1",
+      "title": "38강 컴퓨터네트워크",
+      "book_title": "교과내용학",
+      "completed": false,
+      "due_date": "2026-03-02",
       "due_time": null
     },
     {
@@ -478,6 +486,134 @@
       "book_title": "스터디",
       "completed": false,
       "due_date": "2026-03-03",
+      "due_time": null
+    },
+    {
+      "notion_id": "317c2bbd-5973-8025-be27-faa04de40c45",
+      "title": "42강 컴퓨터네트워크",
+      "book_title": "교과내용학",
+      "completed": false,
+      "due_date": "2026-03-05",
+      "due_time": null
+    },
+    {
+      "notion_id": "317c2bbd-5973-804f-965e-e783c6a5f35a",
+      "title": "41강 컴퓨터네트워크",
+      "book_title": "교과내용학",
+      "completed": false,
+      "due_date": "2026-03-05",
+      "due_time": null
+    },
+    {
+      "notion_id": "317c2bbd-5973-809f-a753-db781a324e93",
+      "title": "40강 컴퓨터네트워크",
+      "book_title": "교과내용학",
+      "completed": false,
+      "due_date": "2026-03-05",
+      "due_time": null
+    },
+    {
+      "notion_id": "317c2bbd-5973-80a1-8134-e9066879c5e4",
+      "title": "43강 컴퓨터네트워크",
+      "book_title": "교과내용학",
+      "completed": false,
+      "due_date": "2026-03-05",
+      "due_time": null
+    },
+    {
+      "notion_id": "317c2bbd-5973-80e7-9ecc-de717f56b8aa",
+      "title": "자료구조 복습 벼락치기",
+      "book_title": "교과내용학",
+      "completed": false,
+      "due_date": "2026-03-06",
+      "due_time": null
+    },
+    {
+      "notion_id": "317c2bbd-5973-8014-8acc-ff316f6a62ae",
+      "title": "45강 디지털논리회로",
+      "book_title": "교과내용학",
+      "completed": false,
+      "due_date": "2026-03-08",
+      "due_time": null
+    },
+    {
+      "notion_id": "317c2bbd-5973-8089-8999-c554a5998b5f",
+      "title": "47강 디지털논리회로",
+      "book_title": "교과내용학",
+      "completed": false,
+      "due_date": "2026-03-08",
+      "due_time": null
+    },
+    {
+      "notion_id": "317c2bbd-5973-808c-8ba7-d3ea2249de9a",
+      "title": "46강 디지털논리회로",
+      "book_title": "교과내용학",
+      "completed": false,
+      "due_date": "2026-03-08",
+      "due_time": null
+    },
+    {
+      "notion_id": "317c2bbd-5973-80a4-b4f7-d824cc67280a",
+      "title": "44강 디지털논리회로",
+      "book_title": "교과내용학",
+      "completed": false,
+      "due_date": "2026-03-08",
+      "due_time": null
+    },
+    {
+      "notion_id": "317c2bbd-5973-8003-8f67-c3c1153ef94e",
+      "title": "48강 컴퓨터구조",
+      "book_title": "교과내용학",
+      "completed": false,
+      "due_date": "2026-03-09",
+      "due_time": null
+    },
+    {
+      "notion_id": "317c2bbd-5973-8014-9959-fcc571f0565d",
+      "title": "49강 컴퓨터구조",
+      "book_title": "교과내용학",
+      "completed": false,
+      "due_date": "2026-03-09",
+      "due_time": null
+    },
+    {
+      "notion_id": "317c2bbd-5973-802a-a055-d7ce54db6440",
+      "title": "데이터베이스 복습 벼락치기",
+      "book_title": "교과내용학",
+      "completed": false,
+      "due_date": "2026-03-11",
+      "due_time": null
+    },
+    {
+      "notion_id": "317c2bbd-5973-8063-8382-e97522915a4f",
+      "title": "운영체제 복습 벼락치기",
+      "book_title": "교과내용학",
+      "completed": false,
+      "due_date": "2026-03-12",
+      "due_time": null
+    },
+    {
+      "notion_id": "317c2bbd-5973-8043-a47c-dc3cc57943e1",
+      "title": "컴퓨터네트워크 복습 벼락치기",
+      "book_title": "교과내용학",
+      "completed": false,
+      "due_date": "2026-03-13",
+      "due_time": null
+    },
+    {
+      "notion_id": "317c2bbd-5973-8027-886e-f79503b47b8b",
+      "title": "디지털논리회로 복습 벼락치기",
+      "book_title": "교과내용학",
+      "completed": false,
+      "due_date": "2026-03-15",
+      "due_time": null
+    },
+    {
+      "notion_id": "317c2bbd-5973-804d-b076-ed0d2f36eb76",
+      "title": "컴퓨터구조 복습 벼락치기",
+      "book_title": "교과내용학",
+      "completed": false,
+      "due_date": "2026-03-15",
       "due_time": null
     },
     {
@@ -1167,8 +1303,56 @@
       "completed": true,
       "due_date": "2026-02-27",
       "due_time": null
+    },
+    {
+      "notion_id": "315c2bbd-5973-814c-b2e2-d238c8f2fd5e",
+      "title": "31강 운영체제'",
+      "book_title": "교과내용학",
+      "completed": true,
+      "due_date": "2026-02-28",
+      "due_time": null
+    },
+    {
+      "notion_id": "315c2bbd-5973-81de-ae4e-e6956d2bc12e",
+      "title": "32강 운영체제'",
+      "book_title": "교과내용학",
+      "completed": true,
+      "due_date": "2026-02-28",
+      "due_time": null
+    },
+    {
+      "notion_id": "317c2bbd-5973-8100-8760-c40de9114996",
+      "title": "34강 운영체제''",
+      "book_title": "교과내용학",
+      "completed": true,
+      "due_date": "2026-03-01",
+      "due_time": null
+    },
+    {
+      "notion_id": "317c2bbd-5973-8157-9007-c857efbc6d77",
+      "title": "33강 운영체제''",
+      "book_title": "교과내용학",
+      "completed": true,
+      "due_date": "2026-03-01",
+      "due_time": null
+    },
+    {
+      "notion_id": "317c2bbd-5973-81af-b34b-f9ca789e0c6a",
+      "title": "35강 운영체제''",
+      "book_title": "교과내용학",
+      "completed": true,
+      "due_date": "2026-03-01",
+      "due_time": null
+    },
+    {
+      "notion_id": "317c2bbd-5973-8006-8713-ef1cf0b9b729",
+      "title": "36강 컴퓨터네트워크",
+      "book_title": "교과내용학",
+      "completed": true,
+      "due_date": "2026-03-02",
+      "due_time": null
     }
   ],
-  "last_sync": "2026-03-02T01:17:30.984373+00:00",
-  "total": 146
+  "last_sync": "2026-03-02T03:39:07.788215+00:00",
+  "total": 169
 }
