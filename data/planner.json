@@ -465,22 +465,6 @@
       "due_time": null
     },
     {
-      "notion_id": "317c2bbd-5973-8056-b8b8-dc0b90c8ea8b",
-      "title": "37강 컴퓨터네트워크",
-      "book_title": "교과내용학",
-      "completed": false,
-      "due_date": "2026-03-02",
-      "due_time": null
-    },
-    {
-      "notion_id": "317c2bbd-5973-80ad-9a5c-f8d7df756de1",
-      "title": "38강 컴퓨터네트워크",
-      "book_title": "교과내용학",
-      "completed": false,
-      "due_date": "2026-03-02",
-      "due_time": null
-    },
-    {
       "notion_id": "314c2bbd-5973-80ad-adbc-d7e4757f389f",
       "title": "인기초 교과서 분석 ",
       "book_title": "스터디",
@@ -1351,8 +1335,24 @@
       "completed": true,
       "due_date": "2026-03-02",
       "due_time": null
+    },
+    {
+      "notion_id": "317c2bbd-5973-8056-b8b8-dc0b90c8ea8b",
+      "title": "37강 컴퓨터네트워크",
+      "book_title": "교과내용학",
+      "completed": true,
+      "due_date": "2026-03-02",
+      "due_time": null
+    },
+    {
+      "notion_id": "317c2bbd-5973-80ad-9a5c-f8d7df756de1",
+      "title": "38강 컴퓨터네트워크",
+      "book_title": "교과내용학",
+      "completed": true,
+      "due_date": "2026-03-02",
+      "due_time": null
     }
   ],
-  "last_sync": "2026-03-02T03:39:07.788215+00:00",
+  "last_sync": "2026-03-02T05:06:44.540646+00:00",
   "total": 169
 }
