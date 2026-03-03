@@ -221,6 +221,11 @@
     <button class="filter-tab"        onclick="setFilter('pending')" id="tab-pending">미완료</button>
     <button class="filter-tab"        onclick="setFilter('all')"     id="tab-all">전체</button>
     <button id="sort-btn" onclick="toggleSort()" style="display:none;margin-left:auto;border:none;background:transparent;font-size:10px;color:#aaa;cursor:pointer;padding:2px 0;">오름차순</button>
+    <div id="date-nav" style="margin-left:auto;display:flex;align-items:center;gap:0px;">
+      <button onclick="shiftBrowseDate(-1)" style="border:none;background:transparent;font-size:12px;color:#aaa;cursor:pointer;padding:1px 4px;line-height:1;">‹</button>
+      <span id="date-nav-label" style="font-size:10px;color:#aaa;min-width:52px;text-align:center;white-space:nowrap;"></span>
+      <button onclick="shiftBrowseDate(1)" style="border:none;background:transparent;font-size:12px;color:#aaa;cursor:pointer;padding:1px 4px;line-height:1;">›</button>
+    </div>
   </div>
 
   <div class="task-list" id="task-list">
@@ -270,6 +275,24 @@ let editingTaskId = null;
 let editingSource = 'todo'; // 'todo' | 'planner'
 let sortAsc = true;
 let collapsedGroups = { pending: false, done: false, planner: false };
+let browseDate = null; // null = 오늘
+
+function getBrowseDate() { return browseDate || todayStr(); }
+
+function shiftBrowseDate(delta) {
+  const d = new Date(getBrowseDate() + 'T00:00:00');
+  d.setDate(d.getDate() + delta);
+  browseDate = `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+  renderDateNav();
+  renderTasks();
+}
+
+function renderDateNav() {
+  const d = new Date(getBrowseDate() + 'T00:00:00');
+  const days = ['일','월','화','수','목','금','토'];
+  document.getElementById('date-nav-label').textContent =
+    `${d.getMonth()+1}/${d.getDate()}(${days[d.getDay()]})`;
+}
 
 // ── Vercel API ────────────────────────────────────────────
 function vercelUrl() { return (localStorage.getItem('vercel_url') || window.location.origin).replace(/\/$/, ''); }
@@ -366,8 +389,10 @@ async function loadPlanner() {
 
 function renderTasks() {
   const today = todayStr();
+  const browseDay = currentFilter === 'today' ? getBrowseDate() : today;
+  const isActualToday = browseDay === today;
   const tasks = allTasks.filter(t => {
-    if (currentFilter === 'today')   return t.completed ? ((t.due_date && t.due_date.startsWith(today)) || completedTodayIds.has(t.notion_id)) : (!t.due_date || t.due_date <= today);
+    if (currentFilter === 'today')   return t.completed ? ((t.due_date && t.due_date.startsWith(browseDay)) || (isActualToday && completedTodayIds.has(t.notion_id))) : (!t.due_date || t.due_date <= browseDay);
     if (currentFilter === 'pending') return !t.completed;
     return true;
   });
@@ -398,7 +423,7 @@ function renderTasks() {
     const dc = collapsedGroups.done;
     html += `<div class="task-group-label" onclick="toggleGroup('done')">완료 ${done.length}<span class="group-chevron">${dc?'∨':'∧'}</span></div>`;
     if (!dc) html += done.length ? done.map(taskHTML).join('') : '<div style="height:4px"></div>';
-    const todayPlanner = allPlanner.filter(t => t.due_date && t.due_date.startsWith(today)).sort(sortFn);
+    const todayPlanner = allPlanner.filter(t => t.due_date && t.due_date.startsWith(browseDay)).sort(sortFn);
     if (todayPlanner.length) {
       const plannerDone = todayPlanner.filter(t => t.completed).length;
       const plannerTotal = todayPlanner.length;
@@ -458,6 +483,8 @@ function setFilter(f) {
   document.querySelectorAll('.filter-tab').forEach(b => b.classList.remove('active'));
   document.getElementById('tab-' + f).classList.add('active');
   document.getElementById('sort-btn').style.display = f === 'all' ? '' : 'none';
+  document.getElementById('date-nav').style.display = f === 'today' ? '' : 'none';
+  if (f === 'today') { browseDate = null; renderDateNav(); }
   renderTasks();
 }
 
@@ -697,6 +724,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const urlInput = document.getElementById('vercel-url-input');
   if (urlInput) urlInput.addEventListener('keydown', e => { if (e.key === 'Enter') saveVercelConfig(); });
   // vercel URL은 window.location.origin으로 자동 감지되므로 setup 불필요
+  renderDateNav();
   loadTasks();
   loadPlanner();
   setInterval(() => { loadTasks(); loadPlanner(); }, 120000);
