@@ -16,15 +16,15 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 8px;
+      padding: 0;
       touch-action: manipulation;
     }
 
     #widget-container {
       width: 100%;
-      max-width: 400px;
+      max-width: none;
       min-height: 300px;
-      height: calc(100vh - 16px);
+      height: 100vh;
       background: rgba(255,255,255,0.95);
       backdrop-filter: blur(20px);
       border-radius: 16px;
@@ -200,7 +200,6 @@
     @media (max-width: 480px) { #widget-container { min-width: 250px; } }
     @media (max-width: 320px) { #widget-container { min-width: 220px; } }
     @media (max-width: 270px) {
-      body { padding: 0; }
       #widget-container { border-radius: 0; box-shadow: none; min-width: 0; }
     }
   </style>
