@@ -227,7 +227,7 @@
     <button id="sort-btn" onclick="toggleSort()" style="display:none;margin-left:auto;border:none;background:transparent;font-size:10px;color:#aaa;cursor:pointer;padding:2px 0;">오름차순</button>
     <div id="date-nav" style="margin-left:auto;display:flex;align-items:center;gap:0px;">
       <button onclick="shiftBrowseDate(-1)" style="border:none;background:transparent;font-size:12px;color:#aaa;cursor:pointer;padding:1px 4px;line-height:1;">‹</button>
-      <span id="date-nav-label" style="font-size:10px;color:#aaa;min-width:52px;text-align:center;white-space:nowrap;"></span>
+      <span id="date-nav-label" onclick="resetToToday()" style="font-size:10px;color:#aaa;min-width:52px;text-align:center;white-space:nowrap;cursor:pointer;" title="오늘로 이동"></span>
       <button onclick="shiftBrowseDate(1)" style="border:none;background:transparent;font-size:12px;color:#aaa;cursor:pointer;padding:1px 4px;line-height:1;">›</button>
     </div>
   </div>
@@ -282,6 +282,12 @@ let collapsedGroups = { pending: false, done: false, planner: false };
 let browseDate = null; // null = 오늘
 
 function getBrowseDate() { return browseDate || todayStr(); }
+
+function resetToToday() {
+  browseDate = null;
+  renderDateNav();
+  renderTasks();
+}
 
 function shiftBrowseDate(delta) {
   const d = new Date(getBrowseDate() + 'T00:00:00');
