@@ -504,7 +504,7 @@ function setFilter(f) {
   document.querySelectorAll('.filter-tab').forEach(b => b.classList.remove('active'));
   document.getElementById('tab-' + f).classList.add('active');
   document.getElementById('sort-btn').style.display = f === 'all' ? '' : 'none';
-  document.getElementById('date-nav').style.display = f === 'today' ? '' : 'none';
+  document.getElementById('date-nav').style.display = f === 'today' ? 'flex' : 'none';
   if (f === 'today') { browseDate = null; renderDateNav(); }
   renderTasks();
 }
