@@ -443,9 +443,13 @@ function renderTasks() {
       const plc = collapsedGroups.planner;
       html += `<div class="task-group-label" onclick="toggleGroup('planner')">플래너 (${plannerDone}/${plannerTotal})<span class="group-chevron">${plc?'∨':'∧'}</span></div>`;
       if (!plc) {
-        const plannerPending = todayPlanner.filter(t => !t.completed);
-        const plannerCompleted = todayPlanner.filter(t => t.completed);
-        html += [...plannerPending, ...plannerCompleted].map(plannerTaskHTML).join('');
+        if (browseDay < today) {
+          html += todayPlanner.map(plannerTaskHTML).join('');
+        } else {
+          const plannerPending = todayPlanner.filter(t => !t.completed);
+          const plannerCompleted = todayPlanner.filter(t => t.completed);
+          html += [...plannerPending, ...plannerCompleted].map(plannerTaskHTML).join('');
+        }
       }
     }
   } else if (currentFilter === 'all') {
