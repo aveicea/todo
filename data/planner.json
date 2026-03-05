@@ -497,14 +497,6 @@
       "due_time": null
     },
     {
-      "notion_id": "319c2bbd-5973-8106-a44f-eb3f5edea3ab",
-      "title": "42강 컴퓨터네트워크'",
-      "book_title": "교과내용학",
-      "completed": false,
-      "due_date": "2026-03-05",
-      "due_time": null
-    },
-    {
       "notion_id": "319c2bbd-5973-8113-aca4-f19f4306f3fd",
       "title": "인기초 교과서 분석  (2)'",
       "book_title": "스터디",
@@ -1383,8 +1375,16 @@
       "completed": true,
       "due_date": "2026-03-03",
       "due_time": null
+    },
+    {
+      "notion_id": "319c2bbd-5973-8106-a44f-eb3f5edea3ab",
+      "title": "42강 컴퓨터네트워크'",
+      "book_title": "교과내용학",
+      "completed": true,
+      "due_date": "2026-03-05",
+      "due_time": null
     }
   ],
-  "last_sync": "2026-03-05T05:12:12.607453+00:00",
+  "last_sync": "2026-03-05T06:02:40.116110+00:00",
   "total": 173
 }
