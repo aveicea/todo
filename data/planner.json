@@ -505,8 +505,8 @@
       "due_time": null
     },
     {
-      "notion_id": "31ac2bbd-5973-816e-b5eb-c6b86cfe0039",
-      "title": "인기초 교과서 분석 2단원",
+      "notion_id": "31ac2bbd-5973-8180-bcd6-cf4cf801a71a",
+      "title": "인기초 교과서 분석 2단원 (2)",
       "book_title": "스터디",
       "completed": false,
       "due_date": "2026-03-05",
@@ -1391,8 +1391,16 @@
       "completed": true,
       "due_date": "2026-03-05",
       "due_time": null
+    },
+    {
+      "notion_id": "31ac2bbd-5973-816e-b5eb-c6b86cfe0039",
+      "title": "인기초 교과서 분석 2단원",
+      "book_title": "스터디",
+      "completed": true,
+      "due_date": "2026-03-05",
+      "due_time": null
     }
   ],
-  "last_sync": "2026-03-05T14:09:38.178781+00:00",
-  "total": 174
+  "last_sync": "2026-03-05T15:03:14.264433+00:00",
+  "total": 175
 }
