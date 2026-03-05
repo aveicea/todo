@@ -497,17 +497,17 @@
       "due_time": null
     },
     {
-      "notion_id": "319c2bbd-5973-8113-aca4-f19f4306f3fd",
-      "title": "인기초 교과서 분석  (2)'",
-      "book_title": "스터디",
+      "notion_id": "319c2bbd-5973-8144-95d8-fecc6c75943c",
+      "title": "43강 컴퓨터네트워크'",
+      "book_title": "교과내용학",
       "completed": false,
       "due_date": "2026-03-05",
       "due_time": null
     },
     {
-      "notion_id": "319c2bbd-5973-8144-95d8-fecc6c75943c",
-      "title": "43강 컴퓨터네트워크'",
-      "book_title": "교과내용학",
+      "notion_id": "31ac2bbd-5973-816e-b5eb-c6b86cfe0039",
+      "title": "인기초 교과서 분석 2단원",
+      "book_title": "스터디",
       "completed": false,
       "due_date": "2026-03-05",
       "due_time": null
@@ -1383,8 +1383,16 @@
       "completed": true,
       "due_date": "2026-03-05",
       "due_time": null
+    },
+    {
+      "notion_id": "319c2bbd-5973-8113-aca4-f19f4306f3fd",
+      "title": "인기초 교과서 분석  (2)'",
+      "book_title": "스터디",
+      "completed": true,
+      "due_date": "2026-03-05",
+      "due_time": null
     }
   ],
-  "last_sync": "2026-03-05T11:09:23.407772+00:00",
-  "total": 173
+  "last_sync": "2026-03-05T11:47:26.424659+00:00",
+  "total": 174
 }
