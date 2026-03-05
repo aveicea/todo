@@ -741,13 +741,22 @@ function saveVercelConfig() {
   document.getElementById('setup-panel').classList.remove('visible');
 }
 
+async function initialLoad() {
+  await Promise.all([loadTasks(), loadPlanner()]);
+  const hasError = document.getElementById('badge').className.includes('error');
+  if (hasError) {
+    setTimeout(async () => {
+      await Promise.all([loadTasks(), loadPlanner()]);
+    }, 3000);
+  }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   const urlInput = document.getElementById('vercel-url-input');
   if (urlInput) urlInput.addEventListener('keydown', e => { if (e.key === 'Enter') saveVercelConfig(); });
   // vercel URL은 window.location.origin으로 자동 감지되므로 setup 불필요
   renderDateNav();
-  loadTasks();
-  loadPlanner();
+  initialLoad();
   setInterval(() => { loadTasks(); loadPlanner(); }, 120000);
 });
 </script>
