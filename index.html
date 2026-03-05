@@ -710,10 +710,20 @@ async function triggerSync() {
   const btn = document.getElementById('sync-btn');
   btn.disabled = true; btn.textContent = '…';
   const url = vercelUrl();
-  if (url) { fetch(`${url}/api/cron`).catch(() => {}); }
-  await new Promise(r => setTimeout(r, 3000));
+  let cronOk = true;
+  if (url) {
+    try {
+      const r = await fetch(`${url}/api/cron`, { signal: AbortSignal.timeout(55000) });
+      const data = await r.json().catch(() => ({}));
+      cronOk = r.ok && data.ok !== false;
+      if (!cronOk) document.getElementById('badge').className = 'dot error';
+    } catch {
+      // 네트워크 오류 또는 타임아웃 → 조용히 실패
+      cronOk = false;
+    }
+  }
   await Promise.all([loadTasks(), loadPlanner()]);
-  const hasError = document.getElementById('badge').className.includes('error');
+  const hasError = !cronOk || document.getElementById('badge').className.includes('error');
   btn.textContent = hasError ? '!' : '✓';
   setTimeout(() => { btn.textContent = '↺'; btn.disabled = false; }, 2000);
 }

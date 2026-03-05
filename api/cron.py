@@ -259,8 +259,16 @@ def run_sync():
         ms_time = task.get("lastModifiedDateTime", "")
         notion_time = page.get("last_edited_time", "")
 
+        # 완료 상태가 다를 때: notion_done=True, ms_done=False이면 타임스탬프 무관하게 MS 업데이트
+        # (노션에서 완료한 항목을 MS에 전파하는 것이 사용자 의도)
+        if ms_done != notion_done:
+            notion_is_source = notion_done or (notion_time > ms_time)
+        else:
+            notion_is_source = notion_time > ms_time
+
         try:
-            if ms_time >= notion_time:
+            if not notion_is_source:
+                # MS가 최신 → Notion 업데이트
                 props = {s["status_prop"]: {"status": {"name": s["done_value"] if ms_done else s["todo_value"]}}}
                 if s["date_prop"] and ms_date != notion_date:
                     props[s["date_prop"]] = {"date": {"start": ms_date}} if ms_date else {"date": None}
@@ -269,6 +277,7 @@ def run_sync():
                     headers=_notion_headers(), json={"properties": props}, timeout=30,
                 ).raise_for_status()
             else:
+                # Notion이 최신 (또는 Notion에서 완료) → MS 업데이트
                 ms_body = {"status": "completed" if notion_done else "notStarted"}
                 if s["date_prop"] and ms_date != notion_date:
                     ms_body["dueDateTime"] = (
@@ -280,8 +289,9 @@ def run_sync():
                     headers=_ms_headers(ms_token), json=ms_body, timeout=30,
                 ).raise_for_status()
             stats["updated"] += 1
-        except Exception:
+        except Exception as e:
             stats["errors"] += 1
+            stats.setdefault("error_details", []).append(str(e))
 
     return stats
 
@@ -301,5 +311,6 @@ class handler(BaseHTTPRequestHandler):
 
         self.send_response(code)
         self.send_header("Content-Type", "application/json")
+        self.send_header("Access-Control-Allow-Origin", "*")
         self.end_headers()
         self.wfile.write(json.dumps(result, ensure_ascii=False).encode())
