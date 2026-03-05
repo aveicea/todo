@@ -497,14 +497,6 @@
       "due_time": null
     },
     {
-      "notion_id": "319c2bbd-5973-8144-95d8-fecc6c75943c",
-      "title": "43강 컴퓨터네트워크'",
-      "book_title": "교과내용학",
-      "completed": false,
-      "due_date": "2026-03-05",
-      "due_time": null
-    },
-    {
       "notion_id": "31ac2bbd-5973-8180-bcd6-cf4cf801a71a",
       "title": "인기초 교과서 분석 2단원 (2)",
       "book_title": "스터디",
@@ -523,6 +515,30 @@
     {
       "notion_id": "317c2bbd-5973-808c-8ba7-d3ea2249de9a",
       "title": "46강 디지털논리회로",
+      "book_title": "교과내용학",
+      "completed": false,
+      "due_date": "2026-03-06",
+      "due_time": null
+    },
+    {
+      "notion_id": "31ac2bbd-5973-8169-b00b-dfa37a668627",
+      "title": "인기초 교과서 분석 2단원 (2)'",
+      "book_title": "스터디",
+      "completed": false,
+      "due_date": "2026-03-06",
+      "due_time": null
+    },
+    {
+      "notion_id": "31ac2bbd-5973-817a-a43a-fc7b2b0ebc0f",
+      "title": "44강 디지털논리회로'",
+      "book_title": "교과내용학",
+      "completed": false,
+      "due_date": "2026-03-06",
+      "due_time": null
+    },
+    {
+      "notion_id": "31ac2bbd-5973-81f0-9720-d73fbb24baa7",
+      "title": "45강 디지털논리회로'",
       "book_title": "교과내용학",
       "completed": false,
       "due_date": "2026-03-06",
@@ -1393,6 +1409,14 @@
       "due_time": null
     },
     {
+      "notion_id": "319c2bbd-5973-8144-95d8-fecc6c75943c",
+      "title": "43강 컴퓨터네트워크'",
+      "book_title": "교과내용학",
+      "completed": true,
+      "due_date": "2026-03-05",
+      "due_time": null
+    },
+    {
       "notion_id": "31ac2bbd-5973-816e-b5eb-c6b86cfe0039",
       "title": "인기초 교과서 분석 2단원",
       "book_title": "스터디",
@@ -1401,6 +1425,6 @@
       "due_time": null
     }
   ],
-  "last_sync": "2026-03-05T18:02:05.785308+00:00",
-  "total": 175
+  "last_sync": "2026-03-05T19:23:19.243745+00:00",
+  "total": 178
 }
