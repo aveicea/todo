@@ -46,6 +46,15 @@
       "importance": "normal"
     },
     {
+      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAell2cUAAA=",
+      "notion_id": "31bc2bbd-5973-81db-8373-d5743143eae1",
+      "title": "등록금 납부",
+      "completed": false,
+      "due_date": "2026-03-09",
+      "due_time": null,
+      "importance": "normal"
+    },
+    {
       "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAell2cRAAA=",
       "notion_id": "317c2bbd-5973-81d9-91b2-e41b96a1e0ad",
       "title": "블로그쓰기",
@@ -118,8 +127,8 @@
       "importance": "normal"
     }
   ],
-  "last_sync": "2026-03-06T02:46:03.379903+00:00",
-  "total": 13,
+  "last_sync": "2026-03-06T04:22:53.956026+00:00",
+  "total": 14,
   "completed": 7,
-  "pending": 6
+  "pending": 7
 }
