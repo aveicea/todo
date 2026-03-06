@@ -529,14 +529,6 @@
       "due_time": null
     },
     {
-      "notion_id": "31ac2bbd-5973-817a-a43a-fc7b2b0ebc0f",
-      "title": "44강 디지털논리회로'",
-      "book_title": "교과내용학",
-      "completed": false,
-      "due_date": "2026-03-06",
-      "due_time": null
-    },
-    {
       "notion_id": "31ac2bbd-5973-81f0-9720-d73fbb24baa7",
       "title": "45강 디지털논리회로'",
       "book_title": "교과내용학",
@@ -1423,8 +1415,16 @@
       "completed": true,
       "due_date": "2026-03-05",
       "due_time": null
+    },
+    {
+      "notion_id": "31ac2bbd-5973-817a-a43a-fc7b2b0ebc0f",
+      "title": "44강 디지털논리회로'",
+      "book_title": "교과내용학",
+      "completed": true,
+      "due_date": "2026-03-06",
+      "due_time": null
     }
   ],
-  "last_sync": "2026-03-06T05:27:08.754836+00:00",
+  "last_sync": "2026-03-06T06:04:13.061941+00:00",
   "total": 178
 }
