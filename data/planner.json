@@ -513,14 +513,6 @@
       "due_time": null
     },
     {
-      "notion_id": "317c2bbd-5973-808c-8ba7-d3ea2249de9a",
-      "title": "46강 디지털논리회로",
-      "book_title": "교과내용학",
-      "completed": false,
-      "due_date": "2026-03-06",
-      "due_time": null
-    },
-    {
       "notion_id": "31ac2bbd-5973-8169-b00b-dfa37a668627",
       "title": "인기초 교과서 분석 2단원 (2)'",
       "book_title": "스터디",
@@ -1409,6 +1401,14 @@
       "due_time": null
     },
     {
+      "notion_id": "317c2bbd-5973-808c-8ba7-d3ea2249de9a",
+      "title": "46강 디지털논리회로",
+      "book_title": "교과내용학",
+      "completed": true,
+      "due_date": "2026-03-06",
+      "due_time": null
+    },
+    {
       "notion_id": "31ac2bbd-5973-817a-a43a-fc7b2b0ebc0f",
       "title": "44강 디지털논리회로'",
       "book_title": "교과내용학",
@@ -1425,6 +1425,6 @@
       "due_time": null
     }
   ],
-  "last_sync": "2026-03-06T09:59:36.776077+00:00",
+  "last_sync": "2026-03-06T10:38:11.295928+00:00",
   "total": 178
 }
