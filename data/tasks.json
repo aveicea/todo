@@ -19,15 +19,6 @@
       "importance": "normal"
     },
     {
-      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAell2cSAAA=",
-      "notion_id": "31ac2bbd-5973-8183-bfed-ea9ab6fec526",
-      "title": "다이어리",
-      "completed": false,
-      "due_date": "2026-03-06",
-      "due_time": null,
-      "importance": "normal"
-    },
-    {
       "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAell2cQAAA=",
       "notion_id": "314c2bbd-5973-813a-b3da-dc68c254e441",
       "title": "보조배터리",
@@ -125,10 +116,19 @@
       "due_date": "2026-03-05",
       "due_time": null,
       "importance": "normal"
+    },
+    {
+      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAell2cSAAA=",
+      "notion_id": "31ac2bbd-5973-8183-bfed-ea9ab6fec526",
+      "title": "다이어리",
+      "completed": true,
+      "due_date": "2026-03-06",
+      "due_time": null,
+      "importance": "normal"
     }
   ],
-  "last_sync": "2026-03-06T11:56:25.443423+00:00",
+  "last_sync": "2026-03-06T12:39:35.923124+00:00",
   "total": 14,
-  "completed": 7,
-  "pending": 7
+  "completed": 8,
+  "pending": 6
 }
