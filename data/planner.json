@@ -521,6 +521,30 @@
       "due_time": null
     },
     {
+      "notion_id": "31cc2bbd-5973-8029-9cc7-ed4305e653a5",
+      "title": "52강 컴퓨터구조",
+      "book_title": "교과내용학",
+      "completed": false,
+      "due_date": "2026-03-07",
+      "due_time": null
+    },
+    {
+      "notion_id": "31cc2bbd-5973-80af-aeb4-c5e9c9633725",
+      "title": "51강 컴퓨터구조",
+      "book_title": "교과내용학",
+      "completed": false,
+      "due_date": "2026-03-07",
+      "due_time": null
+    },
+    {
+      "notion_id": "31cc2bbd-5973-80fb-a6cb-f2d85469ef0d",
+      "title": "50강 컴퓨터구조",
+      "book_title": "교과내용학",
+      "completed": false,
+      "due_date": "2026-03-07",
+      "due_time": null
+    },
+    {
       "notion_id": "317c2bbd-5973-80e7-9ecc-de717f56b8aa",
       "title": "자료구조 복습 벼락치기",
       "book_title": "교과내용학",
@@ -549,7 +573,7 @@
       "title": "운영체제 복습 벼락치기",
       "book_title": "교과내용학",
       "completed": false,
-      "due_date": "2026-03-12",
+      "due_date": "2026-03-10",
       "due_time": null
     },
     {
@@ -557,7 +581,7 @@
       "title": "컴퓨터네트워크 복습 벼락치기",
       "book_title": "교과내용학",
       "completed": false,
-      "due_date": "2026-03-13",
+      "due_date": "2026-03-11",
       "due_time": null
     },
     {
@@ -565,7 +589,7 @@
       "title": "디지털논리회로 복습 벼락치기",
       "book_title": "교과내용학",
       "completed": false,
-      "due_date": "2026-03-14",
+      "due_date": "2026-03-12",
       "due_time": null
     },
     {
@@ -573,7 +597,7 @@
       "title": "컴퓨터구조 복습 벼락치기",
       "book_title": "교과내용학",
       "completed": false,
-      "due_date": "2026-03-14",
+      "due_date": "2026-03-13",
       "due_time": null
     },
     {
@@ -1425,6 +1449,6 @@
       "due_time": null
     }
   ],
-  "last_sync": "2026-03-07T02:06:24.468641+00:00",
-  "total": 178
+  "last_sync": "2026-03-07T04:07:04.793066+00:00",
+  "total": 181
 }
