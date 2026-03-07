@@ -1,24 +1,6 @@
 {
   "tasks": [
     {
-      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAenKv4xAAA=",
-      "notion_id": "31bc2bbd-5973-81c2-a5fe-ddefed823517",
-      "title": "데일리 체크",
-      "completed": false,
-      "due_date": "2026-03-07",
-      "due_time": null,
-      "importance": "normal"
-    },
-    {
-      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAenKv4wAAA=",
-      "notion_id": "31bc2bbd-5973-8151-b680-ffbdc2fe97a4",
-      "title": "다이어리",
-      "completed": false,
-      "due_date": "2026-03-07",
-      "due_time": null,
-      "importance": "normal"
-    },
-    {
       "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAen7C4TAAA=",
       "notion_id": "31cc2bbd-5973-8179-a1f0-dece591e71fa",
       "title": "데일리 체크",
@@ -161,10 +143,28 @@
       "due_date": "2026-03-06",
       "due_time": null,
       "importance": "normal"
+    },
+    {
+      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAenKv4xAAA=",
+      "notion_id": "31bc2bbd-5973-81c2-a5fe-ddefed823517",
+      "title": "데일리 체크",
+      "completed": true,
+      "due_date": "2026-03-07",
+      "due_time": null,
+      "importance": "normal"
+    },
+    {
+      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAenKv4wAAA=",
+      "notion_id": "31bc2bbd-5973-8151-b680-ffbdc2fe97a4",
+      "title": "다이어리",
+      "completed": true,
+      "due_date": "2026-03-07",
+      "due_time": null,
+      "importance": "normal"
     }
   ],
-  "last_sync": "2026-03-07T16:00:55.097460+00:00",
+  "last_sync": "2026-03-07T16:35:37.153820+00:00",
   "total": 18,
-  "completed": 9,
-  "pending": 9
+  "completed": 11,
+  "pending": 7
 }
