@@ -513,14 +513,6 @@
       "due_time": null
     },
     {
-      "notion_id": "31cc2bbd-5973-80af-aeb4-c5e9c9633725",
-      "title": "51강 컴퓨터구조",
-      "book_title": "교과내용학",
-      "completed": false,
-      "due_date": "2026-03-07",
-      "due_time": null
-    },
-    {
       "notion_id": "317c2bbd-5973-80e7-9ecc-de717f56b8aa",
       "title": "자료구조 복습 벼락치기",
       "book_title": "교과내용학",
@@ -1441,6 +1433,14 @@
       "due_time": null
     },
     {
+      "notion_id": "31cc2bbd-5973-80af-aeb4-c5e9c9633725",
+      "title": "51강 컴퓨터구조",
+      "book_title": "교과내용학",
+      "completed": true,
+      "due_date": "2026-03-07",
+      "due_time": null
+    },
+    {
       "notion_id": "31cc2bbd-5973-80fb-a6cb-f2d85469ef0d",
       "title": "50강 컴퓨터구조",
       "book_title": "교과내용학",
@@ -1449,6 +1449,6 @@
       "due_time": null
     }
   ],
-  "last_sync": "2026-03-07T15:15:57.530441+00:00",
+  "last_sync": "2026-03-07T15:39:04.267984+00:00",
   "total": 181
 }
