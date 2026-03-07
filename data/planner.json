@@ -513,17 +513,17 @@
       "due_time": null
     },
     {
-      "notion_id": "317c2bbd-5973-802a-a055-d7ce54db6440",
-      "title": "데이터베이스 복습 벼락치기",
-      "book_title": "교과내용학",
-      "completed": false,
-      "due_date": "2026-03-09",
-      "due_time": null
-    },
-    {
       "notion_id": "31ac2bbd-5973-8169-b00b-dfa37a668627",
       "title": "인기초 교과서 분석 2단원 (2)'",
       "book_title": "스터디",
+      "completed": false,
+      "due_date": "2026-03-08",
+      "due_time": null
+    },
+    {
+      "notion_id": "317c2bbd-5973-802a-a055-d7ce54db6440",
+      "title": "데이터베이스 복습 벼락치기",
+      "book_title": "교과내용학",
       "completed": false,
       "due_date": "2026-03-09",
       "due_time": null
@@ -1449,6 +1449,6 @@
       "due_time": null
     }
   ],
-  "last_sync": "2026-03-07T16:54:26.225280+00:00",
+  "last_sync": "2026-03-07T17:11:56.556951+00:00",
   "total": 181
 }
