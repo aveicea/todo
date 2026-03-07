@@ -505,14 +505,6 @@
       "due_time": null
     },
     {
-      "notion_id": "317c2bbd-5973-8003-8f67-c3c1153ef94e",
-      "title": "48강 컴퓨터구조",
-      "book_title": "교과내용학",
-      "completed": false,
-      "due_date": "2026-03-07",
-      "due_time": null
-    },
-    {
       "notion_id": "317c2bbd-5973-8014-9959-fcc571f0565d",
       "title": "49강 컴퓨터구조",
       "book_title": "교과내용학",
@@ -1447,8 +1439,16 @@
       "completed": true,
       "due_date": "2026-03-06",
       "due_time": null
+    },
+    {
+      "notion_id": "317c2bbd-5973-8003-8f67-c3c1153ef94e",
+      "title": "48강 컴퓨터구조",
+      "book_title": "교과내용학",
+      "completed": true,
+      "due_date": "2026-03-07",
+      "due_time": null
     }
   ],
-  "last_sync": "2026-03-07T07:00:56.303413+00:00",
+  "last_sync": "2026-03-07T07:34:09.097182+00:00",
   "total": 181
 }
