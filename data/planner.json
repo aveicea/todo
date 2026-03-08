@@ -529,6 +529,22 @@
       "due_time": null
     },
     {
+      "notion_id": "31dc2bbd-5973-8152-b30f-dc24bb1c3fca",
+      "title": "인기초 교과서 분석 2단원 (2)' (3)'",
+      "book_title": "스터디",
+      "completed": false,
+      "due_date": "2026-03-09",
+      "due_time": null
+    },
+    {
+      "notion_id": "31dc2bbd-5973-816b-bcc0-d34640e93eaf",
+      "title": "자료구조 복습 벼락치기'",
+      "book_title": "교과내용학",
+      "completed": false,
+      "due_date": "2026-03-09",
+      "due_time": null
+    },
+    {
       "notion_id": "317c2bbd-5973-8063-8382-e97522915a4f",
       "title": "운영체제 복습 벼락치기",
       "book_title": "교과내용학",
@@ -1465,6 +1481,6 @@
       "due_time": null
     }
   ],
-  "last_sync": "2026-03-08T23:31:33.804636+00:00",
-  "total": 183
+  "last_sync": "2026-03-08T23:49:08.746350+00:00",
+  "total": 185
 }
