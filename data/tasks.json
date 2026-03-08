@@ -1,15 +1,6 @@
 {
   "tasks": [
     {
-      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAeoXtQ-AAA=",
-      "notion_id": "31dc2bbd-5973-8130-b97c-ff1f406f1de5",
-      "title": "기본서 구매",
-      "completed": false,
-      "due_date": "2026-03-08",
-      "due_time": null,
-      "importance": "normal"
-    },
-    {
       "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAen7C4TAAA=",
       "notion_id": "31cc2bbd-5973-8179-a1f0-dece591e71fa",
       "title": "데일리 체크",
@@ -64,11 +55,11 @@
       "importance": "normal"
     },
     {
-      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAenKv4vAAA=",
-      "notion_id": "31bc2bbd-5973-8107-bb76-d6e9fc7b44ae",
-      "title": "문사공 과제 1",
+      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAeoXtQ-AAA=",
+      "notion_id": "31dc2bbd-5973-8130-b97c-ff1f406f1de5",
+      "title": "기본서 구매",
       "completed": false,
-      "due_date": "2026-03-11",
+      "due_date": "2026-03-09",
       "due_time": null,
       "importance": "normal"
     },
@@ -80,6 +71,15 @@
       "due_date": "2026-03-11",
       "due_time": null,
       "importance": "high"
+    },
+    {
+      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAeorgiKAAA=",
+      "notion_id": "31bc2bbd-5973-8107-bb76-d6e9fc7b44ae",
+      "title": "문사공 과제 1",
+      "completed": false,
+      "due_date": "2026-03-11",
+      "due_time": null,
+      "importance": "normal"
     },
     {
       "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAell2cRAAA=",
@@ -190,7 +190,7 @@
       "importance": "normal"
     }
   ],
-  "last_sync": "2026-03-08T23:01:05.837009+00:00",
+  "last_sync": "2026-03-08T23:31:16.090119+00:00",
   "total": 21,
   "completed": 11,
   "pending": 10
