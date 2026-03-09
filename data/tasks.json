@@ -55,6 +55,24 @@
       "importance": "normal"
     },
     {
+      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAeorgiMAAA=",
+      "notion_id": "31ec2bbd-5973-8147-b6ec-f98493b46997",
+      "title": "데일리 체크",
+      "completed": false,
+      "due_date": "2026-03-10",
+      "due_time": null,
+      "importance": "normal"
+    },
+    {
+      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAeorgiLAAA=",
+      "notion_id": "31ec2bbd-5973-81c7-8d4a-f4393fdd513d",
+      "title": "다이어리",
+      "completed": false,
+      "due_date": "2026-03-10",
+      "due_time": null,
+      "importance": "normal"
+    },
+    {
       "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAeorgiKAAA=",
       "notion_id": "31bc2bbd-5973-8107-bb76-d6e9fc7b44ae",
       "title": "문사공 과제 1",
@@ -190,8 +208,8 @@
       "importance": "normal"
     }
   ],
-  "last_sync": "2026-03-09T14:15:45.818503+00:00",
-  "total": 21,
+  "last_sync": "2026-03-09T15:12:27.941431+00:00",
+  "total": 23,
   "completed": 12,
-  "pending": 9
+  "pending": 11
 }
