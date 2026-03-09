@@ -505,14 +505,6 @@
       "due_time": null
     },
     {
-      "notion_id": "317c2bbd-5973-80e7-9ecc-de717f56b8aa",
-      "title": "자료구조 복습 벼락치기",
-      "book_title": "교과내용학",
-      "completed": false,
-      "due_date": "2026-03-08",
-      "due_time": null
-    },
-    {
       "notion_id": "31dc2bbd-5973-811c-b4fc-fb0562e674d4",
       "title": "인기초 교과서 분석 2단원 (2)' (3)",
       "book_title": "스터디",
@@ -521,11 +513,11 @@
       "due_time": null
     },
     {
-      "notion_id": "317c2bbd-5973-802a-a055-d7ce54db6440",
-      "title": "데이터베이스 복습 벼락치기",
+      "notion_id": "31ec2bbd-5973-80eb-bbce-efa75180649c",
+      "title": "자료구조 필기 보충",
       "book_title": "교과내용학",
       "completed": false,
-      "due_date": "2026-03-09",
+      "due_date": "2026-03-08",
       "due_time": null
     },
     {
@@ -538,42 +530,90 @@
     },
     {
       "notion_id": "31dc2bbd-5973-816b-bcc0-d34640e93eaf",
-      "title": "자료구조 복습 벼락치기'",
+      "title": "데이터베이스 필기 보충",
       "book_title": "교과내용학",
       "completed": false,
       "due_date": "2026-03-09",
       "due_time": null
     },
     {
-      "notion_id": "317c2bbd-5973-8063-8382-e97522915a4f",
-      "title": "운영체제 복습 벼락치기",
+      "notion_id": "31ec2bbd-5973-800b-83cb-fc64a48077ab",
+      "title": "자료구조 필기 보충’",
+      "book_title": "교과내용학",
+      "completed": false,
+      "due_date": "2026-03-09",
+      "due_time": null
+    },
+    {
+      "notion_id": "31ec2bbd-5973-8073-9643-e82a97bfc620",
+      "title": "데이터베이스 워드 정리",
+      "book_title": "교과내용학",
+      "completed": false,
+      "due_date": "2026-03-09",
+      "due_time": null
+    },
+    {
+      "notion_id": "31ec2bbd-5973-8020-9262-e1b899053219",
+      "title": "운영체제 필기 보충",
       "book_title": "교과내용학",
       "completed": false,
       "due_date": "2026-03-10",
       "due_time": null
     },
     {
-      "notion_id": "317c2bbd-5973-8043-a47c-dc3cc57943e1",
-      "title": "컴퓨터네트워크 복습 벼락치기",
+      "notion_id": "317c2bbd-5973-8063-8382-e97522915a4f",
+      "title": "운영체제 워드 정리",
       "book_title": "교과내용학",
       "completed": false,
       "due_date": "2026-03-11",
       "due_time": null
     },
     {
-      "notion_id": "317c2bbd-5973-8027-886e-f79503b47b8b",
-      "title": "디지털논리회로 복습 벼락치기",
+      "notion_id": "317c2bbd-5973-8043-a47c-dc3cc57943e1",
+      "title": "컴퓨터네트워크 워드 정리",
       "book_title": "교과내용학",
       "completed": false,
       "due_date": "2026-03-12",
       "due_time": null
     },
     {
-      "notion_id": "317c2bbd-5973-804d-b076-ed0d2f36eb76",
-      "title": "컴퓨터구조 복습 벼락치기",
+      "notion_id": "31ec2bbd-5973-80a1-a62e-e38c64813256",
+      "title": "컴퓨터네트워크 필기 보충",
+      "book_title": "교과내용학",
+      "completed": false,
+      "due_date": "2026-03-12",
+      "due_time": null
+    },
+    {
+      "notion_id": "317c2bbd-5973-8027-886e-f79503b47b8b",
+      "title": "디지털논리회로 워드 정리",
       "book_title": "교과내용학",
       "completed": false,
       "due_date": "2026-03-13",
+      "due_time": null
+    },
+    {
+      "notion_id": "31ec2bbd-5973-8034-8a08-ea6975fb3e09",
+      "title": "디지털논리회로 필기 보충",
+      "book_title": "교과내용학",
+      "completed": false,
+      "due_date": "2026-03-13",
+      "due_time": null
+    },
+    {
+      "notion_id": "317c2bbd-5973-804d-b076-ed0d2f36eb76",
+      "title": "컴퓨터구조 워드 정리",
+      "book_title": "교과내용학",
+      "completed": false,
+      "due_date": "2026-03-14",
+      "due_time": null
+    },
+    {
+      "notion_id": "31ec2bbd-5973-805d-a384-f1f0ef7ab14d",
+      "title": "컴퓨터구조 필기 보충",
+      "book_title": "교과내용학",
+      "completed": false,
+      "due_date": "2026-03-14",
       "due_time": null
     },
     {
@@ -1465,6 +1505,14 @@
       "due_time": null
     },
     {
+      "notion_id": "317c2bbd-5973-80e7-9ecc-de717f56b8aa",
+      "title": "자료구조 워드 정리",
+      "book_title": "교과내용학",
+      "completed": true,
+      "due_date": "2026-03-08",
+      "due_time": null
+    },
+    {
       "notion_id": "31ac2bbd-5973-8169-b00b-dfa37a668627",
       "title": "인기초 교과서 분석 2단원 (2)'",
       "book_title": "스터디",
@@ -1481,6 +1529,6 @@
       "due_time": null
     }
   ],
-  "last_sync": "2026-03-08T23:59:59.984777+00:00",
-  "total": 185
+  "last_sync": "2026-03-09T02:28:39.540081+00:00",
+  "total": 191
 }
