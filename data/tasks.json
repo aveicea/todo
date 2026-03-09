@@ -1,6 +1,15 @@
 {
   "tasks": [
     {
+      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAen7C4TAAA=",
+      "notion_id": "31cc2bbd-5973-8179-a1f0-dece591e71fa",
+      "title": "데일리 체크",
+      "completed": false,
+      "due_date": "2026-03-08",
+      "due_time": null,
+      "importance": "normal"
+    },
+    {
       "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAen7C4SAAA=",
       "notion_id": "31cc2bbd-5973-8160-ba65-ca46f277e64e",
       "title": "다이어리",
@@ -24,15 +33,6 @@
       "title": "초반 교재 정리",
       "completed": false,
       "due_date": "2026-03-08",
-      "due_time": null,
-      "importance": "normal"
-    },
-    {
-      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAeoXtRBAAA=",
-      "notion_id": "31dc2bbd-5973-812b-9d84-c6050131f076",
-      "title": "데일리 체크",
-      "completed": false,
-      "due_date": "2026-03-09",
       "due_time": null,
       "importance": "normal"
     },
@@ -181,16 +181,16 @@
       "importance": "normal"
     },
     {
-      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAen7C4TAAA=",
-      "notion_id": "31cc2bbd-5973-8179-a1f0-dece591e71fa",
+      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAeoXtRBAAA=",
+      "notion_id": "31dc2bbd-5973-812b-9d84-c6050131f076",
       "title": "데일리 체크",
       "completed": true,
-      "due_date": "2026-03-08",
+      "due_date": "2026-03-09",
       "due_time": null,
       "importance": "normal"
     }
   ],
-  "last_sync": "2026-03-09T11:11:05.261577+00:00",
+  "last_sync": "2026-03-09T11:48:30.437623+00:00",
   "total": 21,
   "completed": 12,
   "pending": 9
