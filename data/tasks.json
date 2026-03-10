@@ -19,7 +19,7 @@
       "importance": "normal"
     },
     {
-      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAepmft7AAA=",
+      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAepmft9AAA=",
       "notion_id": "319c2bbd-5973-8148-b605-c4273432e14a",
       "title": "초반 교재 정리",
       "completed": false,
@@ -73,7 +73,7 @@
       "importance": "high"
     },
     {
-      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAepmft8AAA=",
+      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAepmft_AAA=",
       "notion_id": "31bc2bbd-5973-8107-bb76-d6e9fc7b44ae",
       "title": "문사공 과제 1",
       "completed": false,
@@ -208,7 +208,7 @@
       "importance": "normal"
     }
   ],
-  "last_sync": "2026-03-10T07:00:14.158306+00:00",
+  "last_sync": "2026-03-10T07:43:38.080200+00:00",
   "total": 23,
   "completed": 13,
   "pending": 10
