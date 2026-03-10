@@ -537,14 +537,6 @@
       "due_time": null
     },
     {
-      "notion_id": "31fc2bbd-5973-80c3-8299-fdb7b8d83d06",
-      "title": "파트 발표 준비",
-      "book_title": "스터디",
-      "completed": false,
-      "due_date": "2026-03-10",
-      "due_time": null
-    },
-    {
       "notion_id": "31fc2bbd-5973-8141-b09b-f2c93a804f69",
       "title": "자료구조 필기 보충’ (2)'",
       "book_title": "교과내용학",
@@ -1681,6 +1673,14 @@
       "due_time": null
     },
     {
+      "notion_id": "31fc2bbd-5973-80c3-8299-fdb7b8d83d06",
+      "title": "파트 발표 준비",
+      "book_title": "스터디",
+      "completed": true,
+      "due_date": "2026-03-10",
+      "due_time": null
+    },
+    {
       "notion_id": "31fc2bbd-5973-80c6-b34a-e8ca8bf5ee3c",
       "title": "13:00-16:00 스터디",
       "book_title": "일정",
@@ -1689,6 +1689,6 @@
       "due_time": null
     }
   ],
-  "last_sync": "2026-03-10T12:01:03.307804+00:00",
+  "last_sync": "2026-03-10T13:13:59.291972+00:00",
   "total": 211
 }
