@@ -457,6 +457,14 @@
       "due_time": null
     },
     {
+      "notion_id": "31fc2bbd-5973-80c7-a07a-ec1283903a7c",
+      "title": "13:00-16:00 스터디",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-03-03",
+      "due_time": null
+    },
+    {
       "notion_id": "317c2bbd-5973-8025-be27-faa04de40c45",
       "title": "42강 컴퓨터네트워크",
       "book_title": "교과내용학",
@@ -585,6 +593,14 @@
       "due_time": null
     },
     {
+      "notion_id": "31fc2bbd-5973-8072-bbf6-d9419edb746a",
+      "title": "10:00-17:00 현강 (1)",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-03-14",
+      "due_time": null
+    },
+    {
       "notion_id": "31ec2bbd-5973-805d-a384-f1f0ef7ab14d",
       "title": "컴퓨터구조 필기 보충",
       "book_title": "교과내용학",
@@ -617,6 +633,14 @@
       "due_time": null
     },
     {
+      "notion_id": "31fc2bbd-5973-80a0-97ed-fb6778fc542c",
+      "title": "13:00-16:00 스터디 - 인기초 1단원",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-03-17",
+      "due_time": null
+    },
+    {
       "notion_id": "317c2bbd-5973-8043-a47c-dc3cc57943e1",
       "title": "컴퓨터네트워크 워드 정리",
       "book_title": "교과내용학",
@@ -638,6 +662,86 @@
       "book_title": "교과내용학",
       "completed": false,
       "due_date": "2026-03-20",
+      "due_time": null
+    },
+    {
+      "notion_id": "31fc2bbd-5973-80a6-a02d-f0b21daf2bbd",
+      "title": "10:00-17:00 현강 (2)",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-03-21",
+      "due_time": null
+    },
+    {
+      "notion_id": "31fc2bbd-5973-8043-bba9-dc4f2d71ba42",
+      "title": "13:00-16:00 스터디 - 인기초 2-1단원",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-03-24",
+      "due_time": null
+    },
+    {
+      "notion_id": "31fc2bbd-5973-806b-9671-f0c45df8a1b3",
+      "title": "10:00-17:00 현강 (3)",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-03-28",
+      "due_time": null
+    },
+    {
+      "notion_id": "31fc2bbd-5973-8029-802e-edc261906d8e",
+      "title": "13:00-16:00 스터디 - 인기초 2-2단원",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-03-31",
+      "due_time": null
+    },
+    {
+      "notion_id": "31fc2bbd-5973-803b-9332-ef07cc26270d",
+      "title": "10:00-17:00 현강 (4)",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-04-04",
+      "due_time": null
+    },
+    {
+      "notion_id": "31fc2bbd-5973-805b-b414-c0e271c8db0d",
+      "title": "13:00-16:00 스터디 - 중정보",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-04-07",
+      "due_time": null
+    },
+    {
+      "notion_id": "31fc2bbd-5973-807b-86f8-ccf5ebfc4a60",
+      "title": "10:00-17:00 현강 (5)",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-04-11",
+      "due_time": null
+    },
+    {
+      "notion_id": "31fc2bbd-5973-802b-be18-f8a91e5c2333",
+      "title": "13:00-16:00 스터디 - 고정보",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-04-14",
+      "due_time": null
+    },
+    {
+      "notion_id": "31fc2bbd-5973-805d-ab3b-c62578cce42f",
+      "title": "10:00-17:00 현강 (6)",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-04-18",
+      "due_time": null
+    },
+    {
+      "notion_id": "31fc2bbd-5973-80cb-8dd4-c52360a5dbb9",
+      "title": "10:00-17:00 현강 (7)",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-04-25",
       "due_time": null
     },
     {
@@ -1575,8 +1679,16 @@
       "completed": true,
       "due_date": "2026-03-09",
       "due_time": null
+    },
+    {
+      "notion_id": "31fc2bbd-5973-80c6-b34a-e8ca8bf5ee3c",
+      "title": "13:00-16:00 스터디",
+      "book_title": "일정",
+      "completed": true,
+      "due_date": "2026-03-10",
+      "due_time": null
     }
   ],
-  "last_sync": "2026-03-10T09:40:51.310750+00:00",
-  "total": 197
+  "last_sync": "2026-03-10T10:22:51.969831+00:00",
+  "total": 211
 }
