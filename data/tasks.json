@@ -19,15 +19,6 @@
       "importance": "normal"
     },
     {
-      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAepmft9AAA=",
-      "notion_id": "319c2bbd-5973-8148-b605-c4273432e14a",
-      "title": "초반 교재 정리",
-      "completed": false,
-      "due_date": "2026-03-08",
-      "due_time": null,
-      "importance": "normal"
-    },
-    {
       "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAeoXtRAAAA=",
       "notion_id": "31dc2bbd-5973-812c-85f2-c1143ffe2e56",
       "title": "다이어리",
@@ -42,15 +33,6 @@
       "title": "기본서 구매",
       "completed": false,
       "due_date": "2026-03-09",
-      "due_time": null,
-      "importance": "normal"
-    },
-    {
-      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAeorgiMAAA=",
-      "notion_id": "31ec2bbd-5973-8147-b6ec-f98493b46997",
-      "title": "데일리 체크",
-      "completed": false,
-      "due_date": "2026-03-10",
       "due_time": null,
       "importance": "normal"
     },
@@ -71,15 +53,6 @@
       "due_date": "2026-03-11",
       "due_time": null,
       "importance": "high"
-    },
-    {
-      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAepmft_AAA=",
-      "notion_id": "31bc2bbd-5973-8107-bb76-d6e9fc7b44ae",
-      "title": "문사공 과제 1",
-      "completed": false,
-      "due_date": "2026-03-11",
-      "due_time": null,
-      "importance": "normal"
     },
     {
       "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAell2cRAAA=",
@@ -206,10 +179,19 @@
       "due_date": "2026-03-09",
       "due_time": null,
       "importance": "normal"
+    },
+    {
+      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAeorgiMAAA=",
+      "notion_id": "31ec2bbd-5973-8147-b6ec-f98493b46997",
+      "title": "데일리 체크",
+      "completed": true,
+      "due_date": "2026-03-10",
+      "due_time": null,
+      "importance": "normal"
     }
   ],
-  "last_sync": "2026-03-10T07:43:38.080200+00:00",
-  "total": 23,
-  "completed": 13,
-  "pending": 10
+  "last_sync": "2026-03-10T08:05:28.881520+00:00",
+  "total": 21,
+  "completed": 14,
+  "pending": 7
 }
