@@ -553,6 +553,14 @@
       "due_time": null
     },
     {
+      "notion_id": "320c2bbd-5973-81f8-b311-f2fd3e584ab1",
+      "title": "자료구조 필기 보충’ (2)''",
+      "book_title": "교과내용학",
+      "completed": false,
+      "due_date": "2026-03-11",
+      "due_time": null
+    },
+    {
       "notion_id": "31ec2bbd-5973-8020-9262-e1b899053219",
       "title": "운영체제 필기 보충",
       "book_title": "교과내용학",
@@ -1689,6 +1697,6 @@
       "due_time": null
     }
   ],
-  "last_sync": "2026-03-11T05:11:42.984675+00:00",
-  "total": 211
+  "last_sync": "2026-03-11T06:02:47.091758+00:00",
+  "total": 212
 }
