@@ -10,6 +10,24 @@
       "importance": "normal"
     },
     {
+      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAep6jySAAA=",
+      "notion_id": "320c2bbd-5973-8109-8c68-e5117076139f",
+      "title": "데일리 체크",
+      "completed": false,
+      "due_date": "2026-03-12",
+      "due_time": null,
+      "importance": "normal"
+    },
+    {
+      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAep6jyRAAA=",
+      "notion_id": "320c2bbd-5973-8189-92c9-ed7eadc7beaa",
+      "title": "다이어리",
+      "completed": false,
+      "due_date": "2026-03-12",
+      "due_time": null,
+      "importance": "normal"
+    },
+    {
       "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAell2cQAAA=",
       "notion_id": "314c2bbd-5973-813a-b3da-dc68c254e441",
       "title": "보조배터리",
@@ -208,8 +226,8 @@
       "importance": "high"
     }
   ],
-  "last_sync": "2026-03-11T14:13:58.939279+00:00",
-  "total": 23,
+  "last_sync": "2026-03-11T15:05:27.092924+00:00",
+  "total": 25,
   "completed": 20,
-  "pending": 3
+  "pending": 5
 }
