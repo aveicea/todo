@@ -553,8 +553,8 @@
       "due_time": null
     },
     {
-      "notion_id": "320c2bbd-5973-81f8-b311-f2fd3e584ab1",
-      "title": "자료구조 필기 보충’ (2)''",
+      "notion_id": "320c2bbd-5973-814f-81cb-dab502808255",
+      "title": "자료구조 필기 보충’ (2)'' (3)",
       "book_title": "교과내용학",
       "completed": false,
       "due_date": "2026-03-11",
@@ -1695,8 +1695,24 @@
       "completed": true,
       "due_date": "2026-03-10",
       "due_time": null
+    },
+    {
+      "notion_id": "320c2bbd-5973-8169-a8d6-f36d4520ba15",
+      "title": "자료구조 필기 보충’ (2)'' (2)",
+      "book_title": "교과내용학",
+      "completed": true,
+      "due_date": "2026-03-11",
+      "due_time": null
+    },
+    {
+      "notion_id": "320c2bbd-5973-81f8-b311-f2fd3e584ab1",
+      "title": "자료구조 필기 보충’ (2)''",
+      "book_title": "교과내용학",
+      "completed": true,
+      "due_date": "2026-03-11",
+      "due_time": null
     }
   ],
-  "last_sync": "2026-03-11T08:24:45.972766+00:00",
-  "total": 212
+  "last_sync": "2026-03-11T09:04:33.740162+00:00",
+  "total": 214
 }
