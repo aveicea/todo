@@ -553,32 +553,32 @@
       "due_time": null
     },
     {
-      "notion_id": "320c2bbd-5973-8184-8d9c-cc45e8d42d08",
-      "title": "자료구조 필기 보충’ (2)'' (4)",
+      "notion_id": "321c2bbd-5973-8198-a9f8-ff3325f263b8",
+      "title": "자료구조 필기 보충’ (2)'' (5)",
       "book_title": "교과내용학",
       "completed": false,
       "due_date": "2026-03-11",
       "due_time": null
     },
     {
+      "notion_id": "321c2bbd-5973-8109-8fbc-e4c5e9a6c1b5",
+      "title": "자료구조 필기 보충’ (2)'' (5)'",
+      "book_title": "교과내용학",
+      "completed": false,
+      "due_date": "2026-03-12",
+      "due_time": null
+    },
+    {
+      "notion_id": "321c2bbd-5973-81f5-82f0-e6f0c2a97f1b",
+      "title": "데이터베이스 필기 보충'",
+      "book_title": "교과내용학",
+      "completed": false,
+      "due_date": "2026-03-12",
+      "due_time": null
+    },
+    {
       "notion_id": "31ec2bbd-5973-8020-9262-e1b899053219",
       "title": "운영체제 필기 보충",
-      "book_title": "교과내용학",
-      "completed": false,
-      "due_date": "2026-03-12",
-      "due_time": null
-    },
-    {
-      "notion_id": "31ec2bbd-5973-80a1-a62e-e38c64813256",
-      "title": "컴퓨터네트워크 필기 보충",
-      "book_title": "교과내용학",
-      "completed": false,
-      "due_date": "2026-03-12",
-      "due_time": null
-    },
-    {
-      "notion_id": "31ec2bbd-5973-8034-8a08-ea6975fb3e09",
-      "title": "디지털논리회로 필기 보충",
       "book_title": "교과내용학",
       "completed": false,
       "due_date": "2026-03-13",
@@ -593,11 +593,27 @@
       "due_time": null
     },
     {
+      "notion_id": "31ec2bbd-5973-80a1-a62e-e38c64813256",
+      "title": "컴퓨터네트워크 필기 보충",
+      "book_title": "교과내용학",
+      "completed": false,
+      "due_date": "2026-03-13",
+      "due_time": null
+    },
+    {
       "notion_id": "31fc2bbd-5973-8072-bbf6-d9419edb746a",
       "title": "10:00-17:00 현강 (1)",
       "book_title": "일정",
       "completed": false,
       "due_date": "2026-03-14",
+      "due_time": null
+    },
+    {
+      "notion_id": "31ec2bbd-5973-8034-8a08-ea6975fb3e09",
+      "title": "디지털논리회로 필기 보충",
+      "book_title": "교과내용학",
+      "completed": false,
+      "due_date": "2026-03-15",
       "due_time": null
     },
     {
@@ -1713,6 +1729,14 @@
       "due_time": null
     },
     {
+      "notion_id": "320c2bbd-5973-8184-8d9c-cc45e8d42d08",
+      "title": "자료구조 필기 보충’ (2)'' (4)",
+      "book_title": "교과내용학",
+      "completed": true,
+      "due_date": "2026-03-11",
+      "due_time": null
+    },
+    {
       "notion_id": "320c2bbd-5973-81f8-b311-f2fd3e584ab1",
       "title": "자료구조 필기 보충’ (2)''",
       "book_title": "교과내용학",
@@ -1721,6 +1745,6 @@
       "due_time": null
     }
   ],
-  "last_sync": "2026-03-11T23:59:01.582079+00:00",
-  "total": 215
+  "last_sync": "2026-03-12T02:08:48.804687+00:00",
+  "total": 218
 }
