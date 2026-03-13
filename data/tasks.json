@@ -260,10 +260,19 @@
       "due_date": "2026-03-12",
       "due_time": null,
       "importance": "normal"
+    },
+    {
+      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAer3PcrAAA=",
+      "notion_id": "322c2bbd-5973-8195-a7d9-c948b9869bca",
+      "title": "안경 피팅",
+      "completed": true,
+      "due_date": "2026-03-13",
+      "due_time": null,
+      "importance": "normal"
     }
   ],
-  "last_sync": "2026-03-13T12:44:36.526480+00:00",
-  "total": 29,
-  "completed": 21,
+  "last_sync": "2026-03-13T13:46:55.008561+00:00",
+  "total": 30,
+  "completed": 22,
   "pending": 8
 }
