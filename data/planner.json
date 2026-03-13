@@ -585,19 +585,19 @@
       "due_time": null
     },
     {
-      "notion_id": "31ec2bbd-5973-80a1-a62e-e38c64813256",
-      "title": "컴퓨터네트워크 필기 보충",
+      "notion_id": "322c2bbd-5973-814b-8dff-fbe9f5cc9952",
+      "title": "데이터베이스 필기 보충' (2)' (4)",
       "book_title": "교과내용학",
       "completed": false,
       "due_date": "2026-03-13",
       "due_time": null
     },
     {
-      "notion_id": "322c2bbd-5973-8185-9f6e-fe2ef72a4417",
-      "title": "데이터베이스 필기 보충' (2)' (3)",
+      "notion_id": "31ec2bbd-5973-80a1-a62e-e38c64813256",
+      "title": "컴퓨터네트워크 필기 보충",
       "book_title": "교과내용학",
       "completed": false,
-      "due_date": "2026-03-13",
+      "due_date": "2026-03-14",
       "due_time": null
     },
     {
@@ -636,6 +636,14 @@
       "notion_id": "31fc2bbd-5973-807e-aa5c-c3fd85281cbb",
       "title": "인공지능 3문제 기출 문제 풀이 및 설명",
       "book_title": "스터디",
+      "completed": false,
+      "due_date": "2026-03-16",
+      "due_time": null
+    },
+    {
+      "notion_id": "322c2bbd-5973-8015-981d-fd221c2d5b7c",
+      "title": "수업 시연 준비",
+      "book_title": "과제",
       "completed": false,
       "due_date": "2026-03-16",
       "due_time": null
@@ -1783,8 +1791,16 @@
       "completed": true,
       "due_date": "2026-03-13",
       "due_time": null
+    },
+    {
+      "notion_id": "322c2bbd-5973-8185-9f6e-fe2ef72a4417",
+      "title": "데이터베이스 필기 보충' (2)' (3)",
+      "book_title": "교과내용학",
+      "completed": true,
+      "due_date": "2026-03-13",
+      "due_time": null
     }
   ],
-  "last_sync": "2026-03-13T07:10:18.927484+00:00",
-  "total": 223
+  "last_sync": "2026-03-13T07:53:46.251702+00:00",
+  "total": 225
 }
