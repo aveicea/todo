@@ -50,7 +50,7 @@
       "notion_id": "314c2bbd-5973-813a-b3da-dc68c254e441",
       "title": "보조배터리",
       "completed": false,
-      "due_date": "2026-03-13",
+      "due_date": "2026-03-15",
       "due_time": null,
       "importance": "normal"
     },
@@ -271,7 +271,7 @@
       "importance": "normal"
     }
   ],
-  "last_sync": "2026-03-13T13:46:55.008561+00:00",
+  "last_sync": "2026-03-13T14:30:25.245395+00:00",
   "total": 30,
   "completed": 22,
   "pending": 8

@@ -577,14 +577,6 @@
       "due_time": null
     },
     {
-      "notion_id": "31ec2bbd-5973-8073-9643-e82a97bfc620",
-      "title": "데이터베이스 워드 정리",
-      "book_title": "교과내용학",
-      "completed": false,
-      "due_date": "2026-03-13",
-      "due_time": null
-    },
-    {
       "notion_id": "31ec2bbd-5973-80a1-a62e-e38c64813256",
       "title": "컴퓨터네트워크 필기 보충",
       "book_title": "교과내용학",
@@ -1769,6 +1761,14 @@
       "due_time": null
     },
     {
+      "notion_id": "31ec2bbd-5973-8073-9643-e82a97bfc620",
+      "title": "데이터베이스 워드 정리",
+      "book_title": "교과내용학",
+      "completed": true,
+      "due_date": "2026-03-13",
+      "due_time": null
+    },
+    {
       "notion_id": "322c2bbd-5973-811c-892b-e297692289e5",
       "title": "데이터베이스 필기 보충' (2)' (2)",
       "book_title": "교과내용학",
@@ -1801,6 +1801,6 @@
       "due_time": null
     }
   ],
-  "last_sync": "2026-03-13T13:47:07.578540+00:00",
+  "last_sync": "2026-03-13T14:30:34.207979+00:00",
   "total": 225
 }
