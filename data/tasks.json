@@ -55,6 +55,15 @@
       "importance": "normal"
     },
     {
+      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAeq9LADAAA=",
+      "notion_id": "322c2bbd-5973-8196-a6fa-d8f2e5d4ae2d",
+      "title": "우리적금 출석체크",
+      "completed": false,
+      "due_date": "2026-03-16",
+      "due_time": null,
+      "importance": "normal"
+    },
+    {
       "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAell2cRAAA=",
       "notion_id": "317c2bbd-5973-81d9-91b2-e41b96a1e0ad",
       "title": "블로그쓰기",
@@ -253,8 +262,8 @@
       "importance": "normal"
     }
   ],
-  "last_sync": "2026-03-13T06:09:05.961013+00:00",
-  "total": 28,
+  "last_sync": "2026-03-13T07:10:09.283061+00:00",
+  "total": 29,
   "completed": 21,
-  "pending": 7
+  "pending": 8
 }

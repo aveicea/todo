@@ -593,8 +593,8 @@
       "due_time": null
     },
     {
-      "notion_id": "322c2bbd-5973-811c-892b-e297692289e5",
-      "title": "데이터베이스 필기 보충' (2)' (2)",
+      "notion_id": "322c2bbd-5973-8185-9f6e-fe2ef72a4417",
+      "title": "데이터베이스 필기 보충' (2)' (3)",
       "book_title": "교과내용학",
       "completed": false,
       "due_date": "2026-03-13",
@@ -1769,6 +1769,14 @@
       "due_time": null
     },
     {
+      "notion_id": "322c2bbd-5973-811c-892b-e297692289e5",
+      "title": "데이터베이스 필기 보충' (2)' (2)",
+      "book_title": "교과내용학",
+      "completed": true,
+      "due_date": "2026-03-13",
+      "due_time": null
+    },
+    {
       "notion_id": "322c2bbd-5973-8171-987b-c6a1c20926b4",
       "title": "데이터베이스 필기 보충' (2)'",
       "book_title": "교과내용학",
@@ -1777,6 +1785,6 @@
       "due_time": null
     }
   ],
-  "last_sync": "2026-03-13T06:09:20.681135+00:00",
-  "total": 222
+  "last_sync": "2026-03-13T07:10:18.927484+00:00",
+  "total": 223
 }
