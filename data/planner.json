@@ -593,6 +593,14 @@
       "due_time": null
     },
     {
+      "notion_id": "322c2bbd-5973-8171-987b-c6a1c20926b4",
+      "title": "데이터베이스 필기 보충' (2)'",
+      "book_title": "교과내용학",
+      "completed": false,
+      "due_date": "2026-03-13",
+      "due_time": null
+    },
+    {
       "notion_id": "31fc2bbd-5973-8072-bbf6-d9419edb746a",
       "title": "10:00-17:00 현강 (1)",
       "book_title": "일정",
@@ -1761,6 +1769,6 @@
       "due_time": null
     }
   ],
-  "last_sync": "2026-03-13T02:29:38.500676+00:00",
-  "total": 220
+  "last_sync": "2026-03-13T04:24:25.554913+00:00",
+  "total": 221
 }
