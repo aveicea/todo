@@ -593,6 +593,14 @@
       "due_time": null
     },
     {
+      "notion_id": "323c2bbd-5973-8176-bcf7-d3d016521f68",
+      "title": "운영체제 필기 보충'",
+      "book_title": "교과내용학",
+      "completed": false,
+      "due_date": "2026-03-14",
+      "due_time": null
+    },
+    {
       "notion_id": "31ec2bbd-5973-8034-8a08-ea6975fb3e09",
       "title": "디지털논리회로 필기 보충",
       "book_title": "교과내용학",
@@ -659,6 +667,14 @@
     {
       "notion_id": "317c2bbd-5973-8027-886e-f79503b47b8b",
       "title": "디지털논리회로 워드 정리",
+      "book_title": "교과내용학",
+      "completed": false,
+      "due_date": "2026-03-19",
+      "due_time": null
+    },
+    {
+      "notion_id": "323c2bbd-5973-819e-a294-f887b736ba48",
+      "title": "레드블랙트리 예제 1, 2, 3 풀기",
       "book_title": "교과내용학",
       "completed": false,
       "due_date": "2026-03-19",
@@ -1801,6 +1817,6 @@
       "due_time": null
     }
   ],
-  "last_sync": "2026-03-14T04:24:29.896328+00:00",
-  "total": 225
+  "last_sync": "2026-03-14T05:27:57.578627+00:00",
+  "total": 227
 }
