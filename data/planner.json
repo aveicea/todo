@@ -585,14 +585,6 @@
       "due_time": null
     },
     {
-      "notion_id": "31fc2bbd-5973-8072-bbf6-d9419edb746a",
-      "title": "10:00-17:00 현강 (1)",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2026-03-14",
-      "due_time": null
-    },
-    {
       "notion_id": "323c2bbd-5973-8176-bcf7-d3d016521f68",
       "title": "운영체제 필기 보충'",
       "book_title": "교과내용학",
@@ -1815,8 +1807,16 @@
       "completed": true,
       "due_date": "2026-03-13",
       "due_time": null
+    },
+    {
+      "notion_id": "31fc2bbd-5973-8072-bbf6-d9419edb746a",
+      "title": "10:00-17:00 현강 (1)",
+      "book_title": "일정",
+      "completed": true,
+      "due_date": "2026-03-14",
+      "due_time": null
     }
   ],
-  "last_sync": "2026-03-14T11:56:27.807224+00:00",
+  "last_sync": "2026-03-14T12:35:41.991132+00:00",
   "total": 227
 }
