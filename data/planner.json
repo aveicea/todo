@@ -577,14 +577,6 @@
       "due_time": null
     },
     {
-      "notion_id": "31ec2bbd-5973-80a1-a62e-e38c64813256",
-      "title": "컴퓨터네트워크 필기 보충",
-      "book_title": "교과내용학",
-      "completed": false,
-      "due_date": "2026-03-14",
-      "due_time": null
-    },
-    {
       "notion_id": "323c2bbd-5973-81ff-a232-e3b290a9f752",
       "title": "운영체제 필기 보충' (4)",
       "book_title": "교과내용학",
@@ -612,6 +604,14 @@
       "notion_id": "323c2bbd-5973-81a7-9b66-e764db4aaa40",
       "title": "운영체제 필기 보충' (4)'",
       "book_title": "교과내용학",
+      "completed": false,
+      "due_date": "2026-03-15",
+      "due_time": null
+    },
+    {
+      "notion_id": "323c2bbd-5973-81d8-a073-fb2409911200",
+      "title": "17:00-18:00 학원/수영쌤",
+      "book_title": "일정",
       "completed": false,
       "due_date": "2026-03-15",
       "due_time": null
@@ -649,14 +649,6 @@
       "due_time": null
     },
     {
-      "notion_id": "317c2bbd-5973-8063-8382-e97522915a4f",
-      "title": "운영체제 워드 정리",
-      "book_title": "교과내용학",
-      "completed": false,
-      "due_date": "2026-03-17",
-      "due_time": null
-    },
-    {
       "notion_id": "31fc2bbd-5973-80a0-97ed-fb6778fc542c",
       "title": "13:00-16:00 스터디 - 인기초 1단원",
       "book_title": "일정",
@@ -665,35 +657,11 @@
       "due_time": null
     },
     {
-      "notion_id": "317c2bbd-5973-8043-a47c-dc3cc57943e1",
-      "title": "컴퓨터네트워크 워드 정리",
-      "book_title": "교과내용학",
-      "completed": false,
-      "due_date": "2026-03-18",
-      "due_time": null
-    },
-    {
-      "notion_id": "317c2bbd-5973-8027-886e-f79503b47b8b",
-      "title": "디지털논리회로 워드 정리",
-      "book_title": "교과내용학",
-      "completed": false,
-      "due_date": "2026-03-19",
-      "due_time": null
-    },
-    {
       "notion_id": "323c2bbd-5973-819e-a294-f887b736ba48",
       "title": "레드블랙트리 예제 1, 2, 3 풀기",
       "book_title": "교과내용학",
       "completed": false,
       "due_date": "2026-03-19",
-      "due_time": null
-    },
-    {
-      "notion_id": "317c2bbd-5973-804d-b076-ed0d2f36eb76",
-      "title": "컴퓨터구조 워드 정리",
-      "book_title": "교과내용학",
-      "completed": false,
-      "due_date": "2026-03-20",
       "due_time": null
     },
     {
@@ -1825,6 +1793,46 @@
       "due_time": null
     },
     {
+      "notion_id": "317c2bbd-5973-8027-886e-f79503b47b8b",
+      "title": "디지털논리회로 워드 정리",
+      "book_title": "교과내용학",
+      "completed": true,
+      "due_date": "2026-03-14",
+      "due_time": null
+    },
+    {
+      "notion_id": "317c2bbd-5973-8043-a47c-dc3cc57943e1",
+      "title": "컴퓨터네트워크 워드 정리",
+      "book_title": "교과내용학",
+      "completed": true,
+      "due_date": "2026-03-14",
+      "due_time": null
+    },
+    {
+      "notion_id": "317c2bbd-5973-804d-b076-ed0d2f36eb76",
+      "title": "컴퓨터구조 워드 정리",
+      "book_title": "교과내용학",
+      "completed": true,
+      "due_date": "2026-03-14",
+      "due_time": null
+    },
+    {
+      "notion_id": "317c2bbd-5973-8063-8382-e97522915a4f",
+      "title": "운영체제 워드 정리",
+      "book_title": "교과내용학",
+      "completed": true,
+      "due_date": "2026-03-14",
+      "due_time": null
+    },
+    {
+      "notion_id": "31ec2bbd-5973-80a1-a62e-e38c64813256",
+      "title": "컴퓨터네트워크 필기 보충",
+      "book_title": "교과내용학",
+      "completed": true,
+      "due_date": "2026-03-14",
+      "due_time": null
+    },
+    {
       "notion_id": "31fc2bbd-5973-8072-bbf6-d9419edb746a",
       "title": "10:00-17:00 현강 (1)",
       "book_title": "일정",
@@ -1857,6 +1865,6 @@
       "due_time": null
     }
   ],
-  "last_sync": "2026-03-14T16:01:18.561148+00:00",
-  "total": 232
+  "last_sync": "2026-03-14T16:39:48.177324+00:00",
+  "total": 233
 }

@@ -82,15 +82,6 @@
       "importance": "normal"
     },
     {
-      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAell2cQAAA=",
-      "notion_id": "314c2bbd-5973-813a-b3da-dc68c254e441",
-      "title": "보조배터리",
-      "completed": false,
-      "due_date": "2026-03-15",
-      "due_time": null,
-      "importance": "normal"
-    },
-    {
       "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAeq9LADAAA=",
       "notion_id": "322c2bbd-5973-8196-a6fa-d8f2e5d4ae2d",
       "title": "우리적금 출석체크",
@@ -305,10 +296,19 @@
       "due_date": "2026-03-13",
       "due_time": null,
       "importance": "normal"
+    },
+    {
+      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAell2cQAAA=",
+      "notion_id": "314c2bbd-5973-813a-b3da-dc68c254e441",
+      "title": "보조배터리",
+      "completed": true,
+      "due_date": "2026-03-14",
+      "due_time": null,
+      "importance": "normal"
     }
   ],
-  "last_sync": "2026-03-14T16:01:07.866936+00:00",
+  "last_sync": "2026-03-14T16:39:35.160326+00:00",
   "total": 34,
-  "completed": 22,
-  "pending": 12
+  "completed": 23,
+  "pending": 11
 }
