@@ -585,8 +585,8 @@
       "due_time": null
     },
     {
-      "notion_id": "323c2bbd-5973-8176-bcf7-d3d016521f68",
-      "title": "운영체제 필기 보충'",
+      "notion_id": "323c2bbd-5973-81c3-a440-f8b31d905d0f",
+      "title": "운영체제 필기 보충' (3)",
       "book_title": "교과내용학",
       "completed": false,
       "due_date": "2026-03-14",
@@ -1815,8 +1815,24 @@
       "completed": true,
       "due_date": "2026-03-14",
       "due_time": null
+    },
+    {
+      "notion_id": "323c2bbd-5973-8108-8975-f3abe41bec78",
+      "title": "운영체제 필기 보충' (2)",
+      "book_title": "교과내용학",
+      "completed": true,
+      "due_date": "2026-03-14",
+      "due_time": null
+    },
+    {
+      "notion_id": "323c2bbd-5973-8176-bcf7-d3d016521f68",
+      "title": "운영체제 필기 보충'",
+      "book_title": "교과내용학",
+      "completed": true,
+      "due_date": "2026-03-14",
+      "due_time": null
     }
   ],
-  "last_sync": "2026-03-14T14:01:10.839494+00:00",
-  "total": 227
+  "last_sync": "2026-03-14T14:35:46.241449+00:00",
+  "total": 229
 }
