@@ -601,24 +601,8 @@
       "due_time": null
     },
     {
-      "notion_id": "323c2bbd-5973-81a7-9b66-e764db4aaa40",
-      "title": "운영체제 필기 보충' (4)'",
-      "book_title": "교과내용학",
-      "completed": false,
-      "due_date": "2026-03-15",
-      "due_time": null
-    },
-    {
-      "notion_id": "323c2bbd-5973-81d8-a073-fb2409911200",
-      "title": "17:00-18:00 학원/수영쌤",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2026-03-15",
-      "due_time": null
-    },
-    {
-      "notion_id": "323c2bbd-5973-81f6-8ff2-f673edb1edf6",
-      "title": "컴퓨터네트워크 필기 보충'",
+      "notion_id": "31ec2bbd-5973-80a1-a62e-e38c64813256",
+      "title": "컴퓨터네트워크 필기 보충",
       "book_title": "교과내용학",
       "completed": false,
       "due_date": "2026-03-15",
@@ -1825,14 +1809,6 @@
       "due_time": null
     },
     {
-      "notion_id": "31ec2bbd-5973-80a1-a62e-e38c64813256",
-      "title": "컴퓨터네트워크 필기 보충",
-      "book_title": "교과내용학",
-      "completed": true,
-      "due_date": "2026-03-14",
-      "due_time": null
-    },
-    {
       "notion_id": "31fc2bbd-5973-8072-bbf6-d9419edb746a",
       "title": "10:00-17:00 현강 (1)",
       "book_title": "일정",
@@ -1863,8 +1839,24 @@
       "completed": true,
       "due_date": "2026-03-14",
       "due_time": null
+    },
+    {
+      "notion_id": "323c2bbd-5973-81a7-9b66-e764db4aaa40",
+      "title": "운영체제 필기 보충' (4)'",
+      "book_title": "교과내용학",
+      "completed": true,
+      "due_date": "2026-03-15",
+      "due_time": null
+    },
+    {
+      "notion_id": "324c2bbd-5973-816a-94d2-defa626797f2",
+      "title": "운영체제 필기 보충' (4)' (2)",
+      "book_title": "교과내용학",
+      "completed": true,
+      "due_date": "2026-03-15",
+      "due_time": null
     }
   ],
-  "last_sync": "2026-03-15T08:57:07.378497+00:00",
-  "total": 233
+  "last_sync": "2026-03-15T09:30:27.750161+00:00",
+  "total": 232
 }
