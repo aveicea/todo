@@ -633,6 +633,14 @@
       "due_time": null
     },
     {
+      "notion_id": "324c2bbd-5973-81e1-ba31-df3ba6b29059",
+      "title": "수업 시연 준비 (2)",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-03-17",
+      "due_time": null
+    },
+    {
       "notion_id": "323c2bbd-5973-819e-a294-f887b736ba48",
       "title": "레드블랙트리 예제 1, 2, 3 풀기",
       "book_title": "교과내용학",
@@ -1857,6 +1865,6 @@
       "due_time": null
     }
   ],
-  "last_sync": "2026-03-15T15:34:23.172693+00:00",
-  "total": 232
+  "last_sync": "2026-03-15T15:54:51.071479+00:00",
+  "total": 233
 }
