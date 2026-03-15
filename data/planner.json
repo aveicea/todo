@@ -593,14 +593,6 @@
       "due_time": null
     },
     {
-      "notion_id": "31ec2bbd-5973-805d-a384-f1f0ef7ab14d",
-      "title": "컴퓨터구조 필기 보충",
-      "book_title": "교과내용학",
-      "completed": false,
-      "due_date": "2026-03-15",
-      "due_time": null
-    },
-    {
       "notion_id": "31ec2bbd-5973-80a1-a62e-e38c64813256",
       "title": "컴퓨터네트워크 필기 보충",
       "book_title": "교과내용학",
@@ -1841,6 +1833,14 @@
       "due_time": null
     },
     {
+      "notion_id": "31ec2bbd-5973-805d-a384-f1f0ef7ab14d",
+      "title": "컴퓨터구조 필기 보충",
+      "book_title": "교과내용학",
+      "completed": true,
+      "due_date": "2026-03-15",
+      "due_time": null
+    },
+    {
       "notion_id": "323c2bbd-5973-81a7-9b66-e764db4aaa40",
       "title": "운영체제 필기 보충' (4)'",
       "book_title": "교과내용학",
@@ -1857,6 +1857,6 @@
       "due_time": null
     }
   ],
-  "last_sync": "2026-03-15T15:00:54.800244+00:00",
+  "last_sync": "2026-03-15T15:34:23.172693+00:00",
   "total": 232
 }
