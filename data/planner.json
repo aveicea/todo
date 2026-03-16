@@ -593,14 +593,6 @@
       "due_time": null
     },
     {
-      "notion_id": "31fc2bbd-5973-802b-a931-d8e5c36dc3c2",
-      "title": "1단원 전체 정리 및 파일 공유",
-      "book_title": "스터디",
-      "completed": false,
-      "due_date": "2026-03-16",
-      "due_time": null
-    },
-    {
       "notion_id": "31fc2bbd-5973-807e-aa5c-c3fd85281cbb",
       "title": "인공지능 3문제 기출 문제 풀이 및 설명",
       "book_title": "스터디",
@@ -1857,6 +1849,14 @@
       "due_time": null
     },
     {
+      "notion_id": "31fc2bbd-5973-802b-a931-d8e5c36dc3c2",
+      "title": "1단원 전체 정리 및 파일 공유",
+      "book_title": "스터디",
+      "completed": true,
+      "due_date": "2026-03-16",
+      "due_time": null
+    },
+    {
       "notion_id": "322c2bbd-5973-8015-981d-fd221c2d5b7c",
       "title": "수업 시연 준비",
       "book_title": "스터디",
@@ -1873,6 +1873,6 @@
       "due_time": null
     }
   ],
-  "last_sync": "2026-03-16T10:05:09.460227+00:00",
+  "last_sync": "2026-03-16T11:07:12.992271+00:00",
   "total": 234
 }
