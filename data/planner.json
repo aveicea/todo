@@ -611,7 +611,7 @@
     {
       "notion_id": "322c2bbd-5973-8015-981d-fd221c2d5b7c",
       "title": "수업 시연 준비",
-      "book_title": "일정",
+      "book_title": "스터디",
       "completed": false,
       "due_date": "2026-03-16",
       "due_time": null
@@ -1865,6 +1865,6 @@
       "due_time": null
     }
   ],
-  "last_sync": "2026-03-16T00:03:17.669603+00:00",
+  "last_sync": "2026-03-16T03:29:08.518419+00:00",
   "total": 233
 }

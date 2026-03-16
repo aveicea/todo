@@ -37,38 +37,11 @@
       "importance": "normal"
     },
     {
-      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAeq9LAAAAA=",
-      "notion_id": "321c2bbd-5973-8132-8ce8-c49f6b269ae5",
-      "title": "충전해 단축어 만들기",
-      "completed": false,
-      "due_date": "2026-03-13",
-      "due_time": null,
-      "importance": "normal"
-    },
-    {
-      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAer3PctAAA=",
-      "notion_id": "322c2bbd-5973-810b-995a-d2aeb21672b2",
-      "title": "데일리 체크",
-      "completed": false,
-      "due_date": "2026-03-14",
-      "due_time": null,
-      "importance": "normal"
-    },
-    {
       "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAer3PcsAAA=",
       "notion_id": "322c2bbd-5973-818a-b080-d934261c6564",
       "title": "다이어리",
       "completed": false,
       "due_date": "2026-03-14",
-      "due_time": null,
-      "importance": "normal"
-    },
-    {
-      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAesjCK1AAA=",
-      "notion_id": "323c2bbd-5973-8161-8e8d-f3dd0a4f0f11",
-      "title": "데일리 체크",
-      "completed": false,
-      "due_date": "2026-03-15",
       "due_time": null,
       "importance": "normal"
     },
@@ -316,6 +289,24 @@
       "importance": "normal"
     },
     {
+      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAeq9LAAAAA=",
+      "notion_id": "321c2bbd-5973-8132-8ce8-c49f6b269ae5",
+      "title": "충전해 단축어 만들기",
+      "completed": true,
+      "due_date": "2026-03-13",
+      "due_time": null,
+      "importance": "normal"
+    },
+    {
+      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAer3PctAAA=",
+      "notion_id": "322c2bbd-5973-810b-995a-d2aeb21672b2",
+      "title": "데일리 체크",
+      "completed": true,
+      "due_date": "2026-03-14",
+      "due_time": null,
+      "importance": "normal"
+    },
+    {
       "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAell2cQAAA=",
       "notion_id": "314c2bbd-5973-813a-b3da-dc68c254e441",
       "title": "보조배터리",
@@ -323,10 +314,19 @@
       "due_date": "2026-03-14",
       "due_time": null,
       "importance": "normal"
+    },
+    {
+      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAesjCK1AAA=",
+      "notion_id": "323c2bbd-5973-8161-8e8d-f3dd0a4f0f11",
+      "title": "데일리 체크",
+      "completed": true,
+      "due_date": "2026-03-15",
+      "due_time": null,
+      "importance": "normal"
     }
   ],
-  "last_sync": "2026-03-16T00:03:06.564481+00:00",
+  "last_sync": "2026-03-16T03:28:36.926357+00:00",
   "total": 36,
-  "completed": 23,
-  "pending": 13
+  "completed": 26,
+  "pending": 10
 }
