@@ -593,17 +593,9 @@
       "due_time": null
     },
     {
-      "notion_id": "325c2bbd-5973-818d-824a-c0ebec4b92c8",
-      "title": "수업 시연 준비 (3)",
+      "notion_id": "326c2bbd-5973-81f1-bdbe-f4f9923b608b",
+      "title": "수업 시연 준비 (4)",
       "book_title": "스터디",
-      "completed": false,
-      "due_date": "2026-03-16",
-      "due_time": null
-    },
-    {
-      "notion_id": "31fc2bbd-5973-80a0-97ed-fb6778fc542c",
-      "title": "13:00-16:00 스터디 - 인기초 1단원",
-      "book_title": "일정",
       "completed": false,
       "due_date": "2026-03-17",
       "due_time": null
@@ -1871,8 +1863,24 @@
       "completed": true,
       "due_date": "2026-03-16",
       "due_time": null
+    },
+    {
+      "notion_id": "31fc2bbd-5973-80a0-97ed-fb6778fc542c",
+      "title": "13:00-16:00 스터디 - 인기초 1단원",
+      "book_title": "일정",
+      "completed": true,
+      "due_date": "2026-03-17",
+      "due_time": null
+    },
+    {
+      "notion_id": "325c2bbd-5973-818d-824a-c0ebec4b92c8",
+      "title": "수업 시연 준비 (3)",
+      "book_title": "스터디",
+      "completed": true,
+      "due_date": "2026-03-17",
+      "due_time": null
     }
   ],
-  "last_sync": "2026-03-17T15:07:12.938095+00:00",
-  "total": 234
+  "last_sync": "2026-03-17T16:16:20.906537+00:00",
+  "total": 235
 }
