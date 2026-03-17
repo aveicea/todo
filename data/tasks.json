@@ -19,15 +19,6 @@
       "importance": "normal"
     },
     {
-      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAeq9LACAAA=",
-      "notion_id": "321c2bbd-5973-815c-a2a7-c40fbf9aaa17",
-      "title": "데일리 체크",
-      "completed": false,
-      "due_date": "2026-03-13",
-      "due_time": null,
-      "importance": "normal"
-    },
-    {
       "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAeq9LABAAA=",
       "notion_id": "321c2bbd-5973-8118-a611-ce563672aec9",
       "title": "다이어리",
@@ -51,15 +42,6 @@
       "title": "다이어리",
       "completed": false,
       "due_date": "2026-03-15",
-      "due_time": null,
-      "importance": "normal"
-    },
-    {
-      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAesqczAAAA=",
-      "notion_id": "324c2bbd-5973-81dd-9297-d738510a8689",
-      "title": "데일리 체크",
-      "completed": false,
-      "due_date": "2026-03-16",
       "due_time": null,
       "importance": "normal"
     },
@@ -307,6 +289,15 @@
       "importance": "normal"
     },
     {
+      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAeq9LACAAA=",
+      "notion_id": "321c2bbd-5973-815c-a2a7-c40fbf9aaa17",
+      "title": "데일리 체크",
+      "completed": true,
+      "due_date": "2026-03-13",
+      "due_time": null,
+      "importance": "normal"
+    },
+    {
       "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAeq9LAAAAA=",
       "notion_id": "321c2bbd-5973-8132-8ce8-c49f6b269ae5",
       "title": "충전해 단축어 만들기",
@@ -341,10 +332,19 @@
       "due_date": "2026-03-15",
       "due_time": null,
       "importance": "normal"
+    },
+    {
+      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAesqczAAAA=",
+      "notion_id": "324c2bbd-5973-81dd-9297-d738510a8689",
+      "title": "데일리 체크",
+      "completed": true,
+      "due_date": "2026-03-16",
+      "due_time": null,
+      "importance": "normal"
     }
   ],
-  "last_sync": "2026-03-17T08:29:23.305045+00:00",
+  "last_sync": "2026-03-17T09:28:33.874440+00:00",
   "total": 38,
-  "completed": 26,
-  "pending": 12
+  "completed": 28,
+  "pending": 10
 }
