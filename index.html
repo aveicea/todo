@@ -357,7 +357,11 @@ function formatDue(dateStr, timeStr, completed) {
   const today = todayStr();
   const timeSuffix = timeStr ? ` ${timeStr}` : '';
   if (completed) return { label: dateStr + timeSuffix, cls: 'done-date' };
-  if (dateStr < today) return { label: `${dateStr}${timeSuffix} 지남`, cls: 'overdue' };
+  if (dateStr < today) {
+    const diffMs = new Date(today) - new Date(dateStr);
+    const diffDays = Math.round(diffMs / 86400000);
+    return { label: `${dateStr}${timeSuffix} (${diffDays}일 지남)`, cls: 'overdue' };
+  }
   if (dateStr === today) return { label: '오늘 마감' + timeSuffix, cls: 'today' };
   return { label: dateStr + timeSuffix, cls: 'upcoming' };
 }
