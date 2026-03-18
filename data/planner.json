@@ -593,16 +593,16 @@
       "due_time": null
     },
     {
-      "notion_id": "326c2bbd-5973-81f1-bdbe-f4f9923b608b",
-      "title": "수업 시연 준비 (4)",
-      "book_title": "스터디",
+      "notion_id": "323c2bbd-5973-819e-a294-f887b736ba48",
+      "title": "전체 필기 참고해서 과제",
+      "book_title": "교과내용학",
       "completed": false,
-      "due_date": "2026-03-17",
+      "due_date": "2026-03-19",
       "due_time": null
     },
     {
-      "notion_id": "323c2bbd-5973-819e-a294-f887b736ba48",
-      "title": "레드블랙트리 예제 1, 2, 3 풀기",
+      "notion_id": "327c2bbd-5973-819b-854d-c00e0a44cf3e",
+      "title": "기본 개념 필기 시작",
       "book_title": "교과내용학",
       "completed": false,
       "due_date": "2026-03-19",
@@ -1879,8 +1879,16 @@
       "completed": true,
       "due_date": "2026-03-17",
       "due_time": null
+    },
+    {
+      "notion_id": "326c2bbd-5973-81f1-bdbe-f4f9923b608b",
+      "title": "수업 시연 준비 (4)",
+      "book_title": "스터디",
+      "completed": true,
+      "due_date": "2026-03-18",
+      "due_time": null
     }
   ],
-  "last_sync": "2026-03-18T08:28:15.914744+00:00",
-  "total": 235
+  "last_sync": "2026-03-18T09:13:17.091364+00:00",
+  "total": 236
 }
