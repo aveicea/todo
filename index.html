@@ -313,15 +313,19 @@ function vercelUrl() { return (localStorage.getItem('vercel_url') || window.loca
 async function callVercel(params) {
   const url = vercelUrl();
   if (!url) { showSetup(); return false; }
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), 15000);
   try {
     const r = await fetch(`${url}/api/action`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(params),
+      signal: controller.signal,
     });
+    clearTimeout(timer);
     if (!r.ok) return false;
     return await r.json();
-  } catch { return false; }
+  } catch { clearTimeout(timer); return false; }
 }
 
 // ── Eventual-consistency 보정: 토글 결과를 60초간 localStorage에 유지 ──
