@@ -602,10 +602,26 @@
     },
     {
       "notion_id": "327c2bbd-5973-819b-854d-c00e0a44cf3e",
-      "title": "기본 개념 필기 시작",
+      "title": "자료구조 구조도 만들기",
       "book_title": "교과내용학",
       "completed": false,
       "due_date": "2026-03-19",
+      "due_time": null
+    },
+    {
+      "notion_id": "329c2bbd-5973-812b-95a9-c203034c8546",
+      "title": "자료구조 구조도 만들기'",
+      "book_title": "교과내용학",
+      "completed": false,
+      "due_date": "2026-03-20",
+      "due_time": null
+    },
+    {
+      "notion_id": "329c2bbd-5973-8151-b388-fe1f0dc663bf",
+      "title": "전체 필기 참고해서 과제'",
+      "book_title": "교과내용학",
+      "completed": false,
+      "due_date": "2026-03-20",
       "due_time": null
     },
     {
@@ -1889,6 +1905,6 @@
       "due_time": null
     }
   ],
-  "last_sync": "2026-03-20T00:02:59.030791+00:00",
-  "total": 236
+  "last_sync": "2026-03-20T02:49:25.517447+00:00",
+  "total": 238
 }
