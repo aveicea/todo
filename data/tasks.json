@@ -82,6 +82,15 @@
       "importance": "normal"
     },
     {
+      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAewTyLRAAA=",
+      "notion_id": "329c2bbd-5973-8121-b7eb-d88a952da9f9",
+      "title": "책상정리",
+      "completed": false,
+      "due_date": "2026-03-20",
+      "due_time": null,
+      "importance": "normal"
+    },
+    {
       "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAeuhoW_AAA=",
       "notion_id": "328c2bbd-5973-8141-a0e8-fad1287d22d1",
       "title": "데일리 체크",
@@ -415,8 +424,8 @@
       "importance": "normal"
     }
   ],
-  "last_sync": "2026-03-20T06:31:37.750064+00:00",
-  "total": 46,
+  "last_sync": "2026-03-20T07:29:50.358463+00:00",
+  "total": 47,
   "completed": 33,
-  "pending": 13
+  "pending": 14
 }
