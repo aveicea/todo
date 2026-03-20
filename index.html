@@ -419,10 +419,10 @@ function renderTasks() {
   });
   const list = document.getElementById('task-list');
   const dateRank = d => {
-    if (!d) return 2;
+    if (!d) return 3;
     if (d === today) return 0;
-    if (d < today) return 3;
-    return 1;
+    if (d < today) return 1;
+    return 2;
   };
   const sortFn = (a, b) => {
     const ra = dateRank(a.due_date), rb = dateRank(b.due_date);
