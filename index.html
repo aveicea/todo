@@ -418,7 +418,15 @@ function renderTasks() {
     return true;
   });
   const list = document.getElementById('task-list');
+  const dateRank = d => {
+    if (!d) return 3;
+    if (d === today) return 0;
+    if (d < today) return 1;
+    return 2;
+  };
   const sortFn = (a, b) => {
+    const ra = dateRank(a.due_date), rb = dateRank(b.due_date);
+    if (ra !== rb) return ra - rb;
     const da = a.due_date || '9999-12-31', db = b.due_date || '9999-12-31';
     const dateCmp = sortAsc ? da.localeCompare(db) : db.localeCompare(da);
     if (dateCmp !== 0) return dateCmp;
