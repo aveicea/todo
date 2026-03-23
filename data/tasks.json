@@ -118,15 +118,6 @@
       "importance": "normal"
     },
     {
-      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAeyZxAcAAA=",
-      "notion_id": "32cc2bbd-5973-817b-909f-f6a707e9d9c0",
-      "title": "박문각 개인정보활용동의서 작성",
-      "completed": false,
-      "due_date": "2026-03-23",
-      "due_time": null,
-      "importance": "normal"
-    },
-    {
       "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAexLK46AAA=",
       "notion_id": "32bc2bbd-5973-8187-944f-eae9b40d0c34",
       "title": "데일리 체크",
@@ -485,10 +476,19 @@
       "due_date": "2026-03-22",
       "due_time": null,
       "importance": "normal"
+    },
+    {
+      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAeyZxAcAAA=",
+      "notion_id": "32cc2bbd-5973-817b-909f-f6a707e9d9c0",
+      "title": "박문각 개인정보활용동의서 작성",
+      "completed": true,
+      "due_date": "2026-03-23",
+      "due_time": null,
+      "importance": "normal"
     }
   ],
-  "last_sync": "2026-03-23T12:00:38.669757+00:00",
+  "last_sync": "2026-03-23T13:20:14.802441+00:00",
   "total": 54,
-  "completed": 35,
-  "pending": 19
+  "completed": 36,
+  "pending": 18
 }
