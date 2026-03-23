@@ -100,15 +100,6 @@
       "importance": "normal"
     },
     {
-      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAexLK47AAA=",
-      "notion_id": "317c2bbd-5973-81d9-91b2-e41b96a1e0ad",
-      "title": "블로그쓰기",
-      "completed": false,
-      "due_date": "2026-03-21",
-      "due_time": null,
-      "importance": "normal"
-    },
-    {
       "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAewTyLSAAA=",
       "notion_id": "329c2bbd-5973-81bc-b76e-e165d5842a29",
       "title": "다이어리",
@@ -123,6 +114,15 @@
       "title": "다이어리",
       "completed": false,
       "due_date": "2026-03-22",
+      "due_time": null,
+      "importance": "normal"
+    },
+    {
+      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAeyZxAcAAA=",
+      "notion_id": "32cc2bbd-5973-817b-909f-f6a707e9d9c0",
+      "title": "박문각 개인정보활용동의서 작성",
+      "completed": false,
+      "due_date": "2026-03-23",
       "due_time": null,
       "importance": "normal"
     },
@@ -150,6 +150,15 @@
       "title": "우리적금 출석체크",
       "completed": false,
       "due_date": "2026-03-23",
+      "due_time": null,
+      "importance": "normal"
+    },
+    {
+      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAeyZxAdAAA=",
+      "notion_id": "32cc2bbd-5973-81a7-aee6-e7959f3d3438",
+      "title": "밀린 할일 토글 기능 추가",
+      "completed": false,
+      "due_date": "2026-03-25",
       "due_time": null,
       "importance": "normal"
     },
@@ -478,8 +487,8 @@
       "importance": "normal"
     }
   ],
-  "last_sync": "2026-03-23T09:42:27.289409+00:00",
-  "total": 53,
+  "last_sync": "2026-03-23T10:36:10.590172+00:00",
+  "total": 54,
   "completed": 35,
-  "pending": 18
+  "pending": 19
 }

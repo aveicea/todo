@@ -609,6 +609,30 @@
       "due_time": null
     },
     {
+      "notion_id": "32cc2bbd-5973-8123-a122-f0e0b1805622",
+      "title": "맡은 파트 설명 연습",
+      "book_title": "스터디",
+      "completed": false,
+      "due_date": "2026-03-23",
+      "due_time": null
+    },
+    {
+      "notion_id": "32cc2bbd-5973-81f9-9247-c7bd6075e702",
+      "title": "인공지능 문제 풀이",
+      "book_title": "스터디",
+      "completed": false,
+      "due_date": "2026-03-23",
+      "due_time": null
+    },
+    {
+      "notion_id": "32cc2bbd-5973-81fc-bc68-d9ae0fb128fd",
+      "title": "인공지능 문제풀이",
+      "book_title": "스터디",
+      "completed": false,
+      "due_date": "2026-03-23",
+      "due_time": null
+    },
+    {
       "notion_id": "31fc2bbd-5973-8043-bba9-dc4f2d71ba42",
       "title": "13:00-16:00 스터디 - 인기초 2-1단원",
       "book_title": "일정",
@@ -1905,6 +1929,6 @@
       "due_time": null
     }
   ],
-  "last_sync": "2026-03-23T09:42:34.447021+00:00",
-  "total": 238
+  "last_sync": "2026-03-23T10:36:18.520459+00:00",
+  "total": 241
 }
