@@ -609,22 +609,6 @@
       "due_time": null
     },
     {
-      "notion_id": "329c2bbd-5973-8151-b388-fe1f0dc663bf",
-      "title": "전체 필기 참고해서 과제'",
-      "book_title": "교과내용학",
-      "completed": false,
-      "due_date": "2026-03-20",
-      "due_time": null
-    },
-    {
-      "notion_id": "31fc2bbd-5973-80a6-a02d-f0b21daf2bbd",
-      "title": "10:00-17:00 현강 (2)",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2026-03-21",
-      "due_time": null
-    },
-    {
       "notion_id": "31fc2bbd-5973-8043-bba9-dc4f2d71ba42",
       "title": "13:00-16:00 스터디 - 인기초 2-1단원",
       "book_title": "일정",
@@ -1903,8 +1887,24 @@
       "completed": true,
       "due_date": "2026-03-20",
       "due_time": null
+    },
+    {
+      "notion_id": "329c2bbd-5973-8151-b388-fe1f0dc663bf",
+      "title": "전체 필기 참고해서 과제'",
+      "book_title": "교과내용학",
+      "completed": true,
+      "due_date": "2026-03-20",
+      "due_time": null
+    },
+    {
+      "notion_id": "31fc2bbd-5973-80a6-a02d-f0b21daf2bbd",
+      "title": "10:00-17:00 현강 (2)",
+      "book_title": "일정",
+      "completed": true,
+      "due_date": "2026-03-21",
+      "due_time": null
     }
   ],
-  "last_sync": "2026-03-22T23:56:59.576511+00:00",
+  "last_sync": "2026-03-23T01:51:38.623428+00:00",
   "total": 238
 }
