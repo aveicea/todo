@@ -100,18 +100,18 @@
       "importance": "normal"
     },
     {
-      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAewTyLSAAA=",
-      "notion_id": "329c2bbd-5973-81bc-b76e-e165d5842a29",
-      "title": "다이어리",
+      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAexLK47AAA=",
+      "notion_id": "317c2bbd-5973-81d9-91b2-e41b96a1e0ad",
+      "title": "블로그쓰기",
       "completed": false,
       "due_date": "2026-03-21",
       "due_time": null,
       "importance": "normal"
     },
     {
-      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAexLK47AAA=",
-      "notion_id": "317c2bbd-5973-81d9-91b2-e41b96a1e0ad",
-      "title": "블로그쓰기",
+      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAewTyLSAAA=",
+      "notion_id": "329c2bbd-5973-81bc-b76e-e165d5842a29",
+      "title": "다이어리",
       "completed": false,
       "due_date": "2026-03-21",
       "due_time": null,
@@ -478,7 +478,7 @@
       "importance": "normal"
     }
   ],
-  "last_sync": "2026-03-23T04:13:48.459247+00:00",
+  "last_sync": "2026-03-23T05:47:06.030880+00:00",
   "total": 53,
   "completed": 35,
   "pending": 18
