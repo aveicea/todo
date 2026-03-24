@@ -154,6 +154,24 @@
       "importance": "normal"
     },
     {
+      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAezGvkkAAA=",
+      "notion_id": "32dc2bbd-5973-8155-ac4e-cd8081030b0e",
+      "title": "다이어리",
+      "completed": false,
+      "due_date": "2026-03-25",
+      "due_time": null,
+      "importance": "normal"
+    },
+    {
+      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAezGvkjAAA=",
+      "notion_id": "32dc2bbd-5973-81ce-a96e-deaaab09b35a",
+      "title": "데일리 체크",
+      "completed": false,
+      "due_date": "2026-03-25",
+      "due_time": null,
+      "importance": "normal"
+    },
+    {
       "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAeyZxAdAAA=",
       "notion_id": "32cc2bbd-5973-81a7-aee6-e7959f3d3438",
       "title": "밀린 할일 토글 기능 추가",
@@ -523,8 +541,8 @@
       "importance": "normal"
     }
   ],
-  "last_sync": "2026-03-24T15:15:47.789034+00:00",
-  "total": 58,
+  "last_sync": "2026-03-24T16:18:00.192776+00:00",
+  "total": 60,
   "completed": 38,
-  "pending": 20
+  "pending": 22
 }
