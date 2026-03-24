@@ -136,12 +136,12 @@
       "importance": "normal"
     },
     {
-      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAewMEWDAAA=",
-      "notion_id": "329c2bbd-5973-8177-9e01-db3e75d65e53",
-      "title": "우리적금 출석체크",
+      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAeyZxAgAAA=",
+      "notion_id": "32dc2bbd-5973-813a-ae27-f2e5009eaa15",
+      "title": "행떡 픽업",
       "completed": false,
-      "due_date": "2026-03-23",
-      "due_time": null,
+      "due_date": "2026-03-24",
+      "due_time": "14:00",
       "importance": "normal"
     },
     {
@@ -168,6 +168,15 @@
       "title": "밀린 할일 토글 기능 추가",
       "completed": false,
       "due_date": "2026-03-25",
+      "due_time": null,
+      "importance": "normal"
+    },
+    {
+      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAewMEWDAAA=",
+      "notion_id": "329c2bbd-5973-8177-9e01-db3e75d65e53",
+      "title": "우리적금 출석체크",
+      "completed": false,
+      "due_date": "2026-03-30",
       "due_time": null,
       "importance": "normal"
     },
@@ -496,6 +505,15 @@
       "importance": "normal"
     },
     {
+      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAeyZxAhAAA=",
+      "notion_id": "32dc2bbd-5973-8155-8a42-ce8351dc954f",
+      "title": "우리적금 출석체크",
+      "completed": true,
+      "due_date": "2026-03-23",
+      "due_time": null,
+      "importance": "normal"
+    },
+    {
       "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAeyZxAcAAA=",
       "notion_id": "32cc2bbd-5973-817b-909f-f6a707e9d9c0",
       "title": "박문각 개인정보활용동의서 작성",
@@ -505,8 +523,8 @@
       "importance": "normal"
     }
   ],
-  "last_sync": "2026-03-24T02:30:23.197593+00:00",
-  "total": 56,
-  "completed": 36,
-  "pending": 20
+  "last_sync": "2026-03-24T04:31:17.646781+00:00",
+  "total": 58,
+  "completed": 37,
+  "pending": 21
 }
