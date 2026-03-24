@@ -519,11 +519,11 @@
       "title": "행떡 픽업",
       "completed": true,
       "due_date": "2026-03-24",
-      "due_time": "14:00",
+      "due_time": "12:45",
       "importance": "normal"
     }
   ],
-  "last_sync": "2026-03-24T06:43:47.240001+00:00",
+  "last_sync": "2026-03-24T07:40:48.136023+00:00",
   "total": 58,
   "completed": 38,
   "pending": 20

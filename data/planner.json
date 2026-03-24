@@ -609,14 +609,6 @@
       "due_time": null
     },
     {
-      "notion_id": "31fc2bbd-5973-8043-bba9-dc4f2d71ba42",
-      "title": "13:00-16:00 스터디 - 인기초 2-1단원",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2026-03-24",
-      "due_time": null
-    },
-    {
       "notion_id": "31fc2bbd-5973-806b-9671-f0c45df8a1b3",
       "title": "10:00-17:00 현강 (3)",
       "book_title": "일정",
@@ -1919,8 +1911,16 @@
       "completed": true,
       "due_date": "2026-03-23",
       "due_time": null
+    },
+    {
+      "notion_id": "31fc2bbd-5973-8043-bba9-dc4f2d71ba42",
+      "title": "13:00-16:00 스터디 - 인기초 2-1단원",
+      "book_title": "일정",
+      "completed": true,
+      "due_date": "2026-03-24",
+      "due_time": null
     }
   ],
-  "last_sync": "2026-03-24T06:44:22.273326+00:00",
+  "last_sync": "2026-03-24T07:41:03.501879+00:00",
   "total": 240
 }
