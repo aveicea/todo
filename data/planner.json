@@ -657,14 +657,6 @@
       "due_time": null
     },
     {
-      "notion_id": "32ec2bbd-5973-809e-9e1c-f1a66170666b",
-      "title": "1강",
-      "book_title": "교육학",
-      "completed": false,
-      "due_date": "2026-03-25",
-      "due_time": null
-    },
-    {
       "notion_id": "32ec2bbd-5973-80ac-8fdd-e12e7a71bfe2",
       "title": "12강",
       "book_title": "교육학",
@@ -691,22 +683,6 @@
     {
       "notion_id": "32ec2bbd-5973-80e6-bdd6-ff5d9ad2d053",
       "title": "13강",
-      "book_title": "교육학",
-      "completed": false,
-      "due_date": "2026-03-25",
-      "due_time": null
-    },
-    {
-      "notion_id": "32ec2bbd-5973-80ef-8e14-c6198acea23c",
-      "title": "3강",
-      "book_title": "교육학",
-      "completed": false,
-      "due_date": "2026-03-25",
-      "due_time": null
-    },
-    {
-      "notion_id": "32ec2bbd-5973-80f2-97ba-fd7cc9c241b3",
-      "title": "2강",
       "book_title": "교육학",
       "completed": false,
       "due_date": "2026-03-25",
@@ -2471,8 +2447,32 @@
       "completed": true,
       "due_date": "2026-03-24",
       "due_time": null
+    },
+    {
+      "notion_id": "32ec2bbd-5973-809e-9e1c-f1a66170666b",
+      "title": "1강",
+      "book_title": "교육학",
+      "completed": true,
+      "due_date": "2026-03-25",
+      "due_time": null
+    },
+    {
+      "notion_id": "32ec2bbd-5973-80ef-8e14-c6198acea23c",
+      "title": "3강",
+      "book_title": "교육학",
+      "completed": true,
+      "due_date": "2026-03-25",
+      "due_time": null
+    },
+    {
+      "notion_id": "32ec2bbd-5973-80f2-97ba-fd7cc9c241b3",
+      "title": "2강",
+      "book_title": "교육학",
+      "completed": true,
+      "due_date": "2026-03-25",
+      "due_time": null
     }
   ],
-  "last_sync": "2026-03-25T08:03:01.465813+00:00",
+  "last_sync": "2026-03-25T09:02:20.766222+00:00",
   "total": 309
 }
