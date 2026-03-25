@@ -673,6 +673,14 @@
       "due_time": null
     },
     {
+      "notion_id": "32ec2bbd-5973-809e-9e1c-f1a66170666b",
+      "title": "1강",
+      "book_title": "교육학",
+      "completed": false,
+      "due_date": null,
+      "due_time": null
+    },
+    {
       "notion_id": "2e7c2bbd-5973-8020-a1c7-f144335c1949",
       "title": "2강 자구&알고리즘",
       "book_title": "교과내용학",
@@ -1921,6 +1929,6 @@
       "due_time": null
     }
   ],
-  "last_sync": "2026-03-25T05:13:21.656189+00:00",
-  "total": 240
+  "last_sync": "2026-03-25T06:13:39.225923+00:00",
+  "total": 241
 }
