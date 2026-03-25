@@ -181,6 +181,15 @@
       "importance": "normal"
     },
     {
+      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAezGvklAAA=",
+      "notion_id": "32ec2bbd-5973-816a-8c78-ce76720c6555",
+      "title": "행떡 픽업",
+      "completed": false,
+      "due_date": "2026-03-31",
+      "due_time": "13:45",
+      "importance": "normal"
+    },
+    {
       "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAell2cWAAA=",
       "notion_id": "311c2bbd-5973-8198-88eb-df671fe340c3",
       "title": "키레나 형광펜 페일 그린",
@@ -541,8 +550,8 @@
       "importance": "normal"
     }
   ],
-  "last_sync": "2026-03-25T12:06:53.436204+00:00",
-  "total": 60,
+  "last_sync": "2026-03-25T13:46:24.142044+00:00",
+  "total": 61,
   "completed": 40,
-  "pending": 20
+  "pending": 21
 }
