@@ -19,6 +19,60 @@
       "importance": "normal"
     },
     {
+      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAe0OMHpAAA=",
+      "notion_id": "32fc2bbd-5973-81a2-a948-f512173eb82f",
+      "title": "기본 목표시간 초기 설정 60 (일정은 0)",
+      "completed": false,
+      "due_date": "2026-03-26",
+      "due_time": null,
+      "importance": "normal"
+    },
+    {
+      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAe0OMHoAAA=",
+      "notion_id": "32fc2bbd-5973-81b6-8d3c-e576b9917a2e",
+      "title": "당일 복제 시 목표 시간 0으로",
+      "completed": false,
+      "due_date": "2026-03-26",
+      "due_time": null,
+      "importance": "normal"
+    },
+    {
+      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAe0OMHnAAA=",
+      "notion_id": "32fc2bbd-5973-81b1-bf01-cdb4bfd29a4c",
+      "title": "실제 시간 Past 페이지랑 연동",
+      "completed": false,
+      "due_date": "2026-03-26",
+      "due_time": null,
+      "importance": "normal"
+    },
+    {
+      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAe0OMHmAAA=",
+      "notion_id": "32fc2bbd-5973-810e-bfc0-fe0976ccde23",
+      "title": "플래너 할일 추가 시 추가 버튼 아래 날짜 없는 할일 뜨고 누르면 해당 날짜로 들어가게",
+      "completed": false,
+      "due_date": "2026-03-26",
+      "due_time": null,
+      "importance": "normal"
+    },
+    {
+      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAe0OMHlAAA=",
+      "notion_id": "32fc2bbd-5973-81cc-b619-eb6298250985",
+      "title": "할일 추가 무조건 오늘 날짜",
+      "completed": false,
+      "due_date": "2026-03-26",
+      "due_time": null,
+      "importance": "normal"
+    },
+    {
+      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAe0OMHkAAA=",
+      "notion_id": "32fc2bbd-5973-8189-9acb-da43173d14a9",
+      "title": "동료평가",
+      "completed": false,
+      "due_date": "2026-03-26",
+      "due_time": null,
+      "importance": "high"
+    },
+    {
       "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAezGvknAAA=",
       "notion_id": "32ec2bbd-5973-81f6-9928-fc12b3b1ee97",
       "title": "데일리 체크",
@@ -568,8 +622,8 @@
       "importance": "normal"
     }
   ],
-  "last_sync": "2026-03-26T01:01:17.416232+00:00",
-  "total": 63,
+  "last_sync": "2026-03-26T03:50:22.414703+00:00",
+  "total": 69,
   "completed": 56,
-  "pending": 7
+  "pending": 13
 }
