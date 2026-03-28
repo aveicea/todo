@@ -118,8 +118,8 @@
       "importance": "normal"
     },
     {
-      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAewMEWDAAA=",
-      "notion_id": "329c2bbd-5973-8177-9e01-db3e75d65e53",
+      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAeq9LADAAA=",
+      "notion_id": "322c2bbd-5973-8196-a6fa-d8f2e5d4ae2d",
       "title": "우리적금 출석체크",
       "completed": false,
       "due_date": "2026-03-30",
@@ -127,8 +127,8 @@
       "importance": "normal"
     },
     {
-      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAeq9LADAAA=",
-      "notion_id": "322c2bbd-5973-8196-a6fa-d8f2e5d4ae2d",
+      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAe1FY5jAAA=",
+      "notion_id": "329c2bbd-5973-8177-9e01-db3e75d65e53",
       "title": "우리적금 출석체크",
       "completed": false,
       "due_date": "2026-03-30",
@@ -658,7 +658,7 @@
       "importance": "high"
     }
   ],
-  "last_sync": "2026-03-28T08:01:18.622821+00:00",
+  "last_sync": "2026-03-28T08:50:49.636276+00:00",
   "total": 73,
   "completed": 57,
   "pending": 16
