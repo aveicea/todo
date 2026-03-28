@@ -1,12 +1,12 @@
 {
-  "last_sync": "2026-03-28T08:50:49.636276+00:00",
+  "last_sync": "2026-03-28T09:22:49.230539+00:00",
   "success": true,
   "stats": {
-    "created_in_ms": 1,
-    "created_in_notion": 0,
+    "created_in_ms": 0,
+    "created_in_notion": 1,
     "updated": 0,
     "errors": 0
   },
-  "total_ms_tasks": 73,
-  "total_notion_pages": 73
+  "total_ms_tasks": 74,
+  "total_notion_pages": 74
 }
