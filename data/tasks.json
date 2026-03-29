@@ -64,15 +64,6 @@
       "importance": "normal"
     },
     {
-      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAezGvknAAA=",
-      "notion_id": "32ec2bbd-5973-81f6-9928-fc12b3b1ee97",
-      "title": "데일리 체크",
-      "completed": false,
-      "due_date": "2026-03-26",
-      "due_time": null,
-      "importance": "normal"
-    },
-    {
       "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAezGvkmAAA=",
       "notion_id": "32ec2bbd-5973-8183-9c8c-f32fe1ef6ffc",
       "title": "다이어리",
@@ -82,29 +73,11 @@
       "importance": "normal"
     },
     {
-      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAe0OMHrAAA=",
-      "notion_id": "32fc2bbd-5973-813c-af7b-e31e2a030d62",
-      "title": "데일리 체크",
-      "completed": false,
-      "due_date": "2026-03-27",
-      "due_time": null,
-      "importance": "normal"
-    },
-    {
       "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAe0OMHqAAA=",
       "notion_id": "32fc2bbd-5973-81d6-a652-d579bf97775d",
       "title": "다이어리",
       "completed": false,
       "due_date": "2026-03-27",
-      "due_time": null,
-      "importance": "normal"
-    },
-    {
-      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAe1FY5iAAA=",
-      "notion_id": "330c2bbd-5973-812c-ab71-f29586038b06",
-      "title": "데일리 체크",
-      "completed": false,
-      "due_date": "2026-03-28",
       "due_time": null,
       "importance": "normal"
     },
@@ -127,45 +100,9 @@
       "importance": "normal"
     },
     {
-      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAe116UdAAA=",
-      "notion_id": "331c2bbd-5973-81e4-8125-c67d8fd782da",
-      "title": "데일리 체크",
-      "completed": false,
-      "due_date": "2026-03-29",
-      "due_time": null,
-      "importance": "normal"
-    },
-    {
-      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAe2AK1uAAA=",
-      "notion_id": "332c2bbd-5973-8128-a7cb-de8130845b07",
-      "title": "데일리 체크",
-      "completed": false,
-      "due_date": "2026-03-30",
-      "due_time": null,
-      "importance": "normal"
-    },
-    {
       "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAe2AK1tAAA=",
       "notion_id": "332c2bbd-5973-81fd-9802-c968e38a2ff7",
       "title": "다이어리",
-      "completed": false,
-      "due_date": "2026-03-30",
-      "due_time": null,
-      "importance": "normal"
-    },
-    {
-      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAe2AK1sAAA=",
-      "notion_id": "331c2bbd-5973-8158-b89e-c089bc79e568",
-      "title": "우리적금 출석체크",
-      "completed": false,
-      "due_date": "2026-03-30",
-      "due_time": null,
-      "importance": "normal"
-    },
-    {
-      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAe2AK1rAAA=",
-      "notion_id": "329c2bbd-5973-8177-9e01-db3e75d65e53",
-      "title": "우리적금 출석체크",
       "completed": false,
       "due_date": "2026-03-30",
       "due_time": null,
@@ -701,10 +638,55 @@
       "due_date": "2026-03-26",
       "due_time": null,
       "importance": "high"
+    },
+    {
+      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAezGvknAAA=",
+      "notion_id": "32ec2bbd-5973-81f6-9928-fc12b3b1ee97",
+      "title": "데일리 체크",
+      "completed": true,
+      "due_date": "2026-03-26",
+      "due_time": null,
+      "importance": "normal"
+    },
+    {
+      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAe0OMHrAAA=",
+      "notion_id": "32fc2bbd-5973-813c-af7b-e31e2a030d62",
+      "title": "데일리 체크",
+      "completed": true,
+      "due_date": "2026-03-27",
+      "due_time": null,
+      "importance": "normal"
+    },
+    {
+      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAe1FY5iAAA=",
+      "notion_id": "330c2bbd-5973-812c-ab71-f29586038b06",
+      "title": "데일리 체크",
+      "completed": true,
+      "due_date": "2026-03-28",
+      "due_time": null,
+      "importance": "normal"
+    },
+    {
+      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAe116UdAAA=",
+      "notion_id": "331c2bbd-5973-81e4-8125-c67d8fd782da",
+      "title": "데일리 체크",
+      "completed": true,
+      "due_date": "2026-03-29",
+      "due_time": null,
+      "importance": "normal"
+    },
+    {
+      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAe2AK1uAAA=",
+      "notion_id": "332c2bbd-5973-8128-a7cb-de8130845b07",
+      "title": "데일리 체크",
+      "completed": true,
+      "due_date": "2026-03-30",
+      "due_time": null,
+      "importance": "normal"
     }
   ],
-  "last_sync": "2026-03-29T16:16:32.028299+00:00",
-  "total": 78,
-  "completed": 57,
-  "pending": 21
+  "last_sync": "2026-03-29T16:53:51.883267+00:00",
+  "total": 76,
+  "completed": 62,
+  "pending": 14
 }
