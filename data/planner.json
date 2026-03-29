@@ -649,22 +649,6 @@
       "due_time": null
     },
     {
-      "notion_id": "32fc2bbd-5973-8177-9cf7-f1bc946f7a33",
-      "title": "자료구조 복습",
-      "book_title": "교과내용학 심화",
-      "completed": false,
-      "due_date": "2026-03-27",
-      "due_time": null
-    },
-    {
-      "notion_id": "31fc2bbd-5973-806b-9671-f0c45df8a1b3",
-      "title": "10:00-17:00 현강 (3)",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2026-03-28",
-      "due_time": null
-    },
-    {
       "notion_id": "32ec2bbd-5973-800e-b535-d313b94aa83b",
       "title": "14강",
       "book_title": "교육학 기본",
@@ -675,6 +659,54 @@
     {
       "notion_id": "32ec2bbd-5973-80e6-bdd6-ff5d9ad2d053",
       "title": "13강",
+      "book_title": "교육학 기본",
+      "completed": false,
+      "due_date": "2026-03-29",
+      "due_time": null
+    },
+    {
+      "notion_id": "32fc2bbd-5973-8177-9cf7-f1bc946f7a33",
+      "title": "자료구조 복습",
+      "book_title": "교과내용학 심화",
+      "completed": false,
+      "due_date": "2026-03-29",
+      "due_time": null
+    },
+    {
+      "notion_id": "332c2bbd-5973-812e-a0f9-f07be9942a03",
+      "title": "12강'",
+      "book_title": "교육학 기본",
+      "completed": false,
+      "due_date": "2026-03-29",
+      "due_time": null
+    },
+    {
+      "notion_id": "332c2bbd-5973-8163-ba2e-d2eae63fc724",
+      "title": "11강'",
+      "book_title": "교육학 기본",
+      "completed": false,
+      "due_date": "2026-03-29",
+      "due_time": null
+    },
+    {
+      "notion_id": "332c2bbd-5973-81c0-950d-efa0e260ae9d",
+      "title": "데이터베이스 구조도'",
+      "book_title": "교과내용학 기본",
+      "completed": false,
+      "due_date": "2026-03-29",
+      "due_time": null
+    },
+    {
+      "notion_id": "332c2bbd-5973-81c0-9c9d-c2d8fe831bd6",
+      "title": "10강'",
+      "book_title": "교육학 기본",
+      "completed": false,
+      "due_date": "2026-03-29",
+      "due_time": null
+    },
+    {
+      "notion_id": "332c2bbd-5973-81f1-acb2-fe4e778a5b2e",
+      "title": "9강'",
       "book_title": "교육학 기본",
       "completed": false,
       "due_date": "2026-03-29",
@@ -2495,8 +2527,16 @@
       "completed": true,
       "due_date": "2026-03-26",
       "due_time": null
+    },
+    {
+      "notion_id": "31fc2bbd-5973-806b-9671-f0c45df8a1b3",
+      "title": "10:00-17:00 현강 (3)",
+      "book_title": "일정",
+      "completed": true,
+      "due_date": "2026-03-28",
+      "due_time": null
     }
   ],
-  "last_sync": "2026-03-29T03:30:02.179541+00:00",
-  "total": 312
+  "last_sync": "2026-03-29T05:23:58.341243+00:00",
+  "total": 317
 }
