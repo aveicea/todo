@@ -203,6 +203,25 @@ def run_sync():
         if stored_id and stored_id in ms_tasks:
             ms_to_notion[stored_id] = page_id
 
+    # Notion에 있지만 MS에서 삭제된 태스크 → Notion 아카이브
+    if s["id_prop"]:
+        for page_id, page in notion_pages.items():
+            stored_id = "".join(
+                t.get("plain_text", "")
+                for t in page["properties"].get(s["id_prop"], {}).get("rich_text", [])
+            ).strip()
+            if stored_id and stored_id not in ms_tasks:
+                try:
+                    requests.patch(
+                        f"https://api.notion.com/v1/pages/{page_id}",
+                        headers=_notion_headers(),
+                        json={"archived": True},
+                        timeout=30,
+                    ).raise_for_status()
+                    stats["deleted"] = stats.get("deleted", 0) + 1
+                except Exception:
+                    stats["errors"] += 1
+
     # MS에만 있는 태스크 → Notion 생성
     for task_id, task in ms_tasks.items():
         if task_id in ms_to_notion:
