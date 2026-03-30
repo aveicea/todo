@@ -10,24 +10,6 @@
       "importance": "normal"
     },
     {
-      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAe0OMHpAAA=",
-      "notion_id": "32fc2bbd-5973-81a2-a948-f512173eb82f",
-      "title": "기본 목표시간 초기 설정 60 (일정은 0)",
-      "completed": false,
-      "due_date": "2026-03-26",
-      "due_time": null,
-      "importance": "normal"
-    },
-    {
-      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAe0OMHoAAA=",
-      "notion_id": "32fc2bbd-5973-81b6-8d3c-e576b9917a2e",
-      "title": "당일 복제 시 목표 시간 0으로",
-      "completed": false,
-      "due_date": "2026-03-26",
-      "due_time": null,
-      "importance": "normal"
-    },
-    {
       "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAe0OMHnAAA=",
       "notion_id": "32fc2bbd-5973-81b1-bf01-cdb4bfd29a4c",
       "title": "실제 시간 Past 페이지랑 연동",
@@ -595,6 +577,24 @@
       "importance": "normal"
     },
     {
+      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAe0OMHpAAA=",
+      "notion_id": "32fc2bbd-5973-81a2-a948-f512173eb82f",
+      "title": "기본 목표시간 초기 설정 60 (일정은 0)",
+      "completed": true,
+      "due_date": "2026-03-26",
+      "due_time": null,
+      "importance": "normal"
+    },
+    {
+      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAe0OMHoAAA=",
+      "notion_id": "32fc2bbd-5973-81b6-8d3c-e576b9917a2e",
+      "title": "당일 복제 시 목표 시간 0으로",
+      "completed": true,
+      "due_date": "2026-03-26",
+      "due_time": null,
+      "importance": "normal"
+    },
+    {
       "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAe0OMHkAAA=",
       "notion_id": "32fc2bbd-5973-8189-9acb-da43173d14a9",
       "title": "동료평가",
@@ -685,8 +685,8 @@
       "importance": "normal"
     }
   ],
-  "last_sync": "2026-03-30T10:00:42.940003+00:00",
+  "last_sync": "2026-03-30T11:08:07.482889+00:00",
   "total": 76,
-  "completed": 67,
-  "pending": 9
+  "completed": 69,
+  "pending": 7
 }
