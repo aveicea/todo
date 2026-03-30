@@ -19,15 +19,6 @@
       "importance": "normal"
     },
     {
-      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAe0OMHmAAA=",
-      "notion_id": "32fc2bbd-5973-810e-bfc0-fe0976ccde23",
-      "title": "플래너 할일 추가 시 추가 버튼 아래 날짜 없는 할일 뜨고 누르면 해당 날짜로 들어가게",
-      "completed": false,
-      "due_date": "2026-03-26",
-      "due_time": null,
-      "importance": "normal"
-    },
-    {
       "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAe0OMHlAAA=",
       "notion_id": "32fc2bbd-5973-81cc-b619-eb6298250985",
       "title": "할일 추가 무조건 오늘 날짜",
@@ -595,6 +586,15 @@
       "importance": "normal"
     },
     {
+      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAe0OMHmAAA=",
+      "notion_id": "32fc2bbd-5973-810e-bfc0-fe0976ccde23",
+      "title": "플래너 할일 추가 시 추가 버튼 아래 날짜 없는 할일 뜨고 누르면 해당 날짜로 들어가게",
+      "completed": true,
+      "due_date": "2026-03-26",
+      "due_time": null,
+      "importance": "normal"
+    },
+    {
       "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAe0OMHkAAA=",
       "notion_id": "32fc2bbd-5973-8189-9acb-da43173d14a9",
       "title": "동료평가",
@@ -685,8 +685,8 @@
       "importance": "normal"
     }
   ],
-  "last_sync": "2026-03-30T11:08:07.482889+00:00",
+  "last_sync": "2026-03-30T12:02:41.881702+00:00",
   "total": 76,
-  "completed": 69,
-  "pending": 7
+  "completed": 70,
+  "pending": 6
 }
