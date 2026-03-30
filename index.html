@@ -448,14 +448,16 @@ function renderTasks() {
   if (currentFilter === 'today') {
     const overdue = pending.filter(t => t.due_date && t.due_date < browseDay);
     const notOverdue = pending.filter(t => !t.due_date || t.due_date >= browseDay);
-    if (overdue.length) {
-      const oc = collapsedGroups.overdue;
-      html += `<div class="task-group-label" onclick="toggleGroup('overdue')">밀린 할일 ${overdue.length}<span class="group-chevron">${oc?'∨':'∧'}</span></div>`;
-      if (!oc) html += overdue.map(taskHTML).join('');
-    }
     const pc = collapsedGroups.pending;
-    html += `<div class="task-group-label" onclick="toggleGroup('pending')">미완료 ${notOverdue.length}<span class="group-chevron">${pc?'∨':'∧'}</span></div>`;
-    if (!pc) html += notOverdue.length ? notOverdue.map(taskHTML).join('') : '<div style="height:6px"></div>';
+    html += `<div class="task-group-label" onclick="toggleGroup('pending')">미완료 ${pending.length}<span class="group-chevron">${pc?'∨':'∧'}</span></div>`;
+    if (!pc) {
+      if (overdue.length) {
+        const oc = collapsedGroups.overdue;
+        html += `<div class="task-group-label" style="padding-left:18px;" onclick="toggleGroup('overdue')">밀린 할일 ${overdue.length}<span class="group-chevron">${oc?'∨':'∧'}</span></div>`;
+        if (!oc) html += overdue.map(taskHTML).join('');
+      }
+      html += notOverdue.length ? notOverdue.map(taskHTML).join('') : (overdue.length ? '' : '<div style="height:6px"></div>');
+    }
     const dc = collapsedGroups.done;
     html += `<div class="task-group-label" onclick="toggleGroup('done')">완료 ${done.length}<span class="group-chevron">${dc?'∨':'∧'}</span></div>`;
     if (!dc) html += done.length ? done.map(taskHTML).join('') : '<div style="height:4px"></div>';
@@ -486,12 +488,16 @@ function renderTasks() {
     if (!tasks.length) { list.innerHTML = ''; return; }
     const overduePending = tasks.filter(t => !t.completed && t.due_date && t.due_date < today);
     const restPending = tasks.filter(t => !t.completed && (!t.due_date || t.due_date >= today));
-    if (overduePending.length) {
-      const oc = collapsedGroups.overdue;
-      html += `<div class="task-group-label" onclick="toggleGroup('overdue')">밀린 할일 ${overduePending.length}<span class="group-chevron">${oc?'∨':'∧'}</span></div>`;
-      if (!oc) html += overduePending.sort(sortFn).map(taskHTML).join('');
+    const pc = collapsedGroups.pending;
+    html += `<div class="task-group-label" onclick="toggleGroup('pending')">미완료 ${tasks.length}<span class="group-chevron">${pc?'∨':'∧'}</span></div>`;
+    if (!pc) {
+      if (overduePending.length) {
+        const oc = collapsedGroups.overdue;
+        html += `<div class="task-group-label" style="padding-left:18px;" onclick="toggleGroup('overdue')">밀린 할일 ${overduePending.length}<span class="group-chevron">${oc?'∨':'∧'}</span></div>`;
+        if (!oc) html += overduePending.sort(sortFn).map(taskHTML).join('');
+      }
+      if (restPending.length) html += restPending.sort(sortFn).map(taskHTML).join('');
     }
-    if (restPending.length) html += restPending.sort(sortFn).map(taskHTML).join('');
   }
   list.innerHTML = html;
 }
