@@ -736,8 +736,22 @@ def main():
 
     # ── Notion → MS Todo (Notion에만 있는 항목 생성) ──────
     for page_id, page in notion_pages.items():
-        if page_id in notion_to_ms and notion_to_ms[page_id] in ms_tasks:
-            continue
+        if page_id in notion_to_ms:
+            if notion_to_ms[page_id] in ms_tasks:
+                continue  # 양쪽 모두 존재 → 스킵
+            else:
+                # MS에서 삭제된 태스크 → Notion도 아카이브 (MS에 재생성 금지)
+                old_ms_id = notion_to_ms.pop(page_id)
+                ms_to_notion.pop(old_ms_id, None)
+                try:
+                    requests.patch(
+                        f"https://api.notion.com/v1/pages/{page_id}",
+                        headers=NOTION_HEADERS, json={"archived": True}, timeout=30,
+                    ).raise_for_status()
+                    print(f"  🗑️ MS 삭제 전파 → Notion 아카이브: {get_page_title(page, title_prop)}")
+                except Exception as e:
+                    print(f"  ⚠️ Notion 아카이브 실패: {e}")
+                continue
         title = get_page_title(page, title_prop)
         if not title.strip():
             continue
