@@ -436,14 +436,16 @@ def handle_create(body):
 
 
 def handle_delete(ms_id, notion_id):
-    # MS Todo 삭제
+    # MS Todo 삭제 (이미 삭제된 경우 404 무시)
     if ms_id:
         token = _ms_token()
         list_id = _get_list_id(token)
-        requests.delete(
+        r = requests.delete(
             f"https://graph.microsoft.com/v1.0/me/todo/lists/{list_id}/tasks/{ms_id}",
             headers={"Authorization": f"Bearer {token}"}, timeout=30,
-        ).raise_for_status()
+        )
+        if r.status_code not in (200, 204, 404):
+            r.raise_for_status()
     # Notion 아카이브
     if notion_id:
         requests.patch(
