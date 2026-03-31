@@ -461,7 +461,8 @@ function renderTasks() {
     if (!dc) html += done.length ? done.map(taskHTML).join('') : '<div style="height:4px"></div>';
     const plannerSortFn = (a, b) => {
       if (a.completed !== b.completed) return a.completed ? 1 : -1;
-      const prio = s => { const m = s && s.match(/^(\d+)/); return m ? parseInt(m[1]) : 9999; };
+      const PRIO = ["1st","2nd","3rd","4th","5th","6th","7th","8th","9th","10th","11th","12th","13th","14th","15th","16th","17th","18th","19th","20th"];
+      const prio = s => { const i = PRIO.indexOf(s); return i >= 0 ? i : 9999; };
       const pd = prio(a.priority) - prio(b.priority);
       if (pd !== 0) return pd;
       const ba = a.book_title || '~', bb = b.book_title || '~';
