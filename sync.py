@@ -496,12 +496,11 @@ def run_planner(input_action, input_task_id):
             "priority": priority,
         })
 
-    planner_tasks.sort(key=lambda x: (
-        x["completed"],
-        x["priority"] or "~",
-        x["book_title"] or "~",
-        x["title"] or "",
-    ))
+    import re as _re
+    def _prio(val):
+        m = _re.match(r'(\d+)', val) if val else None
+        return int(m.group(1)) if m else 9999
+    planner_tasks.sort(key=lambda x: (x["completed"], _prio(x["priority"]), x["book_title"] or "~", x["title"] or ""))
     now_iso = datetime.now(timezone.utc).isoformat()
     save_json(PLANNER_FILE, {
         "tasks": planner_tasks,
