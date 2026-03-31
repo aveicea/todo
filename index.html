@@ -491,7 +491,7 @@ function renderTasks() {
     if (!pc) html += restPending.length ? restPending.sort(sortFn).map(taskHTML).join('') : '<div style="height:6px"></div>';
     if (overduePending.length) {
       const oc = collapsedGroups.overdue;
-      html += `<div class="task-group-label" onclick="toggleGroup('overdue')">밀린 할일 ${overduePending.length}<span class="group-chevron">${oc?'∨':'∧'}</span></div>`;
+      html += `<div class="task-group-label" onclick="toggleGroup('overdue')">밀린 ${overduePending.length}<span class="group-chevron">${oc?'∨':'∧'}</span></div>`;
       if (!oc) html += overduePending.sort(sortFn).map(taskHTML).join('');
     }
   }
