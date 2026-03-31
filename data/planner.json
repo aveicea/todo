@@ -262,15 +262,6 @@
       "priority": "3rd"
     },
     {
-      "notion_id": "31fc2bbd-5973-8029-802e-edc261906d8e",
-      "title": "13:00-16:00 스터디 - 인기초 2-2단원",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2026-03-31",
-      "due_time": null,
-      "priority": "3rd"
-    },
-    {
       "notion_id": "2ecc2bbd-5973-8163-86a1-d48a635c3380",
       "title": "10강 자구&알고리즘'",
       "book_title": "교과내용학 기본",
@@ -2278,6 +2269,15 @@
       "priority": "3rd"
     },
     {
+      "notion_id": "31fc2bbd-5973-8029-802e-edc261906d8e",
+      "title": "13:00-16:00 스터디 - 인기초 2-2단원",
+      "book_title": "일정",
+      "completed": true,
+      "due_date": "2026-03-31",
+      "due_time": null,
+      "priority": "3rd"
+    },
+    {
       "notion_id": "303c2bbd-5973-8073-ae92-e4280daf05b3",
       "title": "21강 데이터베이스",
       "book_title": "교과내용학 기본",
@@ -2998,6 +2998,6 @@
       "priority": ""
     }
   ],
-  "last_sync": "2026-03-31T06:57:34.045299+00:00",
+  "last_sync": "2026-03-31T08:06:53.793751+00:00",
   "total": 333
 }
