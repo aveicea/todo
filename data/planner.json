@@ -37,11 +37,11 @@
       "priority": "1st"
     },
     {
-      "notion_id": "334c2bbd-5973-8143-8530-ea0ebae81581",
-      "title": "인기초 컴퓨터 비전 정리",
-      "book_title": "스터디",
+      "notion_id": "333c2bbd-5973-8103-b082-de930a2bda55",
+      "title": "자료구조 복습'",
+      "book_title": "교과내용학 심화",
       "completed": false,
-      "due_date": "2026-03-31",
+      "due_date": "2026-03-30",
       "due_time": null,
       "priority": "1st"
     },
@@ -177,15 +177,6 @@
       "book_title": "나도코딩 C언어",
       "completed": false,
       "due_date": "2026-01-17",
-      "due_time": null,
-      "priority": "2nd"
-    },
-    {
-      "notion_id": "334c2bbd-5973-81d2-bf2b-f61ddbcb4903",
-      "title": "문제풀이",
-      "book_title": "스터디",
-      "completed": false,
-      "due_date": "2026-03-31",
       "due_time": null,
       "priority": "2nd"
     },
@@ -442,15 +433,6 @@
       "priority": "5th"
     },
     {
-      "notion_id": "334c2bbd-5973-8119-9a0d-ed4d7f00aae4",
-      "title": "10강'''",
-      "book_title": "교육학 기본",
-      "completed": false,
-      "due_date": "2026-03-31",
-      "due_time": null,
-      "priority": "5th"
-    },
-    {
       "notion_id": "332c2bbd-5973-812e-a0f9-f07be9942a03",
       "title": "12강'",
       "book_title": "교육학 기본",
@@ -537,6 +519,15 @@
       "book_title": "교과내용학 기본",
       "completed": false,
       "due_date": "2026-03-05",
+      "due_time": null,
+      "priority": "6th"
+    },
+    {
+      "notion_id": "334c2bbd-5973-8119-9a0d-ed4d7f00aae4",
+      "title": "10강'''",
+      "book_title": "교육학 기본",
+      "completed": false,
+      "due_date": "2026-03-31",
       "due_time": null,
       "priority": "6th"
     },
@@ -717,15 +708,6 @@
       "book_title": "교과내용학 심화",
       "completed": false,
       "due_date": "2026-03-29",
-      "due_time": null,
-      "priority": "8th"
-    },
-    {
-      "notion_id": "333c2bbd-5973-8103-b082-de930a2bda55",
-      "title": "자료구조 복습'",
-      "book_title": "교과내용학 심화",
-      "completed": false,
-      "due_date": "2026-03-30",
       "due_time": null,
       "priority": "8th"
     },
@@ -1711,6 +1693,15 @@
       "priority": "1st"
     },
     {
+      "notion_id": "334c2bbd-5973-8143-8530-ea0ebae81581",
+      "title": "인기초 컴퓨터 비전 정리",
+      "book_title": "스터디",
+      "completed": true,
+      "due_date": "2026-03-31",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
       "notion_id": "31fc2bbd-5973-8072-bbf6-d9419edb746a",
       "title": "10:00-17:00 현강 (1)",
       "book_title": "일정",
@@ -2103,6 +2094,15 @@
       "book_title": "스터디",
       "completed": true,
       "due_date": "2026-03-16",
+      "due_time": null,
+      "priority": "2nd"
+    },
+    {
+      "notion_id": "334c2bbd-5973-81d2-bf2b-f61ddbcb4903",
+      "title": "문제풀이",
+      "book_title": "스터디",
+      "completed": true,
+      "due_date": "2026-03-31",
       "due_time": null,
       "priority": "2nd"
     },
@@ -2998,6 +2998,6 @@
       "priority": ""
     }
   ],
-  "last_sync": "2026-03-31T04:09:06.498734+00:00",
+  "last_sync": "2026-03-31T05:52:14.327148+00:00",
   "total": 333
 }

@@ -10,15 +10,6 @@
       "importance": "normal"
     },
     {
-      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAezGvklAAA=",
-      "notion_id": "32ec2bbd-5973-816a-8c78-ce76720c6555",
-      "title": "행떡 픽업",
-      "completed": false,
-      "due_date": "2026-03-31",
-      "due_time": "13:45",
-      "importance": "normal"
-    },
-    {
       "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAe2ppVOAAA=",
       "notion_id": "333c2bbd-5973-8184-bc9f-f54a0c6e8049",
       "title": "데일리 체크",
@@ -701,10 +692,19 @@
       "due_date": "2026-03-30",
       "due_time": null,
       "importance": "normal"
+    },
+    {
+      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAezGvklAAA=",
+      "notion_id": "32ec2bbd-5973-816a-8c78-ce76720c6555",
+      "title": "행떡 픽업",
+      "completed": true,
+      "due_date": "2026-03-31",
+      "due_time": "13:45",
+      "importance": "normal"
     }
   ],
-  "last_sync": "2026-03-31T04:08:52.982598+00:00",
+  "last_sync": "2026-03-31T05:51:59.044995+00:00",
   "total": 78,
-  "completed": 73,
-  "pending": 5
+  "completed": 74,
+  "pending": 4
 }
