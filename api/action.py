@@ -153,6 +153,12 @@ def _planner_schema():
          if p["type"] == "relation" and p.get("relation", {}).get("database_id", "").replace("-", "") == book_raw),
         None,
     )
+    priority_prop = next(
+        (n for n, p in props.items()
+         if p["type"] in ("select", "number", "rich_text")
+         and any(k in n for k in ("우선순위", "priority", "Priority"))),
+        None,
+    )
     _planner_schema_info = {
         "title_prop": title_prop,
         "date_prop": date_prop,
@@ -161,6 +167,7 @@ def _planner_schema():
         "done_value": done_value,
         "todo_value": todo_value,
         "book_rel_prop": book_rel_prop,
+        "priority_prop": priority_prop,
     }
     return _planner_schema_info
 
@@ -481,6 +488,17 @@ def handle_get_planner():
             rel_ids = [r["id"] for r in page["properties"].get(s["book_rel_prop"], {}).get("relation", [])]
             if rel_ids:
                 book_title = book_title_map.get(rel_ids[0])
+        priority = ""
+        if s["priority_prop"]:
+            prop = page["properties"].get(s["priority_prop"], {})
+            pt = prop.get("type", "")
+            if pt == "select":
+                priority = (prop.get("select") or {}).get("name", "") or ""
+            elif pt == "number":
+                n = prop.get("number")
+                priority = str(n) if n is not None else ""
+            elif pt == "rich_text":
+                priority = "".join(t.get("plain_text", "") for t in prop.get("rich_text", []))
         tasks.append({
             "notion_id": page["id"],
             "title": title,
@@ -488,8 +506,14 @@ def handle_get_planner():
             "completed": _page_completed(page, s["comp_prop"], s["done_value"], s["comp_type"]),
             "due_date": _page_date(page, s["date_prop"]),
             "due_time": None,
+            "priority": priority,
         })
-    tasks.sort(key=lambda x: (x["completed"], x["due_date"] or "9999-12-31"))
+    tasks.sort(key=lambda x: (
+        x["completed"],
+        x["priority"] or "~",
+        x["book_title"] or "~",
+        x["title"] or "",
+    ))
     return {"ok": True, "tasks": tasks}
 
 
