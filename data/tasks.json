@@ -1,45 +1,9 @@
 {
   "tasks": [
     {
-      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAeyZxAdAAA=",
-      "notion_id": "32cc2bbd-5973-81a7-aee6-e7959f3d3438",
-      "title": "밀린 할일 토글 기능 추가",
-      "completed": false,
-      "due_date": "2026-03-25",
-      "due_time": null,
-      "importance": "normal"
-    },
-    {
-      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAe0OMHnAAA=",
-      "notion_id": "32fc2bbd-5973-81b1-bf01-cdb4bfd29a4c",
-      "title": "실제 시간 Past 페이지랑 연동",
-      "completed": false,
-      "due_date": "2026-03-26",
-      "due_time": null,
-      "importance": "normal"
-    },
-    {
-      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAe0OMHlAAA=",
-      "notion_id": "32fc2bbd-5973-81cc-b619-eb6298250985",
-      "title": "할일 추가 무조건 오늘 날짜",
-      "completed": false,
-      "due_date": "2026-03-26",
-      "due_time": null,
-      "importance": "normal"
-    },
-    {
       "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAe2AK1tAAA=",
       "notion_id": "332c2bbd-5973-81fd-9802-c968e38a2ff7",
       "title": "다이어리",
-      "completed": false,
-      "due_date": "2026-03-30",
-      "due_time": null,
-      "importance": "normal"
-    },
-    {
-      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAeq9LADAAA=",
-      "notion_id": "322c2bbd-5973-8196-a6fa-d8f2e5d4ae2d",
-      "title": "우리적금 출석체크",
       "completed": false,
       "due_date": "2026-03-30",
       "due_time": null,
@@ -69,6 +33,15 @@
       "title": "다이어리",
       "completed": false,
       "due_date": "2026-03-31",
+      "due_time": null,
+      "importance": "normal"
+    },
+    {
+      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAeq9LADAAA=",
+      "notion_id": "322c2bbd-5973-8196-a6fa-d8f2e5d4ae2d",
+      "title": "우리적금 출석체크",
+      "completed": false,
+      "due_date": "2026-04-06",
       "due_time": null,
       "importance": "normal"
     },
@@ -586,6 +559,15 @@
       "importance": "normal"
     },
     {
+      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAeyZxAdAAA=",
+      "notion_id": "32cc2bbd-5973-81a7-aee6-e7959f3d3438",
+      "title": "밀린 할일 토글 기능 추가",
+      "completed": true,
+      "due_date": "2026-03-25",
+      "due_time": null,
+      "importance": "normal"
+    },
+    {
       "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAe0OMHpAAA=",
       "notion_id": "32fc2bbd-5973-81a2-a948-f512173eb82f",
       "title": "기본 목표시간 초기 설정 60 (일정은 0)",
@@ -607,6 +589,15 @@
       "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAe0OMHmAAA=",
       "notion_id": "32fc2bbd-5973-810e-bfc0-fe0976ccde23",
       "title": "플래너 할일 추가 시 추가 버튼 아래 날짜 없는 할일 뜨고 누르면 해당 날짜로 들어가게",
+      "completed": true,
+      "due_date": "2026-03-26",
+      "due_time": null,
+      "importance": "normal"
+    },
+    {
+      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAe0OMHlAAA=",
+      "notion_id": "32fc2bbd-5973-81cc-b619-eb6298250985",
+      "title": "할일 추가 무조건 오늘 날짜",
       "completed": true,
       "due_date": "2026-03-26",
       "due_time": null,
@@ -701,10 +692,19 @@
       "due_date": "2026-03-30",
       "due_time": null,
       "importance": "normal"
+    },
+    {
+      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAe2ppVPAAA=",
+      "notion_id": "334c2bbd-5973-8162-ac75-eb7bf01604ce",
+      "title": "우리적금 출석체크",
+      "completed": true,
+      "due_date": "2026-03-30",
+      "due_time": null,
+      "importance": "normal"
     }
   ],
-  "last_sync": "2026-03-31T01:18:34.948552+00:00",
+  "last_sync": "2026-03-31T04:08:52.982598+00:00",
   "total": 78,
-  "completed": 70,
-  "pending": 8
+  "completed": 73,
+  "pending": 5
 }
