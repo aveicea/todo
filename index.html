@@ -459,7 +459,15 @@ function renderTasks() {
     const dc = collapsedGroups.done;
     html += `<div class="task-group-label" onclick="toggleGroup('done')">완료 ${done.length}<span class="group-chevron">${dc?'∨':'∧'}</span></div>`;
     if (!dc) html += done.length ? done.map(taskHTML).join('') : '<div style="height:4px"></div>';
-    const todayPlanner = allPlanner.filter(t => t.due_date && t.due_date.startsWith(browseDay)).sort(sortFn);
+    const plannerSortFn = (a, b) => {
+      if (a.completed !== b.completed) return a.completed ? 1 : -1;
+      const pa = a.priority || '~', pb = b.priority || '~';
+      if (pa !== pb) return pa.localeCompare(pb, 'ko');
+      const ba = a.book_title || '~', bb = b.book_title || '~';
+      if (ba !== bb) return ba.localeCompare(bb, 'ko');
+      return (a.title || '').localeCompare(b.title || '', 'ko');
+    };
+    const todayPlanner = allPlanner.filter(t => t.due_date && t.due_date.startsWith(browseDay)).sort(plannerSortFn);
     if (todayPlanner.length) {
       const plannerDone = todayPlanner.filter(t => t.completed).length;
       const plannerTotal = todayPlanner.length;

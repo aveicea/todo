@@ -431,6 +431,14 @@ def run_planner(input_action, input_task_id):
             if rel_db == _book_raw:
                 book_rel_prop = name
                 break
+
+    # 우선순위 속성 탐지
+    priority_prop = next(
+        (n for n, p in schema["properties"].items()
+         if p["type"] in ("select", "number", "rich_text")
+         and any(k in n for k in ("우선순위", "priority", "Priority"))),
+        None,
+    )
     print(f"  📚 책 관계형 속성: {book_rel_prop or '없음'}")
 
     # 책 제목 일괄 조회
@@ -467,6 +475,17 @@ def run_planner(input_action, input_task_id):
         # Notion eventual consistency 대응: PATCH 직후 stale 데이터 반환 가능 → override 우선 사용
         comp_val = override_completed[page_id] if page_id in override_completed \
                    else get_page_completed(page, comp_prop, done_value, comp_type)
+        priority = ""
+        if priority_prop:
+            prop = page["properties"].get(priority_prop, {})
+            pt = prop.get("type", "")
+            if pt == "select":
+                priority = (prop.get("select") or {}).get("name", "") or ""
+            elif pt == "number":
+                n = prop.get("number")
+                priority = str(n) if n is not None else ""
+            elif pt == "rich_text":
+                priority = "".join(t.get("plain_text", "") for t in prop.get("rich_text", []))
         planner_tasks.append({
             "notion_id": page_id,
             "title": title,
@@ -474,9 +493,15 @@ def run_planner(input_action, input_task_id):
             "completed": comp_val,
             "due_date": get_page_date(page, date_prop) if date_prop else None,
             "due_time": None,
+            "priority": priority,
         })
 
-    planner_tasks.sort(key=lambda x: (x["completed"], x["due_date"] or "9999-12-31"))
+    planner_tasks.sort(key=lambda x: (
+        x["completed"],
+        x["priority"] or "~",
+        x["book_title"] or "~",
+        x["title"] or "",
+    ))
     now_iso = datetime.now(timezone.utc).isoformat()
     save_json(PLANNER_FILE, {
         "tasks": planner_tasks,
