@@ -334,15 +334,6 @@
       "priority": "4th"
     },
     {
-      "notion_id": "334c2bbd-5973-8123-884d-d4126c36f7c3",
-      "title": "자료구조 복습''",
-      "book_title": "교과내용학 심화",
-      "completed": false,
-      "due_date": "2026-03-31",
-      "due_time": null,
-      "priority": "4th"
-    },
-    {
       "notion_id": "332c2bbd-5973-8163-ba2e-d2eae63fc724",
       "title": "11강'",
       "book_title": "교육학 기본",
@@ -442,15 +433,6 @@
       "priority": "5th"
     },
     {
-      "notion_id": "334c2bbd-5973-8176-be72-d1cf98662843",
-      "title": "9강''' (2)",
-      "book_title": "교육학 기본",
-      "completed": false,
-      "due_date": "2026-03-31",
-      "due_time": null,
-      "priority": "5th"
-    },
-    {
       "notion_id": "2e7c2bbd-5973-8068-829b-f92eab19c37e",
       "title": "6일차",
       "book_title": "나도코딩 C언어",
@@ -510,15 +492,6 @@
       "book_title": "교과내용학 기본",
       "completed": false,
       "due_date": "2026-03-05",
-      "due_time": null,
-      "priority": "6th"
-    },
-    {
-      "notion_id": "334c2bbd-5973-8119-9a0d-ed4d7f00aae4",
-      "title": "10강'''",
-      "book_title": "교육학 기본",
-      "completed": false,
-      "due_date": "2026-03-31",
       "due_time": null,
       "priority": "6th"
     },
@@ -595,8 +568,8 @@
       "priority": "7th"
     },
     {
-      "notion_id": "334c2bbd-5973-8158-9c3b-f6e923d5c4ea",
-      "title": "11강'''",
+      "notion_id": "334c2bbd-5973-8119-9a0d-ed4d7f00aae4",
+      "title": "10강'''",
       "book_title": "교육학 기본",
       "completed": false,
       "due_date": "2026-03-31",
@@ -703,8 +676,8 @@
       "priority": "8th"
     },
     {
-      "notion_id": "334c2bbd-5973-819d-b53d-d4f7f3dca477",
-      "title": "12강'''",
+      "notion_id": "334c2bbd-5973-8158-9c3b-f6e923d5c4ea",
+      "title": "11강'''",
       "book_title": "교육학 기본",
       "completed": false,
       "due_date": "2026-03-31",
@@ -721,8 +694,8 @@
       "priority": "8th"
     },
     {
-      "notion_id": "334c2bbd-5973-81d1-abf3-ff2089a787d3",
-      "title": "13강''",
+      "notion_id": "334c2bbd-5973-819d-b53d-d4f7f3dca477",
+      "title": "12강'''",
       "book_title": "교육학 기본",
       "completed": false,
       "due_date": "2026-03-31",
@@ -748,9 +721,9 @@
       "priority": "9th"
     },
     {
-      "notion_id": "334c2bbd-5973-8181-88fa-dabfdee2ccf3",
-      "title": "14강''",
-      "book_title": "교육학 기본",
+      "notion_id": "334c2bbd-5973-8123-884d-d4126c36f7c3",
+      "title": "자료구조 복습''",
+      "book_title": "교과내용학 심화",
       "completed": false,
       "due_date": "2026-03-31",
       "due_time": null,
@@ -782,6 +755,24 @@
       "due_date": "2026-01-27",
       "due_time": null,
       "priority": "10th"
+    },
+    {
+      "notion_id": "334c2bbd-5973-81d1-abf3-ff2089a787d3",
+      "title": "13강''",
+      "book_title": "교육학 기본",
+      "completed": false,
+      "due_date": "2026-03-31",
+      "due_time": null,
+      "priority": "11th"
+    },
+    {
+      "notion_id": "334c2bbd-5973-8181-88fa-dabfdee2ccf3",
+      "title": "14강''",
+      "book_title": "교육학 기본",
+      "completed": false,
+      "due_date": "2026-03-31",
+      "due_time": null,
+      "priority": "12th"
     },
     {
       "notion_id": "314c2bbd-5973-8047-be92-f2e4d6cc4930",
@@ -1693,15 +1684,6 @@
       "priority": "1st"
     },
     {
-      "notion_id": "334c2bbd-5973-8143-8530-ea0ebae81581",
-      "title": "인기초 컴퓨터 비전 정리",
-      "book_title": "스터디",
-      "completed": true,
-      "due_date": "2026-03-31",
-      "due_time": null,
-      "priority": "1st"
-    },
-    {
       "notion_id": "31fc2bbd-5973-8072-bbf6-d9419edb746a",
       "title": "10:00-17:00 현강 (1)",
       "book_title": "일정",
@@ -2098,8 +2080,8 @@
       "priority": "2nd"
     },
     {
-      "notion_id": "334c2bbd-5973-81d2-bf2b-f61ddbcb4903",
-      "title": "문제풀이",
+      "notion_id": "334c2bbd-5973-8143-8530-ea0ebae81581",
+      "title": "인기초 컴퓨터 비전 정리",
       "book_title": "스터디",
       "completed": true,
       "due_date": "2026-03-31",
@@ -2260,6 +2242,15 @@
       "priority": "3rd"
     },
     {
+      "notion_id": "334c2bbd-5973-81d2-bf2b-f61ddbcb4903",
+      "title": "문제풀이",
+      "book_title": "스터디",
+      "completed": true,
+      "due_date": "2026-03-31",
+      "due_time": null,
+      "priority": "3rd"
+    },
+    {
       "notion_id": "31fc2bbd-5973-807e-aa5c-c3fd85281cbb",
       "title": "인공지능 기출 문제 풀이 및 설명",
       "book_title": "스터디",
@@ -2274,15 +2265,6 @@
       "book_title": "스터디",
       "completed": true,
       "due_date": "2026-03-05",
-      "due_time": null,
-      "priority": "3rd"
-    },
-    {
-      "notion_id": "31fc2bbd-5973-8029-802e-edc261906d8e",
-      "title": "13:00-16:00 스터디 - 인기초 2-2단원",
-      "book_title": "일정",
-      "completed": true,
-      "due_date": "2026-03-31",
       "due_time": null,
       "priority": "3rd"
     },
@@ -2404,6 +2386,15 @@
       "priority": "4th"
     },
     {
+      "notion_id": "31fc2bbd-5973-8029-802e-edc261906d8e",
+      "title": "13:00-16:00 스터디 - 인기초 2-2단원",
+      "book_title": "일정",
+      "completed": true,
+      "due_date": "2026-03-31",
+      "due_time": null,
+      "priority": "4th"
+    },
+    {
       "notion_id": "2ebc2bbd-5973-81de-8a7c-f7d284fde84c",
       "title": "조선후기 기출'",
       "book_title": "한능검",
@@ -2449,8 +2440,8 @@
       "priority": "5th"
     },
     {
-      "notion_id": "334c2bbd-5973-811b-91ac-dc1a80a2281a",
-      "title": "9강'''",
+      "notion_id": "334c2bbd-5973-8176-be72-d1cf98662843",
+      "title": "9강''' (2)",
       "book_title": "교육학 기본",
       "completed": true,
       "due_date": "2026-03-31",
@@ -2589,6 +2580,15 @@
       "book_title": "교육학 기본",
       "completed": true,
       "due_date": "2026-03-25",
+      "due_time": null,
+      "priority": "6th"
+    },
+    {
+      "notion_id": "334c2bbd-5973-811b-91ac-dc1a80a2281a",
+      "title": "9강'''",
+      "book_title": "교육학 기본",
+      "completed": true,
+      "due_date": "2026-03-31",
       "due_time": null,
       "priority": "6th"
     },
@@ -3016,6 +3016,6 @@
       "priority": ""
     }
   ],
-  "last_sync": "2026-03-31T11:58:45.423008+00:00",
+  "last_sync": "2026-03-31T13:18:18.024120+00:00",
   "total": 335
 }
