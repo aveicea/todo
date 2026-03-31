@@ -1549,6 +1549,15 @@
       "priority": "1st"
     },
     {
+      "notion_id": "334c2bbd-5973-8132-8a23-fc72853f3336",
+      "title": "데이터베이스 구조도''",
+      "book_title": "교과내용학 기본",
+      "completed": true,
+      "due_date": "2026-03-31",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
       "notion_id": "303c2bbd-5973-810f-95e7-c34c15116621",
       "title": "밀린 필기",
       "book_title": "교과내용학 기본",
@@ -2998,6 +3007,6 @@
       "priority": ""
     }
   ],
-  "last_sync": "2026-03-31T08:06:53.793751+00:00",
-  "total": 333
+  "last_sync": "2026-03-31T10:14:39.572386+00:00",
+  "total": 334
 }
