@@ -508,12 +508,11 @@ def handle_get_planner():
             "due_time": None,
             "priority": priority,
         })
-    tasks.sort(key=lambda x: (
-        x["completed"],
-        x["priority"] or "~",
-        x["book_title"] or "~",
-        x["title"] or "",
-    ))
+    import re as _re
+    def _prio(val):
+        m = _re.match(r'(\d+)', val) if val else None
+        return int(m.group(1)) if m else 9999
+    tasks.sort(key=lambda x: (x["completed"], _prio(x["priority"]), x["book_title"] or "~", x["title"] or ""))
     return {"ok": True, "tasks": tasks}
 
 
