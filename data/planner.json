@@ -442,8 +442,8 @@
       "priority": "5th"
     },
     {
-      "notion_id": "334c2bbd-5973-811b-91ac-dc1a80a2281a",
-      "title": "9강'''",
+      "notion_id": "334c2bbd-5973-8176-be72-d1cf98662843",
+      "title": "9강''' (2)",
       "book_title": "교육학 기본",
       "completed": false,
       "due_date": "2026-03-31",
@@ -2449,6 +2449,15 @@
       "priority": "5th"
     },
     {
+      "notion_id": "334c2bbd-5973-811b-91ac-dc1a80a2281a",
+      "title": "9강'''",
+      "book_title": "교육학 기본",
+      "completed": true,
+      "due_date": "2026-03-31",
+      "due_time": null,
+      "priority": "5th"
+    },
+    {
       "notion_id": "2eec2bbd-5973-81f4-bfe5-c21aacb8e1fc",
       "title": "11일차",
       "book_title": "나도코딩 C언어",
@@ -3007,6 +3016,6 @@
       "priority": ""
     }
   ],
-  "last_sync": "2026-03-31T11:11:22.464904+00:00",
-  "total": 334
+  "last_sync": "2026-03-31T11:58:45.423008+00:00",
+  "total": 335
 }
