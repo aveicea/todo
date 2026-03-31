@@ -1,29 +1,29 @@
 {
   "tasks": [
     {
-      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAe2AK1tAAA=",
-      "notion_id": "332c2bbd-5973-81fd-9802-c968e38a2ff7",
-      "title": "다이어리",
+      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAe3t7GCAAA=",
+      "notion_id": "334c2bbd-5973-8168-b10d-ca1e540e578b",
+      "title": "밀린 식단 기록",
       "completed": false,
-      "due_date": "2026-03-30",
+      "due_date": "2026-04-01",
       "due_time": null,
       "importance": "normal"
     },
     {
-      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAe2ppVOAAA=",
-      "notion_id": "333c2bbd-5973-8184-bc9f-f54a0c6e8049",
+      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAe3t7GBAAA=",
+      "notion_id": "334c2bbd-5973-812b-9bf3-f325c49852a4",
       "title": "데일리 체크",
       "completed": false,
-      "due_date": "2026-03-31",
+      "due_date": "2026-04-01",
       "due_time": null,
       "importance": "normal"
     },
     {
-      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAe2ppVNAAA=",
-      "notion_id": "333c2bbd-5973-81e5-b5b5-e82fd23b66ca",
+      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAe3t7GAAAA=",
+      "notion_id": "334c2bbd-5973-81ea-a9c3-c5bc192618e1",
       "title": "다이어리",
       "completed": false,
-      "due_date": "2026-03-31",
+      "due_date": "2026-04-01",
       "due_time": null,
       "importance": "normal"
     },
@@ -685,6 +685,15 @@
       "importance": "normal"
     },
     {
+      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAe2AK1tAAA=",
+      "notion_id": "332c2bbd-5973-81fd-9802-c968e38a2ff7",
+      "title": "다이어리",
+      "completed": true,
+      "due_date": "2026-03-30",
+      "due_time": null,
+      "importance": "normal"
+    },
+    {
       "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAe2ppVPAAA=",
       "notion_id": "334c2bbd-5973-8162-ac75-eb7bf01604ce",
       "title": "우리적금 출석체크",
@@ -701,10 +710,28 @@
       "due_date": "2026-03-31",
       "due_time": "13:45",
       "importance": "normal"
+    },
+    {
+      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAe2ppVOAAA=",
+      "notion_id": "333c2bbd-5973-8184-bc9f-f54a0c6e8049",
+      "title": "데일리 체크",
+      "completed": true,
+      "due_date": "2026-03-31",
+      "due_time": null,
+      "importance": "normal"
+    },
+    {
+      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAe2ppVNAAA=",
+      "notion_id": "333c2bbd-5973-81e5-b5b5-e82fd23b66ca",
+      "title": "다이어리",
+      "completed": true,
+      "due_date": "2026-03-31",
+      "due_time": null,
+      "importance": "normal"
     }
   ],
-  "last_sync": "2026-03-31T14:44:27.489592+00:00",
-  "total": 78,
-  "completed": 74,
+  "last_sync": "2026-03-31T15:51:07.414846+00:00",
+  "total": 81,
+  "completed": 77,
   "pending": 4
 }
