@@ -225,7 +225,7 @@
 
   <div class="filter-tabs">
     <button class="filter-tab active" onclick="setFilter('today')"   id="tab-today">오늘</button>
-    <button class="filter-tab"        onclick="setFilter('pending')" id="tab-pending">미완료</button>
+    <button class="filter-tab"        onclick="setFilter('pending')" id="tab-pending">미완</button>
     <button class="filter-tab"        onclick="setFilter('all')"     id="tab-all">전체</button>
     <button id="sort-btn" onclick="toggleSort()" style="display:none;margin-left:auto;border:none;background:transparent;font-size:10px;color:#aaa;cursor:pointer;padding:2px 8px 2px 0;">오름차순</button>
     <div id="date-nav" style="margin-left:auto;margin-right:6px;display:flex;align-items:center;gap:0px;">
@@ -449,7 +449,7 @@ function renderTasks() {
     const overdue = pending.filter(t => t.due_date && t.due_date < browseDay);
     const notOverdue = pending.filter(t => !t.due_date || t.due_date >= browseDay);
     const pc = collapsedGroups.pending;
-    html += `<div class="task-group-label" onclick="toggleGroup('pending')">미완료 ${notOverdue.length}<span class="group-chevron">${pc?'∨':'∧'}</span></div>`;
+    html += `<div class="task-group-label" onclick="toggleGroup('pending')">미완 ${notOverdue.length}<span class="group-chevron">${pc?'∨':'∧'}</span></div>`;
     if (!pc) html += notOverdue.length ? notOverdue.map(taskHTML).join('') : '<div style="height:6px"></div>';
     if (overdue.length) {
       const oc = collapsedGroups.overdue;
