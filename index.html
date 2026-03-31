@@ -453,7 +453,7 @@ function renderTasks() {
     if (!pc) html += notOverdue.length ? notOverdue.map(taskHTML).join('') : '<div style="height:6px"></div>';
     if (overdue.length) {
       const oc = collapsedGroups.overdue;
-      html += `<div class="task-group-label" onclick="toggleGroup('overdue')">밀린 할일 ${overdue.length}<span class="group-chevron">${oc?'∨':'∧'}</span></div>`;
+      html += `<div class="task-group-label" onclick="toggleGroup('overdue')">밀린 ${overdue.length}<span class="group-chevron">${oc?'∨':'∧'}</span></div>`;
       if (!oc) html += overdue.map(taskHTML).join('');
     }
     const dc = collapsedGroups.done;
