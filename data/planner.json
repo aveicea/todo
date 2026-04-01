@@ -685,6 +685,15 @@
       "priority": "9th"
     },
     {
+      "notion_id": "335c2bbd-5973-81b6-bdba-f23cdbb5b7a6",
+      "title": "12강'''' (2)",
+      "book_title": "교육학 기본",
+      "completed": false,
+      "due_date": "2026-04-01",
+      "due_time": null,
+      "priority": "9th"
+    },
+    {
       "notion_id": "2eec2bbd-5973-8128-bca5-c41b8bcbafb2",
       "title": "13일차'",
       "book_title": "나도코딩 C언어",
@@ -708,6 +717,15 @@
       "book_title": "교과내용학 심화",
       "completed": false,
       "due_date": "2026-03-31",
+      "due_time": null,
+      "priority": "10th"
+    },
+    {
+      "notion_id": "335c2bbd-5973-813d-8402-fc9be582ba67",
+      "title": "자료구조 복습'''",
+      "book_title": "교과내용학 심화",
+      "completed": false,
+      "due_date": "2026-04-01",
       "due_time": null,
       "priority": "10th"
     },
@@ -748,11 +766,29 @@
       "priority": "11th"
     },
     {
+      "notion_id": "335c2bbd-5973-814d-8197-deac8545b3a3",
+      "title": "13강'''",
+      "book_title": "교육학 기본",
+      "completed": false,
+      "due_date": "2026-04-01",
+      "due_time": null,
+      "priority": "11th"
+    },
+    {
       "notion_id": "334c2bbd-5973-8181-88fa-dabfdee2ccf3",
       "title": "14강''",
       "book_title": "교육학 기본",
       "completed": false,
       "due_date": "2026-03-31",
+      "due_time": null,
+      "priority": "12th"
+    },
+    {
+      "notion_id": "335c2bbd-5973-81aa-aa43-f03938b877f8",
+      "title": "14강'''",
+      "book_title": "교육학 기본",
+      "completed": false,
+      "due_date": "2026-04-01",
       "due_time": null,
       "priority": "12th"
     },
@@ -2728,6 +2764,15 @@
       "priority": "8th"
     },
     {
+      "notion_id": "335c2bbd-5973-81f0-8867-d6f380b8f630",
+      "title": "12강''''",
+      "book_title": "교육학 기본",
+      "completed": true,
+      "due_date": "2026-04-01",
+      "due_time": null,
+      "priority": "9th"
+    },
+    {
       "notion_id": "2ebc2bbd-5973-8116-8137-d54de6878ac2",
       "title": "6강 자구&알고리즘''",
       "book_title": "교과내용학 기본",
@@ -3016,6 +3061,6 @@
       "priority": ""
     }
   ],
-  "last_sync": "2026-04-01T01:10:37.047268+00:00",
-  "total": 335
+  "last_sync": "2026-04-01T04:19:31.632804+00:00",
+  "total": 340
 }
