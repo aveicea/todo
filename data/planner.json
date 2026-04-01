@@ -766,11 +766,11 @@
       "priority": "12th"
     },
     {
-      "notion_id": "335c2bbd-5973-81aa-aa43-f03938b877f8",
-      "title": "14강'''",
+      "notion_id": "335c2bbd-5973-8144-8270-e147d0af848e",
+      "title": "14강''' (2)",
       "book_title": "교육학 기본",
       "completed": false,
-      "due_date": "2026-04-02",
+      "due_date": "2026-04-01",
       "due_time": null,
       "priority": "12th"
     },
@@ -2782,6 +2782,15 @@
       "priority": "11th"
     },
     {
+      "notion_id": "335c2bbd-5973-81aa-aa43-f03938b877f8",
+      "title": "14강'''",
+      "book_title": "교육학 기본",
+      "completed": true,
+      "due_date": "2026-04-01",
+      "due_time": null,
+      "priority": "12th"
+    },
+    {
       "notion_id": "303c2bbd-5973-8059-bb30-db9ccdedf935",
       "title": "23강 데이터베이스",
       "book_title": "교과내용학 기본",
@@ -3070,6 +3079,6 @@
       "priority": ""
     }
   ],
-  "last_sync": "2026-04-01T15:41:28.999315+00:00",
-  "total": 341
+  "last_sync": "2026-04-01T16:36:01.711801+00:00",
+  "total": 342
 }
