@@ -770,7 +770,7 @@
       "title": "14강'''",
       "book_title": "교육학 기본",
       "completed": false,
-      "due_date": "2026-04-01",
+      "due_date": "2026-04-02",
       "due_time": null,
       "priority": "12th"
     },
@@ -3070,6 +3070,6 @@
       "priority": ""
     }
   ],
-  "last_sync": "2026-04-01T11:36:51.381936+00:00",
+  "last_sync": "2026-04-01T12:38:36.270807+00:00",
   "total": 341
 }
