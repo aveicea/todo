@@ -910,24 +910,6 @@
       "priority": ""
     },
     {
-      "notion_id": "32ec2bbd-5973-8084-962e-fb7667ef31e6",
-      "title": "17강",
-      "book_title": "교육학 기본",
-      "completed": false,
-      "due_date": "2026-04-01",
-      "due_time": null,
-      "priority": ""
-    },
-    {
-      "notion_id": "32ec2bbd-5973-80be-9ff5-e9534e6e9dd5",
-      "title": "18강",
-      "book_title": "교육학 기본",
-      "completed": false,
-      "due_date": "2026-04-01",
-      "due_time": null,
-      "priority": ""
-    },
-    {
       "notion_id": "32ec2bbd-5973-8023-949b-c9ed7cf2687e",
       "title": "19강",
       "book_title": "교육학 기본",
@@ -3007,6 +2989,24 @@
       "priority": ""
     },
     {
+      "notion_id": "32ec2bbd-5973-8084-962e-fb7667ef31e6",
+      "title": "17강",
+      "book_title": "교육학 기본",
+      "completed": true,
+      "due_date": "2026-04-01",
+      "due_time": null,
+      "priority": ""
+    },
+    {
+      "notion_id": "32ec2bbd-5973-80be-9ff5-e9534e6e9dd5",
+      "title": "18강",
+      "book_title": "교육학 기본",
+      "completed": true,
+      "due_date": "2026-04-01",
+      "due_time": null,
+      "priority": ""
+    },
+    {
       "notion_id": "314c2bbd-5973-80ad-adbc-d7e4757f389f",
       "title": "인기초 교과서 분석 ",
       "book_title": "스터디",
@@ -3070,6 +3070,6 @@
       "priority": ""
     }
   ],
-  "last_sync": "2026-04-01T12:38:36.270807+00:00",
+  "last_sync": "2026-04-01T14:13:58.648642+00:00",
   "total": 341
 }
