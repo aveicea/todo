@@ -716,7 +716,7 @@
       "title": "자료구조 복습'''",
       "book_title": "교과내용학 심화",
       "completed": false,
-      "due_date": "2026-04-01",
+      "due_date": "2026-04-03",
       "due_time": null,
       "priority": "10th"
     },
@@ -753,15 +753,6 @@
       "book_title": "교육학 기본",
       "completed": false,
       "due_date": "2026-03-31",
-      "due_time": null,
-      "priority": "11th"
-    },
-    {
-      "notion_id": "335c2bbd-5973-814d-8197-deac8545b3a3",
-      "title": "13강'''",
-      "book_title": "교육학 기본",
-      "completed": false,
-      "due_date": "2026-04-01",
       "due_time": null,
       "priority": "11th"
     },
@@ -2782,6 +2773,15 @@
       "priority": "10th"
     },
     {
+      "notion_id": "335c2bbd-5973-814d-8197-deac8545b3a3",
+      "title": "13강'''",
+      "book_title": "교육학 기본",
+      "completed": true,
+      "due_date": "2026-04-01",
+      "due_time": null,
+      "priority": "11th"
+    },
+    {
       "notion_id": "2f6c2bbd-5973-817f-8e65-e901c73ff914",
       "title": "공부돼지 전범위 통합본",
       "book_title": "한능검",
@@ -3061,6 +3061,6 @@
       "priority": ""
     }
   ],
-  "last_sync": "2026-04-01T07:49:25.717273+00:00",
+  "last_sync": "2026-04-01T08:48:33.325147+00:00",
   "total": 340
 }
