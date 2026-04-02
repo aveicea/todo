@@ -262,15 +262,6 @@
       "priority": "3rd"
     },
     {
-      "notion_id": "336c2bbd-5973-8178-b56d-df74e5486200",
-      "title": "20강'",
-      "book_title": "교육학 기본",
-      "completed": false,
-      "due_date": "2026-04-02",
-      "due_time": null,
-      "priority": "3rd"
-    },
-    {
       "notion_id": "2ebc2bbd-5973-81b1-9d7b-ffa6116fb797",
       "title": "7일차'",
       "book_title": "나도코딩 C언어",
@@ -780,15 +771,6 @@
       "book_title": "교과내용학 심화",
       "completed": false,
       "due_date": "2026-03-31",
-      "due_time": null,
-      "priority": "10th"
-    },
-    {
-      "notion_id": "335c2bbd-5973-813d-8402-fc9be582ba67",
-      "title": "자료구조 복습'''",
-      "book_title": "교과내용학 심화",
-      "completed": false,
-      "due_date": "2026-04-03",
       "due_time": null,
       "priority": "10th"
     },
@@ -2269,6 +2251,15 @@
       "priority": "3rd"
     },
     {
+      "notion_id": "336c2bbd-5973-8178-b56d-df74e5486200",
+      "title": "20강'",
+      "book_title": "교육학 기본",
+      "completed": true,
+      "due_date": "2026-04-02",
+      "due_time": null,
+      "priority": "3rd"
+    },
+    {
       "notion_id": "32ec2bbd-5973-80ef-8e14-c6198acea23c",
       "title": "3강",
       "book_title": "교육학 기본",
@@ -2827,6 +2818,15 @@
       "priority": "10th"
     },
     {
+      "notion_id": "335c2bbd-5973-813d-8402-fc9be582ba67",
+      "title": "자료구조 복습'''",
+      "book_title": "교과내용학 심화",
+      "completed": true,
+      "due_date": "2026-04-02",
+      "due_time": null,
+      "priority": "10th"
+    },
+    {
       "notion_id": "335c2bbd-5973-814d-8197-deac8545b3a3",
       "title": "13강'''",
       "book_title": "교육학 기본",
@@ -3151,6 +3151,6 @@
       "priority": ""
     }
   ],
-  "last_sync": "2026-04-02T04:14:10.211520+00:00",
+  "last_sync": "2026-04-02T05:49:32.718807+00:00",
   "total": 350
 }
