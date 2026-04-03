@@ -55,6 +55,15 @@
       "priority": "1st"
     },
     {
+      "notion_id": "337c2bbd-5973-8196-bdf1-e33b378fd633",
+      "title": "14강''' (2)''",
+      "book_title": "교육학 기본",
+      "completed": false,
+      "due_date": "2026-04-03",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
       "notion_id": "2ecc2bbd-5973-81d2-bf66-d3e74e876157",
       "title": "일제강점기 기출'",
       "book_title": "한능검",
@@ -343,6 +352,15 @@
       "priority": "4th"
     },
     {
+      "notion_id": "337c2bbd-5973-8131-9031-eb0d863a20a1",
+      "title": "운영체제 구조도'",
+      "book_title": "교과내용학 기본",
+      "completed": false,
+      "due_date": "2026-04-03",
+      "due_time": null,
+      "priority": "4th"
+    },
+    {
       "notion_id": "321c2bbd-5973-8198-a9f8-ff3325f263b8",
       "title": "자료구조 필기 보충’ (2)'' (5)",
       "book_title": "교과내용학 기본",
@@ -550,6 +568,15 @@
       "priority": "6th"
     },
     {
+      "notion_id": "337c2bbd-5973-8170-87af-cf7fee2431ec",
+      "title": "22강''",
+      "book_title": "교육학 기본",
+      "completed": false,
+      "due_date": "2026-04-03",
+      "due_time": null,
+      "priority": "6th"
+    },
+    {
       "notion_id": "2ebc2bbd-5973-81be-a30d-f6a09b9aae20",
       "title": "12일차",
       "book_title": "나도코딩 C언어",
@@ -627,6 +654,15 @@
       "book_title": "교육학 기본",
       "completed": false,
       "due_date": "2026-04-02",
+      "due_time": null,
+      "priority": "7th"
+    },
+    {
+      "notion_id": "337c2bbd-5973-8116-ba56-d649ef62ee2a",
+      "title": "23강''",
+      "book_title": "교육학 기본",
+      "completed": false,
+      "due_date": "2026-04-03",
       "due_time": null,
       "priority": "7th"
     },
@@ -712,6 +748,15 @@
       "priority": "8th"
     },
     {
+      "notion_id": "337c2bbd-5973-81b8-8264-d82153f2ccef",
+      "title": "24강''",
+      "book_title": "교육학 기본",
+      "completed": false,
+      "due_date": "2026-04-03",
+      "due_time": null,
+      "priority": "8th"
+    },
+    {
       "notion_id": "2e9c2bbd-5973-81c8-ad14-eb36d996f66c",
       "title": "8일차",
       "book_title": "나도코딩 C언어",
@@ -735,6 +780,15 @@
       "book_title": "교육학 기본",
       "completed": false,
       "due_date": "2026-04-02",
+      "due_time": null,
+      "priority": "9th"
+    },
+    {
+      "notion_id": "337c2bbd-5973-81f4-8931-d5a76be6420b",
+      "title": "25강'",
+      "book_title": "교육학 기본",
+      "completed": false,
+      "due_date": "2026-04-03",
       "due_time": null,
       "priority": "9th"
     },
@@ -771,6 +825,15 @@
       "book_title": "교육학 기본",
       "completed": false,
       "due_date": "2026-04-02",
+      "due_time": null,
+      "priority": "10th"
+    },
+    {
+      "notion_id": "337c2bbd-5973-81fc-b00b-dff56037a76a",
+      "title": "26강'",
+      "book_title": "교육학 기본",
+      "completed": false,
+      "due_date": "2026-04-03",
       "due_time": null,
       "priority": "10th"
     },
@@ -820,6 +883,15 @@
       "priority": "11th"
     },
     {
+      "notion_id": "337c2bbd-5973-81cb-a6dc-d328f0ccb81b",
+      "title": "27강'",
+      "book_title": "교육학 기본",
+      "completed": false,
+      "due_date": "2026-04-03",
+      "due_time": null,
+      "priority": "11th"
+    },
+    {
       "notion_id": "334c2bbd-5973-8181-88fa-dabfdee2ccf3",
       "title": "14강''",
       "book_title": "교육학 기본",
@@ -847,11 +919,29 @@
       "priority": "12th"
     },
     {
+      "notion_id": "337c2bbd-5973-8136-9422-e206a8f04647",
+      "title": "28강'",
+      "book_title": "교육학 기본",
+      "completed": false,
+      "due_date": "2026-04-03",
+      "due_time": null,
+      "priority": "12th"
+    },
+    {
       "notion_id": "32ec2bbd-5973-802a-8709-f86db53aceff",
       "title": "29강",
       "book_title": "교육학 기본",
       "completed": false,
       "due_date": "2026-04-02",
+      "due_time": null,
+      "priority": "13th"
+    },
+    {
+      "notion_id": "337c2bbd-5973-812b-994c-cb492c42b103",
+      "title": "29강'",
+      "book_title": "교육학 기본",
+      "completed": false,
+      "due_date": "2026-04-03",
       "due_time": null,
       "priority": "13th"
     },
@@ -3160,6 +3250,6 @@
       "priority": ""
     }
   ],
-  "last_sync": "2026-04-03T01:03:01.826805+00:00",
-  "total": 351
+  "last_sync": "2026-04-03T03:49:12.292008+00:00",
+  "total": 361
 }
