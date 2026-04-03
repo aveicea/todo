@@ -352,15 +352,6 @@
       "priority": "4th"
     },
     {
-      "notion_id": "337c2bbd-5973-8131-9031-eb0d863a20a1",
-      "title": "운영체제 구조도'",
-      "book_title": "교과내용학 기본",
-      "completed": false,
-      "due_date": "2026-04-03",
-      "due_time": null,
-      "priority": "4th"
-    },
-    {
       "notion_id": "321c2bbd-5973-8198-a9f8-ff3325f263b8",
       "title": "자료구조 필기 보충’ (2)'' (5)",
       "book_title": "교과내용학 기본",
@@ -2458,6 +2449,15 @@
       "priority": "4th"
     },
     {
+      "notion_id": "337c2bbd-5973-8131-9031-eb0d863a20a1",
+      "title": "운영체제 구조도'",
+      "book_title": "교과내용학 기본",
+      "completed": true,
+      "due_date": "2026-04-03",
+      "due_time": null,
+      "priority": "4th"
+    },
+    {
       "notion_id": "320c2bbd-5973-814f-81cb-dab502808255",
       "title": "자료구조 필기 보충’ (2)'' (3)",
       "book_title": "교과내용학 기본",
@@ -2962,6 +2962,24 @@
       "priority": "12th"
     },
     {
+      "notion_id": "337c2bbd-5973-8143-aaa1-ec9136e6f649",
+      "title": "운영체제 복습",
+      "book_title": "교과내용학 기본",
+      "completed": true,
+      "due_date": "2026-04-03",
+      "due_time": null,
+      "priority": "14th"
+    },
+    {
+      "notion_id": "337c2bbd-5973-8134-8023-c23a88b18325",
+      "title": "운영체제 복습 (2)",
+      "book_title": "교과내용학 기본",
+      "completed": true,
+      "due_date": "2026-04-03",
+      "due_time": null,
+      "priority": "14th"
+    },
+    {
       "notion_id": "303c2bbd-5973-8059-bb30-db9ccdedf935",
       "title": "23강 데이터베이스",
       "book_title": "교과내용학 기본",
@@ -3250,6 +3268,6 @@
       "priority": ""
     }
   ],
-  "last_sync": "2026-04-03T15:50:32.821379+00:00",
-  "total": 361
+  "last_sync": "2026-04-03T16:23:13.241026+00:00",
+  "total": 363
 }
