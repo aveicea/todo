@@ -577,15 +577,6 @@
       "priority": "6th"
     },
     {
-      "notion_id": "338c2bbd-5973-81ff-b52d-fc00fbfe262a",
-      "title": "22강'''",
-      "book_title": "교육학 기본",
-      "completed": false,
-      "due_date": "2026-04-04",
-      "due_time": null,
-      "priority": "6th"
-    },
-    {
       "notion_id": "2ebc2bbd-5973-81be-a30d-f6a09b9aae20",
       "title": "12일차",
       "book_title": "나도코딩 C언어",
@@ -2791,6 +2782,15 @@
       "priority": "6th"
     },
     {
+      "notion_id": "338c2bbd-5973-81ff-b52d-fc00fbfe262a",
+      "title": "22강'''",
+      "book_title": "교육학 기본",
+      "completed": true,
+      "due_date": "2026-04-04",
+      "due_time": null,
+      "priority": "6th"
+    },
+    {
       "notion_id": "32ec2bbd-5973-8016-a92d-edbe811ece5e",
       "title": "6강",
       "book_title": "교육학 기본",
@@ -3349,6 +3349,6 @@
       "priority": ""
     }
   ],
-  "last_sync": "2026-04-04T16:01:15.076946+00:00",
+  "last_sync": "2026-04-04T16:43:51.074303+00:00",
   "total": 372
 }
