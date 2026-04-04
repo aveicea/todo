@@ -64,6 +64,15 @@
       "priority": "1st"
     },
     {
+      "notion_id": "338c2bbd-5973-8135-b95c-e57e235f5bd5",
+      "title": "14강''' (2)'''",
+      "book_title": "교육학 기본",
+      "completed": false,
+      "due_date": "2026-04-04",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
       "notion_id": "2ecc2bbd-5973-81d2-bf66-d3e74e876157",
       "title": "일제강점기 기출'",
       "book_title": "한능검",
@@ -568,6 +577,15 @@
       "priority": "6th"
     },
     {
+      "notion_id": "338c2bbd-5973-81ff-b52d-fc00fbfe262a",
+      "title": "22강'''",
+      "book_title": "교육학 기본",
+      "completed": false,
+      "due_date": "2026-04-04",
+      "due_time": null,
+      "priority": "6th"
+    },
+    {
       "notion_id": "2ebc2bbd-5973-81be-a30d-f6a09b9aae20",
       "title": "12일차",
       "book_title": "나도코딩 C언어",
@@ -654,6 +672,15 @@
       "book_title": "교육학 기본",
       "completed": false,
       "due_date": "2026-04-03",
+      "due_time": null,
+      "priority": "7th"
+    },
+    {
+      "notion_id": "338c2bbd-5973-81f3-99df-cad8d90b8ed9",
+      "title": "23강'''",
+      "book_title": "교육학 기본",
+      "completed": false,
+      "due_date": "2026-04-04",
       "due_time": null,
       "priority": "7th"
     },
@@ -748,6 +775,15 @@
       "priority": "8th"
     },
     {
+      "notion_id": "338c2bbd-5973-8107-907d-f5158bda756d",
+      "title": "24강'''",
+      "book_title": "교육학 기본",
+      "completed": false,
+      "due_date": "2026-04-04",
+      "due_time": null,
+      "priority": "8th"
+    },
+    {
       "notion_id": "2e9c2bbd-5973-81c8-ad14-eb36d996f66c",
       "title": "8일차",
       "book_title": "나도코딩 C언어",
@@ -780,6 +816,15 @@
       "book_title": "교육학 기본",
       "completed": false,
       "due_date": "2026-04-03",
+      "due_time": null,
+      "priority": "9th"
+    },
+    {
+      "notion_id": "338c2bbd-5973-815d-a503-dffb32f2da11",
+      "title": "25강''",
+      "book_title": "교육학 기본",
+      "completed": false,
+      "due_date": "2026-04-04",
       "due_time": null,
       "priority": "9th"
     },
@@ -825,6 +870,15 @@
       "book_title": "교육학 기본",
       "completed": false,
       "due_date": "2026-04-03",
+      "due_time": null,
+      "priority": "10th"
+    },
+    {
+      "notion_id": "338c2bbd-5973-81d7-a1d2-f6f5100557a8",
+      "title": "26강''",
+      "book_title": "교육학 기본",
+      "completed": false,
+      "due_date": "2026-04-04",
       "due_time": null,
       "priority": "10th"
     },
@@ -883,6 +937,15 @@
       "priority": "11th"
     },
     {
+      "notion_id": "338c2bbd-5973-8105-bba5-dae964761f1c",
+      "title": "27강''",
+      "book_title": "교육학 기본",
+      "completed": false,
+      "due_date": "2026-04-04",
+      "due_time": null,
+      "priority": "11th"
+    },
+    {
       "notion_id": "334c2bbd-5973-8181-88fa-dabfdee2ccf3",
       "title": "14강''",
       "book_title": "교육학 기본",
@@ -919,6 +982,15 @@
       "priority": "12th"
     },
     {
+      "notion_id": "338c2bbd-5973-81cf-9970-de168c3fde6e",
+      "title": "28강''",
+      "book_title": "교육학 기본",
+      "completed": false,
+      "due_date": "2026-04-04",
+      "due_time": null,
+      "priority": "12th"
+    },
+    {
       "notion_id": "32ec2bbd-5973-802a-8709-f86db53aceff",
       "title": "29강",
       "book_title": "교육학 기본",
@@ -933,6 +1005,15 @@
       "book_title": "교육학 기본",
       "completed": false,
       "due_date": "2026-04-03",
+      "due_time": null,
+      "priority": "13th"
+    },
+    {
+      "notion_id": "338c2bbd-5973-819b-a63b-db4f8f5feb17",
+      "title": "29강''",
+      "book_title": "교육학 기본",
+      "completed": false,
+      "due_date": "2026-04-04",
       "due_time": null,
       "priority": "13th"
     },
@@ -1491,15 +1572,6 @@
       "book_title": "스터디",
       "completed": false,
       "due_date": "2026-03-04",
-      "due_time": null,
-      "priority": ""
-    },
-    {
-      "notion_id": "31fc2bbd-5973-803b-9332-ef07cc26270d",
-      "title": "10:00-17:00 현강 (4)",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2026-04-04",
       "due_time": null,
       "priority": ""
     },
@@ -3241,6 +3313,15 @@
       "priority": ""
     },
     {
+      "notion_id": "31fc2bbd-5973-803b-9332-ef07cc26270d",
+      "title": "10:00-17:00 현강 (4)",
+      "book_title": "일정",
+      "completed": true,
+      "due_date": "2026-04-04",
+      "due_time": null,
+      "priority": ""
+    },
+    {
       "notion_id": "31fc2bbd-5973-80c6-b34a-e8ca8bf5ee3c",
       "title": "13:00-16:00 스터디",
       "book_title": "일정",
@@ -3268,6 +3349,6 @@
       "priority": ""
     }
   ],
-  "last_sync": "2026-04-04T13:15:15.746609+00:00",
-  "total": 363
+  "last_sync": "2026-04-04T13:59:34.251922+00:00",
+  "total": 372
 }
