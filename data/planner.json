@@ -163,6 +163,15 @@
       "priority": "2nd"
     },
     {
+      "notion_id": "339c2bbd-5973-811d-8f67-e43d8e6cb498",
+      "title": "24강''''",
+      "book_title": "교육학 기본",
+      "completed": false,
+      "due_date": "2026-04-05",
+      "due_time": null,
+      "priority": "2nd"
+    },
+    {
       "notion_id": "332c2bbd-5973-81f1-acb2-fe4e778a5b2e",
       "title": "9강'",
       "book_title": "교육학 기본",
@@ -280,6 +289,15 @@
       "priority": "3rd"
     },
     {
+      "notion_id": "339c2bbd-5973-8129-bf8c-efff419797ea",
+      "title": "25강'''",
+      "book_title": "교육학 기본",
+      "completed": false,
+      "due_date": "2026-04-05",
+      "due_time": null,
+      "priority": "3rd"
+    },
+    {
       "notion_id": "2ebc2bbd-5973-81b1-9d7b-ffa6116fb797",
       "title": "7일차'",
       "book_title": "나도코딩 C언어",
@@ -388,6 +406,15 @@
       "priority": "4th"
     },
     {
+      "notion_id": "339c2bbd-5973-8172-abef-d28e8d99173c",
+      "title": "26강'''",
+      "book_title": "교육학 기본",
+      "completed": false,
+      "due_date": "2026-04-05",
+      "due_time": null,
+      "priority": "4th"
+    },
+    {
       "notion_id": "32ec2bbd-5973-8087-bdae-e296c5b5ea4e",
       "title": "9강",
       "book_title": "교육학 기본",
@@ -465,6 +492,15 @@
       "book_title": "교육학 기본",
       "completed": false,
       "due_date": "2026-03-30",
+      "due_time": null,
+      "priority": "5th"
+    },
+    {
+      "notion_id": "339c2bbd-5973-8183-907b-c1f03573c12c",
+      "title": "27강'''",
+      "book_title": "교육학 기본",
+      "completed": false,
+      "due_date": "2026-04-05",
       "due_time": null,
       "priority": "5th"
     },
@@ -577,6 +613,15 @@
       "priority": "6th"
     },
     {
+      "notion_id": "339c2bbd-5973-8132-b02d-df0c649b80dd",
+      "title": "28강'''",
+      "book_title": "교육학 기본",
+      "completed": false,
+      "due_date": "2026-04-05",
+      "due_time": null,
+      "priority": "6th"
+    },
+    {
       "notion_id": "2ebc2bbd-5973-81be-a30d-f6a09b9aae20",
       "title": "12일차",
       "book_title": "나도코딩 C언어",
@@ -672,6 +717,15 @@
       "book_title": "교육학 기본",
       "completed": false,
       "due_date": "2026-04-04",
+      "due_time": null,
+      "priority": "7th"
+    },
+    {
+      "notion_id": "339c2bbd-5973-8175-85ca-ff14e05e1058",
+      "title": "29강'''",
+      "book_title": "교육학 기본",
+      "completed": false,
+      "due_date": "2026-04-05",
       "due_time": null,
       "priority": "7th"
     },
@@ -784,11 +838,29 @@
       "priority": "8th"
     },
     {
+      "notion_id": "339c2bbd-5973-8156-b562-ce4fb066e09b",
+      "title": "5:00 저녁",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-04-05",
+      "due_time": null,
+      "priority": "8th"
+    },
+    {
       "notion_id": "334c2bbd-5973-819d-b53d-d4f7f3dca477",
       "title": "12강'''",
       "book_title": "교육학 기본",
       "completed": false,
       "due_date": "2026-03-31",
+      "due_time": null,
+      "priority": "9th"
+    },
+    {
+      "notion_id": "339c2bbd-5973-81ba-99d1-e9177159b331",
+      "title": "14강''' (2)''''",
+      "book_title": "교육학 기본",
+      "completed": false,
+      "due_date": "2026-04-05",
       "due_time": null,
       "priority": "9th"
     },
@@ -836,6 +908,15 @@
       "due_date": "2026-01-17",
       "due_time": null,
       "priority": "9th"
+    },
+    {
+      "notion_id": "339c2bbd-5973-814e-8259-c93553b6dceb",
+      "title": "데이터 베이스 구조도 보완",
+      "book_title": "교과내용학 심화",
+      "completed": false,
+      "due_date": "2026-04-05",
+      "due_time": null,
+      "priority": "10th"
     },
     {
       "notion_id": "334c2bbd-5973-8123-884d-d4126c36f7c3",
@@ -901,6 +982,15 @@
       "priority": "10th"
     },
     {
+      "notion_id": "339c2bbd-5973-8167-82ec-ef840a05dfcb",
+      "title": "운영체제 구조도 보완",
+      "book_title": "교과내용학 심화",
+      "completed": false,
+      "due_date": "2026-04-05",
+      "due_time": null,
+      "priority": "11th"
+    },
+    {
       "notion_id": "334c2bbd-5973-81d1-abf3-ff2089a787d3",
       "title": "13강''",
       "book_title": "교육학 기본",
@@ -935,6 +1025,15 @@
       "due_date": "2026-04-04",
       "due_time": null,
       "priority": "11th"
+    },
+    {
+      "notion_id": "339c2bbd-5973-81db-b8b1-eb9d7238794d",
+      "title": "데이터 베이스 워드 정리",
+      "book_title": "교과내용학 심화",
+      "completed": false,
+      "due_date": "2026-04-05",
+      "due_time": null,
+      "priority": "12th"
     },
     {
       "notion_id": "334c2bbd-5973-8181-88fa-dabfdee2ccf3",
@@ -1770,6 +1869,15 @@
       "book_title": "교육학 기본",
       "completed": true,
       "due_date": "2026-03-25",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
+      "notion_id": "339c2bbd-5973-8105-8cf9-ef30352d8a40",
+      "title": "23강''''",
+      "book_title": "교육학 기본",
+      "completed": true,
+      "due_date": "2026-04-05",
       "due_time": null,
       "priority": "1st"
     },
@@ -3349,6 +3457,6 @@
       "priority": ""
     }
   ],
-  "last_sync": "2026-04-05T02:38:45.069304+00:00",
-  "total": 372
+  "last_sync": "2026-04-05T05:01:42.107832+00:00",
+  "total": 384
 }
