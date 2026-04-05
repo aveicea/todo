@@ -1,9 +1,9 @@
 {
-  "last_sync": "2026-04-05T09:35:33.249894+00:00",
+  "last_sync": "2026-04-05T10:04:45.078446+00:00",
   "success": true,
   "stats": {
     "created_in_ms": 0,
-    "created_in_notion": 0,
+    "created_in_notion": 1,
     "updated": 0,
     "errors": 0
   },

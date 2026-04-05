@@ -19,8 +19,8 @@
       "importance": "normal"
     },
     {
-      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAe5EMq6AAA=",
-      "notion_id": "339c2bbd-5973-818b-9f6f-f5829954f6bd",
+      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAe5EMq7AAA=",
+      "notion_id": "339c2bbd-5973-8191-9d31-c425618f9734",
       "title": "투두 플래너에 일정은 제거",
       "completed": false,
       "due_date": "2026-04-05",
@@ -820,7 +820,7 @@
       "importance": "normal"
     }
   ],
-  "last_sync": "2026-04-05T09:35:33.249894+00:00",
+  "last_sync": "2026-04-05T10:04:45.078446+00:00",
   "total": 91,
   "completed": 85,
   "pending": 6
