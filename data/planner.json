@@ -388,15 +388,6 @@
       "priority": "4th"
     },
     {
-      "notion_id": "339c2bbd-5973-8129-bf8c-efff419797ea",
-      "title": "25강'''",
-      "book_title": "교육학 기본",
-      "completed": false,
-      "due_date": "2026-04-05",
-      "due_time": null,
-      "priority": "4th"
-    },
-    {
       "notion_id": "32ec2bbd-5973-8087-bdae-e296c5b5ea4e",
       "title": "9강",
       "book_title": "교육학 기본",
@@ -2647,6 +2638,15 @@
       "priority": "4th"
     },
     {
+      "notion_id": "339c2bbd-5973-8129-bf8c-efff419797ea",
+      "title": "25강'''",
+      "book_title": "교육학 기본",
+      "completed": true,
+      "due_date": "2026-04-05",
+      "due_time": null,
+      "priority": "4th"
+    },
+    {
       "notion_id": "32ec2bbd-5973-8010-ba08-ea970e1fb101",
       "title": "4강",
       "book_title": "교육학 기본",
@@ -3457,6 +3457,6 @@
       "priority": ""
     }
   ],
-  "last_sync": "2026-04-05T10:05:01.260751+00:00",
+  "last_sync": "2026-04-05T10:50:06.298273+00:00",
   "total": 384
 }
