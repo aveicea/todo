@@ -289,15 +289,6 @@
       "priority": "3rd"
     },
     {
-      "notion_id": "33ac2bbd-5973-814d-abfa-c70324434491",
-      "title": "6:00-1:00 알바",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2026-04-06",
-      "due_time": null,
-      "priority": "3rd"
-    },
-    {
       "notion_id": "2ecc2bbd-5973-8163-86a1-d48a635c3380",
       "title": "10강 자구&알고리즘'",
       "book_title": "교과내용학 기본",
@@ -2593,6 +2584,15 @@
       "priority": "3rd"
     },
     {
+      "notion_id": "33ac2bbd-5973-814d-abfa-c70324434491",
+      "title": "6:00-1:00 알바",
+      "book_title": "일정",
+      "completed": true,
+      "due_date": "2026-04-06",
+      "due_time": null,
+      "priority": "3rd"
+    },
+    {
       "notion_id": "303c2bbd-5973-8073-ae92-e4280daf05b3",
       "title": "21강 데이터베이스",
       "book_title": "교과내용학 기본",
@@ -3538,6 +3538,6 @@
       "priority": ""
     }
   ],
-  "last_sync": "2026-04-06T10:44:53.740240+00:00",
+  "last_sync": "2026-04-06T11:35:43.569938+00:00",
   "total": 393
 }
