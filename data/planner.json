@@ -811,6 +811,15 @@
       "priority": "9th"
     },
     {
+      "notion_id": "33ac2bbd-5973-8116-b6ea-e18ea3a28917",
+      "title": "14강''' (2)'''''",
+      "book_title": "교육학 기본",
+      "completed": false,
+      "due_date": "2026-04-06",
+      "due_time": null,
+      "priority": "9th"
+    },
+    {
       "notion_id": "32ec2bbd-5973-80c6-a4ea-fdeb9d8f91e4",
       "title": "25강",
       "book_title": "교육학 기본",
@@ -861,6 +870,15 @@
       "book_title": "교과내용학 심화",
       "completed": false,
       "due_date": "2026-04-05",
+      "due_time": null,
+      "priority": "10th"
+    },
+    {
+      "notion_id": "33ac2bbd-5973-8121-afa9-eac48ce1bbe8",
+      "title": "데이터 베이스 구조도 보완'",
+      "book_title": "교과내용학 심화",
+      "completed": false,
+      "due_date": "2026-04-06",
       "due_time": null,
       "priority": "10th"
     },
@@ -937,6 +955,15 @@
       "priority": "11th"
     },
     {
+      "notion_id": "33ac2bbd-5973-8185-9737-f10e9c82bca4",
+      "title": "운영체제 구조도 보완'",
+      "book_title": "교과내용학 심화",
+      "completed": false,
+      "due_date": "2026-04-06",
+      "due_time": null,
+      "priority": "11th"
+    },
+    {
       "notion_id": "334c2bbd-5973-81d1-abf3-ff2089a787d3",
       "title": "13강''",
       "book_title": "교육학 기본",
@@ -978,6 +1005,15 @@
       "book_title": "교과내용학 심화",
       "completed": false,
       "due_date": "2026-04-05",
+      "due_time": null,
+      "priority": "12th"
+    },
+    {
+      "notion_id": "33ac2bbd-5973-819b-907d-efaa08afba43",
+      "title": "데이터 베이스 워드 정리'",
+      "book_title": "교과내용학 심화",
+      "completed": false,
+      "due_date": "2026-04-06",
       "due_time": null,
       "priority": "12th"
     },
@@ -3034,6 +3070,15 @@
       "priority": "8th"
     },
     {
+      "notion_id": "33ac2bbd-5973-817e-95bf-dfda1fb3ca61",
+      "title": "29강''’ 형성평가 파트'",
+      "book_title": "교육학 기본",
+      "completed": true,
+      "due_date": "2026-04-06",
+      "due_time": null,
+      "priority": "8th"
+    },
+    {
       "notion_id": "2ebc2bbd-5973-8101-8d0a-faa8599f43b8",
       "title": "11일차",
       "book_title": "나도코딩 C언어",
@@ -3466,6 +3511,6 @@
       "priority": ""
     }
   ],
-  "last_sync": "2026-04-06T00:04:06.294241+00:00",
-  "total": 385
+  "last_sync": "2026-04-06T03:34:57.843825+00:00",
+  "total": 390
 }
