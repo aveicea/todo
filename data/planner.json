@@ -289,6 +289,15 @@
       "priority": "3rd"
     },
     {
+      "notion_id": "33bc2bbd-5973-817c-9ae8-fb27f36308bf",
+      "title": "16:30-19:20 문사공",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-04-07",
+      "due_time": null,
+      "priority": "3rd"
+    },
+    {
       "notion_id": "2ecc2bbd-5973-8163-86a1-d48a635c3380",
       "title": "10강 자구&알고리즘'",
       "book_title": "교과내용학 기본",
@@ -366,6 +375,15 @@
       "book_title": "교과내용학 기본",
       "completed": false,
       "due_date": "2026-03-11",
+      "due_time": null,
+      "priority": "4th"
+    },
+    {
+      "notion_id": "33bc2bbd-5973-81c7-9aea-f70f134600ce",
+      "title": "데이터 베이스 구조도 보완''",
+      "book_title": "교과내용학 심화",
+      "completed": false,
+      "due_date": "2026-04-07",
       "due_time": null,
       "priority": "4th"
     },
@@ -456,6 +474,15 @@
       "book_title": "교과내용학 심화",
       "completed": false,
       "due_date": "2026-04-06",
+      "due_time": null,
+      "priority": "5th"
+    },
+    {
+      "notion_id": "33bc2bbd-5973-817b-8cfc-d8e78b5e63fa",
+      "title": "데이터 베이스 워드 정리''",
+      "book_title": "교과내용학 심화",
+      "completed": false,
+      "due_date": "2026-04-07",
       "due_time": null,
       "priority": "5th"
     },
@@ -555,6 +582,15 @@
       "book_title": "교과내용학 심화",
       "completed": false,
       "due_date": "2026-04-06",
+      "due_time": null,
+      "priority": "6th"
+    },
+    {
+      "notion_id": "33bc2bbd-5973-8144-860a-c2cf2b19c67f",
+      "title": "운영체제 구조도 보완''",
+      "book_title": "교과내용학 심화",
+      "completed": false,
+      "due_date": "2026-04-07",
       "due_time": null,
       "priority": "6th"
     },
@@ -681,6 +717,15 @@
       "book_title": "교육학 기본",
       "completed": false,
       "due_date": "2026-03-30",
+      "due_time": null,
+      "priority": "7th"
+    },
+    {
+      "notion_id": "33bc2bbd-5973-81a3-9cd2-e82b2be0ffdf",
+      "title": "14강''' (2)''''''",
+      "book_title": "교육학 기본",
+      "completed": false,
+      "due_date": "2026-04-07",
       "due_time": null,
       "priority": "7th"
     },
@@ -1702,15 +1747,6 @@
       "priority": ""
     },
     {
-      "notion_id": "31fc2bbd-5973-805b-b414-c0e271c8db0d",
-      "title": "13:00-16:00 스터디 - 중정보",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2026-04-07",
-      "due_time": null,
-      "priority": ""
-    },
-    {
       "notion_id": "32fc2bbd-5973-80ef-ba5f-f07eeb49c64a",
       "title": "교생 시작",
       "book_title": "일정",
@@ -1932,6 +1968,15 @@
       "book_title": "스터디",
       "completed": true,
       "due_date": "2026-03-18",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
+      "notion_id": "33bc2bbd-5973-8104-978f-eddccbf706e3",
+      "title": "알고리즘 문제 풀이'",
+      "book_title": "스터디",
+      "completed": true,
+      "due_date": "2026-04-07",
       "due_time": null,
       "priority": "1st"
     },
@@ -2382,6 +2427,15 @@
       "book_title": "스터디",
       "completed": true,
       "due_date": "2026-03-31",
+      "due_time": null,
+      "priority": "2nd"
+    },
+    {
+      "notion_id": "31fc2bbd-5973-805b-b414-c0e271c8db0d",
+      "title": "13:00-16:00 스터디 - 중정보",
+      "book_title": "일정",
+      "completed": true,
+      "due_date": "2026-04-07",
       "due_time": null,
       "priority": "2nd"
     },
@@ -3538,6 +3592,6 @@
       "priority": ""
     }
   ],
-  "last_sync": "2026-04-07T07:00:26.228430+00:00",
-  "total": 393
+  "last_sync": "2026-04-07T08:15:33.821447+00:00",
+  "total": 399
 }

@@ -1,15 +1,6 @@
 {
   "tasks": [
     {
-      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAe3t7GDAAA=",
-      "notion_id": "334c2bbd-5973-817a-b0c5-e72bb764345e",
-      "title": "예약?",
-      "completed": false,
-      "due_date": "2026-04-01",
-      "due_time": null,
-      "importance": "normal"
-    },
-    {
       "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAe5EMq1AAA=",
       "notion_id": "337c2bbd-5973-8113-a8f6-ce5b61f03714",
       "title": "다이어리",
@@ -19,29 +10,11 @@
       "importance": "normal"
     },
     {
-      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAe5EMq5AAA=",
-      "notion_id": "338c2bbd-5973-81e7-8d3e-d08201c251dd",
-      "title": "데일리 체크",
-      "completed": false,
-      "due_date": "2026-04-05",
-      "due_time": null,
-      "importance": "normal"
-    },
-    {
       "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAe5EMq4AAA=",
       "notion_id": "338c2bbd-5973-812b-9f9d-ebeb04abceef",
       "title": "다이어리",
       "completed": false,
       "due_date": "2026-04-05",
-      "due_time": null,
-      "importance": "normal"
-    },
-    {
-      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAe5EMq9AAA=",
-      "notion_id": "339c2bbd-5973-8158-a916-cc66b1850afb",
-      "title": "데일리 체크",
-      "completed": false,
-      "due_date": "2026-04-06",
       "due_time": null,
       "importance": "normal"
     },
@@ -60,6 +33,15 @@
       "title": "우리적금 출석체크",
       "completed": false,
       "due_date": "2026-04-06",
+      "due_time": null,
+      "importance": "normal"
+    },
+    {
+      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAe5EMrAAAA=",
+      "notion_id": "33bc2bbd-5973-819f-9ba5-df6b1b51dda9",
+      "title": "밀린 식단 기록",
+      "completed": false,
+      "due_date": "2026-04-07",
       "due_time": null,
       "importance": "normal"
     },
@@ -775,6 +757,15 @@
       "importance": "normal"
     },
     {
+      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAe3t7GDAAA=",
+      "notion_id": "334c2bbd-5973-817a-b0c5-e72bb764345e",
+      "title": "예약?",
+      "completed": true,
+      "due_date": "2026-04-01",
+      "due_time": null,
+      "importance": "normal"
+    },
+    {
       "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAe3t7GCAAA=",
       "notion_id": "334c2bbd-5973-8168-b10d-ca1e540e578b",
       "title": "밀린 식단 기록",
@@ -845,10 +836,28 @@
       "due_date": "2026-04-04",
       "due_time": null,
       "importance": "normal"
+    },
+    {
+      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAe5EMq5AAA=",
+      "notion_id": "338c2bbd-5973-81e7-8d3e-d08201c251dd",
+      "title": "데일리 체크",
+      "completed": true,
+      "due_date": "2026-04-05",
+      "due_time": null,
+      "importance": "normal"
+    },
+    {
+      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAe5EMq9AAA=",
+      "notion_id": "339c2bbd-5973-8158-a916-cc66b1850afb",
+      "title": "데일리 체크",
+      "completed": true,
+      "due_date": "2026-04-06",
+      "due_time": null,
+      "importance": "normal"
     }
   ],
-  "last_sync": "2026-04-07T07:00:20.154011+00:00",
-  "total": 94,
-  "completed": 85,
-  "pending": 9
+  "last_sync": "2026-04-07T08:15:25.616521+00:00",
+  "total": 95,
+  "completed": 88,
+  "pending": 7
 }
