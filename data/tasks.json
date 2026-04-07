@@ -37,13 +37,31 @@
       "importance": "normal"
     },
     {
+      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAe5EMrCAAA=",
+      "notion_id": "33bc2bbd-5973-817d-bf0d-d8780e5e8b39",
+      "title": "데일리 로그 블록 추가 삭제",
+      "completed": false,
+      "due_date": "2026-04-07",
+      "due_time": null,
+      "importance": "normal"
+    },
+    {
+      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAe5EMrBAAA=",
+      "notion_id": "33bc2bbd-5973-814f-af9a-c5a9f4296139",
+      "title": "날씨 속성으로 빼기",
+      "completed": false,
+      "due_date": "2026-04-07",
+      "due_time": null,
+      "importance": "high"
+    },
+    {
       "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAe5EMrAAAA=",
       "notion_id": "33bc2bbd-5973-819f-9ba5-df6b1b51dda9",
       "title": "밀린 식단 기록",
       "completed": false,
       "due_date": "2026-04-07",
       "due_time": null,
-      "importance": "normal"
+      "importance": "high"
     },
     {
       "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAe5EMq-AAA=",
@@ -856,8 +874,8 @@
       "importance": "normal"
     }
   ],
-  "last_sync": "2026-04-07T10:36:11.008329+00:00",
-  "total": 95,
+  "last_sync": "2026-04-07T11:33:01.436385+00:00",
+  "total": 97,
   "completed": 88,
-  "pending": 7
+  "pending": 9
 }

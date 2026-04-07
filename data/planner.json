@@ -289,15 +289,6 @@
       "priority": "3rd"
     },
     {
-      "notion_id": "33bc2bbd-5973-817c-9ae8-fb27f36308bf",
-      "title": "16:30-19:20 문사공",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2026-04-07",
-      "due_time": null,
-      "priority": "3rd"
-    },
-    {
       "notion_id": "2ecc2bbd-5973-8163-86a1-d48a635c3380",
       "title": "10강 자구&알고리즘'",
       "book_title": "교과내용학 기본",
@@ -2629,6 +2620,15 @@
       "priority": "3rd"
     },
     {
+      "notion_id": "33bc2bbd-5973-817c-9ae8-fb27f36308bf",
+      "title": "16:30-19:20 문사공",
+      "book_title": "일정",
+      "completed": true,
+      "due_date": "2026-04-07",
+      "due_time": null,
+      "priority": "3rd"
+    },
+    {
       "notion_id": "339c2bbd-5973-8156-b562-ce4fb066e09b",
       "title": "5:00 저녁",
       "book_title": "일정",
@@ -3592,6 +3592,6 @@
       "priority": ""
     }
   ],
-  "last_sync": "2026-04-07T10:36:17.414164+00:00",
+  "last_sync": "2026-04-07T11:33:07.925930+00:00",
   "total": 399
 }
