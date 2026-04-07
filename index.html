@@ -281,7 +281,7 @@ let currentFilter = 'today';
 let editingTaskId = null;
 let editingSource = 'todo'; // 'todo' | 'planner'
 let sortAsc = true;
-let collapsedGroups = { overdue: false, pending: false, done: false, planner: false };
+let collapsedGroups = { overdue: true, pending: false, done: true, planner: true };
 let browseDate = null; // null = 오늘
 
 function getBrowseDate() { return browseDate || todayStr(); }
@@ -449,7 +449,7 @@ function renderTasks() {
     const overdue = pending.filter(t => t.due_date && t.due_date < browseDay);
     const notOverdue = pending.filter(t => !t.due_date || t.due_date >= browseDay);
     const pc = collapsedGroups.pending;
-    html += `<div class="task-group-label" onclick="toggleGroup('pending')">미완료 ${notOverdue.length}<span class="group-chevron">${pc?'∨':'∧'}</span></div>`;
+    html += `<div class="task-group-label" onclick="toggleGroup('pending')">미완 ${notOverdue.length}<span class="group-chevron">${pc?'∨':'∧'}</span></div>`;
     if (!pc) html += notOverdue.length ? notOverdue.map(taskHTML).join('') : '<div style="height:6px"></div>';
     if (overdue.length) {
       const oc = collapsedGroups.overdue;
@@ -487,7 +487,7 @@ function renderTasks() {
     }
   } else if (currentFilter === 'all') {
     const pc = collapsedGroups.pending;
-    html += `<div class="task-group-label" onclick="toggleGroup('pending')">미완료 ${pending.length}<span class="group-chevron">${pc?'∨':'∧'}</span></div>`;
+    html += `<div class="task-group-label" onclick="toggleGroup('pending')">미완 ${pending.length}<span class="group-chevron">${pc?'∨':'∧'}</span></div>`;
     if (!pc) html += pending.length ? pending.map(taskHTML).join('') : '<div style="height:6px"></div>';
     const dc = collapsedGroups.done;
     html += `<div class="task-group-label" onclick="toggleGroup('done')">완료 ${done.length}<span class="group-chevron">${dc?'∨':'∧'}</span></div>`;
@@ -497,7 +497,7 @@ function renderTasks() {
     const overduePending = tasks.filter(t => !t.completed && t.due_date && t.due_date < today);
     const restPending = tasks.filter(t => !t.completed && (!t.due_date || t.due_date >= today));
     const pc = collapsedGroups.pending;
-    html += `<div class="task-group-label" onclick="toggleGroup('pending')">미완료 ${restPending.length}<span class="group-chevron">${pc?'∨':'∧'}</span></div>`;
+    html += `<div class="task-group-label" onclick="toggleGroup('pending')">미완 ${restPending.length}<span class="group-chevron">${pc?'∨':'∧'}</span></div>`;
     if (!pc) html += restPending.length ? restPending.sort(sortFn).map(taskHTML).join('') : '<div style="height:6px"></div>';
     if (overduePending.length) {
       const oc = collapsedGroups.overdue;
