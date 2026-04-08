@@ -91,6 +91,33 @@
       "importance": "normal"
     },
     {
+      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAe5EMrHAAA=",
+      "notion_id": "33cc2bbd-5973-819e-9767-c3a2ac748f08",
+      "title": "급식비 내고 문자",
+      "completed": false,
+      "due_date": "2026-04-09",
+      "due_time": "01:00",
+      "importance": "normal"
+    },
+    {
+      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAe5EMrGAAA=",
+      "notion_id": "33cc2bbd-5973-8197-863c-f6f831d243e9",
+      "title": "데일리 체크",
+      "completed": false,
+      "due_date": "2026-04-09",
+      "due_time": null,
+      "importance": "normal"
+    },
+    {
+      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAe5EMrFAAA=",
+      "notion_id": "33cc2bbd-5973-81dd-9609-c73e8614eab0",
+      "title": "다이어리",
+      "completed": false,
+      "due_date": "2026-04-09",
+      "due_time": null,
+      "importance": "normal"
+    },
+    {
       "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAell2cWAAA=",
       "notion_id": "311c2bbd-5973-8198-88eb-df671fe340c3",
       "title": "키레나 형광펜 페일 그린",
@@ -892,8 +919,8 @@
       "importance": "high"
     }
   ],
-  "last_sync": "2026-04-08T14:11:59.278032+00:00",
-  "total": 99,
+  "last_sync": "2026-04-08T15:43:13.538226+00:00",
+  "total": 102,
   "completed": 89,
-  "pending": 10
+  "pending": 13
 }
