@@ -163,15 +163,6 @@
       "priority": "2nd"
     },
     {
-      "notion_id": "33cc2bbd-5973-819b-822f-f9b68e300515",
-      "title": "데이터 베이스 워드 정리'''",
-      "book_title": "교과내용학 심화",
-      "completed": false,
-      "due_date": "2026-04-08",
-      "due_time": null,
-      "priority": "2nd"
-    },
-    {
       "notion_id": "332c2bbd-5973-81f1-acb2-fe4e778a5b2e",
       "title": "9강'",
       "book_title": "교육학 기본",
@@ -2386,6 +2377,15 @@
       "priority": "2nd"
     },
     {
+      "notion_id": "33cc2bbd-5973-819b-822f-f9b68e300515",
+      "title": "데이터 베이스 워드 정리'''",
+      "book_title": "교과내용학 심화",
+      "completed": true,
+      "due_date": "2026-04-08",
+      "due_time": null,
+      "priority": "2nd"
+    },
+    {
       "notion_id": "336c2bbd-5973-8171-b0a6-e1c6aef4952b",
       "title": "19강'",
       "book_title": "교육학 기본",
@@ -3655,6 +3655,6 @@
       "priority": ""
     }
   ],
-  "last_sync": "2026-04-08T11:36:00.953270+00:00",
+  "last_sync": "2026-04-08T12:38:26.542926+00:00",
   "total": 406
 }
