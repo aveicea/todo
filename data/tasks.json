@@ -46,15 +46,6 @@
       "importance": "normal"
     },
     {
-      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAe5EMrBAAA=",
-      "notion_id": "33bc2bbd-5973-814f-af9a-c5a9f4296139",
-      "title": "날씨 속성으로 빼기",
-      "completed": false,
-      "due_date": "2026-04-07",
-      "due_time": null,
-      "importance": "high"
-    },
-    {
       "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAe5EMrAAAA=",
       "notion_id": "33bc2bbd-5973-819f-9ba5-df6b1b51dda9",
       "title": "밀린 식단 기록",
@@ -890,10 +881,19 @@
       "due_date": "2026-04-06",
       "due_time": null,
       "importance": "normal"
+    },
+    {
+      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAe5EMrBAAA=",
+      "notion_id": "33bc2bbd-5973-814f-af9a-c5a9f4296139",
+      "title": "날씨 속성으로 빼기",
+      "completed": true,
+      "due_date": "2026-04-07",
+      "due_time": null,
+      "importance": "high"
     }
   ],
-  "last_sync": "2026-04-08T10:38:42.271125+00:00",
+  "last_sync": "2026-04-08T11:35:56.215182+00:00",
   "total": 99,
-  "completed": 88,
-  "pending": 11
+  "completed": 89,
+  "pending": 10
 }
