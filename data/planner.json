@@ -1765,6 +1765,15 @@
       "priority": ""
     },
     {
+      "notion_id": "33cc2bbd-5973-80d2-9b81-f8cdb45ce4a0",
+      "title": "—————————낮—————————",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-04-08",
+      "due_time": null,
+      "priority": ""
+    },
+    {
       "notion_id": "32fc2bbd-5973-80ef-ba5f-f07eeb49c64a",
       "title": "교생 시작",
       "book_title": "일정",
@@ -3628,6 +3637,6 @@
       "priority": ""
     }
   ],
-  "last_sync": "2026-04-08T09:34:56.233507+00:00",
-  "total": 403
+  "last_sync": "2026-04-08T10:38:49.024138+00:00",
+  "total": 404
 }
