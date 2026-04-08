@@ -73,6 +73,33 @@
       "priority": "1st"
     },
     {
+      "notion_id": "33cc2bbd-5973-80d6-b703-d97bb0d475cf",
+      "title": "———————— 저녁—————————",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-04-09",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
+      "notion_id": "33cc2bbd-5973-8033-88fb-f2a8b928e33b",
+      "title": "—————————낮—————————",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-04-09",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
+      "notion_id": "33cc2bbd-5973-80d7-ad83-f8764c05929d",
+      "title": "—————————밤—————————",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-04-09",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
       "notion_id": "2ecc2bbd-5973-81d2-bf66-d3e74e876157",
       "title": "일제강점기 기출'",
       "book_title": "한능검",
@@ -3655,6 +3682,6 @@
       "priority": ""
     }
   ],
-  "last_sync": "2026-04-08T15:43:19.889561+00:00",
-  "total": 406
+  "last_sync": "2026-04-08T16:44:50.835234+00:00",
+  "total": 409
 }
