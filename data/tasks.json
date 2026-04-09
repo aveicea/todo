@@ -55,15 +55,6 @@
       "importance": "normal"
     },
     {
-      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAe5EMrGAAA=",
-      "notion_id": "33cc2bbd-5973-8197-863c-f6f831d243e9",
-      "title": "데일리 체크",
-      "completed": false,
-      "due_date": "2026-04-09",
-      "due_time": null,
-      "importance": "normal"
-    },
-    {
       "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAe5EMrFAAA=",
       "notion_id": "33cc2bbd-5973-81dd-9609-c73e8614eab0",
       "title": "다이어리",
@@ -935,10 +926,19 @@
       "due_date": "2026-04-09",
       "due_time": "01:00",
       "importance": "normal"
+    },
+    {
+      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAe5EMrGAAA=",
+      "notion_id": "33cc2bbd-5973-8197-863c-f6f831d243e9",
+      "title": "데일리 체크",
+      "completed": true,
+      "due_date": "2026-04-09",
+      "due_time": null,
+      "importance": "normal"
     }
   ],
-  "last_sync": "2026-04-09T17:13:24.559623+00:00",
+  "last_sync": "2026-04-09T18:10:30.186523+00:00",
   "total": 104,
-  "completed": 93,
-  "pending": 11
+  "completed": 94,
+  "pending": 10
 }
