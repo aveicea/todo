@@ -73,6 +73,24 @@
       "importance": "normal"
     },
     {
+      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAe9ZwzvAAA=",
+      "notion_id": "33dc2bbd-5973-81df-aff5-f6767eef87ab",
+      "title": "데일리 체크",
+      "completed": false,
+      "due_date": "2026-04-10",
+      "due_time": null,
+      "importance": "normal"
+    },
+    {
+      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAe9ZwzuAAA=",
+      "notion_id": "33dc2bbd-5973-8143-ac56-c2ad264f99b1",
+      "title": "다이어리",
+      "completed": false,
+      "due_date": "2026-04-10",
+      "due_time": null,
+      "importance": "normal"
+    },
+    {
       "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAeq9LADAAA=",
       "notion_id": "322c2bbd-5973-8196-a6fa-d8f2e5d4ae2d",
       "title": "우리적금 출석체크",
@@ -919,8 +937,8 @@
       "importance": "normal"
     }
   ],
-  "last_sync": "2026-04-09T14:28:14.999840+00:00",
-  "total": 102,
+  "last_sync": "2026-04-09T16:00:38.007493+00:00",
+  "total": 104,
   "completed": 93,
-  "pending": 9
+  "pending": 11
 }
