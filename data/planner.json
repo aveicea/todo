@@ -208,6 +208,15 @@
       "priority": "2nd"
     },
     {
+      "notion_id": "33dc2bbd-5973-8086-b3ed-c249f8dcefd4",
+      "title": "낮",
+      "book_title": "루틴",
+      "completed": false,
+      "due_date": null,
+      "due_time": null,
+      "priority": "2nd"
+    },
+    {
       "notion_id": "2e9c2bbd-5973-8119-9bd3-dd6e0dc599a6",
       "title": "10강 자구&알고리즘",
       "book_title": "교과내용학 기본",
@@ -276,15 +285,6 @@
       "book_title": "교육학 기본",
       "completed": false,
       "due_date": "2026-03-30",
-      "due_time": null,
-      "priority": "3rd"
-    },
-    {
-      "notion_id": "33dc2bbd-5973-8141-9756-eb8127830dd0",
-      "title": "32강'",
-      "book_title": "교육학 기본",
-      "completed": false,
-      "due_date": "2026-04-09",
       "due_time": null,
       "priority": "3rd"
     },
@@ -532,15 +532,6 @@
       "priority": "5th"
     },
     {
-      "notion_id": "33dc2bbd-5973-8155-9207-c1145edd067b",
-      "title": "34강'",
-      "book_title": "교육학 기본",
-      "completed": false,
-      "due_date": "2026-04-09",
-      "due_time": null,
-      "priority": "5th"
-    },
-    {
       "notion_id": "2e7c2bbd-5973-8068-829b-f92eab19c37e",
       "title": "6일차",
       "book_title": "나도코딩 C언어",
@@ -550,11 +541,29 @@
       "priority": "5th"
     },
     {
+      "notion_id": "33cc2bbd-5973-80d7-ad83-f8764c05929d",
+      "title": "밤",
+      "book_title": "루틴",
+      "completed": false,
+      "due_date": null,
+      "due_time": null,
+      "priority": "5th"
+    },
+    {
       "notion_id": "31dc2bbd-5973-811c-b4fc-fb0562e674d4",
       "title": "인기초 교과서 분석 2단원 (2)' (3)",
       "book_title": "스터디",
       "completed": false,
       "due_date": "2026-03-08",
+      "due_time": null,
+      "priority": "5th"
+    },
+    {
+      "notion_id": "33dc2bbd-5973-816b-9891-f54bc4676a31",
+      "title": "자료구조 내 파트 대략 정리",
+      "book_title": "스터디",
+      "completed": false,
+      "due_date": "2026-04-09",
       "due_time": null,
       "priority": "5th"
     },
@@ -703,18 +712,9 @@
       "priority": "6th"
     },
     {
-      "notion_id": "33cc2bbd-5973-8033-88fb-f2a8b928e33b",
-      "title": "낮",
-      "book_title": "루틴",
-      "completed": false,
-      "due_date": null,
-      "due_time": null,
-      "priority": "6th"
-    },
-    {
-      "notion_id": "33dc2bbd-5973-816b-9891-f54bc4676a31",
-      "title": "자료구조 내 파트 대략 정리",
-      "book_title": "스터디",
+      "notion_id": "33dc2bbd-5973-816a-b9c8-fb7c539ab3b7",
+      "title": "동료평가",
+      "book_title": "일정",
       "completed": false,
       "due_date": "2026-04-09",
       "due_time": null,
@@ -847,6 +847,15 @@
       "priority": "7th"
     },
     {
+      "notion_id": "33cc2bbd-5973-80d6-b703-d97bb0d475cf",
+      "title": "저녁",
+      "book_title": "루틴",
+      "completed": false,
+      "due_date": null,
+      "due_time": null,
+      "priority": "7th"
+    },
+    {
       "notion_id": "31ac2bbd-5973-8180-bcd6-cf4cf801a71a",
       "title": "인기초 교과서 분석 2단원 (2)",
       "book_title": "스터디",
@@ -937,8 +946,8 @@
       "priority": "8th"
     },
     {
-      "notion_id": "33dc2bbd-5973-8193-94c8-eaf9f34f0f66",
-      "title": "35강'",
+      "notion_id": "33dc2bbd-5973-8155-9207-c1145edd067b",
+      "title": "34강'",
       "book_title": "교육학 기본",
       "completed": false,
       "due_date": "2026-04-09",
@@ -1009,8 +1018,8 @@
       "priority": "9th"
     },
     {
-      "notion_id": "33dc2bbd-5973-810b-8e36-ff556eb5df31",
-      "title": "36강'",
+      "notion_id": "33dc2bbd-5973-8193-94c8-eaf9f34f0f66",
+      "title": "35강'",
       "book_title": "교육학 기본",
       "completed": false,
       "due_date": "2026-04-09",
@@ -1032,15 +1041,6 @@
       "book_title": "나도코딩 C언어",
       "completed": false,
       "due_date": "2026-01-17",
-      "due_time": null,
-      "priority": "9th"
-    },
-    {
-      "notion_id": "33cc2bbd-5973-80d6-b703-d97bb0d475cf",
-      "title": "저녁",
-      "book_title": "루틴",
-      "completed": false,
-      "due_date": null,
       "due_time": null,
       "priority": "9th"
     },
@@ -1099,20 +1099,20 @@
       "priority": "10th"
     },
     {
+      "notion_id": "33dc2bbd-5973-810b-8e36-ff556eb5df31",
+      "title": "36강'",
+      "book_title": "교육학 기본",
+      "completed": false,
+      "due_date": "2026-04-09",
+      "due_time": null,
+      "priority": "10th"
+    },
+    {
       "notion_id": "2ecc2bbd-5973-8146-afdf-cd284767e93d",
       "title": "14일차",
       "book_title": "나도코딩 C언어",
       "completed": false,
       "due_date": "2026-01-27",
-      "due_time": null,
-      "priority": "10th"
-    },
-    {
-      "notion_id": "33dc2bbd-5973-816a-b9c8-fb7c539ab3b7",
-      "title": "동료평가",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2026-04-09",
       "due_time": null,
       "priority": "10th"
     },
@@ -1333,15 +1333,6 @@
       "priority": "14th"
     },
     {
-      "notion_id": "33cc2bbd-5973-80d7-ad83-f8764c05929d",
-      "title": "밤",
-      "book_title": "루틴",
-      "completed": false,
-      "due_date": null,
-      "due_time": null,
-      "priority": "14th"
-    },
-    {
       "notion_id": "32ec2bbd-5973-802a-b187-cbf7fb3b279f",
       "title": "41강",
       "book_title": "교육학 기본",
@@ -1360,20 +1351,38 @@
       "priority": "16th"
     },
     {
-      "notion_id": "33dc2bbd-5973-8086-b3ed-c249f8dcefd4",
-      "title": "예비",
-      "book_title": "루틴",
-      "completed": false,
-      "due_date": null,
-      "due_time": null,
-      "priority": "16th"
-    },
-    {
       "notion_id": "32ec2bbd-5973-8091-961d-e6266836c6ae",
       "title": "43강",
       "book_title": "교육학 기본",
       "completed": false,
       "due_date": "2026-04-09",
+      "due_time": null,
+      "priority": "17th"
+    },
+    {
+      "notion_id": "33cc2bbd-5973-8033-88fb-f2a8b928e33b",
+      "title": "예비",
+      "book_title": "루틴",
+      "completed": false,
+      "due_date": null,
+      "due_time": null,
+      "priority": "17th"
+    },
+    {
+      "notion_id": "33dc2bbd-5973-80e1-ae09-c6962d24cc8e",
+      "title": "예비",
+      "book_title": "루틴",
+      "completed": false,
+      "due_date": null,
+      "due_time": null,
+      "priority": "17th"
+    },
+    {
+      "notion_id": "33dc2bbd-5973-812e-8b2b-f4573f13025b",
+      "title": "예비",
+      "book_title": "루틴",
+      "completed": false,
+      "due_date": null,
       "due_time": null,
       "priority": "17th"
     },
@@ -1802,15 +1811,6 @@
     },
     {
       "notion_id": "33dc2bbd-5973-8056-ab71-f1d7c2e8678c",
-      "title": "예비",
-      "book_title": "루틴",
-      "completed": false,
-      "due_date": null,
-      "due_time": null,
-      "priority": ""
-    },
-    {
-      "notion_id": "33dc2bbd-5973-80e1-ae09-c6962d24cc8e",
       "title": "예비",
       "book_title": "루틴",
       "completed": false,
@@ -2733,6 +2733,15 @@
       "book_title": "교육학 기본",
       "completed": true,
       "due_date": "2026-04-02",
+      "due_time": null,
+      "priority": "3rd"
+    },
+    {
+      "notion_id": "33dc2bbd-5973-8141-9756-eb8127830dd0",
+      "title": "32강'",
+      "book_title": "교육학 기본",
+      "completed": true,
+      "due_date": "2026-04-09",
       "due_time": null,
       "priority": "3rd"
     },
@@ -3772,6 +3781,6 @@
       "priority": ""
     }
   ],
-  "last_sync": "2026-04-09T07:06:41.729591+00:00",
-  "total": 419
+  "last_sync": "2026-04-09T08:44:33.142129+00:00",
+  "total": 420
 }
