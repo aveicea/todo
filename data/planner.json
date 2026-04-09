@@ -1936,7 +1936,7 @@
       "priority": ""
     },
     {
-      "notion_id": "33dc2bbd-5973-8056-ab71-f1d7c2e8678c",
+      "notion_id": "33dc2bbd-5973-81e8-a27f-ca102cb7ee9a",
       "title": "예비",
       "book_title": "루틴",
       "completed": false,
@@ -1945,7 +1945,7 @@
       "priority": ""
     },
     {
-      "notion_id": "33dc2bbd-5973-81e8-a27f-ca102cb7ee9a",
+      "notion_id": "33dc2bbd-5973-8056-ab71-f1d7c2e8678c",
       "title": "예비",
       "book_title": "루틴",
       "completed": false,
@@ -3916,6 +3916,6 @@
       "priority": ""
     }
   ],
-  "last_sync": "2026-04-09T21:07:36.896612+00:00",
+  "last_sync": "2026-04-09T21:55:13.964986+00:00",
   "total": 435
 }
