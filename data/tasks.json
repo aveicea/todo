@@ -28,24 +28,6 @@
       "importance": "normal"
     },
     {
-      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAeq9LADAAA=",
-      "notion_id": "322c2bbd-5973-8196-a6fa-d8f2e5d4ae2d",
-      "title": "우리적금 출석체크",
-      "completed": false,
-      "due_date": "2026-04-06",
-      "due_time": null,
-      "importance": "normal"
-    },
-    {
-      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAe5EMrCAAA=",
-      "notion_id": "33bc2bbd-5973-817d-bf0d-d8780e5e8b39",
-      "title": "데일리 로그 블록 추가 삭제",
-      "completed": false,
-      "due_date": "2026-04-07",
-      "due_time": null,
-      "importance": "normal"
-    },
-    {
       "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAe5EMrAAAA=",
       "notion_id": "33bc2bbd-5973-819f-9ba5-df6b1b51dda9",
       "title": "밀린 식단 기록",
@@ -53,15 +35,6 @@
       "due_date": "2026-04-07",
       "due_time": null,
       "importance": "high"
-    },
-    {
-      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAe5EMq-AAA=",
-      "notion_id": "33ac2bbd-5973-8109-80af-c3fd30cdad97",
-      "title": "데일리 체크",
-      "completed": false,
-      "due_date": "2026-04-07",
-      "due_time": null,
-      "importance": "normal"
     },
     {
       "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAe5EMq_AAA=",
@@ -73,30 +46,12 @@
       "importance": "normal"
     },
     {
-      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAe5EMrEAAA=",
-      "notion_id": "33bc2bbd-5973-8114-a62a-c1e571b91e2a",
-      "title": "데일리 체크",
-      "completed": false,
-      "due_date": "2026-04-08",
-      "due_time": null,
-      "importance": "normal"
-    },
-    {
       "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAe5EMrDAAA=",
       "notion_id": "33bc2bbd-5973-815f-a667-f676247985c9",
       "title": "다이어리",
       "completed": false,
       "due_date": "2026-04-08",
       "due_time": null,
-      "importance": "normal"
-    },
-    {
-      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAe5EMrHAAA=",
-      "notion_id": "33cc2bbd-5973-819e-9767-c3a2ac748f08",
-      "title": "급식비 내고 문자",
-      "completed": false,
-      "due_date": "2026-04-09",
-      "due_time": "01:00",
       "importance": "normal"
     },
     {
@@ -114,6 +69,15 @@
       "title": "다이어리",
       "completed": false,
       "due_date": "2026-04-09",
+      "due_time": null,
+      "importance": "normal"
+    },
+    {
+      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAeq9LADAAA=",
+      "notion_id": "322c2bbd-5973-8196-a6fa-d8f2e5d4ae2d",
+      "title": "우리적금 출석체크",
+      "completed": false,
+      "due_date": "2026-04-13",
       "due_time": null,
       "importance": "normal"
     },
@@ -910,6 +874,15 @@
       "importance": "normal"
     },
     {
+      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAe9ZwztAAA=",
+      "notion_id": "33dc2bbd-5973-81e6-9e64-d4db3c2c5aca",
+      "title": "우리적금 출석체크",
+      "completed": true,
+      "due_date": "2026-04-06",
+      "due_time": null,
+      "importance": "normal"
+    },
+    {
       "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAe5EMrBAAA=",
       "notion_id": "33bc2bbd-5973-814f-af9a-c5a9f4296139",
       "title": "날씨 속성으로 빼기",
@@ -917,10 +890,37 @@
       "due_date": "2026-04-07",
       "due_time": null,
       "importance": "high"
+    },
+    {
+      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAe5EMq-AAA=",
+      "notion_id": "33ac2bbd-5973-8109-80af-c3fd30cdad97",
+      "title": "데일리 체크",
+      "completed": true,
+      "due_date": "2026-04-07",
+      "due_time": null,
+      "importance": "normal"
+    },
+    {
+      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAe5EMrEAAA=",
+      "notion_id": "33bc2bbd-5973-8114-a62a-c1e571b91e2a",
+      "title": "데일리 체크",
+      "completed": true,
+      "due_date": "2026-04-08",
+      "due_time": null,
+      "importance": "normal"
+    },
+    {
+      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAe5EMrHAAA=",
+      "notion_id": "33cc2bbd-5973-819e-9767-c3a2ac748f08",
+      "title": "급식비 내고 문자",
+      "completed": true,
+      "due_date": "2026-04-09",
+      "due_time": "01:00",
+      "importance": "normal"
     }
   ],
-  "last_sync": "2026-04-09T01:09:31.596273+00:00",
+  "last_sync": "2026-04-09T04:03:22.031575+00:00",
   "total": 102,
-  "completed": 89,
-  "pending": 13
+  "completed": 93,
+  "pending": 9
 }
