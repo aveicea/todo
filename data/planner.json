@@ -74,7 +74,7 @@
     },
     {
       "notion_id": "33dc2bbd-5973-8086-b3ed-c249f8dcefd4",
-      "title": "낮",
+      "title": "도서관 ㄱㄱ",
       "book_title": "루틴",
       "completed": false,
       "due_date": null,
@@ -307,9 +307,18 @@
       "priority": "3rd"
     },
     {
+      "notion_id": "33dc2bbd-5973-81e8-a27f-ca102cb7ee9a",
+      "title": "4시에 클로드 리셋",
+      "book_title": "루틴",
+      "completed": false,
+      "due_date": null,
+      "due_time": null,
+      "priority": "3rd"
+    },
+    {
       "notion_id": "33dc2bbd-5973-81c6-86dc-db6b242d8550",
       "title": "동료평가'",
-      "book_title": "일정",
+      "book_title": "할일",
       "completed": false,
       "due_date": "2026-04-10",
       "due_time": null,
@@ -452,7 +461,7 @@
     },
     {
       "notion_id": "33dc2bbd-5973-812e-8b2b-f4573f13025b",
-      "title": "예린이랑 저녁",
+      "title": "5시 예린이랑 저녁, 자리 연장",
       "book_title": "루틴",
       "completed": false,
       "due_date": null,
@@ -1019,7 +1028,7 @@
     },
     {
       "notion_id": "33cc2bbd-5973-80d6-b703-d97bb0d475cf",
-      "title": "밤",
+      "title": "밤 .. 스터디 녹음 확인",
       "book_title": "루틴",
       "completed": false,
       "due_date": null,
@@ -1477,15 +1486,6 @@
       "priority": "15th"
     },
     {
-      "notion_id": "33dc2bbd-5973-80e1-ae09-c6962d24cc8e",
-      "title": "예비",
-      "book_title": "루틴",
-      "completed": false,
-      "due_date": null,
-      "due_time": null,
-      "priority": "15th"
-    },
-    {
       "notion_id": "32ec2bbd-5973-8072-9bd1-d5125f4c4b9c",
       "title": "42강",
       "book_title": "교육학 기본",
@@ -1504,7 +1504,7 @@
       "priority": "16th"
     },
     {
-      "notion_id": "33dc2bbd-5973-81e8-a27f-ca102cb7ee9a",
+      "notion_id": "33dc2bbd-5973-80e1-ae09-c6962d24cc8e",
       "title": "예비",
       "book_title": "루틴",
       "completed": false,
@@ -1948,6 +1948,15 @@
       "notion_id": "32ec2bbd-5973-80c5-a62b-cfe19dec1fe3",
       "title": "69강",
       "book_title": "교육학 기본",
+      "completed": false,
+      "due_date": null,
+      "due_time": null,
+      "priority": ""
+    },
+    {
+      "notion_id": "33ec2bbd-5973-819a-ad93-e91cec067cad",
+      "title": "예비",
+      "book_title": "루틴",
       "completed": false,
       "due_date": null,
       "due_time": null,
@@ -3925,6 +3934,6 @@
       "priority": ""
     }
   ],
-  "last_sync": "2026-04-10T04:14:07.443061+00:00",
-  "total": 436
+  "last_sync": "2026-04-10T06:08:25.813601+00:00",
+  "total": 437
 }
