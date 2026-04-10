@@ -217,15 +217,6 @@
       "priority": "2nd"
     },
     {
-      "notion_id": "33ec2bbd-5973-800f-bf04-cf3af7fa2de9",
-      "title": "자료구조s2 스택과 큐",
-      "book_title": "전공 스터디",
-      "completed": false,
-      "due_date": "2026-04-10",
-      "due_time": null,
-      "priority": "2nd"
-    },
-    {
       "notion_id": "2e9c2bbd-5973-8119-9bd3-dd6e0dc599a6",
       "title": "10강 자구&알고리즘",
       "book_title": "교과내용학 기본",
@@ -730,15 +721,6 @@
       "priority": "6th"
     },
     {
-      "notion_id": "33ec2bbd-5973-80c1-b739-d23dc2a00519",
-      "title": "자료구조 내 파트 다시 정리",
-      "book_title": "전공 스터디",
-      "completed": false,
-      "due_date": "2026-04-10",
-      "due_time": null,
-      "priority": "6th"
-    },
-    {
       "notion_id": "33ec2bbd-5973-80e3-8aad-fd20da89452b",
       "title": "자료구조s4 그래프",
       "book_title": "전공 스터디",
@@ -879,6 +861,15 @@
       "book_title": "전공 스터디",
       "completed": false,
       "due_date": "2026-03-05",
+      "due_time": null,
+      "priority": "7th"
+    },
+    {
+      "notion_id": "33ec2bbd-5973-80c1-b739-d23dc2a00519",
+      "title": "자료구조 내 파트 다시 정리",
+      "book_title": "전공 스터디",
+      "completed": false,
+      "due_date": "2026-04-10",
       "due_time": null,
       "priority": "7th"
     },
@@ -3493,8 +3484,8 @@
       "priority": "2nd"
     },
     {
-      "notion_id": "33dc2bbd-5973-817e-bdbc-c66c33e07967",
-      "title": "자료구조s1 단순 연결리스트 대략 정리'",
+      "notion_id": "33ec2bbd-5973-800f-bf04-cf3af7fa2de9",
+      "title": "자료구조s2 스택과 큐",
       "book_title": "전공 스터디",
       "completed": true,
       "due_date": "2026-04-10",
@@ -3696,6 +3687,15 @@
       "book_title": "전공 스터디",
       "completed": true,
       "due_date": "2026-03-05",
+      "due_time": null,
+      "priority": "3rd"
+    },
+    {
+      "notion_id": "33dc2bbd-5973-817e-bdbc-c66c33e07967",
+      "title": "자료구조s1 단순 연결리스트 대략 정리'",
+      "book_title": "전공 스터디",
+      "completed": true,
+      "due_date": "2026-04-10",
       "due_time": null,
       "priority": "3rd"
     },
@@ -4978,6 +4978,6 @@
       "priority": ""
     }
   ],
-  "last_sync": "2026-04-10T14:20:39.297872+00:00",
+  "last_sync": "2026-04-10T15:10:08.357829+00:00",
   "total": 553
 }
