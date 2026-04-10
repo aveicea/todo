@@ -4636,6 +4636,15 @@
       "priority": ""
     },
     {
+      "notion_id": "33ec2bbd-5973-81ff-9df2-f0edd4b09688",
+      "title": "12:00-14:00 교회",
+      "book_title": "일정",
+      "completed": true,
+      "due_date": "2026-03-15",
+      "due_time": null,
+      "priority": ""
+    },
+    {
       "notion_id": "31fc2bbd-5973-80c7-a07a-ec1283903a7c",
       "title": "13:00-16:00 스터디",
       "book_title": "일정",
@@ -4677,15 +4686,6 @@
       "book_title": "일정",
       "completed": true,
       "due_date": "2026-04-08",
-      "due_time": null,
-      "priority": ""
-    },
-    {
-      "notion_id": "33ec2bbd-5973-81ff-9df2-f0edd4b09688",
-      "title": "15:00-17:00 교회",
-      "book_title": "일정",
-      "completed": true,
-      "due_date": "2026-03-29",
       "due_time": null,
       "priority": ""
     },
@@ -4978,6 +4978,6 @@
       "priority": ""
     }
   ],
-  "last_sync": "2026-04-10T22:35:41.393405+00:00",
+  "last_sync": "2026-04-10T23:07:00.087148+00:00",
   "total": 553
 }
