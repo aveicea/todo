@@ -219,7 +219,7 @@
     {
       "notion_id": "33dc2bbd-5973-817e-bdbc-c66c33e07967",
       "title": "자료구조 내 파트 대략 정리'",
-      "book_title": "스터디",
+      "book_title": "전공 스터디",
       "completed": false,
       "due_date": "2026-04-10",
       "due_time": null,
@@ -471,7 +471,7 @@
     {
       "notion_id": "33ac2bbd-5973-81bf-9ab5-c77891f32500",
       "title": "알고리즘 문제 풀이",
-      "book_title": "스터디",
+      "book_title": "전공 스터디",
       "completed": false,
       "due_date": "2026-04-06",
       "due_time": null,
@@ -588,7 +588,7 @@
     {
       "notion_id": "31dc2bbd-5973-811c-b4fc-fb0562e674d4",
       "title": "인기초 교과서 분석 2단원 (2)' (3)",
-      "book_title": "스터디",
+      "book_title": "전공 스터디",
       "completed": false,
       "due_date": "2026-03-08",
       "due_time": null,
@@ -597,18 +597,9 @@
     {
       "notion_id": "33dc2bbd-5973-816b-9891-f54bc4676a31",
       "title": "자료구조 내 파트 대략 정리",
-      "book_title": "스터디",
+      "book_title": "전공 스터디",
       "completed": false,
       "due_date": "2026-04-09",
-      "due_time": null,
-      "priority": "5th"
-    },
-    {
-      "notion_id": "33ec2bbd-5973-81be-8f01-f3a04589d717",
-      "title": "자료구조 내 파트 대략 정리' (2)",
-      "book_title": "스터디",
-      "completed": false,
-      "due_date": "2026-04-10",
       "due_time": null,
       "priority": "5th"
     },
@@ -912,7 +903,7 @@
     {
       "notion_id": "31ac2bbd-5973-8180-bcd6-cf4cf801a71a",
       "title": "인기초 교과서 분석 2단원 (2)",
-      "book_title": "스터디",
+      "book_title": "전공 스터디",
       "completed": false,
       "due_date": "2026-03-05",
       "due_time": null,
@@ -1972,15 +1963,6 @@
       "priority": ""
     },
     {
-      "notion_id": "318c2bbd-5973-812c-83ac-d493c30561b2",
-      "title": "인기초 교과서 분석  (2)",
-      "book_title": "스터디",
-      "completed": false,
-      "due_date": "2026-03-04",
-      "due_time": null,
-      "priority": ""
-    },
-    {
       "notion_id": "31fc2bbd-5973-807b-86f8-ccf5ebfc4a60",
       "title": "10:00-17:00 현강 (5)",
       "book_title": "일정",
@@ -2031,6 +2013,15 @@
       "book_title": "일정",
       "completed": false,
       "due_date": "2026-04-27",
+      "due_time": null,
+      "priority": ""
+    },
+    {
+      "notion_id": "318c2bbd-5973-812c-83ac-d493c30561b2",
+      "title": "인기초 교과서 분석  (2)",
+      "book_title": "전공 스터디",
+      "completed": false,
+      "due_date": "2026-03-04",
       "due_time": null,
       "priority": ""
     },
@@ -2224,78 +2215,6 @@
       "priority": "1st"
     },
     {
-      "notion_id": "32cc2bbd-5973-8123-a122-f0e0b1805622",
-      "title": "맡은 파트 설명 연습",
-      "book_title": "스터디",
-      "completed": true,
-      "due_date": "2026-03-23",
-      "due_time": null,
-      "priority": "1st"
-    },
-    {
-      "notion_id": "322c2bbd-5973-8015-981d-fd221c2d5b7c",
-      "title": "수업 시연 준비",
-      "book_title": "스터디",
-      "completed": true,
-      "due_date": "2026-03-16",
-      "due_time": null,
-      "priority": "1st"
-    },
-    {
-      "notion_id": "325c2bbd-5973-815a-ad9f-fbf3a9a2e09d",
-      "title": "수업 시연 준비 (2)",
-      "book_title": "스터디",
-      "completed": true,
-      "due_date": "2026-03-16",
-      "due_time": null,
-      "priority": "1st"
-    },
-    {
-      "notion_id": "325c2bbd-5973-818d-824a-c0ebec4b92c8",
-      "title": "수업 시연 준비 (3)",
-      "book_title": "스터디",
-      "completed": true,
-      "due_date": "2026-03-17",
-      "due_time": null,
-      "priority": "1st"
-    },
-    {
-      "notion_id": "326c2bbd-5973-81f1-bdbe-f4f9923b608b",
-      "title": "수업 시연 준비 (4)",
-      "book_title": "스터디",
-      "completed": true,
-      "due_date": "2026-03-18",
-      "due_time": null,
-      "priority": "1st"
-    },
-    {
-      "notion_id": "33bc2bbd-5973-8104-978f-eddccbf706e3",
-      "title": "알고리즘 문제 풀이'",
-      "book_title": "스터디",
-      "completed": true,
-      "due_date": "2026-04-07",
-      "due_time": null,
-      "priority": "1st"
-    },
-    {
-      "notion_id": "32cc2bbd-5973-81fc-bc68-d9ae0fb128fd",
-      "title": "인공지능 문제풀이",
-      "book_title": "스터디",
-      "completed": true,
-      "due_date": "2026-03-23",
-      "due_time": null,
-      "priority": "1st"
-    },
-    {
-      "notion_id": "31ac2bbd-5973-816e-b5eb-c6b86cfe0039",
-      "title": "인기초 교과서 분석 2단원",
-      "book_title": "스터디",
-      "completed": true,
-      "due_date": "2026-03-05",
-      "due_time": null,
-      "priority": "1st"
-    },
-    {
       "notion_id": "31fc2bbd-5973-8072-bbf6-d9419edb746a",
       "title": "10:00-17:00 현강 (1)",
       "book_title": "일정",
@@ -2310,6 +2229,78 @@
       "book_title": "일정",
       "completed": true,
       "due_date": "2026-03-17",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
+      "notion_id": "32cc2bbd-5973-8123-a122-f0e0b1805622",
+      "title": "맡은 파트 설명 연습",
+      "book_title": "전공 스터디",
+      "completed": true,
+      "due_date": "2026-03-23",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
+      "notion_id": "322c2bbd-5973-8015-981d-fd221c2d5b7c",
+      "title": "수업 시연 준비",
+      "book_title": "전공 스터디",
+      "completed": true,
+      "due_date": "2026-03-16",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
+      "notion_id": "325c2bbd-5973-815a-ad9f-fbf3a9a2e09d",
+      "title": "수업 시연 준비 (2)",
+      "book_title": "전공 스터디",
+      "completed": true,
+      "due_date": "2026-03-16",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
+      "notion_id": "325c2bbd-5973-818d-824a-c0ebec4b92c8",
+      "title": "수업 시연 준비 (3)",
+      "book_title": "전공 스터디",
+      "completed": true,
+      "due_date": "2026-03-17",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
+      "notion_id": "326c2bbd-5973-81f1-bdbe-f4f9923b608b",
+      "title": "수업 시연 준비 (4)",
+      "book_title": "전공 스터디",
+      "completed": true,
+      "due_date": "2026-03-18",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
+      "notion_id": "33bc2bbd-5973-8104-978f-eddccbf706e3",
+      "title": "알고리즘 문제 풀이'",
+      "book_title": "전공 스터디",
+      "completed": true,
+      "due_date": "2026-04-07",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
+      "notion_id": "32cc2bbd-5973-81fc-bc68-d9ae0fb128fd",
+      "title": "인공지능 문제풀이",
+      "book_title": "전공 스터디",
+      "completed": true,
+      "due_date": "2026-03-23",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
+      "notion_id": "31ac2bbd-5973-816e-b5eb-c6b86cfe0039",
+      "title": "인기초 교과서 분석 2단원",
+      "book_title": "전공 스터디",
+      "completed": true,
+      "due_date": "2026-03-05",
       "due_time": null,
       "priority": "1st"
     },
@@ -2719,9 +2710,18 @@
       "priority": "2nd"
     },
     {
+      "notion_id": "31fc2bbd-5973-805b-b414-c0e271c8db0d",
+      "title": "13:00-16:00 스터디 - 중정보",
+      "book_title": "일정",
+      "completed": true,
+      "due_date": "2026-04-07",
+      "due_time": null,
+      "priority": "2nd"
+    },
+    {
       "notion_id": "31fc2bbd-5973-802b-a931-d8e5c36dc3c2",
       "title": "1단원 전체 정리 및 파일 공유",
-      "book_title": "스터디",
+      "book_title": "전공 스터디",
       "completed": true,
       "due_date": "2026-03-16",
       "due_time": null,
@@ -2730,7 +2730,7 @@
     {
       "notion_id": "33ac2bbd-5973-8187-97d7-c1a74d5abdcb",
       "title": "고정보 해당 파트 정리",
-      "book_title": "스터디",
+      "book_title": "전공 스터디",
       "completed": true,
       "due_date": "2026-04-06",
       "due_time": null,
@@ -2739,18 +2739,9 @@
     {
       "notion_id": "334c2bbd-5973-8143-8530-ea0ebae81581",
       "title": "인기초 컴퓨터 비전 정리",
-      "book_title": "스터디",
+      "book_title": "전공 스터디",
       "completed": true,
       "due_date": "2026-03-31",
-      "due_time": null,
-      "priority": "2nd"
-    },
-    {
-      "notion_id": "31fc2bbd-5973-805b-b414-c0e271c8db0d",
-      "title": "13:00-16:00 스터디 - 중정보",
-      "book_title": "일정",
-      "completed": true,
-      "due_date": "2026-04-07",
       "due_time": null,
       "priority": "2nd"
     },
@@ -2926,33 +2917,6 @@
       "priority": "3rd"
     },
     {
-      "notion_id": "334c2bbd-5973-81d2-bf2b-f61ddbcb4903",
-      "title": "문제풀이",
-      "book_title": "스터디",
-      "completed": true,
-      "due_date": "2026-03-31",
-      "due_time": null,
-      "priority": "3rd"
-    },
-    {
-      "notion_id": "31fc2bbd-5973-807e-aa5c-c3fd85281cbb",
-      "title": "인공지능 기출 문제 풀이 및 설명",
-      "book_title": "스터디",
-      "completed": true,
-      "due_date": "2026-03-16",
-      "due_time": null,
-      "priority": "3rd"
-    },
-    {
-      "notion_id": "319c2bbd-5973-8113-aca4-f19f4306f3fd",
-      "title": "인기초 교과서 분석  (2)'",
-      "book_title": "스터디",
-      "completed": true,
-      "due_date": "2026-03-05",
-      "due_time": null,
-      "priority": "3rd"
-    },
-    {
       "notion_id": "33bc2bbd-5973-817c-9ae8-fb27f36308bf",
       "title": "16:30-19:20 문사공",
       "book_title": "일정",
@@ -2976,6 +2940,33 @@
       "book_title": "일정",
       "completed": true,
       "due_date": "2026-04-06",
+      "due_time": null,
+      "priority": "3rd"
+    },
+    {
+      "notion_id": "334c2bbd-5973-81d2-bf2b-f61ddbcb4903",
+      "title": "문제풀이",
+      "book_title": "전공 스터디",
+      "completed": true,
+      "due_date": "2026-03-31",
+      "due_time": null,
+      "priority": "3rd"
+    },
+    {
+      "notion_id": "31fc2bbd-5973-807e-aa5c-c3fd85281cbb",
+      "title": "인공지능 기출 문제 풀이 및 설명",
+      "book_title": "전공 스터디",
+      "completed": true,
+      "due_date": "2026-03-16",
+      "due_time": null,
+      "priority": "3rd"
+    },
+    {
+      "notion_id": "319c2bbd-5973-8113-aca4-f19f4306f3fd",
+      "title": "인기초 교과서 분석  (2)'",
+      "book_title": "전공 스터디",
+      "completed": true,
+      "due_date": "2026-03-05",
       "due_time": null,
       "priority": "3rd"
     },
@@ -3261,7 +3252,7 @@
     {
       "notion_id": "31ac2bbd-5973-8169-b00b-dfa37a668627",
       "title": "인기초 교과서 분석 2단원 (2)'",
-      "book_title": "스터디",
+      "book_title": "전공 스터디",
       "completed": true,
       "due_date": "2026-03-08",
       "due_time": null,
@@ -3270,7 +3261,7 @@
     {
       "notion_id": "31dc2bbd-5973-8164-aea1-f295f86dd1d6",
       "title": "인기초 교과서 분석 2단원 (2)' (2)",
-      "book_title": "스터디",
+      "book_title": "전공 스터디",
       "completed": true,
       "due_date": "2026-03-08",
       "due_time": null,
@@ -3279,7 +3270,7 @@
     {
       "notion_id": "31dc2bbd-5973-8152-b30f-dc24bb1c3fca",
       "title": "인기초 교과서 분석 2단원 (2)' (3)'",
-      "book_title": "스터디",
+      "book_title": "전공 스터디",
       "completed": true,
       "due_date": "2026-03-09",
       "due_time": null,
@@ -3288,7 +3279,7 @@
     {
       "notion_id": "31fc2bbd-5973-815e-8106-f91e49662ad2",
       "title": "인기초 교과서 분석 2단원 (2)' (3)' (2)",
-      "book_title": "스터디",
+      "book_title": "전공 스터디",
       "completed": true,
       "due_date": "2026-03-09",
       "due_time": null,
@@ -3862,24 +3853,6 @@
       "priority": ""
     },
     {
-      "notion_id": "314c2bbd-5973-80ad-adbc-d7e4757f389f",
-      "title": "인기초 교과서 분석 ",
-      "book_title": "스터디",
-      "completed": true,
-      "due_date": "2026-03-03",
-      "due_time": null,
-      "priority": ""
-    },
-    {
-      "notion_id": "31fc2bbd-5973-80c3-8299-fdb7b8d83d06",
-      "title": "파트 발표 준비",
-      "book_title": "스터디",
-      "completed": true,
-      "due_date": "2026-03-10",
-      "due_time": null,
-      "priority": ""
-    },
-    {
       "notion_id": "31fc2bbd-5973-80a6-a02d-f0b21daf2bbd",
       "title": "10:00-17:00 현강 (2)",
       "book_title": "일정",
@@ -3925,6 +3898,24 @@
       "priority": ""
     },
     {
+      "notion_id": "314c2bbd-5973-80ad-adbc-d7e4757f389f",
+      "title": "인기초 교과서 분석 ",
+      "book_title": "전공 스터디",
+      "completed": true,
+      "due_date": "2026-03-03",
+      "due_time": null,
+      "priority": ""
+    },
+    {
+      "notion_id": "31fc2bbd-5973-80c3-8299-fdb7b8d83d06",
+      "title": "파트 발표 준비",
+      "book_title": "전공 스터디",
+      "completed": true,
+      "due_date": "2026-03-10",
+      "due_time": null,
+      "priority": ""
+    },
+    {
       "notion_id": "2ebc2bbd-5973-8124-af3e-c28e08fc7c90",
       "title": "전야제",
       "book_title": "한능검",
@@ -3934,6 +3925,6 @@
       "priority": ""
     }
   ],
-  "last_sync": "2026-04-10T06:08:25.813601+00:00",
-  "total": 437
+  "last_sync": "2026-04-10T07:57:09.907567+00:00",
+  "total": 436
 }
