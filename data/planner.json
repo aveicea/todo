@@ -2638,6 +2638,96 @@
       "priority": ""
     },
     {
+      "notion_id": "33fc2bbd-5973-81ab-a420-e8bead01e028",
+      "title": "13:30-16:30 스터디",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-04-14",
+      "due_time": null,
+      "priority": ""
+    },
+    {
+      "notion_id": "33fc2bbd-5973-815c-9a1a-de7bcb31ebf7",
+      "title": "13:30-16:30 스터디",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-04-14",
+      "due_time": null,
+      "priority": ""
+    },
+    {
+      "notion_id": "33fc2bbd-5973-816b-97cc-d9bf8aec5f8e",
+      "title": "13:30-16:30 스터디",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-04-07",
+      "due_time": null,
+      "priority": ""
+    },
+    {
+      "notion_id": "33fc2bbd-5973-8166-ae72-e39f83e2a2fb",
+      "title": "13:30-16:30 스터디",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-03-31",
+      "due_time": null,
+      "priority": ""
+    },
+    {
+      "notion_id": "33fc2bbd-5973-811e-b036-c2ed15d5b0a5",
+      "title": "13:30-16:30 스터디",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-04-07",
+      "due_time": null,
+      "priority": ""
+    },
+    {
+      "notion_id": "33fc2bbd-5973-812e-a968-d0cb9b74efec",
+      "title": "13:30-16:30 스터디",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-03-31",
+      "due_time": null,
+      "priority": ""
+    },
+    {
+      "notion_id": "33fc2bbd-5973-8108-bf22-f24cea2888a2",
+      "title": "13:30-16:30 스터디",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-03-24",
+      "due_time": null,
+      "priority": ""
+    },
+    {
+      "notion_id": "33fc2bbd-5973-811b-ab3a-e3cbdf9d3baa",
+      "title": "13:30-16:30 스터디",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-03-24",
+      "due_time": null,
+      "priority": ""
+    },
+    {
+      "notion_id": "33fc2bbd-5973-8173-ad36-ce6713f746aa",
+      "title": "13:30-16:30 스터디",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-03-17",
+      "due_time": null,
+      "priority": ""
+    },
+    {
+      "notion_id": "33fc2bbd-5973-811b-aaea-e56103ecc152",
+      "title": "13:30-16:30 스터디",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-03-17",
+      "due_time": null,
+      "priority": ""
+    },
+    {
       "notion_id": "33ec2bbd-5973-8121-a1bd-ca0a7265523c",
       "title": "13:30-16:30 스터디",
       "book_title": "일정",
@@ -2872,11 +2962,20 @@
       "priority": ""
     },
     {
-      "notion_id": "33ec2bbd-5973-815c-962a-c465acb639e9",
-      "title": "일단중식팟",
+      "notion_id": "33fc2bbd-5973-8140-a4d1-f7012a07174a",
+      "title": "예린",
       "book_title": "일정",
       "completed": false,
-      "due_date": "2026-04-14",
+      "due_date": "2026-04-10",
+      "due_time": null,
+      "priority": ""
+    },
+    {
+      "notion_id": "33fc2bbd-5973-81bc-85f1-c7aea8661604",
+      "title": "예린",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-04-10",
       "due_time": null,
       "priority": ""
     },
@@ -5122,6 +5221,6 @@
       "priority": ""
     }
   ],
-  "last_sync": "2026-04-11T14:02:30.145672+00:00",
-  "total": 569
+  "last_sync": "2026-04-11T14:46:18.850704+00:00",
+  "total": 580
 }
