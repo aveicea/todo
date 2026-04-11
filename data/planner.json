@@ -73,11 +73,11 @@
       "priority": "1st"
     },
     {
-      "notion_id": "33cc2bbd-5973-80d6-b703-d97bb0d475cf",
-      "title": "집가서 스터디 녹음본 확인",
-      "book_title": "구분",
+      "notion_id": "33ec2bbd-5973-81e9-806a-f0039fd3450b",
+      "title": "09:00-11:00 교회",
+      "book_title": "일정",
       "completed": false,
-      "due_date": null,
+      "due_date": "2026-04-12",
       "due_time": null,
       "priority": "1st"
     },
@@ -190,6 +190,24 @@
       "priority": "2nd"
     },
     {
+      "notion_id": "33cc2bbd-5973-80d7-ad83-f8764c05929d",
+      "title": "내일",
+      "book_title": "구분",
+      "completed": false,
+      "due_date": null,
+      "due_time": null,
+      "priority": "2nd"
+    },
+    {
+      "notion_id": "33ec2bbd-5973-819a-ad93-e91cec067cad",
+      "title": "예비",
+      "book_title": "구분",
+      "completed": false,
+      "due_date": null,
+      "due_time": null,
+      "priority": "2nd"
+    },
+    {
       "notion_id": "303c2bbd-5973-8199-9d69-e3f33e76c17c",
       "title": "13일차'''",
       "book_title": "나도코딩 C언어",
@@ -221,7 +239,7 @@
       "title": "동료평가''",
       "book_title": "할일",
       "completed": false,
-      "due_date": "2026-04-11",
+      "due_date": "2026-04-12",
       "due_time": null,
       "priority": "2nd"
     },
@@ -726,15 +744,6 @@
       "book_title": "교육학 기본",
       "completed": false,
       "due_date": "2026-04-03",
-      "due_time": null,
-      "priority": "6th"
-    },
-    {
-      "notion_id": "33cc2bbd-5973-80d7-ad83-f8764c05929d",
-      "title": "내일",
-      "book_title": "구분",
-      "completed": false,
-      "due_date": null,
       "due_time": null,
       "priority": "6th"
     },
@@ -1621,15 +1630,6 @@
       "priority": "17th"
     },
     {
-      "notion_id": "33ec2bbd-5973-819a-ad93-e91cec067cad",
-      "title": "예비",
-      "book_title": "구분",
-      "completed": false,
-      "due_date": null,
-      "due_time": null,
-      "priority": "17th"
-    },
-    {
       "notion_id": "33dc2bbd-5973-81e8-a27f-ca102cb7ee9a",
       "title": "예비",
       "book_title": "구분",
@@ -2107,6 +2107,15 @@
       "priority": ""
     },
     {
+      "notion_id": "33cc2bbd-5973-80d6-b703-d97bb0d475cf",
+      "title": "기상",
+      "book_title": "구분",
+      "completed": false,
+      "due_date": null,
+      "due_time": null,
+      "priority": "0th"
+    },
+    {
       "notion_id": "33dc2bbd-5973-8056-ab71-f1d7c2e8678c",
       "title": "예비",
       "book_title": "구분",
@@ -2121,6 +2130,15 @@
       "book_title": "일정",
       "completed": false,
       "due_date": "2026-04-27",
+      "due_time": null,
+      "priority": ""
+    },
+    {
+      "notion_id": "33fc2bbd-5973-817d-9d4f-cda4b8f32d8b",
+      "title": "09:00-11:00 교회",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2027-04-11",
       "due_time": null,
       "priority": ""
     },
@@ -2584,15 +2602,6 @@
       "priority": ""
     },
     {
-      "notion_id": "33ec2bbd-5973-81e9-806a-f0039fd3450b",
-      "title": "09:00-11:00 교회",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2026-04-12",
-      "due_time": null,
-      "priority": ""
-    },
-    {
       "notion_id": "33ec2bbd-5973-817b-bcc9-c6dce18cc05a",
       "title": "09:00-18:00 학원 스터디",
       "book_title": "일정",
@@ -2629,8 +2638,8 @@
       "priority": ""
     },
     {
-      "notion_id": "31fc2bbd-5973-802b-be18-f8a91e5c2333",
-      "title": "13:00-16:00 스터디 - 고정보",
+      "notion_id": "33fc2bbd-5973-81ef-a6d4-d9ca153d94a7",
+      "title": "13:30-16:30 학교 스터디",
       "book_title": "일정",
       "completed": false,
       "due_date": "2026-04-14",
@@ -2638,26 +2647,8 @@
       "priority": ""
     },
     {
-      "notion_id": "33fc2bbd-5973-81ab-a420-e8bead01e028",
-      "title": "13:30-16:30 스터디",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2026-04-14",
-      "due_time": null,
-      "priority": ""
-    },
-    {
-      "notion_id": "33fc2bbd-5973-815c-9a1a-de7bcb31ebf7",
-      "title": "13:30-16:30 스터디",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2026-04-14",
-      "due_time": null,
-      "priority": ""
-    },
-    {
-      "notion_id": "33fc2bbd-5973-816b-97cc-d9bf8aec5f8e",
-      "title": "13:30-16:30 스터디",
+      "notion_id": "33fc2bbd-5973-819b-abba-f7e23616e0ec",
+      "title": "13:30-16:30 학교 스터디",
       "book_title": "일정",
       "completed": false,
       "due_date": "2026-04-07",
@@ -2665,8 +2656,8 @@
       "priority": ""
     },
     {
-      "notion_id": "33fc2bbd-5973-8166-ae72-e39f83e2a2fb",
-      "title": "13:30-16:30 스터디",
+      "notion_id": "33fc2bbd-5973-8150-a35e-eb85044b42e7",
+      "title": "13:30-16:30 학교 스터디",
       "book_title": "일정",
       "completed": false,
       "due_date": "2026-03-31",
@@ -2674,26 +2665,8 @@
       "priority": ""
     },
     {
-      "notion_id": "33fc2bbd-5973-811e-b036-c2ed15d5b0a5",
-      "title": "13:30-16:30 스터디",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2026-04-07",
-      "due_time": null,
-      "priority": ""
-    },
-    {
-      "notion_id": "33fc2bbd-5973-812e-a968-d0cb9b74efec",
-      "title": "13:30-16:30 스터디",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2026-03-31",
-      "due_time": null,
-      "priority": ""
-    },
-    {
-      "notion_id": "33fc2bbd-5973-8108-bf22-f24cea2888a2",
-      "title": "13:30-16:30 스터디",
+      "notion_id": "33fc2bbd-5973-81d9-bca3-d4dbbbafebd4",
+      "title": "13:30-16:30 학교 스터디",
       "book_title": "일정",
       "completed": false,
       "due_date": "2026-03-24",
@@ -2701,26 +2674,8 @@
       "priority": ""
     },
     {
-      "notion_id": "33fc2bbd-5973-811b-ab3a-e3cbdf9d3baa",
-      "title": "13:30-16:30 스터디",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2026-03-24",
-      "due_time": null,
-      "priority": ""
-    },
-    {
-      "notion_id": "33fc2bbd-5973-8173-ad36-ce6713f746aa",
-      "title": "13:30-16:30 스터디",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2026-03-17",
-      "due_time": null,
-      "priority": ""
-    },
-    {
-      "notion_id": "33fc2bbd-5973-811b-aaea-e56103ecc152",
-      "title": "13:30-16:30 스터디",
+      "notion_id": "33fc2bbd-5973-8192-b762-c9042f54533b",
+      "title": "13:30-16:30 학교 스터디",
       "book_title": "일정",
       "completed": false,
       "due_date": "2026-03-17",
@@ -2729,7 +2684,7 @@
     },
     {
       "notion_id": "33ec2bbd-5973-8121-a1bd-ca0a7265523c",
-      "title": "13:30-16:30 스터디",
+      "title": "13:30-16:30 학교 스터디",
       "book_title": "일정",
       "completed": false,
       "due_date": "2026-04-21",
@@ -2962,16 +2917,7 @@
       "priority": ""
     },
     {
-      "notion_id": "33fc2bbd-5973-8140-a4d1-f7012a07174a",
-      "title": "예린",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2026-04-10",
-      "due_time": null,
-      "priority": ""
-    },
-    {
-      "notion_id": "33fc2bbd-5973-81bc-85f1-c7aea8661604",
+      "notion_id": "33fc2bbd-5973-81ef-86a3-c44133e592c2",
       "title": "예린",
       "book_title": "일정",
       "completed": false,
@@ -3201,15 +3147,6 @@
       "book_title": "일정",
       "completed": true,
       "due_date": "2026-04-11",
-      "due_time": null,
-      "priority": "1st"
-    },
-    {
-      "notion_id": "31fc2bbd-5973-80a0-97ed-fb6778fc542c",
-      "title": "13:00-16:00 스터디 - 인기초 1단원",
-      "book_title": "일정",
-      "completed": true,
-      "due_date": "2026-03-17",
       "due_time": null,
       "priority": "1st"
     },
@@ -3691,15 +3628,6 @@
       "priority": "2nd"
     },
     {
-      "notion_id": "31fc2bbd-5973-805b-b414-c0e271c8db0d",
-      "title": "13:00-16:00 스터디 - 중정보",
-      "book_title": "일정",
-      "completed": true,
-      "due_date": "2026-04-07",
-      "due_time": null,
-      "priority": "2nd"
-    },
-    {
       "notion_id": "31fc2bbd-5973-802b-a931-d8e5c36dc3c2",
       "title": "1단원 전체 정리 및 파일 공유",
       "book_title": "전공 스터디",
@@ -4074,15 +4002,6 @@
       "book_title": "나도코딩 C언어",
       "completed": true,
       "due_date": "2026-01-14",
-      "due_time": null,
-      "priority": "4th"
-    },
-    {
-      "notion_id": "31fc2bbd-5973-8029-802e-edc261906d8e",
-      "title": "13:00-16:00 스터디 - 인기초 2-2단원",
-      "book_title": "일정",
-      "completed": true,
-      "due_date": "2026-03-31",
       "due_time": null,
       "priority": "4th"
     },
@@ -4897,15 +4816,6 @@
       "priority": ""
     },
     {
-      "notion_id": "31fc2bbd-5973-8043-bba9-dc4f2d71ba42",
-      "title": "13:00-16:00 스터디 - 인기초 2-1단원",
-      "book_title": "일정",
-      "completed": true,
-      "due_date": "2026-03-24",
-      "due_time": null,
-      "priority": ""
-    },
-    {
       "notion_id": "33ec2bbd-5973-814a-916b-d4d1b1335ed6",
       "title": "14:00-14:30 꽃 픽업",
       "book_title": "일정",
@@ -5221,6 +5131,6 @@
       "priority": ""
     }
   ],
-  "last_sync": "2026-04-11T14:46:18.850704+00:00",
-  "total": 580
+  "last_sync": "2026-04-11T15:18:46.954339+00:00",
+  "total": 570
 }
