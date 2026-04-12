@@ -425,7 +425,7 @@
     },
     {
       "notion_id": "33ec2bbd-5973-819a-ad93-e91cec067cad",
-      "title": "5시 저녁 / 6시 클로드 리셋",
+      "title": "6시 클로드 리셋",
       "book_title": "구분",
       "completed": false,
       "due_date": null,
@@ -1063,6 +1063,15 @@
       "priority": "8th"
     },
     {
+      "notion_id": "33dc2bbd-5973-80e1-ae09-c6962d24cc8e",
+      "title": "내일",
+      "book_title": "구분",
+      "completed": false,
+      "due_date": null,
+      "due_time": null,
+      "priority": "8th"
+    },
+    {
       "notion_id": "2e9c2bbd-5973-81c8-ad14-eb36d996f66c",
       "title": "8일차",
       "book_title": "나도코딩 C언어",
@@ -1675,15 +1684,6 @@
       "priority": "16th"
     },
     {
-      "notion_id": "33dc2bbd-5973-80e1-ae09-c6962d24cc8e",
-      "title": "내일",
-      "book_title": "구분",
-      "completed": false,
-      "due_date": null,
-      "due_time": null,
-      "priority": "16th"
-    },
-    {
       "notion_id": "33dc2bbd-5973-8149-be09-fef5d7fa6af6",
       "title": "41강'",
       "book_title": "교육학 기본",
@@ -1720,33 +1720,6 @@
       "priority": "17th"
     },
     {
-      "notion_id": "340c2bbd-5973-8123-b084-db85324bf326",
-      "title": "예비",
-      "book_title": "구분",
-      "completed": false,
-      "due_date": null,
-      "due_time": null,
-      "priority": "17th"
-    },
-    {
-      "notion_id": "33dc2bbd-5973-81e8-a27f-ca102cb7ee9a",
-      "title": "예비",
-      "book_title": "구분",
-      "completed": false,
-      "due_date": null,
-      "due_time": null,
-      "priority": "17th"
-    },
-    {
-      "notion_id": "33cc2bbd-5973-8033-88fb-f2a8b928e33b",
-      "title": "예비",
-      "book_title": "구분",
-      "completed": false,
-      "due_date": null,
-      "due_time": null,
-      "priority": "17th"
-    },
-    {
       "notion_id": "33dc2bbd-5973-811b-b640-f1056a89ed9c",
       "title": "42강'",
       "book_title": "교육학 기본",
@@ -1765,33 +1738,6 @@
       "priority": "18th"
     },
     {
-      "notion_id": "33dc2bbd-5973-812e-8b2b-f4573f13025b",
-      "title": "예비",
-      "book_title": "구분",
-      "completed": false,
-      "due_date": null,
-      "due_time": null,
-      "priority": "18th"
-    },
-    {
-      "notion_id": "33dc2bbd-5973-8086-b3ed-c249f8dcefd4",
-      "title": "예비",
-      "book_title": "구분",
-      "completed": false,
-      "due_date": null,
-      "due_time": null,
-      "priority": "18th"
-    },
-    {
-      "notion_id": "33cc2bbd-5973-80d7-ad83-f8764c05929d",
-      "title": "예비",
-      "book_title": "구분",
-      "completed": false,
-      "due_date": null,
-      "due_time": null,
-      "priority": "18th"
-    },
-    {
       "notion_id": "33dc2bbd-5973-814d-ae05-fb9815de7769",
       "title": "43강'",
       "book_title": "교육학 기본",
@@ -1806,15 +1752,6 @@
       "book_title": "교육학 기본",
       "completed": false,
       "due_date": "2026-04-12",
-      "due_time": null,
-      "priority": "19th"
-    },
-    {
-      "notion_id": "340c2bbd-5973-81e5-8f8c-cf1c1cba20bb",
-      "title": "예비",
-      "book_title": "구분",
-      "completed": false,
-      "due_date": null,
       "due_time": null,
       "priority": "19th"
     },
@@ -2251,7 +2188,16 @@
       "priority": "0th"
     },
     {
-      "notion_id": "33dc2bbd-5973-8056-ab71-f1d7c2e8678c",
+      "notion_id": "340c2bbd-5973-81ed-9d9f-e2e2d74c51f2",
+      "title": "예비",
+      "book_title": "구분",
+      "completed": false,
+      "due_date": null,
+      "due_time": null,
+      "priority": ""
+    },
+    {
+      "notion_id": "340c2bbd-5973-811a-9787-fc4ad6edbd7e",
       "title": "예비",
       "book_title": "구분",
       "completed": false,
@@ -5302,6 +5248,6 @@
       "priority": ""
     }
   ],
-  "last_sync": "2026-04-12T10:38:44.188789+00:00",
-  "total": 589
+  "last_sync": "2026-04-12T11:19:24.152355+00:00",
+  "total": 583
 }
