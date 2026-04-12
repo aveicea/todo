@@ -2188,7 +2188,7 @@
       "priority": "0th"
     },
     {
-      "notion_id": "340c2bbd-5973-81ed-9d9f-e2e2d74c51f2",
+      "notion_id": "340c2bbd-5973-81dc-8d70-e979dec8d6a5",
       "title": "예비",
       "book_title": "구분",
       "completed": false,
@@ -5248,6 +5248,6 @@
       "priority": ""
     }
   ],
-  "last_sync": "2026-04-12T11:19:24.152355+00:00",
+  "last_sync": "2026-04-12T11:50:38.332509+00:00",
   "total": 583
 }
