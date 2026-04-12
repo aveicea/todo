@@ -73,15 +73,6 @@
       "priority": "1st"
     },
     {
-      "notion_id": "33ec2bbd-5973-81e9-806a-f0039fd3450b",
-      "title": "09:00-11:00 교회",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2026-04-12",
-      "due_time": null,
-      "priority": "1st"
-    },
-    {
       "notion_id": "2ecc2bbd-5973-81d2-bf66-d3e74e876157",
       "title": "일제강점기 기출'",
       "book_title": "한능검",
@@ -190,24 +181,6 @@
       "priority": "2nd"
     },
     {
-      "notion_id": "33cc2bbd-5973-80d7-ad83-f8764c05929d",
-      "title": "내일",
-      "book_title": "구분",
-      "completed": false,
-      "due_date": null,
-      "due_time": null,
-      "priority": "2nd"
-    },
-    {
-      "notion_id": "33ec2bbd-5973-819a-ad93-e91cec067cad",
-      "title": "예비",
-      "book_title": "구분",
-      "completed": false,
-      "due_date": null,
-      "due_time": null,
-      "priority": "2nd"
-    },
-    {
       "notion_id": "303c2bbd-5973-8199-9d69-e3f33e76c17c",
       "title": "13일차'''",
       "book_title": "나도코딩 C언어",
@@ -235,9 +208,9 @@
       "priority": "2nd"
     },
     {
-      "notion_id": "33fc2bbd-5973-81b8-8c07-f28b391ea1e6",
-      "title": "동료평가''",
-      "book_title": "할일",
+      "notion_id": "33ec2bbd-5973-81e9-806a-f0039fd3450b",
+      "title": "09:00-11:00 교회",
+      "book_title": "일정",
       "completed": false,
       "due_date": "2026-04-12",
       "due_time": null,
@@ -784,6 +757,15 @@
       "priority": "6th"
     },
     {
+      "notion_id": "33ec2bbd-5973-819a-ad93-e91cec067cad",
+      "title": "5시 저녁",
+      "book_title": "구분",
+      "completed": false,
+      "due_date": null,
+      "due_time": null,
+      "priority": "6th"
+    },
+    {
       "notion_id": "2ebc2bbd-5973-81be-a30d-f6a09b9aae20",
       "title": "12일차",
       "book_title": "나도코딩 C언어",
@@ -1104,6 +1086,15 @@
       "book_title": "교육학 기본",
       "completed": false,
       "due_date": "2026-04-12",
+      "due_time": null,
+      "priority": "8th"
+    },
+    {
+      "notion_id": "33cc2bbd-5973-80d7-ad83-f8764c05929d",
+      "title": "6시 클로드 리셋",
+      "book_title": "구분",
+      "completed": false,
+      "due_date": null,
       "due_time": null,
       "priority": "8th"
     },
@@ -1603,6 +1594,15 @@
       "priority": "13th"
     },
     {
+      "notion_id": "33dc2bbd-5973-80e1-ae09-c6962d24cc8e",
+      "title": "내일",
+      "book_title": "구분",
+      "completed": false,
+      "due_date": null,
+      "due_time": null,
+      "priority": "13th"
+    },
+    {
       "notion_id": "32ec2bbd-5973-80df-b0c2-c09a7516cef0",
       "title": "36강",
       "book_title": "교육학 기본",
@@ -1720,15 +1720,6 @@
       "priority": "16th"
     },
     {
-      "notion_id": "33dc2bbd-5973-80e1-ae09-c6962d24cc8e",
-      "title": "예비",
-      "book_title": "구분",
-      "completed": false,
-      "due_date": null,
-      "due_time": null,
-      "priority": "16th"
-    },
-    {
       "notion_id": "33dc2bbd-5973-8149-be09-fef5d7fa6af6",
       "title": "41강'",
       "book_title": "교육학 기본",
@@ -1761,6 +1752,24 @@
       "book_title": "교육학 기본",
       "completed": false,
       "due_date": "2026-04-12",
+      "due_time": null,
+      "priority": "17th"
+    },
+    {
+      "notion_id": "340c2bbd-5973-81e5-8f8c-cf1c1cba20bb",
+      "title": "예비",
+      "book_title": "구분",
+      "completed": false,
+      "due_date": null,
+      "due_time": null,
+      "priority": "17th"
+    },
+    {
+      "notion_id": "340c2bbd-5973-8123-b084-db85324bf326",
+      "title": "예비",
+      "book_title": "구분",
+      "completed": false,
+      "due_date": null,
       "due_time": null,
       "priority": "17th"
     },
@@ -3471,6 +3480,15 @@
       "book_title": "한능검",
       "completed": true,
       "due_date": "2026-01-27",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
+      "notion_id": "33fc2bbd-5973-81b8-8c07-f28b391ea1e6",
+      "title": "동료평가''",
+      "book_title": "할일",
+      "completed": true,
+      "due_date": "2026-04-12",
       "due_time": null,
       "priority": "1st"
     },
@@ -5266,6 +5284,6 @@
       "priority": ""
     }
   ],
-  "last_sync": "2026-04-12T01:10:37.504441+00:00",
-  "total": 585
+  "last_sync": "2026-04-12T04:18:44.467037+00:00",
+  "total": 587
 }
