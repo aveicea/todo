@@ -73,15 +73,6 @@
       "priority": "1st"
     },
     {
-      "notion_id": "342c2bbd-5973-8154-b0f5-c82d3026b06c",
-      "title": "자료구조s3 트리'' (3)' (3)'",
-      "book_title": "전공 스터디",
-      "completed": false,
-      "due_date": "2026-04-14",
-      "due_time": null,
-      "priority": "1st"
-    },
-    {
       "notion_id": "2ecc2bbd-5973-81d2-bf66-d3e74e876157",
       "title": "일제강점기 기출'",
       "book_title": "한능검",
@@ -3547,6 +3538,15 @@
       "priority": "1st"
     },
     {
+      "notion_id": "342c2bbd-5973-8154-b0f5-c82d3026b06c",
+      "title": "자료구조s3 트리'' (3)' (3)'",
+      "book_title": "전공 스터디",
+      "completed": true,
+      "due_date": "2026-04-14",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
       "notion_id": "2ebc2bbd-5973-8100-8c9c-d1b4c34b3682",
       "title": "공부돼지 개항기 암기",
       "book_title": "한능검",
@@ -5545,6 +5545,6 @@
       "priority": ""
     }
   ],
-  "last_sync": "2026-04-14T01:45:06.534235+00:00",
+  "last_sync": "2026-04-14T04:33:04.266676+00:00",
   "total": 616
 }
