@@ -3214,6 +3214,15 @@
       "priority": ""
     },
     {
+      "notion_id": "342c2bbd-5973-81ab-9a0b-e0a9d1041502",
+      "title": "16:00-18:00 교회",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-03-22",
+      "due_time": null,
+      "priority": ""
+    },
+    {
       "notion_id": "342c2bbd-5973-81b4-90e6-f7413f5d1538",
       "title": "18:45-19:15 .",
       "book_title": "일정",
@@ -5563,6 +5572,6 @@
       "priority": ""
     }
   ],
-  "last_sync": "2026-04-14T22:26:31.729782+00:00",
-  "total": 618
+  "last_sync": "2026-04-14T23:09:09.220115+00:00",
+  "total": 619
 }
