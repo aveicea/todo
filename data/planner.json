@@ -73,6 +73,762 @@
       "priority": "1st"
     },
     {
+      "notion_id": "33ec2bbd-5973-81b1-a49c-cfac176aa8a4",
+      "title": "08:30-09:30 교생 오티",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-04-27",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
+      "notion_id": "33fc2bbd-5973-817d-9d4f-cda4b8f32d8b",
+      "title": "09:00-11:00 교회",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2027-04-11",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
+      "notion_id": "33ec2bbd-5973-8112-8ff3-cd2e9dafd178",
+      "title": "09:00-11:00 교회",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2027-04-04",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
+      "notion_id": "33ec2bbd-5973-81cb-8638-d0aa29652e7d",
+      "title": "09:00-11:00 교회",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2027-03-28",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
+      "notion_id": "33ec2bbd-5973-81dd-9e4c-dc8b12c71152",
+      "title": "09:00-11:00 교회",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2027-03-21",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
+      "notion_id": "33ec2bbd-5973-8162-a7bf-dae80df4b17e",
+      "title": "09:00-11:00 교회",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2027-03-14",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
+      "notion_id": "33ec2bbd-5973-810e-b70d-e43c63ca859d",
+      "title": "09:00-11:00 교회",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2027-03-07",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
+      "notion_id": "33ec2bbd-5973-8110-a808-eb090102d6e9",
+      "title": "09:00-11:00 교회",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2027-02-28",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
+      "notion_id": "33ec2bbd-5973-8151-963f-eb383397a96c",
+      "title": "09:00-11:00 교회",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2027-02-21",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
+      "notion_id": "33ec2bbd-5973-8169-86e7-fa4aba910229",
+      "title": "09:00-11:00 교회",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2027-02-14",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
+      "notion_id": "33ec2bbd-5973-81dd-a04f-d1e462ed7986",
+      "title": "09:00-11:00 교회",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2027-02-07",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
+      "notion_id": "33ec2bbd-5973-81c1-bd54-c28debf6b0eb",
+      "title": "09:00-11:00 교회",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2027-01-31",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
+      "notion_id": "33ec2bbd-5973-81d5-b6cb-de1df71d704a",
+      "title": "09:00-11:00 교회",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2027-01-24",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
+      "notion_id": "33ec2bbd-5973-8158-8996-c90258f24eb8",
+      "title": "09:00-11:00 교회",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2027-01-17",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
+      "notion_id": "33ec2bbd-5973-8168-bce1-e1b667f881ac",
+      "title": "09:00-11:00 교회",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2027-01-10",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
+      "notion_id": "33ec2bbd-5973-81c1-a9cd-effd48692675",
+      "title": "09:00-11:00 교회",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2027-01-03",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
+      "notion_id": "33ec2bbd-5973-8121-b7d3-ecc7485f4c8c",
+      "title": "09:00-11:00 교회",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-12-27",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
+      "notion_id": "33ec2bbd-5973-81df-a00e-d9d88037bcf4",
+      "title": "09:00-11:00 교회",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-12-20",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
+      "notion_id": "33ec2bbd-5973-81ef-903e-c4d62f021a83",
+      "title": "09:00-11:00 교회",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-12-13",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
+      "notion_id": "33ec2bbd-5973-81cf-9465-f89feccaf93b",
+      "title": "09:00-11:00 교회",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-12-06",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
+      "notion_id": "33ec2bbd-5973-81ce-a26d-ef17eec8cb8a",
+      "title": "09:00-11:00 교회",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-11-29",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
+      "notion_id": "33ec2bbd-5973-81ae-a350-c0555c09043b",
+      "title": "09:00-11:00 교회",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-11-22",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
+      "notion_id": "33ec2bbd-5973-81f8-a420-fbd8ab0ed4c3",
+      "title": "09:00-11:00 교회",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-11-15",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
+      "notion_id": "33ec2bbd-5973-8161-8745-d3cd6e6cd2d1",
+      "title": "09:00-11:00 교회",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-11-08",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
+      "notion_id": "33ec2bbd-5973-8105-9bfb-d88fef92b0b0",
+      "title": "09:00-11:00 교회",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-11-01",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
+      "notion_id": "33ec2bbd-5973-8128-ab4b-d14b2b52373b",
+      "title": "09:00-11:00 교회",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-10-25",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
+      "notion_id": "33ec2bbd-5973-8116-b501-cbde6c297fbd",
+      "title": "09:00-11:00 교회",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-10-18",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
+      "notion_id": "33ec2bbd-5973-817f-b2cb-f4d5daeaa4fc",
+      "title": "09:00-11:00 교회",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-10-11",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
+      "notion_id": "33ec2bbd-5973-817a-8618-d1bf98a8f40f",
+      "title": "09:00-11:00 교회",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-10-04",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
+      "notion_id": "33ec2bbd-5973-8194-b690-cf60f40ff589",
+      "title": "09:00-11:00 교회",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-09-27",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
+      "notion_id": "33ec2bbd-5973-8161-a45b-ca7e6f1e626e",
+      "title": "09:00-11:00 교회",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-09-20",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
+      "notion_id": "33ec2bbd-5973-81ab-b56f-c04e19187a43",
+      "title": "09:00-11:00 교회",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-09-13",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
+      "notion_id": "33ec2bbd-5973-81a9-a765-faf70b6e1125",
+      "title": "09:00-11:00 교회",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-09-06",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
+      "notion_id": "33ec2bbd-5973-8199-a484-c54dee74e28c",
+      "title": "09:00-11:00 교회",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-08-30",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
+      "notion_id": "33ec2bbd-5973-814d-a9e5-e1336dcc03bf",
+      "title": "09:00-11:00 교회",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-08-23",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
+      "notion_id": "33ec2bbd-5973-81fb-a63e-e4d78be3e47f",
+      "title": "09:00-11:00 교회",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-08-16",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
+      "notion_id": "33ec2bbd-5973-8192-aed9-ce87d46de570",
+      "title": "09:00-11:00 교회",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-08-09",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
+      "notion_id": "33ec2bbd-5973-81c7-aea4-cf217f0ec7ca",
+      "title": "09:00-11:00 교회",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-08-02",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
+      "notion_id": "33ec2bbd-5973-8135-940d-ea128f917f15",
+      "title": "09:00-11:00 교회",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-07-26",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
+      "notion_id": "33ec2bbd-5973-81a5-8c20-debdb9dd7cbc",
+      "title": "09:00-11:00 교회",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-07-19",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
+      "notion_id": "33ec2bbd-5973-8172-85aa-eb8ec0d44145",
+      "title": "09:00-11:00 교회",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-07-12",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
+      "notion_id": "33ec2bbd-5973-81a8-a05e-cbbbde091c8a",
+      "title": "09:00-11:00 교회",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-07-05",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
+      "notion_id": "33ec2bbd-5973-8127-ba1b-e2caa2eb7275",
+      "title": "09:00-11:00 교회",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-06-28",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
+      "notion_id": "33ec2bbd-5973-817a-afe1-d2babaec2aed",
+      "title": "09:00-11:00 교회",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-06-21",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
+      "notion_id": "33ec2bbd-5973-8138-a86e-ef58293ef436",
+      "title": "09:00-11:00 교회",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-06-14",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
+      "notion_id": "33ec2bbd-5973-8134-8abf-c692e4aff5e1",
+      "title": "09:00-11:00 교회",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-06-07",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
+      "notion_id": "33ec2bbd-5973-810f-80aa-ea4026694cbb",
+      "title": "09:00-11:00 교회",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-05-31",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
+      "notion_id": "33ec2bbd-5973-81f9-82e2-fa368f877bd6",
+      "title": "09:00-11:00 교회",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-05-24",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
+      "notion_id": "33ec2bbd-5973-8111-900f-cba78d2d9e17",
+      "title": "09:00-11:00 교회",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-05-17",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
+      "notion_id": "33ec2bbd-5973-8198-8795-c2421af16373",
+      "title": "09:00-11:00 교회",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-05-10",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
+      "notion_id": "33ec2bbd-5973-8140-bd5d-e40cdb860005",
+      "title": "09:00-11:00 교회",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-05-03",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
+      "notion_id": "33ec2bbd-5973-81f8-88bd-de0b522471c3",
+      "title": "09:00-11:00 교회",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-04-26",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
+      "notion_id": "33ec2bbd-5973-813b-ad26-f931811d5f61",
+      "title": "09:00-11:00 교회",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-04-19",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
+      "notion_id": "33ec2bbd-5973-817b-bcc9-c6dce18cc05a",
+      "title": "09:00-18:00 학원 스터디",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-04-22",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
+      "notion_id": "33ec2bbd-5973-8178-8c68-d3b805f82236",
+      "title": "09:00-18:00 학원 스터디",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-04-15",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
+      "notion_id": "33ec2bbd-5973-81c8-b23f-deaea387ce09",
+      "title": "10:00-17:00 교과내용학",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-04-25",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
+      "notion_id": "33ec2bbd-5973-81fb-bd6a-ff44354bb71d",
+      "title": "10:00-17:00 교과내용학",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-04-18",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
+      "notion_id": "33ec2bbd-5973-8121-a1bd-ca0a7265523c",
+      "title": "13:30-16:30 학교 스터디",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-04-21",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
+      "notion_id": "33ec2bbd-5973-81b4-8ec4-f3506280dbe7",
+      "title": "16:30-19:20 문화예술과사회공헌",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-06-09",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
+      "notion_id": "33ec2bbd-5973-816f-a3a0-ffeaecdfab63",
+      "title": "16:30-19:20 문화예술과사회공헌",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-06-02",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
+      "notion_id": "33ec2bbd-5973-8141-b2e9-d199f25a238a",
+      "title": "16:30-19:20 문화예술과사회공헌",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-05-26",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
+      "notion_id": "33ec2bbd-5973-8189-a605-e00c7e392c00",
+      "title": "16:30-19:20 문화예술과사회공헌",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-05-19",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
+      "notion_id": "33ec2bbd-5973-8140-a121-c4ac571b932d",
+      "title": "16:30-19:20 문화예술과사회공헌",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-05-12",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
+      "notion_id": "33ec2bbd-5973-8170-8143-d932b593db5c",
+      "title": "16:30-19:20 문화예술과사회공헌",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-05-05",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
+      "notion_id": "33ec2bbd-5973-81b6-8e43-c023fa64a29d",
+      "title": "16:30-19:20 문화예술과사회공헌",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-04-28",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
+      "notion_id": "33ec2bbd-5973-81b4-a3dc-f91ee7a6af03",
+      "title": "16:30-19:20 문화예술과사회공헌",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-04-21",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
+      "notion_id": "33ec2bbd-5973-814c-94af-ea566d11db5f",
+      "title": "17:00-19:50 학교현장실습",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-06-10",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
+      "notion_id": "33ec2bbd-5973-818f-8da8-d031a7d2f0f1",
+      "title": "교생 8:20-16:30",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-04-27",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
+      "notion_id": "33ec2bbd-5973-815d-b252-dc21553dca74",
+      "title": "바교한시",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-05-24",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
+      "notion_id": "33ec2bbd-5973-818b-9eb0-d5fbc9126910",
+      "title": "아이클라우드 결제",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2027-03-27",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
+      "notion_id": "33ec2bbd-5973-812c-9947-d9d4092354a9",
+      "title": "아이클라우드 결제",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2027-02-27",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
+      "notion_id": "33ec2bbd-5973-8117-a047-cccb2a752567",
+      "title": "아이클라우드 결제",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2027-01-27",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
+      "notion_id": "33ec2bbd-5973-818a-8955-cbb888466f59",
+      "title": "아이클라우드 결제",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-12-27",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
+      "notion_id": "33ec2bbd-5973-8106-a9bc-cb0a1cb33324",
+      "title": "아이클라우드 결제",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-11-27",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
+      "notion_id": "33ec2bbd-5973-818e-8411-f0ee4989bcb9",
+      "title": "아이클라우드 결제",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-10-27",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
+      "notion_id": "33ec2bbd-5973-811e-b022-fff4ee186b65",
+      "title": "아이클라우드 결제",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-09-27",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
+      "notion_id": "33ec2bbd-5973-8181-a8f4-ca9f362ef509",
+      "title": "아이클라우드 결제",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-08-27",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
+      "notion_id": "33ec2bbd-5973-816d-af6c-f1fac6e939db",
+      "title": "아이클라우드 결제",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-07-27",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
+      "notion_id": "33ec2bbd-5973-816b-bbe4-f93f2ea4d5c1",
+      "title": "아이클라우드 결제",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-06-27",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
+      "notion_id": "33ec2bbd-5973-81a7-83a9-f76a4743a657",
+      "title": "아이클라우드 결제",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-05-27",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
+      "notion_id": "33ec2bbd-5973-813f-b0be-c88b212350c1",
+      "title": "아이클라우드 결제",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-04-27",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
+      "notion_id": "33ec2bbd-5973-8156-8ad5-cbafc773f1b2",
+      "title": "양솔콘",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-05-30",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
+      "notion_id": "33ec2bbd-5973-8151-8a5e-c91c56e8909d",
+      "title": "🍎🧑🏻‍🌾🎉",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2027-01-04",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
+      "notion_id": "33ec2bbd-5973-8166-83cf-cb736486a4ad",
+      "title": "🐱💛🎉",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2027-01-05",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
       "notion_id": "2ecc2bbd-5973-81d2-bf66-d3e74e876157",
       "title": "일제강점기 기출'",
       "book_title": "한능검",
@@ -217,15 +973,6 @@
       "priority": "2nd"
     },
     {
-      "notion_id": "342c2bbd-5973-8140-b93e-df7c64440a45",
-      "title": "자료구조s4 그래프''''",
-      "book_title": "전공 스터디",
-      "completed": false,
-      "due_date": "2026-04-14",
-      "due_time": null,
-      "priority": "2nd"
-    },
-    {
       "notion_id": "2e9c2bbd-5973-8119-9bd3-dd6e0dc599a6",
       "title": "10강 자구&알고리즘",
       "book_title": "교과내용학 기본",
@@ -307,9 +1054,9 @@
       "priority": "3rd"
     },
     {
-      "notion_id": "342c2bbd-5973-8110-90d5-f728f9d4513a",
-      "title": "자료구조 내 파트 다시 정리''''",
-      "book_title": "전공 스터디",
+      "notion_id": "33ec2bbd-5973-8178-a287-d7b24275a1f5",
+      "title": "16:30-19:20 문화예술과사회공헌",
+      "book_title": "일정",
       "completed": false,
       "due_date": "2026-04-14",
       "due_time": null,
@@ -460,15 +1207,6 @@
       "priority": "4th"
     },
     {
-      "notion_id": "33ec2bbd-5973-8178-a287-d7b24275a1f5",
-      "title": "16:30-19:20 문화예술과사회공헌",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2026-04-14",
-      "due_time": null,
-      "priority": "4th"
-    },
-    {
       "notion_id": "33ac2bbd-5973-81bf-9ab5-c77891f32500",
       "title": "알고리즘 문제 풀이",
       "book_title": "전공 스터디",
@@ -492,6 +1230,15 @@
       "book_title": "전공 스터디",
       "completed": false,
       "due_date": "2026-04-13",
+      "due_time": null,
+      "priority": "4th"
+    },
+    {
+      "notion_id": "342c2bbd-5973-812b-b154-cdac1d0b1c24",
+      "title": "자료구조s4 그래프'''' (2)",
+      "book_title": "전공 스터디",
+      "completed": false,
+      "due_date": "2026-04-14",
       "due_time": null,
       "priority": "4th"
     },
@@ -811,15 +1558,6 @@
       "priority": "6th"
     },
     {
-      "notion_id": "342c2bbd-5973-812b-a1fe-e8ac113b68b5",
-      "title": "33강''''''",
-      "book_title": "교육학 기본",
-      "completed": false,
-      "due_date": "2026-04-14",
-      "due_time": null,
-      "priority": "6th"
-    },
-    {
       "notion_id": "2ebc2bbd-5973-81be-a30d-f6a09b9aae20",
       "title": "12일차",
       "book_title": "나도코딩 C언어",
@@ -852,6 +1590,15 @@
       "book_title": "나도코딩 C언어",
       "completed": false,
       "due_date": "2026-01-16",
+      "due_time": null,
+      "priority": "6th"
+    },
+    {
+      "notion_id": "342c2bbd-5973-8110-90d5-f728f9d4513a",
+      "title": "자료구조 내 파트 다시 정리''''",
+      "book_title": "전공 스터디",
+      "completed": false,
+      "due_date": "2026-04-14",
       "due_time": null,
       "priority": "6th"
     },
@@ -991,8 +1738,8 @@
       "priority": "7th"
     },
     {
-      "notion_id": "342c2bbd-5973-810a-b790-f131464a9e79",
-      "title": "34강''''''",
+      "notion_id": "342c2bbd-5973-812b-a1fe-e8ac113b68b5",
+      "title": "33강''''''",
       "book_title": "교육학 기본",
       "completed": false,
       "due_date": "2026-04-14",
@@ -1189,8 +1936,8 @@
       "priority": "8th"
     },
     {
-      "notion_id": "342c2bbd-5973-81f4-a24f-c7a3a3e6a481",
-      "title": "35강''''''",
+      "notion_id": "342c2bbd-5973-810a-b790-f131464a9e79",
+      "title": "34강''''''",
       "book_title": "교육학 기본",
       "completed": false,
       "due_date": "2026-04-14",
@@ -1306,8 +2053,8 @@
       "priority": "9th"
     },
     {
-      "notion_id": "342c2bbd-5973-81dd-a3a7-e85f914314f5",
-      "title": "36강''''''",
+      "notion_id": "342c2bbd-5973-81f4-a24f-c7a3a3e6a481",
+      "title": "35강''''''",
       "book_title": "교육학 기본",
       "completed": false,
       "due_date": "2026-04-14",
@@ -1432,8 +2179,8 @@
       "priority": "10th"
     },
     {
-      "notion_id": "342c2bbd-5973-81e3-b7fc-e08f517cc2e8",
-      "title": "37강'''''",
+      "notion_id": "342c2bbd-5973-81dd-a3a7-e85f914314f5",
+      "title": "36강''''''",
       "book_title": "교육학 기본",
       "completed": false,
       "due_date": "2026-04-14",
@@ -1567,8 +2314,8 @@
       "priority": "11th"
     },
     {
-      "notion_id": "342c2bbd-5973-8195-83ca-ffa1a573a842",
-      "title": "38강'''''",
+      "notion_id": "342c2bbd-5973-81e3-b7fc-e08f517cc2e8",
+      "title": "37강'''''",
       "book_title": "교육학 기본",
       "completed": false,
       "due_date": "2026-04-14",
@@ -1684,11 +2431,11 @@
       "priority": "12th"
     },
     {
-      "notion_id": "342c2bbd-5973-81d0-8b7d-ef90fa40b963",
-      "title": "39강'''''",
+      "notion_id": "342c2bbd-5973-8195-83ca-ffa1a573a842",
+      "title": "38강'''''",
       "book_title": "교육학 기본",
       "completed": false,
-      "due_date": "2026-04-14",
+      "due_date": "2026-04-15",
       "due_time": null,
       "priority": "12th"
     },
@@ -1774,11 +2521,11 @@
       "priority": "13th"
     },
     {
-      "notion_id": "342c2bbd-5973-8162-ae30-fa8b442c17bb",
-      "title": "40강'''''",
+      "notion_id": "342c2bbd-5973-81d0-8b7d-ef90fa40b963",
+      "title": "39강'''''",
       "book_title": "교육학 기본",
       "completed": false,
-      "due_date": "2026-04-14",
+      "due_date": "2026-04-15",
       "due_time": null,
       "priority": "13th"
     },
@@ -1837,11 +2584,11 @@
       "priority": "14th"
     },
     {
-      "notion_id": "342c2bbd-5973-8160-8d85-fea7de0d80dd",
-      "title": "41강'''''",
+      "notion_id": "342c2bbd-5973-8162-ae30-fa8b442c17bb",
+      "title": "40강'''''",
       "book_title": "교육학 기본",
       "completed": false,
-      "due_date": "2026-04-14",
+      "due_date": "2026-04-15",
       "due_time": null,
       "priority": "14th"
     },
@@ -1891,11 +2638,11 @@
       "priority": "15th"
     },
     {
-      "notion_id": "342c2bbd-5973-81bc-b9b1-f54da20a9444",
-      "title": "42강'''''",
+      "notion_id": "342c2bbd-5973-8160-8d85-fea7de0d80dd",
+      "title": "41강'''''",
       "book_title": "교육학 기본",
       "completed": false,
-      "due_date": "2026-04-14",
+      "due_date": "2026-04-15",
       "due_time": null,
       "priority": "15th"
     },
@@ -1945,11 +2692,11 @@
       "priority": "16th"
     },
     {
-      "notion_id": "342c2bbd-5973-81f4-871d-d838976c3e95",
-      "title": "43강'''''",
+      "notion_id": "342c2bbd-5973-81bc-b9b1-f54da20a9444",
+      "title": "42강'''''",
       "book_title": "교육학 기본",
       "completed": false,
-      "due_date": "2026-04-14",
+      "due_date": "2026-04-15",
       "due_time": null,
       "priority": "16th"
     },
@@ -1999,11 +2746,11 @@
       "priority": "17th"
     },
     {
-      "notion_id": "33fc2bbd-5973-81ef-a6d4-d9ca153d94a7",
-      "title": "13:30-16:30 학교 스터디",
-      "book_title": "일정",
+      "notion_id": "342c2bbd-5973-81f4-871d-d838976c3e95",
+      "title": "43강'''''",
+      "book_title": "교육학 기본",
       "completed": false,
-      "due_date": "2026-04-14",
+      "due_date": "2026-04-15",
       "due_time": null,
       "priority": "17th"
     },
@@ -2022,6 +2769,15 @@
       "book_title": "교육학 기본",
       "completed": false,
       "due_date": "2026-04-12",
+      "due_time": null,
+      "priority": "18th"
+    },
+    {
+      "notion_id": "33fc2bbd-5973-81ef-a6d4-d9ca153d94a7",
+      "title": "13:30-16:30 학교 스터디",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-04-14",
       "due_time": null,
       "priority": "18th"
     },
@@ -2237,7 +2993,7 @@
       "title": "44강",
       "book_title": "교육학 기본",
       "completed": false,
-      "due_date": "2026-04-15",
+      "due_date": "2026-04-16",
       "due_time": null,
       "priority": ""
     },
@@ -2246,7 +3002,7 @@
       "title": "45강",
       "book_title": "교육학 기본",
       "completed": false,
-      "due_date": "2026-04-15",
+      "due_date": "2026-04-16",
       "due_time": null,
       "priority": ""
     },
@@ -2255,7 +3011,7 @@
       "title": "46강",
       "book_title": "교육학 기본",
       "completed": false,
-      "due_date": "2026-04-15",
+      "due_date": "2026-04-16",
       "due_time": null,
       "priority": ""
     },
@@ -2264,7 +3020,7 @@
       "title": "47강",
       "book_title": "교육학 기본",
       "completed": false,
-      "due_date": "2026-04-15",
+      "due_date": "2026-04-16",
       "due_time": null,
       "priority": ""
     },
@@ -2273,7 +3029,7 @@
       "title": "48강",
       "book_title": "교육학 기본",
       "completed": false,
-      "due_date": "2026-04-15",
+      "due_date": "2026-04-16",
       "due_time": null,
       "priority": ""
     },
@@ -2282,7 +3038,7 @@
       "title": "49강",
       "book_title": "교육학 기본",
       "completed": false,
-      "due_date": "2026-04-15",
+      "due_date": "2026-04-16",
       "due_time": null,
       "priority": ""
     },
@@ -2291,7 +3047,7 @@
       "title": "50강",
       "book_title": "교육학 기본",
       "completed": false,
-      "due_date": "2026-04-15",
+      "due_date": "2026-04-16",
       "due_time": null,
       "priority": ""
     },
@@ -2300,7 +3056,7 @@
       "title": "51강",
       "book_title": "교육학 기본",
       "completed": false,
-      "due_date": "2026-04-16",
+      "due_date": "2026-04-23",
       "due_time": null,
       "priority": ""
     },
@@ -2309,7 +3065,7 @@
       "title": "52강",
       "book_title": "교육학 기본",
       "completed": false,
-      "due_date": "2026-04-16",
+      "due_date": "2026-04-23",
       "due_time": null,
       "priority": ""
     },
@@ -2318,7 +3074,7 @@
       "title": "53강",
       "book_title": "교육학 기본",
       "completed": false,
-      "due_date": "2026-04-16",
+      "due_date": "2026-04-23",
       "due_time": null,
       "priority": ""
     },
@@ -2327,7 +3083,7 @@
       "title": "54강",
       "book_title": "교육학 기본",
       "completed": false,
-      "due_date": "2026-04-16",
+      "due_date": "2026-04-23",
       "due_time": null,
       "priority": ""
     },
@@ -2354,7 +3110,7 @@
       "title": "57강",
       "book_title": "교육학 기본",
       "completed": false,
-      "due_date": "2026-04-16",
+      "due_date": "2026-04-23",
       "due_time": null,
       "priority": ""
     },
@@ -2363,7 +3119,7 @@
       "title": "58강",
       "book_title": "교육학 기본",
       "completed": false,
-      "due_date": "2026-04-16",
+      "due_date": "2026-04-23",
       "due_time": null,
       "priority": ""
     },
@@ -2372,7 +3128,7 @@
       "title": "59강",
       "book_title": "교육학 기본",
       "completed": false,
-      "due_date": "2026-04-16",
+      "due_date": "2026-04-23",
       "due_time": null,
       "priority": ""
     },
@@ -2381,7 +3137,7 @@
       "title": "60강",
       "book_title": "교육학 기본",
       "completed": false,
-      "due_date": "2026-04-16",
+      "due_date": "2026-04-23",
       "due_time": null,
       "priority": ""
     },
@@ -2390,7 +3146,7 @@
       "title": "61강",
       "book_title": "교육학 기본",
       "completed": false,
-      "due_date": "2026-04-16",
+      "due_date": "2026-04-23",
       "due_time": null,
       "priority": ""
     },
@@ -2399,7 +3155,7 @@
       "title": "62강",
       "book_title": "교육학 기본",
       "completed": false,
-      "due_date": "2026-04-16",
+      "due_date": "2026-04-23",
       "due_time": null,
       "priority": ""
     },
@@ -2490,762 +3246,6 @@
       "book_title": "구분",
       "completed": false,
       "due_date": null,
-      "due_time": null,
-      "priority": ""
-    },
-    {
-      "notion_id": "33ec2bbd-5973-81b1-a49c-cfac176aa8a4",
-      "title": "08:30-09:30 교생 오티",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2026-04-27",
-      "due_time": null,
-      "priority": ""
-    },
-    {
-      "notion_id": "33fc2bbd-5973-817d-9d4f-cda4b8f32d8b",
-      "title": "09:00-11:00 교회",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2027-04-11",
-      "due_time": null,
-      "priority": ""
-    },
-    {
-      "notion_id": "33ec2bbd-5973-8112-8ff3-cd2e9dafd178",
-      "title": "09:00-11:00 교회",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2027-04-04",
-      "due_time": null,
-      "priority": ""
-    },
-    {
-      "notion_id": "33ec2bbd-5973-81cb-8638-d0aa29652e7d",
-      "title": "09:00-11:00 교회",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2027-03-28",
-      "due_time": null,
-      "priority": ""
-    },
-    {
-      "notion_id": "33ec2bbd-5973-81dd-9e4c-dc8b12c71152",
-      "title": "09:00-11:00 교회",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2027-03-21",
-      "due_time": null,
-      "priority": ""
-    },
-    {
-      "notion_id": "33ec2bbd-5973-8162-a7bf-dae80df4b17e",
-      "title": "09:00-11:00 교회",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2027-03-14",
-      "due_time": null,
-      "priority": ""
-    },
-    {
-      "notion_id": "33ec2bbd-5973-810e-b70d-e43c63ca859d",
-      "title": "09:00-11:00 교회",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2027-03-07",
-      "due_time": null,
-      "priority": ""
-    },
-    {
-      "notion_id": "33ec2bbd-5973-8110-a808-eb090102d6e9",
-      "title": "09:00-11:00 교회",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2027-02-28",
-      "due_time": null,
-      "priority": ""
-    },
-    {
-      "notion_id": "33ec2bbd-5973-8151-963f-eb383397a96c",
-      "title": "09:00-11:00 교회",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2027-02-21",
-      "due_time": null,
-      "priority": ""
-    },
-    {
-      "notion_id": "33ec2bbd-5973-8169-86e7-fa4aba910229",
-      "title": "09:00-11:00 교회",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2027-02-14",
-      "due_time": null,
-      "priority": ""
-    },
-    {
-      "notion_id": "33ec2bbd-5973-81dd-a04f-d1e462ed7986",
-      "title": "09:00-11:00 교회",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2027-02-07",
-      "due_time": null,
-      "priority": ""
-    },
-    {
-      "notion_id": "33ec2bbd-5973-81c1-bd54-c28debf6b0eb",
-      "title": "09:00-11:00 교회",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2027-01-31",
-      "due_time": null,
-      "priority": ""
-    },
-    {
-      "notion_id": "33ec2bbd-5973-81d5-b6cb-de1df71d704a",
-      "title": "09:00-11:00 교회",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2027-01-24",
-      "due_time": null,
-      "priority": ""
-    },
-    {
-      "notion_id": "33ec2bbd-5973-8158-8996-c90258f24eb8",
-      "title": "09:00-11:00 교회",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2027-01-17",
-      "due_time": null,
-      "priority": ""
-    },
-    {
-      "notion_id": "33ec2bbd-5973-8168-bce1-e1b667f881ac",
-      "title": "09:00-11:00 교회",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2027-01-10",
-      "due_time": null,
-      "priority": ""
-    },
-    {
-      "notion_id": "33ec2bbd-5973-81c1-a9cd-effd48692675",
-      "title": "09:00-11:00 교회",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2027-01-03",
-      "due_time": null,
-      "priority": ""
-    },
-    {
-      "notion_id": "33ec2bbd-5973-8121-b7d3-ecc7485f4c8c",
-      "title": "09:00-11:00 교회",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2026-12-27",
-      "due_time": null,
-      "priority": ""
-    },
-    {
-      "notion_id": "33ec2bbd-5973-81df-a00e-d9d88037bcf4",
-      "title": "09:00-11:00 교회",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2026-12-20",
-      "due_time": null,
-      "priority": ""
-    },
-    {
-      "notion_id": "33ec2bbd-5973-81ef-903e-c4d62f021a83",
-      "title": "09:00-11:00 교회",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2026-12-13",
-      "due_time": null,
-      "priority": ""
-    },
-    {
-      "notion_id": "33ec2bbd-5973-81cf-9465-f89feccaf93b",
-      "title": "09:00-11:00 교회",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2026-12-06",
-      "due_time": null,
-      "priority": ""
-    },
-    {
-      "notion_id": "33ec2bbd-5973-81ce-a26d-ef17eec8cb8a",
-      "title": "09:00-11:00 교회",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2026-11-29",
-      "due_time": null,
-      "priority": ""
-    },
-    {
-      "notion_id": "33ec2bbd-5973-81ae-a350-c0555c09043b",
-      "title": "09:00-11:00 교회",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2026-11-22",
-      "due_time": null,
-      "priority": ""
-    },
-    {
-      "notion_id": "33ec2bbd-5973-81f8-a420-fbd8ab0ed4c3",
-      "title": "09:00-11:00 교회",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2026-11-15",
-      "due_time": null,
-      "priority": ""
-    },
-    {
-      "notion_id": "33ec2bbd-5973-8161-8745-d3cd6e6cd2d1",
-      "title": "09:00-11:00 교회",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2026-11-08",
-      "due_time": null,
-      "priority": ""
-    },
-    {
-      "notion_id": "33ec2bbd-5973-8105-9bfb-d88fef92b0b0",
-      "title": "09:00-11:00 교회",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2026-11-01",
-      "due_time": null,
-      "priority": ""
-    },
-    {
-      "notion_id": "33ec2bbd-5973-8128-ab4b-d14b2b52373b",
-      "title": "09:00-11:00 교회",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2026-10-25",
-      "due_time": null,
-      "priority": ""
-    },
-    {
-      "notion_id": "33ec2bbd-5973-8116-b501-cbde6c297fbd",
-      "title": "09:00-11:00 교회",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2026-10-18",
-      "due_time": null,
-      "priority": ""
-    },
-    {
-      "notion_id": "33ec2bbd-5973-817f-b2cb-f4d5daeaa4fc",
-      "title": "09:00-11:00 교회",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2026-10-11",
-      "due_time": null,
-      "priority": ""
-    },
-    {
-      "notion_id": "33ec2bbd-5973-817a-8618-d1bf98a8f40f",
-      "title": "09:00-11:00 교회",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2026-10-04",
-      "due_time": null,
-      "priority": ""
-    },
-    {
-      "notion_id": "33ec2bbd-5973-8194-b690-cf60f40ff589",
-      "title": "09:00-11:00 교회",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2026-09-27",
-      "due_time": null,
-      "priority": ""
-    },
-    {
-      "notion_id": "33ec2bbd-5973-8161-a45b-ca7e6f1e626e",
-      "title": "09:00-11:00 교회",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2026-09-20",
-      "due_time": null,
-      "priority": ""
-    },
-    {
-      "notion_id": "33ec2bbd-5973-81ab-b56f-c04e19187a43",
-      "title": "09:00-11:00 교회",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2026-09-13",
-      "due_time": null,
-      "priority": ""
-    },
-    {
-      "notion_id": "33ec2bbd-5973-81a9-a765-faf70b6e1125",
-      "title": "09:00-11:00 교회",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2026-09-06",
-      "due_time": null,
-      "priority": ""
-    },
-    {
-      "notion_id": "33ec2bbd-5973-8199-a484-c54dee74e28c",
-      "title": "09:00-11:00 교회",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2026-08-30",
-      "due_time": null,
-      "priority": ""
-    },
-    {
-      "notion_id": "33ec2bbd-5973-814d-a9e5-e1336dcc03bf",
-      "title": "09:00-11:00 교회",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2026-08-23",
-      "due_time": null,
-      "priority": ""
-    },
-    {
-      "notion_id": "33ec2bbd-5973-81fb-a63e-e4d78be3e47f",
-      "title": "09:00-11:00 교회",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2026-08-16",
-      "due_time": null,
-      "priority": ""
-    },
-    {
-      "notion_id": "33ec2bbd-5973-8192-aed9-ce87d46de570",
-      "title": "09:00-11:00 교회",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2026-08-09",
-      "due_time": null,
-      "priority": ""
-    },
-    {
-      "notion_id": "33ec2bbd-5973-81c7-aea4-cf217f0ec7ca",
-      "title": "09:00-11:00 교회",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2026-08-02",
-      "due_time": null,
-      "priority": ""
-    },
-    {
-      "notion_id": "33ec2bbd-5973-8135-940d-ea128f917f15",
-      "title": "09:00-11:00 교회",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2026-07-26",
-      "due_time": null,
-      "priority": ""
-    },
-    {
-      "notion_id": "33ec2bbd-5973-81a5-8c20-debdb9dd7cbc",
-      "title": "09:00-11:00 교회",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2026-07-19",
-      "due_time": null,
-      "priority": ""
-    },
-    {
-      "notion_id": "33ec2bbd-5973-8172-85aa-eb8ec0d44145",
-      "title": "09:00-11:00 교회",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2026-07-12",
-      "due_time": null,
-      "priority": ""
-    },
-    {
-      "notion_id": "33ec2bbd-5973-81a8-a05e-cbbbde091c8a",
-      "title": "09:00-11:00 교회",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2026-07-05",
-      "due_time": null,
-      "priority": ""
-    },
-    {
-      "notion_id": "33ec2bbd-5973-8127-ba1b-e2caa2eb7275",
-      "title": "09:00-11:00 교회",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2026-06-28",
-      "due_time": null,
-      "priority": ""
-    },
-    {
-      "notion_id": "33ec2bbd-5973-817a-afe1-d2babaec2aed",
-      "title": "09:00-11:00 교회",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2026-06-21",
-      "due_time": null,
-      "priority": ""
-    },
-    {
-      "notion_id": "33ec2bbd-5973-8138-a86e-ef58293ef436",
-      "title": "09:00-11:00 교회",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2026-06-14",
-      "due_time": null,
-      "priority": ""
-    },
-    {
-      "notion_id": "33ec2bbd-5973-8134-8abf-c692e4aff5e1",
-      "title": "09:00-11:00 교회",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2026-06-07",
-      "due_time": null,
-      "priority": ""
-    },
-    {
-      "notion_id": "33ec2bbd-5973-810f-80aa-ea4026694cbb",
-      "title": "09:00-11:00 교회",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2026-05-31",
-      "due_time": null,
-      "priority": ""
-    },
-    {
-      "notion_id": "33ec2bbd-5973-81f9-82e2-fa368f877bd6",
-      "title": "09:00-11:00 교회",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2026-05-24",
-      "due_time": null,
-      "priority": ""
-    },
-    {
-      "notion_id": "33ec2bbd-5973-8111-900f-cba78d2d9e17",
-      "title": "09:00-11:00 교회",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2026-05-17",
-      "due_time": null,
-      "priority": ""
-    },
-    {
-      "notion_id": "33ec2bbd-5973-8198-8795-c2421af16373",
-      "title": "09:00-11:00 교회",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2026-05-10",
-      "due_time": null,
-      "priority": ""
-    },
-    {
-      "notion_id": "33ec2bbd-5973-8140-bd5d-e40cdb860005",
-      "title": "09:00-11:00 교회",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2026-05-03",
-      "due_time": null,
-      "priority": ""
-    },
-    {
-      "notion_id": "33ec2bbd-5973-81f8-88bd-de0b522471c3",
-      "title": "09:00-11:00 교회",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2026-04-26",
-      "due_time": null,
-      "priority": ""
-    },
-    {
-      "notion_id": "33ec2bbd-5973-813b-ad26-f931811d5f61",
-      "title": "09:00-11:00 교회",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2026-04-19",
-      "due_time": null,
-      "priority": ""
-    },
-    {
-      "notion_id": "33ec2bbd-5973-817b-bcc9-c6dce18cc05a",
-      "title": "09:00-18:00 학원 스터디",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2026-04-22",
-      "due_time": null,
-      "priority": ""
-    },
-    {
-      "notion_id": "33ec2bbd-5973-8178-8c68-d3b805f82236",
-      "title": "09:00-18:00 학원 스터디",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2026-04-15",
-      "due_time": null,
-      "priority": ""
-    },
-    {
-      "notion_id": "33ec2bbd-5973-81c8-b23f-deaea387ce09",
-      "title": "10:00-17:00 교과내용학",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2026-04-25",
-      "due_time": null,
-      "priority": ""
-    },
-    {
-      "notion_id": "33ec2bbd-5973-81fb-bd6a-ff44354bb71d",
-      "title": "10:00-17:00 교과내용학",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2026-04-18",
-      "due_time": null,
-      "priority": ""
-    },
-    {
-      "notion_id": "33ec2bbd-5973-8121-a1bd-ca0a7265523c",
-      "title": "13:30-16:30 학교 스터디",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2026-04-21",
-      "due_time": null,
-      "priority": ""
-    },
-    {
-      "notion_id": "33ec2bbd-5973-81b4-8ec4-f3506280dbe7",
-      "title": "16:30-19:20 문화예술과사회공헌",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2026-06-09",
-      "due_time": null,
-      "priority": ""
-    },
-    {
-      "notion_id": "33ec2bbd-5973-816f-a3a0-ffeaecdfab63",
-      "title": "16:30-19:20 문화예술과사회공헌",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2026-06-02",
-      "due_time": null,
-      "priority": ""
-    },
-    {
-      "notion_id": "33ec2bbd-5973-8141-b2e9-d199f25a238a",
-      "title": "16:30-19:20 문화예술과사회공헌",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2026-05-26",
-      "due_time": null,
-      "priority": ""
-    },
-    {
-      "notion_id": "33ec2bbd-5973-8189-a605-e00c7e392c00",
-      "title": "16:30-19:20 문화예술과사회공헌",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2026-05-19",
-      "due_time": null,
-      "priority": ""
-    },
-    {
-      "notion_id": "33ec2bbd-5973-8140-a121-c4ac571b932d",
-      "title": "16:30-19:20 문화예술과사회공헌",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2026-05-12",
-      "due_time": null,
-      "priority": ""
-    },
-    {
-      "notion_id": "33ec2bbd-5973-8170-8143-d932b593db5c",
-      "title": "16:30-19:20 문화예술과사회공헌",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2026-05-05",
-      "due_time": null,
-      "priority": ""
-    },
-    {
-      "notion_id": "33ec2bbd-5973-81b6-8e43-c023fa64a29d",
-      "title": "16:30-19:20 문화예술과사회공헌",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2026-04-28",
-      "due_time": null,
-      "priority": ""
-    },
-    {
-      "notion_id": "33ec2bbd-5973-81b4-a3dc-f91ee7a6af03",
-      "title": "16:30-19:20 문화예술과사회공헌",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2026-04-21",
-      "due_time": null,
-      "priority": ""
-    },
-    {
-      "notion_id": "33ec2bbd-5973-814c-94af-ea566d11db5f",
-      "title": "17:00-19:50 학교현장실습",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2026-06-10",
-      "due_time": null,
-      "priority": ""
-    },
-    {
-      "notion_id": "33ec2bbd-5973-818f-8da8-d031a7d2f0f1",
-      "title": "교생 8:20-16:30",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2026-04-27",
-      "due_time": null,
-      "priority": ""
-    },
-    {
-      "notion_id": "33ec2bbd-5973-815d-b252-dc21553dca74",
-      "title": "바교한시",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2026-05-24",
-      "due_time": null,
-      "priority": ""
-    },
-    {
-      "notion_id": "33ec2bbd-5973-818b-9eb0-d5fbc9126910",
-      "title": "아이클라우드 결제",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2027-03-27",
-      "due_time": null,
-      "priority": ""
-    },
-    {
-      "notion_id": "33ec2bbd-5973-812c-9947-d9d4092354a9",
-      "title": "아이클라우드 결제",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2027-02-27",
-      "due_time": null,
-      "priority": ""
-    },
-    {
-      "notion_id": "33ec2bbd-5973-8117-a047-cccb2a752567",
-      "title": "아이클라우드 결제",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2027-01-27",
-      "due_time": null,
-      "priority": ""
-    },
-    {
-      "notion_id": "33ec2bbd-5973-818a-8955-cbb888466f59",
-      "title": "아이클라우드 결제",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2026-12-27",
-      "due_time": null,
-      "priority": ""
-    },
-    {
-      "notion_id": "33ec2bbd-5973-8106-a9bc-cb0a1cb33324",
-      "title": "아이클라우드 결제",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2026-11-27",
-      "due_time": null,
-      "priority": ""
-    },
-    {
-      "notion_id": "33ec2bbd-5973-818e-8411-f0ee4989bcb9",
-      "title": "아이클라우드 결제",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2026-10-27",
-      "due_time": null,
-      "priority": ""
-    },
-    {
-      "notion_id": "33ec2bbd-5973-811e-b022-fff4ee186b65",
-      "title": "아이클라우드 결제",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2026-09-27",
-      "due_time": null,
-      "priority": ""
-    },
-    {
-      "notion_id": "33ec2bbd-5973-8181-a8f4-ca9f362ef509",
-      "title": "아이클라우드 결제",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2026-08-27",
-      "due_time": null,
-      "priority": ""
-    },
-    {
-      "notion_id": "33ec2bbd-5973-816d-af6c-f1fac6e939db",
-      "title": "아이클라우드 결제",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2026-07-27",
-      "due_time": null,
-      "priority": ""
-    },
-    {
-      "notion_id": "33ec2bbd-5973-816b-bbe4-f93f2ea4d5c1",
-      "title": "아이클라우드 결제",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2026-06-27",
-      "due_time": null,
-      "priority": ""
-    },
-    {
-      "notion_id": "33ec2bbd-5973-81a7-83a9-f76a4743a657",
-      "title": "아이클라우드 결제",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2026-05-27",
-      "due_time": null,
-      "priority": ""
-    },
-    {
-      "notion_id": "33ec2bbd-5973-813f-b0be-c88b212350c1",
-      "title": "아이클라우드 결제",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2026-04-27",
-      "due_time": null,
-      "priority": ""
-    },
-    {
-      "notion_id": "33ec2bbd-5973-8156-8ad5-cbafc773f1b2",
-      "title": "양솔콘",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2026-05-30",
-      "due_time": null,
-      "priority": ""
-    },
-    {
-      "notion_id": "33ec2bbd-5973-8151-8a5e-c91c56e8909d",
-      "title": "🍎🧑🏻‍🌾🎉",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2027-01-04",
-      "due_time": null,
-      "priority": ""
-    },
-    {
-      "notion_id": "33ec2bbd-5973-8166-83cf-cb736486a4ad",
-      "title": "🐱💛🎉",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2027-01-05",
       "due_time": null,
       "priority": ""
     },
@@ -4011,6 +4011,15 @@
       "book_title": "전공 스터디",
       "completed": true,
       "due_date": "2026-04-13",
+      "due_time": null,
+      "priority": "2nd"
+    },
+    {
+      "notion_id": "342c2bbd-5973-8140-b93e-df7c64440a45",
+      "title": "자료구조s4 그래프''''",
+      "book_title": "전공 스터디",
+      "completed": true,
+      "due_date": "2026-04-14",
       "due_time": null,
       "priority": "2nd"
     },
@@ -5545,6 +5554,6 @@
       "priority": ""
     }
   ],
-  "last_sync": "2026-04-14T04:33:04.266676+00:00",
-  "total": 616
+  "last_sync": "2026-04-14T08:05:57.895445+00:00",
+  "total": 617
 }
