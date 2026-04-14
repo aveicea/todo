@@ -1396,15 +1396,6 @@
       "priority": "5th"
     },
     {
-      "notion_id": "342c2bbd-5973-8173-8694-d39576d4ae31",
-      "title": "자료구조s4 그래프'''' (3)",
-      "book_title": "전공 스터디",
-      "completed": false,
-      "due_date": "2026-04-14",
-      "due_time": null,
-      "priority": "5th"
-    },
-    {
       "notion_id": "2e9c2bbd-5973-8172-be68-da39fe0b1327",
       "title": "개항기 기출",
       "book_title": "한능검",
@@ -1761,15 +1752,6 @@
       "book_title": "전공 스터디",
       "completed": false,
       "due_date": "2026-04-12",
-      "due_time": null,
-      "priority": "7th"
-    },
-    {
-      "notion_id": "342c2bbd-5973-8110-90d5-f728f9d4513a",
-      "title": "자료구조 내 파트 다시 정리''''",
-      "book_title": "전공 스터디",
-      "completed": false,
-      "due_date": "2026-04-14",
       "due_time": null,
       "priority": "7th"
     },
@@ -4573,6 +4555,15 @@
       "priority": "5th"
     },
     {
+      "notion_id": "342c2bbd-5973-8173-8694-d39576d4ae31",
+      "title": "자료구조s4 그래프'''' (3)",
+      "book_title": "전공 스터디",
+      "completed": true,
+      "due_date": "2026-04-14",
+      "due_time": null,
+      "priority": "5th"
+    },
+    {
       "notion_id": "2edc2bbd-5973-8120-94d6-d5fee390c6a7",
       "title": "개항기 기출'",
       "book_title": "한능검",
@@ -5572,6 +5563,6 @@
       "priority": ""
     }
   ],
-  "last_sync": "2026-04-14T23:09:09.220115+00:00",
-  "total": 619
+  "last_sync": "2026-04-14T23:56:36.900998+00:00",
+  "total": 618
 }
