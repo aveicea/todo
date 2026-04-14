@@ -586,15 +586,6 @@
       "priority": "1st"
     },
     {
-      "notion_id": "33ec2bbd-5973-8121-a1bd-ca0a7265523c",
-      "title": "13:30-16:30 학교 스터디",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2026-04-21",
-      "due_time": null,
-      "priority": "1st"
-    },
-    {
       "notion_id": "33ec2bbd-5973-81b4-8ec4-f3506280dbe7",
       "title": "16:30-19:20 문화예술과사회공헌",
       "book_title": "일정",
@@ -1324,15 +1315,6 @@
       "priority": "5th"
     },
     {
-      "notion_id": "342c2bbd-5973-8194-acf6-d2911e870fb4",
-      "title": "운영체제 구조도 보완'''''''''",
-      "book_title": "교과내용학 심화",
-      "completed": false,
-      "due_date": "2026-04-14",
-      "due_time": null,
-      "priority": "5th"
-    },
-    {
       "notion_id": "32ec2bbd-5973-8067-a856-c614883c03e3",
       "title": "10강",
       "book_title": "교육학 기본",
@@ -1361,7 +1343,7 @@
     },
     {
       "notion_id": "340c2bbd-5973-81dc-8d70-e979dec8d6a5",
-      "title": "저녁",
+      "title": "7시 클로드 초기화 - 마인드맵용, 스터디용",
       "book_title": "구분",
       "completed": false,
       "due_date": null,
@@ -2773,15 +2755,6 @@
       "priority": "18th"
     },
     {
-      "notion_id": "33fc2bbd-5973-81ef-a6d4-d9ca153d94a7",
-      "title": "13:30-16:30 학교 스터디",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2026-04-14",
-      "due_time": null,
-      "priority": "18th"
-    },
-    {
       "notion_id": "33dc2bbd-5973-814d-ae05-fb9815de7769",
       "title": "43강'",
       "book_title": "교육학 기본",
@@ -3246,6 +3219,24 @@
       "book_title": "구분",
       "completed": false,
       "due_date": null,
+      "due_time": null,
+      "priority": ""
+    },
+    {
+      "notion_id": "342c2bbd-5973-81b4-90e6-f7413f5d1538",
+      "title": "18:45-19:15 .",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-04-15",
+      "due_time": null,
+      "priority": ""
+    },
+    {
+      "notion_id": "342c2bbd-5973-8190-9231-d90cc6a341f8",
+      "title": "19:00-22:00 학교 스터디",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-04-21",
       "due_time": null,
       "priority": ""
     },
@@ -4420,6 +4411,15 @@
       "priority": "5th"
     },
     {
+      "notion_id": "342c2bbd-5973-8194-acf6-d2911e870fb4",
+      "title": "운영체제 구조도 보완'''''''''",
+      "book_title": "교과내용학 심화",
+      "completed": true,
+      "due_date": "2026-04-14",
+      "due_time": null,
+      "priority": "5th"
+    },
+    {
       "notion_id": "336c2bbd-5973-818d-ad8b-ee9d75820fbd",
       "title": "21강'",
       "book_title": "교육학 기본",
@@ -5554,6 +5554,6 @@
       "priority": ""
     }
   ],
-  "last_sync": "2026-04-14T08:05:57.895445+00:00",
+  "last_sync": "2026-04-14T09:45:08.386045+00:00",
   "total": 617
 }
