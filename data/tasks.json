@@ -163,6 +163,24 @@
       "importance": "normal"
     },
     {
+      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAe-vLLTAAA=",
+      "notion_id": "343c2bbd-5973-817e-8f2c-efdcf26ec275",
+      "title": "데일리 체크",
+      "completed": false,
+      "due_date": "2026-04-16",
+      "due_time": null,
+      "importance": "normal"
+    },
+    {
+      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAe-vLLSAAA=",
+      "notion_id": "343c2bbd-5973-819e-8695-cd444ab3c097",
+      "title": "다이어리",
+      "completed": false,
+      "due_date": "2026-04-16",
+      "due_time": null,
+      "importance": "normal"
+    },
+    {
       "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAell2cWAAA=",
       "notion_id": "311c2bbd-5973-8198-88eb-df671fe340c3",
       "title": "키레나 형광펜 페일 그린",
@@ -1027,8 +1045,8 @@
       "importance": "normal"
     }
   ],
-  "last_sync": "2026-04-15T14:14:51.955833+00:00",
-  "total": 114,
+  "last_sync": "2026-04-15T15:38:29.627140+00:00",
+  "total": 116,
   "completed": 96,
-  "pending": 18
+  "pending": 20
 }
