@@ -100,15 +100,6 @@
       "importance": "normal"
     },
     {
-      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAe-vLLNAAA=",
-      "notion_id": "340c2bbd-5973-81c1-95f9-f2de098e2c69",
-      "title": "데일리 체크",
-      "completed": false,
-      "due_date": "2026-04-13",
-      "due_time": null,
-      "importance": "normal"
-    },
-    {
       "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAe-vLLMAAA=",
       "notion_id": "340c2bbd-5973-8146-9f23-faf4dc7b391c",
       "title": "다이어리",
@@ -127,29 +118,11 @@
       "importance": "normal"
     },
     {
-      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAe-vLLPAAA=",
-      "notion_id": "341c2bbd-5973-81ef-87b6-e1a5741b5936",
-      "title": "데일리 체크",
-      "completed": false,
-      "due_date": "2026-04-14",
-      "due_time": null,
-      "importance": "normal"
-    },
-    {
       "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAe-vLLOAAA=",
       "notion_id": "341c2bbd-5973-814b-ad9f-c6c22ffc938a",
       "title": "다이어리",
       "completed": false,
       "due_date": "2026-04-14",
-      "due_time": null,
-      "importance": "normal"
-    },
-    {
-      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAe-vLLRAAA=",
-      "notion_id": "342c2bbd-5973-816f-a2f8-d6545ca653c3",
-      "title": "데일리 체크",
-      "completed": false,
-      "due_date": "2026-04-15",
       "due_time": null,
       "importance": "normal"
     },
@@ -1043,10 +1016,37 @@
       "due_date": "2026-04-11",
       "due_time": null,
       "importance": "normal"
+    },
+    {
+      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAe-vLLNAAA=",
+      "notion_id": "340c2bbd-5973-81c1-95f9-f2de098e2c69",
+      "title": "데일리 체크",
+      "completed": true,
+      "due_date": "2026-04-13",
+      "due_time": null,
+      "importance": "normal"
+    },
+    {
+      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAe-vLLPAAA=",
+      "notion_id": "341c2bbd-5973-81ef-87b6-e1a5741b5936",
+      "title": "데일리 체크",
+      "completed": true,
+      "due_date": "2026-04-14",
+      "due_time": null,
+      "importance": "normal"
+    },
+    {
+      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAe-vLLRAAA=",
+      "notion_id": "342c2bbd-5973-816f-a2f8-d6545ca653c3",
+      "title": "데일리 체크",
+      "completed": true,
+      "due_date": "2026-04-15",
+      "due_time": null,
+      "importance": "normal"
     }
   ],
-  "last_sync": "2026-04-15T23:54:36.030672+00:00",
+  "last_sync": "2026-04-16T01:24:17.008596+00:00",
   "total": 116,
-  "completed": 96,
-  "pending": 20
+  "completed": 99,
+  "pending": 17
 }
