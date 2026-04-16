@@ -1045,15 +1045,6 @@
       "priority": "3rd"
     },
     {
-      "notion_id": "344c2bbd-5973-814d-97be-e2c3af8685d9",
-      "title": "자료구조s4 최단경로 개념 2차 (4)",
-      "book_title": "전공 스터디",
-      "completed": false,
-      "due_date": "2026-04-16",
-      "due_time": null,
-      "priority": "3rd"
-    },
-    {
       "notion_id": "2ecc2bbd-5973-8163-86a1-d48a635c3380",
       "title": "10강 자구&알고리즘'",
       "book_title": "교과내용학 기본",
@@ -1216,6 +1207,15 @@
       "priority": "4th"
     },
     {
+      "notion_id": "344c2bbd-5973-8170-bdc2-d5d205f5b1d9",
+      "title": "자료구조s4 최단경로 개념 2차 (5)",
+      "book_title": "전공 스터디",
+      "completed": false,
+      "due_date": "2026-04-16",
+      "due_time": null,
+      "priority": "4th"
+    },
+    {
       "notion_id": "2ecc2bbd-5973-81d9-8277-e0cd37d57fbf",
       "title": "조선후기 기출' (2)",
       "book_title": "한능검",
@@ -1365,15 +1365,6 @@
       "book_title": "전공 스터디",
       "completed": false,
       "due_date": "2026-04-09",
-      "due_time": null,
-      "priority": "5th"
-    },
-    {
-      "notion_id": "344c2bbd-5973-8036-b5c5-e5889274a320",
-      "title": "자료구조 문제풀이 (obst 기출)",
-      "book_title": "전공 스터디",
-      "completed": false,
-      "due_date": "2026-04-16",
       "due_time": null,
       "priority": "5th"
     },
@@ -1558,17 +1549,8 @@
       "priority": "6th"
     },
     {
-      "notion_id": "344c2bbd-5973-8068-adad-c4fb9515f091",
-      "title": "알고리즘a1 기본개념",
-      "book_title": "전공 스터디",
-      "completed": false,
-      "due_date": "2026-04-16",
-      "due_time": null,
-      "priority": "6th"
-    },
-    {
-      "notion_id": "344c2bbd-5973-8064-882d-cdcfb4f45f47",
-      "title": "알고리즘a2 설계",
+      "notion_id": "344c2bbd-5973-8036-b5c5-e5889274a320",
+      "title": "자료구조 문제풀이 (obst 기출)",
       "book_title": "전공 스터디",
       "completed": false,
       "due_date": "2026-04-16",
@@ -1747,8 +1729,17 @@
       "priority": "7th"
     },
     {
-      "notion_id": "344c2bbd-5973-80c1-b8a0-e09fe0b976fa",
-      "title": "알고리즘a3 탐색과 해싱",
+      "notion_id": "344c2bbd-5973-8068-adad-c4fb9515f091",
+      "title": "알고리즘a1 기본개념",
+      "book_title": "전공 스터디",
+      "completed": false,
+      "due_date": "2026-04-16",
+      "due_time": null,
+      "priority": "7th"
+    },
+    {
+      "notion_id": "344c2bbd-5973-8064-882d-cdcfb4f45f47",
+      "title": "알고리즘a2 설계",
       "book_title": "전공 스터디",
       "completed": false,
       "due_date": "2026-04-16",
@@ -1945,6 +1936,15 @@
       "priority": "8th"
     },
     {
+      "notion_id": "344c2bbd-5973-80c1-b8a0-e09fe0b976fa",
+      "title": "알고리즘a3 탐색과 해싱",
+      "book_title": "전공 스터디",
+      "completed": false,
+      "due_date": "2026-04-16",
+      "due_time": null,
+      "priority": "8th"
+    },
+    {
       "notion_id": "344c2bbd-5973-816a-b243-d03a6c58a594",
       "title": "인공지능 구조도",
       "book_title": "교과내용학 심화",
@@ -2089,24 +2089,6 @@
       "priority": "9th"
     },
     {
-      "notion_id": "344c2bbd-5973-800c-8c18-cc33ce34248d",
-      "title": "알고리즘a4 정렬 알고리즘",
-      "book_title": "전공 스터디",
-      "completed": false,
-      "due_date": "2026-04-16",
-      "due_time": null,
-      "priority": "9th"
-    },
-    {
-      "notion_id": "344c2bbd-5973-80b0-85f5-f16ead3851e0",
-      "title": "알고리즘a5 이산수학",
-      "book_title": "전공 스터디",
-      "completed": false,
-      "due_date": "2026-04-16",
-      "due_time": null,
-      "priority": "9th"
-    },
-    {
       "notion_id": "339c2bbd-5973-814e-8259-c93553b6dceb",
       "title": "데이터 베이스 구조도 보완",
       "book_title": "교과내용학 심화",
@@ -2229,6 +2211,24 @@
       "book_title": "나도코딩 C언어",
       "completed": false,
       "due_date": "2026-01-27",
+      "due_time": null,
+      "priority": "10th"
+    },
+    {
+      "notion_id": "344c2bbd-5973-800c-8c18-cc33ce34248d",
+      "title": "알고리즘a4 정렬 알고리즘",
+      "book_title": "전공 스터디",
+      "completed": false,
+      "due_date": "2026-04-16",
+      "due_time": null,
+      "priority": "10th"
+    },
+    {
+      "notion_id": "344c2bbd-5973-80b0-85f5-f16ead3851e0",
+      "title": "알고리즘a5 이산수학",
+      "book_title": "전공 스터디",
+      "completed": false,
+      "due_date": "2026-04-16",
       "due_time": null,
       "priority": "10th"
     },
@@ -2422,15 +2422,6 @@
       "priority": "12th"
     },
     {
-      "notion_id": "344c2bbd-5973-8148-b4eb-c92c8c6c1155",
-      "title": "33강''''''''",
-      "book_title": "교육학 기본",
-      "completed": false,
-      "due_date": "2026-04-16",
-      "due_time": null,
-      "priority": "12th"
-    },
-    {
       "notion_id": "32ec2bbd-5973-805d-854f-e0cceb020999",
       "title": "34강",
       "book_title": "교육학 기본",
@@ -2548,8 +2539,8 @@
       "priority": "13th"
     },
     {
-      "notion_id": "344c2bbd-5973-813d-96e4-f6b42a536e33",
-      "title": "34강''''''''",
+      "notion_id": "344c2bbd-5973-8148-b4eb-c92c8c6c1155",
+      "title": "33강''''''''",
       "book_title": "교육학 기본",
       "completed": false,
       "due_date": "2026-04-16",
@@ -2620,6 +2611,15 @@
       "priority": "13th"
     },
     {
+      "notion_id": "344c2bbd-5973-813d-96e4-f6b42a536e33",
+      "title": "34강''''''''",
+      "book_title": "교육학 기본",
+      "completed": false,
+      "due_date": "2026-04-16",
+      "due_time": null,
+      "priority": "14th"
+    },
+    {
       "notion_id": "32ec2bbd-5973-80df-b0c2-c09a7516cef0",
       "title": "36강",
       "book_title": "교육학 기본",
@@ -2681,15 +2681,6 @@
       "due_date": "2026-04-15",
       "due_time": null,
       "priority": "14th"
-    },
-    {
-      "notion_id": "344c2bbd-5973-815d-8d87-d6a97caecc9d",
-      "title": "35강''''''''",
-      "book_title": "교육학 기본",
-      "completed": false,
-      "due_date": "2026-04-16",
-      "due_time": null,
-      "priority": "15th"
     },
     {
       "notion_id": "344c2bbd-5973-81d6-a2d1-e2c3610dc20e",
@@ -2755,17 +2746,8 @@
       "priority": "15th"
     },
     {
-      "notion_id": "344c2bbd-5973-8147-b014-e72cd94635f0",
-      "title": "36강''''''''",
-      "book_title": "교육학 기본",
-      "completed": false,
-      "due_date": "2026-04-16",
-      "due_time": null,
-      "priority": "16th"
-    },
-    {
-      "notion_id": "344c2bbd-5973-81e6-a910-ddcdad80af65",
-      "title": "38강''''''",
+      "notion_id": "344c2bbd-5973-815d-8d87-d6a97caecc9d",
+      "title": "35강''''''''",
       "book_title": "교육학 기본",
       "completed": false,
       "due_date": "2026-04-16",
@@ -2834,6 +2816,24 @@
       "due_date": "2026-04-15",
       "due_time": null,
       "priority": "16th"
+    },
+    {
+      "notion_id": "344c2bbd-5973-8147-b014-e72cd94635f0",
+      "title": "36강''''''''",
+      "book_title": "교육학 기본",
+      "completed": false,
+      "due_date": "2026-04-16",
+      "due_time": null,
+      "priority": "17th"
+    },
+    {
+      "notion_id": "344c2bbd-5973-81e6-a910-ddcdad80af65",
+      "title": "38강''''''",
+      "book_title": "교육학 기본",
+      "completed": false,
+      "due_date": "2026-04-16",
+      "due_time": null,
+      "priority": "17th"
     },
     {
       "notion_id": "344c2bbd-5973-816b-84cc-fd77daedddec",
@@ -4492,6 +4492,15 @@
       "priority": "3rd"
     },
     {
+      "notion_id": "344c2bbd-5973-814d-97be-e2c3af8685d9",
+      "title": "자료구조s4 최단경로 개념 2차 (4)",
+      "book_title": "전공 스터디",
+      "completed": true,
+      "due_date": "2026-04-16",
+      "due_time": null,
+      "priority": "3rd"
+    },
+    {
       "notion_id": "303c2bbd-5973-8073-ae92-e4280daf05b3",
       "title": "21강 데이터베이스",
       "book_title": "교과내용학 기본",
@@ -5842,6 +5851,6 @@
       "priority": ""
     }
   ],
-  "last_sync": "2026-04-16T12:49:27.528286+00:00",
-  "total": 649
+  "last_sync": "2026-04-16T14:27:59.052658+00:00",
+  "total": 650
 }
