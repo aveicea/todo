@@ -3565,6 +3565,42 @@
       "priority": ""
     },
     {
+      "notion_id": "345c2bbd-5973-81df-accb-e87984f008af",
+      "title": "멤바십",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-04-20",
+      "due_time": null,
+      "priority": ""
+    },
+    {
+      "notion_id": "345c2bbd-5973-81ae-9033-e6425e64506d",
+      "title": "멤바십",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-04-28",
+      "due_time": null,
+      "priority": ""
+    },
+    {
+      "notion_id": "345c2bbd-5973-8138-846a-e41b756ef46f",
+      "title": "멤바십",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-04-22",
+      "due_time": null,
+      "priority": ""
+    },
+    {
+      "notion_id": "345c2bbd-5973-8160-aad4-d0e4945df26e",
+      "title": "멤버십",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-04-24",
+      "due_time": null,
+      "priority": ""
+    },
+    {
       "notion_id": "318c2bbd-5973-812c-83ac-d493c30561b2",
       "title": "인기초 교과서 분석  (2)",
       "book_title": "전공 스터디",
@@ -5977,6 +6013,6 @@
       "priority": ""
     }
   ],
-  "last_sync": "2026-04-17T10:01:02.252048+00:00",
-  "total": 664
+  "last_sync": "2026-04-17T11:58:51.546096+00:00",
+  "total": 668
 }
