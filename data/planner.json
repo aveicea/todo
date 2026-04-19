@@ -541,15 +541,6 @@
       "priority": "1st"
     },
     {
-      "notion_id": "33ec2bbd-5973-813b-ad26-f931811d5f61",
-      "title": "09:00-11:00 교회",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2026-04-19",
-      "due_time": null,
-      "priority": "1st"
-    },
-    {
       "notion_id": "33ec2bbd-5973-817b-bcc9-c6dce18cc05a",
       "title": "09:00-18:00 학원 스터디",
       "book_title": "일정",
@@ -4249,6 +4240,15 @@
       "priority": "1st"
     },
     {
+      "notion_id": "33ec2bbd-5973-813b-ad26-f931811d5f61",
+      "title": "09:00-11:00 교회",
+      "book_title": "일정",
+      "completed": true,
+      "due_date": "2026-04-19",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
       "notion_id": "33ec2bbd-5973-81fb-bd6a-ff44354bb71d",
       "title": "10:00-17:00 교과내용학",
       "book_title": "일정",
@@ -6499,6 +6499,6 @@
       "priority": ""
     }
   ],
-  "last_sync": "2026-04-19T06:11:04.031702+00:00",
+  "last_sync": "2026-04-19T07:44:40.573247+00:00",
   "total": 722
 }
