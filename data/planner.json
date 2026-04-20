@@ -1054,15 +1054,6 @@
       "priority": "3rd"
     },
     {
-      "notion_id": "348c2bbd-5973-818b-9fcf-c1662857ff73",
-      "title": "알고리즘a3 탐색과 해싱' (2)'''",
-      "book_title": "전공 스터디",
-      "completed": false,
-      "due_date": "2026-04-20",
-      "due_time": null,
-      "priority": "3rd"
-    },
-    {
       "notion_id": "33fc2bbd-5973-81b4-8919-f6583da05730",
       "title": "자료구조s3 트리'",
       "book_title": "전공 스터디",
@@ -5284,6 +5275,15 @@
       "priority": "3rd"
     },
     {
+      "notion_id": "348c2bbd-5973-818b-9fcf-c1662857ff73",
+      "title": "알고리즘a3 탐색과 해싱' (2)'''",
+      "book_title": "전공 스터디",
+      "completed": true,
+      "due_date": "2026-04-20",
+      "due_time": null,
+      "priority": "3rd"
+    },
+    {
       "notion_id": "31fc2bbd-5973-807e-aa5c-c3fd85281cbb",
       "title": "인공지능 기출 문제 풀이 및 설명",
       "book_title": "전공 스터디",
@@ -6733,6 +6733,6 @@
       "priority": ""
     }
   ],
-  "last_sync": "2026-04-20T09:15:26.243030+00:00",
+  "last_sync": "2026-04-20T10:58:25.674523+00:00",
   "total": 748
 }
