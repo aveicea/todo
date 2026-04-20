@@ -1234,15 +1234,6 @@
       "priority": "4th"
     },
     {
-      "notion_id": "348c2bbd-5973-81a1-9469-c7830461d0e9",
-      "title": "알고리즘a4 정렬 알고리즘''' (2)'",
-      "book_title": "전공 스터디",
-      "completed": false,
-      "due_date": "2026-04-20",
-      "due_time": null,
-      "priority": "4th"
-    },
-    {
       "notion_id": "33fc2bbd-5973-81ec-8278-f13a180656be",
       "title": "자료구조s4 그래프'",
       "book_title": "전공 스터디",
@@ -5473,6 +5464,15 @@
       "priority": "4th"
     },
     {
+      "notion_id": "348c2bbd-5973-81a1-9469-c7830461d0e9",
+      "title": "알고리즘a4 정렬 알고리즘''' (2)'",
+      "book_title": "전공 스터디",
+      "completed": true,
+      "due_date": "2026-04-20",
+      "due_time": null,
+      "priority": "4th"
+    },
+    {
       "notion_id": "340c2bbd-5973-8105-b078-cbdb89a8a737",
       "title": "자료구조s3 트리'' (2)",
       "book_title": "전공 스터디",
@@ -6733,6 +6733,6 @@
       "priority": ""
     }
   ],
-  "last_sync": "2026-04-20T12:03:10.682429+00:00",
+  "last_sync": "2026-04-20T14:06:01.445521+00:00",
   "total": 748
 }
