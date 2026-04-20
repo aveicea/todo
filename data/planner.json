@@ -6715,6 +6715,15 @@
       "priority": ""
     },
     {
+      "notion_id": "348c2bbd-5973-8123-9135-fcae025f9f3e",
+      "title": "최단경로",
+      "book_title": "전공 스터디",
+      "completed": true,
+      "due_date": "2026-04-20",
+      "due_time": null,
+      "priority": "26th"
+    },
+    {
       "notion_id": "31fc2bbd-5973-80c3-8299-fdb7b8d83d06",
       "title": "파트 발표 준비",
       "book_title": "전공 스터디",
@@ -6733,6 +6742,6 @@
       "priority": ""
     }
   ],
-  "last_sync": "2026-04-20T15:25:32.177441+00:00",
-  "total": 748
+  "last_sync": "2026-04-20T16:38:36.016007+00:00",
+  "total": 749
 }
