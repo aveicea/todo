@@ -163,132 +163,6 @@
       "priority": "1st"
     },
     {
-      "notion_id": "33ec2bbd-5973-81cf-9465-f89feccaf93b",
-      "title": "09:00-11:00 교회",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2026-12-06",
-      "due_time": null,
-      "priority": "1st"
-    },
-    {
-      "notion_id": "33ec2bbd-5973-81ce-a26d-ef17eec8cb8a",
-      "title": "09:00-11:00 교회",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2026-11-29",
-      "due_time": null,
-      "priority": "1st"
-    },
-    {
-      "notion_id": "33ec2bbd-5973-81ae-a350-c0555c09043b",
-      "title": "09:00-11:00 교회",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2026-11-22",
-      "due_time": null,
-      "priority": "1st"
-    },
-    {
-      "notion_id": "33ec2bbd-5973-81f8-a420-fbd8ab0ed4c3",
-      "title": "09:00-11:00 교회",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2026-11-15",
-      "due_time": null,
-      "priority": "1st"
-    },
-    {
-      "notion_id": "33ec2bbd-5973-8161-8745-d3cd6e6cd2d1",
-      "title": "09:00-11:00 교회",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2026-11-08",
-      "due_time": null,
-      "priority": "1st"
-    },
-    {
-      "notion_id": "33ec2bbd-5973-8105-9bfb-d88fef92b0b0",
-      "title": "09:00-11:00 교회",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2026-11-01",
-      "due_time": null,
-      "priority": "1st"
-    },
-    {
-      "notion_id": "33ec2bbd-5973-8128-ab4b-d14b2b52373b",
-      "title": "09:00-11:00 교회",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2026-10-25",
-      "due_time": null,
-      "priority": "1st"
-    },
-    {
-      "notion_id": "33ec2bbd-5973-8116-b501-cbde6c297fbd",
-      "title": "09:00-11:00 교회",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2026-10-18",
-      "due_time": null,
-      "priority": "1st"
-    },
-    {
-      "notion_id": "33ec2bbd-5973-817f-b2cb-f4d5daeaa4fc",
-      "title": "09:00-11:00 교회",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2026-10-11",
-      "due_time": null,
-      "priority": "1st"
-    },
-    {
-      "notion_id": "33ec2bbd-5973-817a-8618-d1bf98a8f40f",
-      "title": "09:00-11:00 교회",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2026-10-04",
-      "due_time": null,
-      "priority": "1st"
-    },
-    {
-      "notion_id": "33ec2bbd-5973-8194-b690-cf60f40ff589",
-      "title": "09:00-11:00 교회",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2026-09-27",
-      "due_time": null,
-      "priority": "1st"
-    },
-    {
-      "notion_id": "33ec2bbd-5973-8161-a45b-ca7e6f1e626e",
-      "title": "09:00-11:00 교회",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2026-09-20",
-      "due_time": null,
-      "priority": "1st"
-    },
-    {
-      "notion_id": "33ec2bbd-5973-81ab-b56f-c04e19187a43",
-      "title": "09:00-11:00 교회",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2026-09-13",
-      "due_time": null,
-      "priority": "1st"
-    },
-    {
-      "notion_id": "33ec2bbd-5973-81a9-a765-faf70b6e1125",
-      "title": "09:00-11:00 교회",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2026-09-06",
-      "due_time": null,
-      "priority": "1st"
-    },
-    {
       "notion_id": "345c2bbd-5973-8148-a7e1-c0a62f8d3a5b",
       "title": "알고리즘a1 기본개념''",
       "book_title": "전공 스터디",
@@ -1801,6 +1675,24 @@
       "priority": ""
     },
     {
+      "notion_id": "349c2bbd-5973-8195-87dc-ea6855c1a238",
+      "title": "10:00-17:00 교과내용학",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-04-04",
+      "due_time": null,
+      "priority": ""
+    },
+    {
+      "notion_id": "349c2bbd-5973-81c7-a81f-de225479e2d6",
+      "title": "10:00-17:00 교과내용학",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-03-28",
+      "due_time": null,
+      "priority": ""
+    },
+    {
       "notion_id": "349c2bbd-5973-81b1-9e70-d74f7c9a68ad",
       "title": "10:00-17:00 교과내용학",
       "book_title": "일정",
@@ -1846,6 +1738,15 @@
       "priority": ""
     },
     {
+      "notion_id": "349c2bbd-5973-818b-952c-fc08ad4b4e99",
+      "title": "11:00-12:00 중간 간식",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-04-07",
+      "due_time": null,
+      "priority": ""
+    },
+    {
       "notion_id": "349c2bbd-5973-8170-8ca1-d0cbc1eb77dd",
       "title": "11:00-12:00 중간 간식",
       "book_title": "일정",
@@ -1869,6 +1770,15 @@
       "book_title": "일정",
       "completed": false,
       "due_date": "2026-04-07",
+      "due_time": null,
+      "priority": ""
+    },
+    {
+      "notion_id": "349c2bbd-5973-8188-b346-f2af851024da",
+      "title": "13:30-16:30 학교 스터디",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-03-24",
       "due_time": null,
       "priority": ""
     },
@@ -1927,6 +1837,24 @@
       "priority": ""
     },
     {
+      "notion_id": "349c2bbd-5973-8169-b914-c2c64683dabe",
+      "title": "14:00-14:30 꽃 픽업",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-04-01",
+      "due_time": null,
+      "priority": ""
+    },
+    {
+      "notion_id": "349c2bbd-5973-812a-80c0-f355810181d7",
+      "title": "14:00-14:30 꽃 픽업",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-04-01",
+      "due_time": null,
+      "priority": ""
+    },
+    {
       "notion_id": "349c2bbd-5973-8153-be39-d35898b9b597",
       "title": "14:00-14:30 꽃 픽업",
       "book_title": "일정",
@@ -1950,6 +1878,15 @@
       "book_title": "일정",
       "completed": false,
       "due_date": "2026-04-01",
+      "due_time": null,
+      "priority": ""
+    },
+    {
+      "notion_id": "349c2bbd-5973-81f6-80d6-c8d827069967",
+      "title": "14:00-15:30 학원 스터디",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-04-08",
       "due_time": null,
       "priority": ""
     },
@@ -2143,6 +2080,15 @@
       "priority": ""
     },
     {
+      "notion_id": "349c2bbd-5973-816f-8844-c97daf8a859b",
+      "title": "17:15-17:45 상담",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-03-28",
+      "due_time": null,
+      "priority": ""
+    },
+    {
       "notion_id": "349c2bbd-5973-81b9-8538-efc2f9cd44f3",
       "title": "17:15-17:45 상담",
       "book_title": "일정",
@@ -2154,6 +2100,15 @@
     {
       "notion_id": "349c2bbd-5973-81d4-bf13-fe1893d03aae",
       "title": "17:15-17:45 상담",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-03-28",
+      "due_time": null,
+      "priority": ""
+    },
+    {
+      "notion_id": "349c2bbd-5973-8148-b4c5-c30038914e59",
+      "title": "17:45-18:00 하영",
       "book_title": "일정",
       "completed": false,
       "due_date": "2026-03-28",
@@ -2287,6 +2242,15 @@
       "priority": ""
     },
     {
+      "notion_id": "349c2bbd-5973-8107-8aa8-e69d1ecd296e",
+      "title": "18:30-18:45 안녕빛",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-03-28",
+      "due_time": null,
+      "priority": ""
+    },
+    {
       "notion_id": "349c2bbd-5973-81e4-8974-e213db4aa071",
       "title": "18:30-18:45 안녕빛",
       "book_title": "일정",
@@ -2319,6 +2283,24 @@
       "book_title": "일정",
       "completed": false,
       "due_date": "2026-04-21",
+      "due_time": null,
+      "priority": ""
+    },
+    {
+      "notion_id": "349c2bbd-5973-8143-8849-d241e7125020",
+      "title": "20:00-21:00 선예",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-04-09",
+      "due_time": null,
+      "priority": ""
+    },
+    {
+      "notion_id": "349c2bbd-5973-8111-bb31-c637727e1437",
+      "title": "20:00-21:00 선예",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-04-09",
       "due_time": null,
       "priority": ""
     },
@@ -2373,6 +2355,24 @@
       "book_title": "일정",
       "completed": false,
       "due_date": "2026-04-24",
+      "due_time": null,
+      "priority": ""
+    },
+    {
+      "notion_id": "349c2bbd-5973-817f-9aa3-e4693992ff04",
+      "title": "예린",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-04-10",
+      "due_time": null,
+      "priority": ""
+    },
+    {
+      "notion_id": "349c2bbd-5973-81b2-8dbe-f9644ae61c18",
+      "title": "예린",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-04-10",
       "due_time": null,
       "priority": ""
     },
@@ -2701,6 +2701,6 @@
       "priority": "26th"
     }
   ],
-  "last_sync": "2026-04-21T07:16:32.997185+00:00",
+  "last_sync": "2026-04-21T09:03:50.025162+00:00",
   "total": 300
 }
