@@ -1369,15 +1369,6 @@
       "priority": "5th"
     },
     {
-      "notion_id": "34bc2bbd-5973-81f0-9a9b-d0d59e96c572",
-      "title": "네트워크 복습 (4)",
-      "book_title": "교과내용학 기본",
-      "completed": false,
-      "due_date": "2026-04-23",
-      "due_time": null,
-      "priority": "5th"
-    },
-    {
       "notion_id": "33ac2bbd-5973-8121-afa9-eac48ce1bbe8",
       "title": "데이터 베이스 구조도 보완'",
       "book_title": "교과내용학 심화",
@@ -6499,6 +6490,15 @@
       "priority": "5th"
     },
     {
+      "notion_id": "34bc2bbd-5973-81f0-9a9b-d0d59e96c572",
+      "title": "네트워크 복습 (4)",
+      "book_title": "교과내용학 기본",
+      "completed": true,
+      "due_date": "2026-04-23",
+      "due_time": null,
+      "priority": "5th"
+    },
+    {
       "notion_id": "342c2bbd-5973-8194-acf6-d2911e870fb4",
       "title": "운영체제 구조도 보완'''''''''",
       "book_title": "교과내용학 심화",
@@ -7732,6 +7732,6 @@
       "priority": ""
     }
   ],
-  "last_sync": "2026-04-23T14:23:34.227376+00:00",
+  "last_sync": "2026-04-23T16:13:51.889684+00:00",
   "total": 859
 }

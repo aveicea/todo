@@ -226,6 +226,24 @@
       "importance": "normal"
     },
     {
+      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAfG5MHiAAA=",
+      "notion_id": "34bc2bbd-5973-81df-8519-edcf265efd5f",
+      "title": "데일리 체크",
+      "completed": false,
+      "due_date": "2026-04-24",
+      "due_time": null,
+      "importance": "normal"
+    },
+    {
+      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAfG5MHhAAA=",
+      "notion_id": "34bc2bbd-5973-81c6-91be-c0cb74dce112",
+      "title": "다이어리",
+      "completed": false,
+      "due_date": "2026-04-24",
+      "due_time": null,
+      "importance": "normal"
+    },
+    {
       "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAfGu461AAA=",
       "notion_id": "34bc2bbd-5973-8149-9f42-c3ac492ecc0b",
       "title": "다이소에서 째끄만 파우치",
@@ -1243,8 +1261,8 @@
       "importance": "normal"
     }
   ],
-  "last_sync": "2026-04-23T14:23:23.244947+00:00",
-  "total": 138,
+  "last_sync": "2026-04-23T16:13:43.424263+00:00",
+  "total": 140,
   "completed": 110,
-  "pending": 28
+  "pending": 30
 }
