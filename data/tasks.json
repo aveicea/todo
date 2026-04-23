@@ -226,6 +226,24 @@
       "importance": "normal"
     },
     {
+      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAfGu461AAA=",
+      "notion_id": "34bc2bbd-5973-8149-9f42-c3ac492ecc0b",
+      "title": "다이소에서 째끄만 파우치",
+      "completed": false,
+      "due_date": "2026-04-25",
+      "due_time": null,
+      "importance": "normal"
+    },
+    {
+      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAfGu460AAA=",
+      "notion_id": "34bc2bbd-5973-81b1-9de2-d9150b45233a",
+      "title": "다이소에서 왕창 큰 카드링",
+      "completed": false,
+      "due_date": "2026-04-25",
+      "due_time": null,
+      "importance": "normal"
+    },
+    {
       "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAeq9LADAAA=",
       "notion_id": "322c2bbd-5973-8196-a6fa-d8f2e5d4ae2d",
       "title": "우리적금 출석체크",
@@ -1225,8 +1243,8 @@
       "importance": "normal"
     }
   ],
-  "last_sync": "2026-04-23T05:16:47.866061+00:00",
-  "total": 136,
+  "last_sync": "2026-04-23T07:10:48.927770+00:00",
+  "total": 138,
   "completed": 110,
-  "pending": 26
+  "pending": 28
 }

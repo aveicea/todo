@@ -1,5 +1,5 @@
 {
-  "last_sync": "2026-04-23T05:16:47.866061+00:00",
+  "last_sync": "2026-04-23T07:10:48.927770+00:00",
   "success": true,
   "stats": {
     "created_in_ms": 0,
@@ -7,6 +7,6 @@
     "updated": 0,
     "errors": 0
   },
-  "total_ms_tasks": 136,
-  "total_notion_pages": 136
+  "total_ms_tasks": 138,
+  "total_notion_pages": 138
 }

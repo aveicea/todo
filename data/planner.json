@@ -73,6 +73,15 @@
       "priority": "1st"
     },
     {
+      "notion_id": "33ec2bbd-5973-819a-ad93-e91cec067cad",
+      "title": "저녁",
+      "book_title": "구분",
+      "completed": false,
+      "due_date": null,
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
       "notion_id": "33ec2bbd-5973-81b1-a49c-cfac176aa8a4",
       "title": "08:30-09:30 교생 오티",
       "book_title": "일정",
@@ -928,6 +937,15 @@
       "priority": "2nd"
     },
     {
+      "notion_id": "347c2bbd-5973-816e-b446-df77221078ff",
+      "title": "컴네 구조도''",
+      "book_title": "교과내용학 기본",
+      "completed": false,
+      "due_date": "2026-04-23",
+      "due_time": null,
+      "priority": "2nd"
+    },
+    {
       "notion_id": "332c2bbd-5973-81f1-acb2-fe4e778a5b2e",
       "title": "9강'",
       "book_title": "교육학 기본",
@@ -1045,6 +1063,15 @@
       "priority": "3rd"
     },
     {
+      "notion_id": "34bc2bbd-5973-81c6-b283-c22ea93ace76",
+      "title": "인공지능 워드 정리 (잡도리)",
+      "book_title": "교과내용학 심화",
+      "completed": false,
+      "due_date": "2026-04-23",
+      "due_time": null,
+      "priority": "3rd"
+    },
+    {
       "notion_id": "332c2bbd-5973-81c0-9c9d-c2d8fe831bd6",
       "title": "10강'",
       "book_title": "교육학 기본",
@@ -1072,8 +1099,8 @@
       "priority": "3rd"
     },
     {
-      "notion_id": "33ec2bbd-5973-819a-ad93-e91cec067cad",
-      "title": "저녁",
+      "notion_id": "33dc2bbd-5973-80e1-ae09-c6962d24cc8e",
+      "title": "내일",
       "book_title": "구분",
       "completed": false,
       "due_date": null,
@@ -1189,6 +1216,15 @@
       "priority": "4th"
     },
     {
+      "notion_id": "34bc2bbd-5973-8167-a4d9-eb348615870c",
+      "title": "네트워크 복습",
+      "book_title": "교과내용학 기본",
+      "completed": false,
+      "due_date": "2026-04-23",
+      "due_time": null,
+      "priority": "4th"
+    },
+    {
       "notion_id": "336c2bbd-5973-81e0-93fb-db4408d35230",
       "title": "운영체제 구조도",
       "book_title": "교과내용학 기본",
@@ -1203,15 +1239,6 @@
       "book_title": "교과내용학 기본",
       "completed": false,
       "due_date": "2026-03-11",
-      "due_time": null,
-      "priority": "4th"
-    },
-    {
-      "notion_id": "347c2bbd-5973-816e-b446-df77221078ff",
-      "title": "컴네 구조도''",
-      "book_title": "교과내용학 기본",
-      "completed": false,
-      "due_date": "2026-04-23",
       "due_time": null,
       "priority": "4th"
     },
@@ -1414,6 +1441,15 @@
       "priority": "5th"
     },
     {
+      "notion_id": "347c2bbd-5973-8181-853c-f33bdd4c079a",
+      "title": "인공지능 구조도''",
+      "book_title": "교과내용학 심화",
+      "completed": false,
+      "due_date": "2026-04-23",
+      "due_time": null,
+      "priority": "5th"
+    },
+    {
       "notion_id": "32ec2bbd-5973-8067-a856-c614883c03e3",
       "title": "10강",
       "book_title": "교육학 기본",
@@ -1576,15 +1612,6 @@
       "priority": "6th"
     },
     {
-      "notion_id": "34bc2bbd-5973-8167-a4d9-eb348615870c",
-      "title": "네트워크 복습",
-      "book_title": "교과내용학 기본",
-      "completed": false,
-      "due_date": "2026-04-23",
-      "due_time": null,
-      "priority": "6th"
-    },
-    {
       "notion_id": "33ac2bbd-5973-8185-9737-f10e9c82bca4",
       "title": "운영체제 구조도 보완'",
       "book_title": "교과내용학 심화",
@@ -1626,15 +1653,6 @@
       "book_title": "교과내용학 심화",
       "completed": false,
       "due_date": "2026-04-17",
-      "due_time": null,
-      "priority": "6th"
-    },
-    {
-      "notion_id": "347c2bbd-5973-8181-853c-f33bdd4c079a",
-      "title": "인공지능 구조도''",
-      "book_title": "교과내용학 심화",
-      "completed": false,
-      "due_date": "2026-04-23",
       "due_time": null,
       "priority": "6th"
     },
@@ -1689,15 +1707,6 @@
       "book_title": "교육학 기본",
       "completed": false,
       "due_date": "2026-04-22",
-      "due_time": null,
-      "priority": "6th"
-    },
-    {
-      "notion_id": "33dc2bbd-5973-80e1-ae09-c6962d24cc8e",
-      "title": "내일",
-      "book_title": "구분",
-      "completed": false,
-      "due_date": null,
       "due_time": null,
       "priority": "6th"
     },
@@ -7696,6 +7705,6 @@
       "priority": ""
     }
   ],
-  "last_sync": "2026-04-23T05:16:56.424639+00:00",
-  "total": 855
+  "last_sync": "2026-04-23T07:11:01.057380+00:00",
+  "total": 856
 }
