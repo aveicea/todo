@@ -73,15 +73,6 @@
       "priority": "1st"
     },
     {
-      "notion_id": "33ec2bbd-5973-819a-ad93-e91cec067cad",
-      "title": "저녁",
-      "book_title": "구분",
-      "completed": false,
-      "due_date": null,
-      "due_time": null,
-      "priority": "1st"
-    },
-    {
       "notion_id": "33ec2bbd-5973-81b1-a49c-cfac176aa8a4",
       "title": "08:30-09:30 교생 오티",
       "book_title": "일정",
@@ -937,15 +928,6 @@
       "priority": "2nd"
     },
     {
-      "notion_id": "347c2bbd-5973-816e-b446-df77221078ff",
-      "title": "컴네 구조도''",
-      "book_title": "교과내용학 기본",
-      "completed": false,
-      "due_date": "2026-04-23",
-      "due_time": null,
-      "priority": "2nd"
-    },
-    {
       "notion_id": "332c2bbd-5973-81f1-acb2-fe4e778a5b2e",
       "title": "9강'",
       "book_title": "교육학 기본",
@@ -1063,15 +1045,6 @@
       "priority": "3rd"
     },
     {
-      "notion_id": "34bc2bbd-5973-81c6-b283-c22ea93ace76",
-      "title": "인공지능 워드 정리 (잡도리)",
-      "book_title": "교과내용학 심화",
-      "completed": false,
-      "due_date": "2026-04-23",
-      "due_time": null,
-      "priority": "3rd"
-    },
-    {
       "notion_id": "332c2bbd-5973-81c0-9c9d-c2d8fe831bd6",
       "title": "10강'",
       "book_title": "교육학 기본",
@@ -1095,15 +1068,6 @@
       "book_title": "교육학 기본",
       "completed": false,
       "due_date": "2026-04-22",
-      "due_time": null,
-      "priority": "3rd"
-    },
-    {
-      "notion_id": "33dc2bbd-5973-80e1-ae09-c6962d24cc8e",
-      "title": "내일",
-      "book_title": "구분",
-      "completed": false,
-      "due_date": null,
       "due_time": null,
       "priority": "3rd"
     },
@@ -1216,8 +1180,8 @@
       "priority": "4th"
     },
     {
-      "notion_id": "34bc2bbd-5973-8167-a4d9-eb348615870c",
-      "title": "네트워크 복습",
+      "notion_id": "34bc2bbd-5973-81e5-9f1e-ea45a85aab81",
+      "title": "네트워크 복습 (3)",
       "book_title": "교과내용학 기본",
       "completed": false,
       "due_date": "2026-04-23",
@@ -1441,8 +1405,8 @@
       "priority": "5th"
     },
     {
-      "notion_id": "347c2bbd-5973-8181-853c-f33bdd4c079a",
-      "title": "인공지능 구조도''",
+      "notion_id": "34bc2bbd-5973-81c6-b283-c22ea93ace76",
+      "title": "인공지능 워드 정리 (잡도리)",
       "book_title": "교과내용학 심화",
       "completed": false,
       "due_date": "2026-04-23",
@@ -1482,6 +1446,15 @@
       "book_title": "교육학 기본",
       "completed": false,
       "due_date": "2026-04-22",
+      "due_time": null,
+      "priority": "5th"
+    },
+    {
+      "notion_id": "33ec2bbd-5973-819a-ad93-e91cec067cad",
+      "title": "저녁",
+      "book_title": "구분",
+      "completed": false,
+      "due_date": null,
       "due_time": null,
       "priority": "5th"
     },
@@ -1608,6 +1581,15 @@
       "book_title": "교과내용학 기본",
       "completed": false,
       "due_date": "2026-03-05",
+      "due_time": null,
+      "priority": "6th"
+    },
+    {
+      "notion_id": "347c2bbd-5973-816e-b446-df77221078ff",
+      "title": "컴네 구조도''",
+      "book_title": "교과내용학 기본",
+      "completed": false,
+      "due_date": "2026-04-23",
       "due_time": null,
       "priority": "6th"
     },
@@ -1828,6 +1810,15 @@
       "priority": "7th"
     },
     {
+      "notion_id": "347c2bbd-5973-8181-853c-f33bdd4c079a",
+      "title": "인공지능 구조도''",
+      "book_title": "교과내용학 심화",
+      "completed": false,
+      "due_date": "2026-04-23",
+      "due_time": null,
+      "priority": "7th"
+    },
+    {
       "notion_id": "32ec2bbd-5973-80ac-8fdd-e12e7a71bfe2",
       "title": "12강",
       "book_title": "교육학 기본",
@@ -1923,6 +1914,15 @@
       "book_title": "교육학 기본",
       "completed": false,
       "due_date": "2026-04-22",
+      "due_time": null,
+      "priority": "7th"
+    },
+    {
+      "notion_id": "33dc2bbd-5973-80e1-ae09-c6962d24cc8e",
+      "title": "내일",
+      "book_title": "구분",
+      "completed": false,
+      "due_date": null,
       "due_time": null,
       "priority": "7th"
     },
@@ -5743,6 +5743,15 @@
       "priority": "2nd"
     },
     {
+      "notion_id": "34bc2bbd-5973-8167-a4d9-eb348615870c",
+      "title": "네트워크 복습",
+      "book_title": "교과내용학 기본",
+      "completed": true,
+      "due_date": "2026-04-23",
+      "due_time": null,
+      "priority": "2nd"
+    },
+    {
       "notion_id": "321c2bbd-5973-81f5-82f0-e6f0c2a97f1b",
       "title": "데이터베이스 필기 보충'",
       "book_title": "교과내용학 기본",
@@ -6126,6 +6135,15 @@
       "book_title": "교과내용학 기본",
       "completed": true,
       "due_date": "2026-02-10",
+      "due_time": null,
+      "priority": "3rd"
+    },
+    {
+      "notion_id": "34bc2bbd-5973-81bc-a629-d3f14da1bbf5",
+      "title": "네트워크 복습 (2)",
+      "book_title": "교과내용학 기본",
+      "completed": true,
+      "due_date": "2026-04-23",
       "due_time": null,
       "priority": "3rd"
     },
@@ -7705,6 +7723,6 @@
       "priority": ""
     }
   ],
-  "last_sync": "2026-04-23T10:26:58.596962+00:00",
-  "total": 856
+  "last_sync": "2026-04-23T11:37:59.784872+00:00",
+  "total": 858
 }
