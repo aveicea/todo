@@ -541,6 +541,60 @@
       "priority": "1st"
     },
     {
+      "notion_id": "34bc2bbd-5973-81b6-bd5c-e05baeb71b93",
+      "title": "09:00-18:00 학원 스터디",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-05-27",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
+      "notion_id": "34bc2bbd-5973-812f-9c14-ed291d596ed7",
+      "title": "09:00-18:00 학원 스터디",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-05-17",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
+      "notion_id": "34bc2bbd-5973-81e8-98c0-c3474a8f6bec",
+      "title": "09:00-18:00 학원 스터디",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-06-03",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
+      "notion_id": "34bc2bbd-5973-8129-b620-c2d96b0ed0bb",
+      "title": "09:00-18:00 학원 스터디",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-06-10",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
+      "notion_id": "34bc2bbd-5973-819e-8d8e-cfb2c054920b",
+      "title": "09:00-18:00 학원 스터디",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-05-03",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
+      "notion_id": "34bc2bbd-5973-8127-b52c-d5760ae5e9a8",
+      "title": "09:00-18:00 학원 스터디",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-06-17",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
       "notion_id": "33ec2bbd-5973-81c8-b23f-deaea387ce09",
       "title": "10:00-17:00 교과내용학",
       "book_title": "일정",
@@ -550,11 +604,11 @@
       "priority": "1st"
     },
     {
-      "notion_id": "342c2bbd-5973-8190-9231-d90cc6a341f8",
-      "title": "16:00-19:00 학교 스터디",
+      "notion_id": "34bc2bbd-5973-81a4-9dd5-f3ca2037d736",
+      "title": "16:30-18:00 문화예술과사회공헌",
       "book_title": "일정",
       "completed": false,
-      "due_date": "2026-04-23",
+      "due_date": "2026-04-21",
       "due_time": null,
       "priority": "1st"
     },
@@ -874,15 +928,6 @@
       "priority": "2nd"
     },
     {
-      "notion_id": "347c2bbd-5973-816e-b446-df77221078ff",
-      "title": "컴네 구조도''",
-      "book_title": "교과내용학 기본",
-      "completed": false,
-      "due_date": "2026-04-23",
-      "due_time": null,
-      "priority": "2nd"
-    },
-    {
       "notion_id": "332c2bbd-5973-81f1-acb2-fe4e778a5b2e",
       "title": "9강'",
       "book_title": "교육학 기본",
@@ -897,24 +942,6 @@
       "book_title": "교육학 기본",
       "completed": false,
       "due_date": "2026-03-30",
-      "due_time": null,
-      "priority": "2nd"
-    },
-    {
-      "notion_id": "33dc2bbd-5973-80e1-ae09-c6962d24cc8e",
-      "title": "내일",
-      "book_title": "구분",
-      "completed": false,
-      "due_date": null,
-      "due_time": null,
-      "priority": "2nd"
-    },
-    {
-      "notion_id": "341c2bbd-5973-81c7-bb6e-e8de00d355df",
-      "title": "점심",
-      "book_title": "구분",
-      "completed": false,
-      "due_date": null,
       "due_time": null,
       "priority": "2nd"
     },
@@ -1018,15 +1045,6 @@
       "priority": "3rd"
     },
     {
-      "notion_id": "347c2bbd-5973-8181-853c-f33bdd4c079a",
-      "title": "인공지능 구조도''",
-      "book_title": "교과내용학 심화",
-      "completed": false,
-      "due_date": "2026-04-23",
-      "due_time": null,
-      "priority": "3rd"
-    },
-    {
       "notion_id": "332c2bbd-5973-81c0-9c9d-c2d8fe831bd6",
       "title": "10강'",
       "book_title": "교육학 기본",
@@ -1050,6 +1068,15 @@
       "book_title": "교육학 기본",
       "completed": false,
       "due_date": "2026-04-22",
+      "due_time": null,
+      "priority": "3rd"
+    },
+    {
+      "notion_id": "33ec2bbd-5973-819a-ad93-e91cec067cad",
+      "title": "저녁",
+      "book_title": "구분",
+      "completed": false,
+      "due_date": null,
       "due_time": null,
       "priority": "3rd"
     },
@@ -1176,6 +1203,15 @@
       "book_title": "교과내용학 기본",
       "completed": false,
       "due_date": "2026-03-11",
+      "due_time": null,
+      "priority": "4th"
+    },
+    {
+      "notion_id": "347c2bbd-5973-816e-b446-df77221078ff",
+      "title": "컴네 구조도''",
+      "book_title": "교과내용학 기본",
+      "completed": false,
+      "due_date": "2026-04-23",
       "due_time": null,
       "priority": "4th"
     },
@@ -1540,6 +1576,15 @@
       "priority": "6th"
     },
     {
+      "notion_id": "34bc2bbd-5973-8167-a4d9-eb348615870c",
+      "title": "네트워크 복습",
+      "book_title": "교과내용학 기본",
+      "completed": false,
+      "due_date": "2026-04-23",
+      "due_time": null,
+      "priority": "6th"
+    },
+    {
       "notion_id": "33ac2bbd-5973-8185-9737-f10e9c82bca4",
       "title": "운영체제 구조도 보완'",
       "book_title": "교과내용학 심화",
@@ -1581,6 +1626,15 @@
       "book_title": "교과내용학 심화",
       "completed": false,
       "due_date": "2026-04-17",
+      "due_time": null,
+      "priority": "6th"
+    },
+    {
+      "notion_id": "347c2bbd-5973-8181-853c-f33bdd4c079a",
+      "title": "인공지능 구조도''",
+      "book_title": "교과내용학 심화",
+      "completed": false,
+      "due_date": "2026-04-23",
       "due_time": null,
       "priority": "6th"
     },
@@ -1635,6 +1689,15 @@
       "book_title": "교육학 기본",
       "completed": false,
       "due_date": "2026-04-22",
+      "due_time": null,
+      "priority": "6th"
+    },
+    {
+      "notion_id": "33dc2bbd-5973-80e1-ae09-c6962d24cc8e",
+      "title": "내일",
+      "book_title": "구분",
+      "completed": false,
+      "due_date": null,
       "due_time": null,
       "priority": "6th"
     },
@@ -4069,15 +4132,6 @@
       "priority": ""
     },
     {
-      "notion_id": "33ec2bbd-5973-819a-ad93-e91cec067cad",
-      "title": "기상",
-      "book_title": "구분",
-      "completed": false,
-      "due_date": null,
-      "due_time": null,
-      "priority": "0th"
-    },
-    {
       "notion_id": "34ac2bbd-5973-8129-8227-fd752acbf049",
       "title": "예비",
       "book_title": "구분",
@@ -4094,6 +4148,15 @@
       "due_date": null,
       "due_time": null,
       "priority": ""
+    },
+    {
+      "notion_id": "341c2bbd-5973-81c7-bb6e-e8de00d355df",
+      "title": "점심",
+      "book_title": "구분",
+      "completed": false,
+      "due_date": null,
+      "due_time": null,
+      "priority": "0th"
     },
     {
       "notion_id": "348c2bbd-5973-8153-aa9a-fc9e64e6b4f5",
@@ -5379,6 +5442,15 @@
       "book_title": "전공 스터디",
       "completed": true,
       "due_date": "2026-03-05",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
+      "notion_id": "34bc2bbd-5973-8147-a545-dd91138d2e51",
+      "title": "자료구조 문제풀이",
+      "book_title": "전공 스터디",
+      "completed": true,
+      "due_date": "2026-04-23",
       "due_time": null,
       "priority": "1st"
     },
@@ -7624,6 +7696,6 @@
       "priority": ""
     }
   ],
-  "last_sync": "2026-04-23T02:35:27.517791+00:00",
-  "total": 847
+  "last_sync": "2026-04-23T05:16:56.424639+00:00",
+  "total": 855
 }

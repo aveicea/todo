@@ -190,15 +190,6 @@
       "importance": "normal"
     },
     {
-      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAfGR_RlAAA=",
-      "notion_id": "34ac2bbd-5973-815a-b556-fbd16c084919",
-      "title": "슬랙스구매~",
-      "completed": false,
-      "due_date": "2026-04-23",
-      "due_time": null,
-      "importance": "normal"
-    },
-    {
       "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAfGR_RkAAA=",
       "notion_id": "34ac2bbd-5973-81fe-ad99-d49b8c9fbc67",
       "title": "밀린 다이어리 청산",
@@ -1223,10 +1214,19 @@
       "due_date": "2026-04-22",
       "due_time": null,
       "importance": "normal"
+    },
+    {
+      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAfGR_RlAAA=",
+      "notion_id": "34ac2bbd-5973-815a-b556-fbd16c084919",
+      "title": "슬랙스구매~",
+      "completed": true,
+      "due_date": "2026-04-23",
+      "due_time": null,
+      "importance": "normal"
     }
   ],
-  "last_sync": "2026-04-23T02:35:13.530648+00:00",
+  "last_sync": "2026-04-23T05:16:47.866061+00:00",
   "total": 136,
-  "completed": 109,
-  "pending": 27
+  "completed": 110,
+  "pending": 26
 }
