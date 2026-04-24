@@ -712,6 +712,15 @@
       "priority": "1st"
     },
     {
+      "notion_id": "34cc2bbd-5973-81df-9f7f-dd68330fc2a7",
+      "title": "살아남기팟",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-05-02",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
       "notion_id": "33ec2bbd-5973-818b-9eb0-d5fbc9126910",
       "title": "아이클라우드 결제",
       "book_title": "일정",
@@ -843,15 +852,6 @@
       "book_title": "일정",
       "completed": false,
       "due_date": "2027-01-05",
-      "due_time": null,
-      "priority": "1st"
-    },
-    {
-      "notion_id": "34cc2bbd-5973-8128-815c-ff53832b6dfd",
-      "title": "데이터 베이스 B1 개관 ✓",
-      "book_title": "전공 스터디",
-      "completed": false,
-      "due_date": "2026-04-24",
       "due_time": null,
       "priority": "1st"
     },
@@ -991,15 +991,6 @@
       "priority": "2nd"
     },
     {
-      "notion_id": "34cc2bbd-5973-81dd-9c85-cb37d17aee76",
-      "title": "데이터 베이스 B4 SQL ✓",
-      "book_title": "전공 스터디",
-      "completed": false,
-      "due_date": "2026-04-24",
-      "due_time": null,
-      "priority": "2nd"
-    },
-    {
       "notion_id": "345c2bbd-5973-8148-a7e1-c0a62f8d3a5b",
       "title": "알고리즘a1 기본개념''",
       "book_title": "전공 스터디",
@@ -1108,8 +1099,8 @@
       "priority": "3rd"
     },
     {
-      "notion_id": "34cc2bbd-5973-8145-9ba9-e77686a5ca8c",
-      "title": "데이터 베이스 B7 트랜잭션 관리 ✓",
+      "notion_id": "34cc2bbd-5973-8111-bd0e-cde22ca2bd79",
+      "title": "데이터 베이스 B1 개관 ✓ (3)",
       "book_title": "전공 스터디",
       "completed": false,
       "due_date": "2026-04-24",
@@ -1243,15 +1234,6 @@
       "priority": "4th"
     },
     {
-      "notion_id": "34cc2bbd-5973-812a-ab34-d1e2940204ec",
-      "title": "인공지능 워드 정리 (잡도리)'",
-      "book_title": "교과내용학 심화",
-      "completed": false,
-      "due_date": "2026-04-24",
-      "due_time": null,
-      "priority": "4th"
-    },
-    {
       "notion_id": "332c2bbd-5973-8163-ba2e-d2eae63fc724",
       "title": "11강'",
       "book_title": "교육학 기본",
@@ -1293,6 +1275,15 @@
       "book_title": "교육학 기본",
       "completed": false,
       "due_date": "2026-03-26",
+      "due_time": null,
+      "priority": "4th"
+    },
+    {
+      "notion_id": "34cc2bbd-5973-81dd-9c85-cb37d17aee76",
+      "title": "데이터 베이스 B4 SQL ✓",
+      "book_title": "전공 스터디",
+      "completed": false,
+      "due_date": "2026-04-24",
       "due_time": null,
       "priority": "4th"
     },
@@ -1486,9 +1477,9 @@
       "priority": "5th"
     },
     {
-      "notion_id": "345c2bbd-5973-8160-aad4-d0e4945df26e",
-      "title": "멤버십",
-      "book_title": "일정",
+      "notion_id": "34cc2bbd-5973-8145-9ba9-e77686a5ca8c",
+      "title": "데이터 베이스 B7 트랜잭션 관리 ✓",
+      "book_title": "전공 스터디",
       "completed": false,
       "due_date": "2026-04-24",
       "due_time": null,
@@ -1657,20 +1648,20 @@
       "priority": "6th"
     },
     {
-      "notion_id": "34cc2bbd-5973-8180-8372-cee00d820d9c",
-      "title": "인공지능 구조도'''",
-      "book_title": "교과내용학 심화",
-      "completed": false,
-      "due_date": "2026-04-24",
-      "due_time": null,
-      "priority": "6th"
-    },
-    {
       "notion_id": "34bc2bbd-5973-81c6-b283-c22ea93ace76",
       "title": "인공지능 워드 정리 (잡도리)",
       "book_title": "교과내용학 심화",
       "completed": false,
       "due_date": "2026-04-23",
+      "due_time": null,
+      "priority": "6th"
+    },
+    {
+      "notion_id": "34cc2bbd-5973-812a-ab34-d1e2940204ec",
+      "title": "인공지능 워드 정리 (잡도리)'",
+      "book_title": "교과내용학 심화",
+      "completed": false,
+      "due_date": "2026-04-24",
       "due_time": null,
       "priority": "6th"
     },
@@ -1828,15 +1819,6 @@
       "priority": "7th"
     },
     {
-      "notion_id": "34cc2bbd-5973-81b3-a4bf-c6efab4019fd",
-      "title": "컴네 구조도'''",
-      "book_title": "교과내용학 기본",
-      "completed": false,
-      "due_date": "2026-04-24",
-      "due_time": null,
-      "priority": "7th"
-    },
-    {
       "notion_id": "33ac2bbd-5973-819b-907d-efaa08afba43",
       "title": "데이터 베이스 워드 정리'",
       "book_title": "교과내용학 심화",
@@ -1990,6 +1972,15 @@
       "priority": "7th"
     },
     {
+      "notion_id": "345c2bbd-5973-8160-aad4-d0e4945df26e",
+      "title": "멤버십",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-04-24",
+      "due_time": null,
+      "priority": "7th"
+    },
+    {
       "notion_id": "344c2bbd-5973-8068-adad-c4fb9515f091",
       "title": "알고리즘a1 기본개념",
       "book_title": "전공 스터디",
@@ -2103,6 +2094,15 @@
       "book_title": "교과내용학 심화",
       "completed": false,
       "due_date": "2026-04-23",
+      "due_time": null,
+      "priority": "8th"
+    },
+    {
+      "notion_id": "34cc2bbd-5973-8180-8372-cee00d820d9c",
+      "title": "인공지능 구조도'''",
+      "book_title": "교과내용학 심화",
+      "completed": false,
+      "due_date": "2026-04-24",
       "due_time": null,
       "priority": "8th"
     },
@@ -2224,15 +2224,6 @@
       "priority": "8th"
     },
     {
-      "notion_id": "34cc2bbd-5973-8163-a5c9-db05971307a6",
-      "title": "데이터 베이스 B2 개체-관계 데이터 모델",
-      "book_title": "전공 스터디",
-      "completed": false,
-      "due_date": "2026-04-24",
-      "due_time": null,
-      "priority": "8th"
-    },
-    {
       "notion_id": "344c2bbd-5973-80c1-b8a0-e09fe0b976fa",
       "title": "알고리즘a3 탐색과 해싱",
       "book_title": "전공 스터디",
@@ -2240,6 +2231,15 @@
       "due_date": "2026-04-16",
       "due_time": null,
       "priority": "8th"
+    },
+    {
+      "notion_id": "34cc2bbd-5973-81b3-a4bf-c6efab4019fd",
+      "title": "컴네 구조도'''",
+      "book_title": "교과내용학 기본",
+      "completed": false,
+      "due_date": "2026-04-24",
+      "due_time": null,
+      "priority": "9th"
     },
     {
       "notion_id": "345c2bbd-5973-81fa-a2b6-ea3e44af1fda",
@@ -2386,6 +2386,15 @@
       "priority": "9th"
     },
     {
+      "notion_id": "33ec2bbd-5973-819a-ad93-e91cec067cad",
+      "title": "저녁",
+      "book_title": "구분",
+      "completed": false,
+      "due_date": null,
+      "due_time": null,
+      "priority": "9th"
+    },
+    {
       "notion_id": "2eec2bbd-5973-8128-bca5-c41b8bcbafb2",
       "title": "13일차'",
       "book_title": "나도코딩 C언어",
@@ -2400,15 +2409,6 @@
       "book_title": "나도코딩 C언어",
       "completed": false,
       "due_date": "2026-01-17",
-      "due_time": null,
-      "priority": "9th"
-    },
-    {
-      "notion_id": "34cc2bbd-5973-81a2-8e22-dd857300cb0d",
-      "title": "데이터 베이스 B3 관계형 데이터 모델",
-      "book_title": "전공 스터디",
-      "completed": false,
-      "due_date": "2026-04-24",
       "due_time": null,
       "priority": "9th"
     },
@@ -2575,8 +2575,8 @@
       "priority": "10th"
     },
     {
-      "notion_id": "34cc2bbd-5973-81d4-b55b-c165863851af",
-      "title": "데이터 베이스 B5 질의처리 및 최적화",
+      "notion_id": "34cc2bbd-5973-8163-a5c9-db05971307a6",
+      "title": "데이터 베이스 B2 개체-관계 데이터 모델",
       "book_title": "전공 스터디",
       "completed": false,
       "due_date": "2026-04-24",
@@ -2755,17 +2755,8 @@
       "priority": "11th"
     },
     {
-      "notion_id": "33ec2bbd-5973-819a-ad93-e91cec067cad",
-      "title": "저녁",
-      "book_title": "구분",
-      "completed": false,
-      "due_date": null,
-      "due_time": null,
-      "priority": "11th"
-    },
-    {
-      "notion_id": "34cc2bbd-5973-81da-82a2-c6b6eaa55b38",
-      "title": "데이터 베이스 B6 관계형 데이터베이스 설계",
+      "notion_id": "34cc2bbd-5973-81a2-8e22-dd857300cb0d",
+      "title": "데이터 베이스 B3 관계형 데이터 모델",
       "book_title": "전공 스터디",
       "completed": false,
       "due_date": "2026-04-24",
@@ -2935,9 +2926,9 @@
       "priority": "12th"
     },
     {
-      "notion_id": "348c2bbd-5973-8185-b343-c7061e2bd7fb",
-      "title": "40강'''''''''",
-      "book_title": "교육학 기본",
+      "notion_id": "34cc2bbd-5973-81d4-b55b-c165863851af",
+      "title": "데이터 베이스 B5 질의처리 및 최적화",
+      "book_title": "전공 스터디",
       "completed": false,
       "due_date": "2026-04-24",
       "due_time": null,
@@ -3079,9 +3070,9 @@
       "priority": "13th"
     },
     {
-      "notion_id": "348c2bbd-5973-81ac-879c-e9dbb4b4726d",
-      "title": "41강'''''''''",
-      "book_title": "교육학 기본",
+      "notion_id": "34cc2bbd-5973-81da-82a2-c6b6eaa55b38",
+      "title": "데이터 베이스 B6 관계형 데이터베이스 설계",
+      "book_title": "전공 스터디",
       "completed": false,
       "due_date": "2026-04-24",
       "due_time": null,
@@ -3187,8 +3178,8 @@
       "priority": "14th"
     },
     {
-      "notion_id": "348c2bbd-5973-81a7-8280-d39b49e3085a",
-      "title": "42강'''''''''",
+      "notion_id": "348c2bbd-5973-8185-b343-c7061e2bd7fb",
+      "title": "40강'''''''''",
       "book_title": "교육학 기본",
       "completed": false,
       "due_date": "2026-04-24",
@@ -3277,8 +3268,8 @@
       "priority": "15th"
     },
     {
-      "notion_id": "348c2bbd-5973-81b7-8946-d1a71c225726",
-      "title": "43강'''''''''",
+      "notion_id": "348c2bbd-5973-81ac-879c-e9dbb4b4726d",
+      "title": "41강'''''''''",
       "book_title": "교육학 기본",
       "completed": false,
       "due_date": "2026-04-24",
@@ -3376,8 +3367,8 @@
       "priority": "16th"
     },
     {
-      "notion_id": "348c2bbd-5973-8103-86ff-d3271642f013",
-      "title": "44강'''",
+      "notion_id": "348c2bbd-5973-81a7-8280-d39b49e3085a",
+      "title": "42강'''''''''",
       "book_title": "교육학 기본",
       "completed": false,
       "due_date": "2026-04-24",
@@ -3484,8 +3475,8 @@
       "priority": "17th"
     },
     {
-      "notion_id": "348c2bbd-5973-8142-93db-fcdc4ce3be13",
-      "title": "45강'''",
+      "notion_id": "348c2bbd-5973-81b7-8946-d1a71c225726",
+      "title": "43강'''''''''",
       "book_title": "교육학 기본",
       "completed": false,
       "due_date": "2026-04-24",
@@ -3547,8 +3538,8 @@
       "priority": "18th"
     },
     {
-      "notion_id": "348c2bbd-5973-815a-8aee-e251db56d580",
-      "title": "46강'''",
+      "notion_id": "348c2bbd-5973-8103-86ff-d3271642f013",
+      "title": "44강'''",
       "book_title": "교육학 기본",
       "completed": false,
       "due_date": "2026-04-24",
@@ -3601,8 +3592,8 @@
       "priority": "19th"
     },
     {
-      "notion_id": "348c2bbd-5973-8135-907a-ff015124826d",
-      "title": "47강'''",
+      "notion_id": "348c2bbd-5973-8142-93db-fcdc4ce3be13",
+      "title": "45강'''",
       "book_title": "교육학 기본",
       "completed": false,
       "due_date": "2026-04-24",
@@ -3637,8 +3628,8 @@
       "priority": "20th"
     },
     {
-      "notion_id": "348c2bbd-5973-814e-b3f6-d2a9913db86d",
-      "title": "48강'''",
+      "notion_id": "348c2bbd-5973-815a-8aee-e251db56d580",
+      "title": "46강'''",
       "book_title": "교육학 기본",
       "completed": false,
       "due_date": "2026-04-24",
@@ -3970,6 +3961,15 @@
       "priority": "23rd"
     },
     {
+      "notion_id": "348c2bbd-5973-8135-907a-ff015124826d",
+      "title": "47강'''",
+      "book_title": "교육학 기본",
+      "completed": false,
+      "due_date": "2026-04-24",
+      "due_time": null,
+      "priority": "21st"
+    },
+    {
       "notion_id": "32ec2bbd-5973-80b9-b4a2-f62e738f23d9",
       "title": "48강",
       "book_title": "교육학 기본",
@@ -3995,6 +3995,15 @@
       "due_date": "2026-04-19",
       "due_time": null,
       "priority": "24th"
+    },
+    {
+      "notion_id": "348c2bbd-5973-814e-b3f6-d2a9913db86d",
+      "title": "48강'''",
+      "book_title": "교육학 기본",
+      "completed": false,
+      "due_date": "2026-04-24",
+      "due_time": null,
+      "priority": "22nd"
     },
     {
       "notion_id": "32ec2bbd-5973-80a5-a40c-cc7f8a2bc233",
@@ -4030,7 +4039,7 @@
       "completed": false,
       "due_date": "2026-04-24",
       "due_time": null,
-      "priority": "21st"
+      "priority": "23rd"
     },
     {
       "notion_id": "32ec2bbd-5973-80e8-b855-f8ad8dfc4dda",
@@ -4066,7 +4075,7 @@
       "completed": false,
       "due_date": "2026-04-24",
       "due_time": null,
-      "priority": "22nd"
+      "priority": "24th"
     },
     {
       "notion_id": "32ec2bbd-5973-80ad-934f-e882b18b17bf",
@@ -5455,6 +5464,15 @@
       "priority": "1st"
     },
     {
+      "notion_id": "34cc2bbd-5973-8128-815c-ff53832b6dfd",
+      "title": "데이터 베이스 B1 개관 ✓",
+      "book_title": "전공 스터디",
+      "completed": true,
+      "due_date": "2026-04-24",
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
       "notion_id": "32cc2bbd-5973-8123-a122-f0e0b1805622",
       "title": "맡은 파트 설명 연습",
       "book_title": "전공 스터디",
@@ -6036,6 +6054,15 @@
       "book_title": "전공 스터디",
       "completed": true,
       "due_date": "2026-04-06",
+      "due_time": null,
+      "priority": "2nd"
+    },
+    {
+      "notion_id": "34cc2bbd-5973-81cb-ab5a-daefd0154b32",
+      "title": "데이터 베이스 B1 개관 ✓ (2)",
+      "book_title": "전공 스터디",
+      "completed": true,
+      "due_date": "2026-04-24",
       "due_time": null,
       "priority": "2nd"
     },
@@ -7822,6 +7849,6 @@
       "priority": ""
     }
   ],
-  "last_sync": "2026-04-24T10:08:50.628213+00:00",
-  "total": 869
+  "last_sync": "2026-04-24T11:20:36.529966+00:00",
+  "total": 872
 }
