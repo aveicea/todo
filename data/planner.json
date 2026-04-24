@@ -73,6 +73,15 @@
       "priority": "1st"
     },
     {
+      "notion_id": "341c2bbd-5973-81c7-bb6e-e8de00d355df",
+      "title": "2시 리셋",
+      "book_title": "구분",
+      "completed": false,
+      "due_date": null,
+      "due_time": null,
+      "priority": "1st"
+    },
+    {
       "notion_id": "33ec2bbd-5973-81b1-a49c-cfac176aa8a4",
       "title": "08:30-09:30 교생 오티",
       "book_title": "일정",
@@ -1288,15 +1297,6 @@
       "priority": "4th"
     },
     {
-      "notion_id": "345c2bbd-5973-8160-aad4-d0e4945df26e",
-      "title": "멤버십",
-      "book_title": "일정",
-      "completed": false,
-      "due_date": "2026-04-24",
-      "due_time": null,
-      "priority": "4th"
-    },
-    {
       "notion_id": "33ac2bbd-5973-81bf-9ab5-c77891f32500",
       "title": "알고리즘 문제 풀이",
       "book_title": "전공 스터디",
@@ -1486,6 +1486,15 @@
       "priority": "5th"
     },
     {
+      "notion_id": "345c2bbd-5973-8160-aad4-d0e4945df26e",
+      "title": "멤버십",
+      "book_title": "일정",
+      "completed": false,
+      "due_date": "2026-04-24",
+      "due_time": null,
+      "priority": "5th"
+    },
+    {
       "notion_id": "345c2bbd-5973-81eb-8cff-c67f1e4d2c18",
       "title": "알고리즘a2 설계'",
       "book_title": "전공 스터디",
@@ -1599,15 +1608,6 @@
       "book_title": "교과내용학 기본",
       "completed": false,
       "due_date": "2026-03-05",
-      "due_time": null,
-      "priority": "6th"
-    },
-    {
-      "notion_id": "34cc2bbd-5973-81b3-a4bf-c6efab4019fd",
-      "title": "컴네 구조도'''",
-      "book_title": "교과내용학 기본",
-      "completed": false,
-      "due_date": "2026-04-24",
       "due_time": null,
       "priority": "6th"
     },
@@ -1824,6 +1824,15 @@
       "book_title": "교과내용학 기본",
       "completed": false,
       "due_date": "2026-04-23",
+      "due_time": null,
+      "priority": "7th"
+    },
+    {
+      "notion_id": "34cc2bbd-5973-81b3-a4bf-c6efab4019fd",
+      "title": "컴네 구조도'''",
+      "book_title": "교과내용학 기본",
+      "completed": false,
+      "due_date": "2026-04-24",
       "due_time": null,
       "priority": "7th"
     },
@@ -4247,15 +4256,6 @@
       "due_date": null,
       "due_time": null,
       "priority": ""
-    },
-    {
-      "notion_id": "341c2bbd-5973-81c7-bb6e-e8de00d355df",
-      "title": "점심",
-      "book_title": "구분",
-      "completed": false,
-      "due_date": null,
-      "due_time": null,
-      "priority": "0th"
     },
     {
       "notion_id": "348c2bbd-5973-8153-aa9a-fc9e64e6b4f5",
@@ -7822,6 +7822,6 @@
       "priority": ""
     }
   ],
-  "last_sync": "2026-04-24T01:56:17.009029+00:00",
+  "last_sync": "2026-04-24T04:50:12.125497+00:00",
   "total": 869
 }
