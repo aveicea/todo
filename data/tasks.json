@@ -181,15 +181,6 @@
       "importance": "normal"
     },
     {
-      "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAfGR_RmAAA=",
-      "notion_id": "34ac2bbd-5973-812c-8867-c368b1aca3be",
-      "title": "염색약 구매",
-      "completed": false,
-      "due_date": "2026-04-23",
-      "due_time": null,
-      "importance": "normal"
-    },
-    {
       "ms_id": "AAMkAGRiZTM2OTRmLTkzYWEtNGE2Zi1hY2Y2LTAzZDI3YThmNjY1YQBGAAAAAADvvYgNJdN7T4gZb4PvK04nBwCQuI-0BLyNQJDTmLuSiUBmAAAAAAESAACQuI-0BLyNQJDTmLuSiUBmAAfGR_RkAAA=",
       "notion_id": "34ac2bbd-5973-81fe-ad99-d49b8c9fbc67",
       "title": "밀린 다이어리 청산",
@@ -1279,8 +1270,8 @@
       "importance": "normal"
     }
   ],
-  "last_sync": "2026-04-25T00:03:24.758206+00:00",
-  "total": 142,
+  "last_sync": "2026-04-25T03:26:20.377445+00:00",
+  "total": 141,
   "completed": 110,
-  "pending": 32
+  "pending": 31
 }
